@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4f53cda18c2baa0c0354bb5f9a3ecbe5"}, "mark": {"type": "rect", "opacity": 0.3}, "encoding": {"color": {"field": "Period Type", "legend": {"title": "Period Type"}, "scale": {"range": ["red"]}, "type": "nominal"}, "tooltip": [{"field": "Crash Start (Peak)", "title": "Crash Start", "type": "temporal"}, {"field": "Crash End (Trough)", "title": "Crash End", "type": "temporal"}, {"field": "Decline %", "format": ".2f", "title": "Decline %", "type": "quantitative"}], "x": {"field": "Crash Start (Peak)", "title": "", "type": "temporal"}, "x2": {"field": "Crash End (Trough)", "title": ""}, "y": {"field": "y_min", "type": "quantitative"}, "y2": {"field": "y_max"}}, "name": "view_50761103bfa31df0_0"}, {"data": {"name": "data-4f53cda18c2baa0c0354bb5f9a3ecbe5"}, "mark": {"type": "line", "color": "black", "opacity": 0.8}, "encoding": {"tooltip": [{"field": "date", "title": "Date", "type": "temporal"}, {"field": "close", "format": ".2f", "title": "Close Price", "type": "quantitative"}], "x": {"axis": {"title": "Date"}, "field": "date", "type": "temporal"}, "y": {"axis": {"title": "Close Price (USD)"}, "field": "close", "type": "quantitative"}}}], "height": 600, "params": [{"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_50761103bfa31df0_0"]}], "title": "Bitcoin Price with Drawdown-Identified Crash Periods (Updated: 2025-11-25)", "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-4f53cda18c2baa0c0354bb5f9a3ecbe5": []}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
