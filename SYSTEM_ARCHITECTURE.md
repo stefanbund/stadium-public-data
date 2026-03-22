@@ -119,10 +119,10 @@ The public-facing results layer, fully automated to maintain an active historica
 - **Trader Operations Deployer**: [`UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py) [NEW]
     - *Role*: Transmits the live Operations Dashboard state directly from the isolated Mac Mini to GitHub Pages via REST without requiring a full code clone.
     - **Live Access URLs**:
-        - **System Architecture (Public Blueprint)**: `https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md`
-        - **Accuracy Dashboard (Model Scores)**: `https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html`
-        - **Strategy Performance Dashboard (Financial Alpha)**: `https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html`
-        - **Trader Operations Dashboard (Live Trades)**: `https://stefanbund.github.io/stadium-public-data/operations_dashboard.html`
+        - **System Architecture (Public Blueprint)**: [View Blueprint](https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md)
+        - **Accuracy Dashboard (Model Scores)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html)
+        - **Strategy Performance Dashboard (Financial Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html)
+        - **Trader Operations Dashboard (Live Trades)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/operations_dashboard.html)
 
 ---
 
