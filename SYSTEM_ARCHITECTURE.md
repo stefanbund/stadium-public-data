@@ -113,9 +113,16 @@ The public-facing results layer, fully automated to maintain an active historica
 - **Architecture Documentation Sync**: [`UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py) [NEW]
     - *Role*: Duplicates the PAT REST API logic to push raw updates to the `SYSTEM_ARCHITECTURE.md` blueprint directly to the public mirror, ensuring researchers always observe the active state.
     - *Execution*: `python3 UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py`
+- **Trader Operations Dashboard Generator**: [`UNIFIED_TRADER_WORKSPACE/generate_operations_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/generate_operations_dashboard.py) [NEW]
+    - *Role*: Automatically ingests live executed trades from Python `executions_log.csv` and renders them into an interactive dark-themed HTML monitoring frontend on the production host.
+    - *Execution*: Triggered natively at the conclusion of any limit-order transaction executed by the Neural Network.
+- **Trader Operations Deployer**: [`UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py) [NEW]
+    - *Role*: Transmits the live Operations Dashboard state directly from the isolated Mac Mini to GitHub Pages via REST without requiring a full code clone.
     - **Live Access URLs**:
+        - **System Architecture (Public Blueprint)**: `https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md`
         - **Accuracy Dashboard (Model Scores)**: `https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html`
         - **Strategy Performance Dashboard (Financial Alpha)**: `https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html`
+        - **Trader Operations Dashboard (Live Trades)**: `https://stefanbund.github.io/stadium-public-data/operations_dashboard.html`
 
 ---
 
@@ -243,15 +250,17 @@ The system relies on two autonomous push/pull tools to synchronize the `UNIFIED_
 
 ```text
 /UNIFIED_TRADER_WORKSPACE
-│── async_trader_rewritten.py     # Pure Python API executor (Limit Buys & Auto-Sells)
-│── trader_NN_HIERARCHICAL.py     # The Bayesian Logic entrypoint tailing the LOB 
-│── run_pause_predictor.sh        # The Executable Start Button for the Trader
-│── deployment_helper.py          # The Laptop -> Mac Mini sync utility
-│── sync_back_from_target.py      # The Mac Mini -> Laptop pull utility
-│── config.json                   # Local override configuration
-│── requirements.txt              # Shared Python dependencies
-├── /neural_network/              # Bayesian Model classes
-└── /utils/                       # Shared utility functions
+│── async_trader_rewritten.py        # Pure Python API executor (Limit Buys & Auto-Sells)
+│── trader_NN_HIERARCHICAL.py        # The Bayesian Logic entrypoint tailing the LOB 
+│── generate_operations_dashboard.py # Live HTML operations dashboard compiler
+│── push_operations_dashboard_to_gh.py # GitHub REST API publisher for live trade telemetry
+│── run_pause_predictor.sh           # The Executable Start Button for the Trader
+│── deployment_helper.py             # The Laptop -> Mac Mini sync utility
+│── sync_back_from_target.py         # The Mac Mini -> Laptop pull utility
+│── config.json                      # Local override configuration
+│── requirements.txt                 # Shared Python dependencies
+├── /neural_network/                 # Bayesian Model classes
+└── /utils/                          # Shared utility functions
 ```  ```bash
           python deployment_helper.py --audit-only
           ```
