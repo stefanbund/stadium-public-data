@@ -112,6 +112,7 @@ The public-facing results layer, fully automated to maintain an active historica
     - *Execution*: The absolute final automated deployment step of the orchestrator's backend sweep.
 - **Architecture Documentation Sync**: [`UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py) [NEW]
     - *Role*: Duplicates the PAT REST API logic to push raw updates to the `SYSTEM_ARCHITECTURE.md` blueprint directly to the public mirror, ensuring researchers always observe the active state.
+    - *Execution*: `python3 UNIFIED_REPORTING_WORKSPACE/push_architecture_to_gh.py`
     - **Live Access URLs**:
         - **Accuracy Dashboard (Model Scores)**: `https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html`
         - **Strategy Performance Dashboard (Financial Alpha)**: `https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html`
