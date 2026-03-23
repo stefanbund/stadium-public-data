@@ -24,12 +24,18 @@ The central nervous system that manages the sequential execution for each symbol
 ## 2. Feature Engineering & Preprocessing
 These scripts transform raw market data into the high-order feature matrices required by the AutoML optimizers. Most are physically housed within `UNIFIED_MLOPS_WORKSPACE`.
 
+- **Dynamic Alpha Lookback Calculator**: [`UNIFIED_MLOPS_WORKSPACE/macro_onset_discovery.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/macro_onset_discovery.py) [NEW]
+    - *Role*: Automatically reverse-engineers historical price surges (>1%) and crashes (<-1%) to mathematically compute the optimal `window_size` duration required to predict those events for any given asset. Replaces manual `window_size=10` static arrays with absolute precision modeling.
+    - *Output Format*: `OPTIMIZED_MACRO_PARAMETERS/target_parameters.txt`
 - **Directional Preprocessor**: [`UNIFIED_MLOPS_WORKSPACE/directional_preprocessor_v2.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/directional_preprocessor_v2.py)
-  - **V2 Strategy**: Employs a robust strategy mirroring the Crash Predictor. It pairs high-resolution Limit Order Book (LOB) precursor anomalies against the reliable Coinbase Kline (OHLC) price stream. It scans the downstream price window and labels target events `1` if the valid structural Surge exceeds a >1.0% threshold, offering superior signal consistency over legacy raw LOB MP methods.
+  - **V2 Strategy**: Employs a robust strategy mirroring the Crash Predictor. It pairs high-resolution Limit Order Book (LOB) precursor anomalies against the reliable Coinbase Kline (OHLC) price stream. It scans the downstream price window and labels target events `1` if the valid structural Surge exceeds a >1.0% threshold. It utilizes the dynamic lookbacks computed by the Onset Discovery engine.
     - *Role*: Generates the base feature engineering (MACD, Bollinger Bands, ADX, VWAP) and assigns binary `[0, 1]` directional labels based on forward price action.
     - *Output Format*: `[SYMBOL]-USD-binary_binned_pipeline.csv`
+- **Imbalance Preprocessor (The Micro-Confirmation Layer)**: [`UNIFIED_MLOPS_WORKSPACE/imbalance_preprocessor.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/imbalance_preprocessor.py) [NEW]
+    - *Role*: Calculates absolute `queue_imbalance_ratio` and `capital_imbalance_ratio` directly from raw Level-2 Bid/Ask metrics. This tier verifies if localized order-book momentum physically supports the Directional model's macro-prediction, serving as a primary alpha filter.
+    - *Output Format*: `[SYMBOL]-USD-imbalance-data.csv`
 - **Crash V5 Preprocessor**: [`UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py)
-    - *Role*: Calculates the most severe crashes using grouped precursor signatures. It leverages the highly stable Coinbase Kline (OHLC) price stream for forward target verification, exclusively labeling a sequence as a Crash (`1`) if the forward `Low` drops **< -3.0%** below the entry price over the target window. This perfectly mirrors the strategy in Directional V2, deprecating the localized Limit Order Book target evaluations and old quantile binning formats.
+    - *Role*: Calculates the most severe crashes using grouped precursor signatures. It leverages the highly stable Coinbase Kline (OHLC) price stream for forward target verification, exclusively labeling a sequence as a Crash (`1`) if the forward `Low` drops **< -3.0%** below the entry price over the target window.
     - *Output Format*: `[SYMBOL]-USD-drawdown-precursor-data.csv`
 - **Unified Durational V2 Preprocessor (The Generalist)**: [`forecaster/unified_durational_preprocessor_v2.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/forecaster/unified_durational_preprocessor_v2.py)
     - *Role*: Synthesizes and merges the preceding models into a master feature matrix across **all** market events. It computes high-order technical indicators (EMAs, RSI, MACD, Cyclical Time) to predict the exact *duration* before a profitable target is hit for any symbol.
@@ -46,11 +52,12 @@ These scripts transform raw market data into the high-order feature matrices req
 The latest evolution of the system, located in the dedicated `neural_network/` folder.
 
 - **Predictor Engine**: [`neural_network/nn_unified_predictor.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/neural_network/nn_unified_predictor.py)
-    - *Architecture*: A PyTorch hierarchical wrapper employing a **4-Layer Intelligence Chain**:
-        1. **Directional (Trend)**: Determines the primary price vector (Bullish/Bearish).
-        2. **Crash (Safety)**: A defensive filter that suppresses signals if a >3.0% drop is imminent.
-        3. **Generalist (Duration)**: Predicts the time-to-profit based on global market features.
-        4. **Specialist (Efficiency)**: A high-velocity filter that prioritizes trades reaching targets in <3 hours.
+    - *Architecture*: A PyTorch hierarchical wrapper employing a **5-Layer Intelligence Chain**:
+        1. **Directional (Trend)**: Determines the primary macro-price vector (Bullish/Bearish).
+        2. **Imbalance (Micro-Confirmation)**: Investigates explicit queue ratio order-flow to physically validate the Directional hypothesis.
+        3. **Crash (Safety)**: A defensive filter that suppresses signals if a >3.0% drop is imminent.
+        4. **Generalist (Duration)**: Predicts the broad market time-to-profit matrix.
+        5. **Specialist (Efficiency)**: A high-velocity filter that prioritizes trades reaching targets in <3 hours.
     - **Bayesian Accuracy Scaling (The Beijing Logic)**: The engine dynamically adjusts decision thresholds based on the historical accuracy of each specific model. For every tier, it calculates a `Dynamic Threshold = Base Threshold * Accuracy`. If the signal probability exceeds this bar, the tier returns a "Green Light," ensuring the system only trades when local performance justifies the risk.
 - **CLI Test Utility**: [`neural_network/unified_predict.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/neural_network/unified_predict.py)
     - *Usage*: `python3 neural_network/unified_predict.py --symbol <NAME>`
@@ -121,7 +128,7 @@ The public-facing results layer, fully automated to maintain an active historica
     - **Live Access URLs**:
         - **System Architecture (Public Blueprint)**: [View Blueprint](https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md)
         - **Accuracy Dashboard (Model Scores)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html)
-        - **Strategy Performance Dashboard (Financial Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html)
+        - **Strategy Performance Dashboard (BacktestedShow me how you're gonna smell Strategy Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html)
         - **Trader Operations Dashboard (Live Trades)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/operations_dashboard.html)
 
 ---
@@ -146,18 +153,20 @@ The modern execution pipeline relies on structured JSON Lines for tracking globa
 The final storage location for the highly trained artifacts and Neural Network target data. The Multi-Phase Accuracy Transfer step packages data specifically for the Neural Network target host to ingest as historical priors.
 
 - **Data Transportation**: Handled via physical USB bridge syncing.
-- **Granular Accuracy CSVs**: Accuracy scores for every symbol are extracted and stored independently across three folders:
+- **Granular Accuracy CSVs**: Accuracy scores for every symbol are extracted and stored independently across folders:
     - Directional Accuracy: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/DIRECTIONAL_MODEL_ACCURACY/[SYMBOL]-directional-accuracy.csv`
+    - Imbalance Accuracy: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/IMBALANCE_MODEL_ACCURACY/[SYMBOL]-imbalance-accuracy.csv`
     - Crash Accuracy: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/CRASH_MODEL_ACCURACY/[SYMBOL]-crash-accuracy.csv`
     - Durational Accuracy: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/DURATIONAL_MODEL_ACCURACY/[SYMBOL]-durational-accuracy.csv`
-- **Unified Neural Network JSON Metadata**: `orchestrator_symbol_centric.py` synthesizes the four independent CSV accuracies into a single isolated JSON payload for the NN Engine to parse before trading:
+- **Unified Neural Network JSON Metadata**: `orchestrator_symbol_centric.py` synthesizes the independent CSV accuracies into a single isolated JSON payload for the NN Engine to parse before trading:
     - Path: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/SYMBOL_METADATA/[SYMBOL].json`
     - **Trade Duration Siloing**: To prevent conflict with existing predictors, Efficiency metadata is strictly isolated on the remote host:
       - Path: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/SYMBOL_METADATA/TRADE_DURATION/[SYMBOL].json`
-    - Example Payload: `{"symbol": "BTC-USD", "accuracies": {"directional": 0.9997, "crash": 0.9534, "durational": 0.9812, "trade_duration": 0.8180}, "last_updated": "2026-03-12T12:00:00"}`
+    - Example Payload: `{"symbol": "BTC-USD", "accuracies": {"directional": 0.9997, "imbalance": 0.9650, "crash": 0.9534, "durational": 0.9812, "trade_duration": 0.8180}, "last_updated": "2026-03-23T12:00:00"}`
 
 - **Compiled Joblib Modules**:
     - Directional: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/DIRECTIONAL_MODULES/`
+    - Imbalance: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/IMBALANCE_MODULES/`
     - Crash: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/CRASH_MODULES/`
     - Durational: `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/MODELS/DURATIONAL_MODULES/`
 
@@ -175,10 +184,12 @@ This section distinguishes between the **Batch Preprocessing** lifecycle (Traini
 1.  **Buffer Management**: The predictor fetches minimal recent context from the exchange API or local cache.
 2.  **In-Memory Calculation**: Indicators (RSI, EMAs, ATR) are computed instantly within the agent's memory space using streamlined math functions.
 3.  **Hierarchical Evaluation**: The resulting "current state" vector is passed sequentially through the `UnifiedHierarchicalPredictor`:
-    - **Tier 1**: Should I buy? (Directional)
-    - **Tier 2**: Is it safe? (Crash)
-    - **Tier 3**: Is it efficient? (Durational/Efficiency)
-4.  **Action Handoff**: Executable signal is generated only if all tiers provide a "Green Light." It then hands off control to the Execution layer.
+    - **Tier 1**: Should I buy? (Directional Trend)
+    - **Tier 2**: Are the micro order-books supporting this? (Imbalance Queue Ratio)
+    - **Tier 3**: Is it safe to execute? (Crash Safety)
+    - **Tier 4**: What is the general market speed limit? (Durational)
+    - **Tier 5**: Does this pass my algorithmic mandate? (Specialist Efficiency)
+4.  **Action Handoff**: Executable signal is generated only if all 5 tiers provide a "Green Light." It then hands off control to the Execution layer.
 
 ### Asynchronous Execution Engine
 The final step in translating inferences into real-world orders is handled by the unified Python executor.
@@ -288,6 +299,7 @@ For the Neural Network trader to run successfully on a remote host, the followin
 └── STADIUM-DATA-FROM-I71/          # ESTABLISHED DATA & MODULE ROOT
     └── MODELS/                     # Intelligence modules live here
         ├── DIRECTIONAL_MODULES/
+        ├── IMBALANCE_MODULES/
         ├── CRASH_MODULES/
         ├── GENERALIST_DURATIONAL_MODULES/
         └── SPECIALIST_TRADE_DURATION_MODULES/
