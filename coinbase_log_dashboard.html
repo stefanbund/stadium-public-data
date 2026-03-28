@@ -118,7 +118,7 @@
         <header>
             <div class="badge">Coinbase M4 Pipeline Intelligence</div>
             <h1>Log Observability & Diagnostics</h1>
-            <p class="timestamp">Analysis Generated: 2026-03-28 10:00:42 • Centralized Monitoring</p>
+            <p class="timestamp">Analysis Generated: 2026-03-28 10:07:00 • Centralized Monitoring</p>
         </header>
 
         <div class="stats-grid">
@@ -152,14 +152,14 @@
                 </div>
             </div>
             <div class="chart-section">
-                <h2>Error Distribution by Source</h2>
+                <h2>Sampler Error Frequency Clusters</h2>
                 <div class="canvas-container">
-                    <canvas id="sourceChart"></canvas>
+                    <canvas id="samplerErrorChart"></canvas>
                 </div>
             </div>
         </div>
 
-        <div class="table-section">
+        <div class="table-section" style="margin-bottom: 2rem;">
             <h2>Detailed Symbol Error Audit</h2>
             <div class="table-scroll-wrapper">
                 <table>
@@ -476,6 +476,43 @@
                 </table>
             </div>
         </div>
+
+        <div class="table-section">
+            <h2>Sampler Error Type Analysis</h2>
+            <div class="table-scroll-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Error Message Cluster</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="symbol" style="font-size: 0.85rem; color: var(--text-main);">Error during book fetch for EOS-USD</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td class="symbol" style="font-size: 0.85rem; color: var(--text-main);">Error during book fetch for MKR-USD</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td class="symbol" style="font-size: 0.85rem; color: var(--text-main);">Error during book fetch for RNDR-USD</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td class="symbol" style="font-size: 0.85rem; color: var(--text-main);">Error during book fetch for GST-USD</td>
+                            <td class="error-count">1</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -509,33 +546,33 @@
                 }
             });
 
-            // Source Chart
-            const ctxSource = document.getElementById('sourceChart').getContext('2d');
-            new Chart(ctxSource, {
-                type: 'doughnut',
+            // Sampler Error Chart
+            const ctxSampler = document.getElementById('samplerErrorChart').getContext('2d');
+            new Chart(ctxSampler, {
+                type: 'bar',
                 data: {
-                    labels: ["MLOPS", "SAMPLER", "TRADING_BOT"],
+                    labels: ["Error during book fetch for EOS-USD", "Error during book fetch for MKR-USD", "Error during book fetch for RNDR-USD", "Error during book fetch for GST-USD"],
                     datasets: [{
-                        data: [0, 88, 5898],
-                        backgroundColor: [
-                            'rgba(139, 92, 246, 0.8)',
-                            'rgba(56, 189, 248, 0.8)',
-                            'rgba(239, 68, 68, 0.8)'
-                        ],
-                        borderWidth: 0,
-                        hoverOffset: 10
+                        label: 'Frequency',
+                        data: [29, 29, 29, 1],
+                        backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                        borderColor: '#8b5cf6',
+                        borderWidth: 1,
+                        borderRadius: 6
                     }]
                 },
                 options: {
+                    indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { 
-                            position: 'bottom',
-                            labels: { color: '#f8fafc', padding: 20 } 
-                        }
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#1e293b' }
                     },
-                    cutout: '70%'
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+                        y: { grid: { display: false }, ticks: { color: '#e2e8f0', font: { size: 10 } } }
+                    }
                 }
             });
         });
