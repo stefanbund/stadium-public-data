@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METASTADIUM | Coinbase Log Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #8b5cf6;
+            --accent-success: #10b981;
+            --accent-warning: #fbbf24;
+            --accent-danger: #ef4444;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 { font-weight: 800; font-size: 2.5rem; letter-spacing: -0.05em; margin-bottom: 0.5rem; color: #fff; }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-danger), var(--accent-secondary));
+            padding: 0.25rem 1rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .timestamp { color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+        .stat-value { font-size: 2.2rem; font-weight: 800; color: var(--text-main); }
+        .stat-label { color: var(--text-dim); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        
+        .value-up { color: var(--accent-success); }
+        .value-down { color: var(--accent-danger); }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-section, .table-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 1.5rem;
+        }
+
+        h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--accent-primary); }
+
+        .canvas-container { height: 350px; position: relative; }
+
+        .table-scroll-wrapper {
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        thead { position: sticky; top: 0; background: var(--card-bg); z-index: 10; }
+        th { text-align: left; padding: 1rem; color: var(--text-dim); border-bottom: 2px solid var(--border); font-size: 0.85rem; text-transform: uppercase; }
+        td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        tr:hover td { background: rgba(56, 189, 248, 0.05); }
+        
+        .symbol { font-weight: 800; font-size: 1.1rem; color: var(--accent-primary); }
+        .error-count { color: var(--accent-danger); font-weight: 700; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">Coinbase M4 Pipeline Intelligence</div>
+            <h1>Log Observability & Diagnostics</h1>
+            <p class="timestamp">Analysis Generated: 2026-03-28 09:47:38 • Centralized Monitoring</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">System-Wide Errors</div>
+                <div class="stat-value value-down">5925</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Warnings</div>
+                <div class="stat-value" style="color: var(--accent-warning)">2127</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Sampler Exceptions</div>
+                <div class="stat-value">27</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Bot Exceptions</div>
+                <div class="stat-value">5898</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Heartbeats</div>
+                <div class="stat-value" style="color: var(--accent-success)">4695</div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="chart-section">
+                <h2>Top 15 Error-Prone Symbols</h2>
+                <div class="canvas-container">
+                    <canvas id="symbolChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-section">
+                <h2>Error Distribution by Source</h2>
+                <div class="canvas-container">
+                    <canvas id="sourceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2>Detailed Symbol Error Audit</h2>
+            <div class="table-scroll-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Symbol</th>
+                            <th>Critical Exceptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td class="symbol">GLOBAL</td>
+                            <td class="error-count">4255</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td class="symbol">ALT</td>
+                            <td class="error-count">40</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td class="symbol">CFG</td>
+                            <td class="error-count">36</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td class="symbol">IRYS</td>
+                            <td class="error-count">33</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td class="symbol">TRB</td>
+                            <td class="error-count">32</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td class="symbol">FLOCK</td>
+                            <td class="error-count">30</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td class="symbol">CGLD</td>
+                            <td class="error-count">30</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td class="symbol">IMU</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td class="symbol">SEAM</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td class="symbol">BIT</td>
+                            <td class="error-count">29</td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td class="symbol">UNI</td>
+                            <td class="error-count">28</td>
+                        </tr>
+
+                        <tr>
+                            <td>12</td>
+                            <td class="symbol">KARRAT</td>
+                            <td class="error-count">27</td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td class="symbol">C2Z</td>
+                            <td class="error-count">27</td>
+                        </tr>
+
+                        <tr>
+                            <td>14</td>
+                            <td class="symbol">COW</td>
+                            <td class="error-count">27</td>
+                        </tr>
+
+                        <tr>
+                            <td>15</td>
+                            <td class="symbol">AURORA</td>
+                            <td class="error-count">27</td>
+                        </tr>
+
+                        <tr>
+                            <td>16</td>
+                            <td class="symbol">ZEC</td>
+                            <td class="error-count">26</td>
+                        </tr>
+
+                        <tr>
+                            <td>17</td>
+                            <td class="symbol">ELSA</td>
+                            <td class="error-count">26</td>
+                        </tr>
+
+                        <tr>
+                            <td>18</td>
+                            <td class="symbol">FAI</td>
+                            <td class="error-count">26</td>
+                        </tr>
+
+                        <tr>
+                            <td>19</td>
+                            <td class="symbol">BOBBOB</td>
+                            <td class="error-count">26</td>
+                        </tr>
+
+                        <tr>
+                            <td>20</td>
+                            <td class="symbol">IOTX</td>
+                            <td class="error-count">25</td>
+                        </tr>
+
+                        <tr>
+                            <td>21</td>
+                            <td class="symbol">AST</td>
+                            <td class="error-count">25</td>
+                        </tr>
+
+                        <tr>
+                            <td>22</td>
+                            <td class="symbol">EIGEN</td>
+                            <td class="error-count">25</td>
+                        </tr>
+
+                        <tr>
+                            <td>23</td>
+                            <td class="symbol">HFT</td>
+                            <td class="error-count">25</td>
+                        </tr>
+
+                        <tr>
+                            <td>24</td>
+                            <td class="symbol">SWFTC</td>
+                            <td class="error-count">24</td>
+                        </tr>
+
+                        <tr>
+                            <td>25</td>
+                            <td class="symbol">NEON</td>
+                            <td class="error-count">24</td>
+                        </tr>
+
+                        <tr>
+                            <td>26</td>
+                            <td class="symbol">ETHFI</td>
+                            <td class="error-count">24</td>
+                        </tr>
+
+                        <tr>
+                            <td>27</td>
+                            <td class="symbol">POLS</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>28</td>
+                            <td class="symbol">COOKIE</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>29</td>
+                            <td class="symbol">KAVA</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>30</td>
+                            <td class="symbol">ATH</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>31</td>
+                            <td class="symbol">GIGA</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>32</td>
+                            <td class="symbol">ZEN</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>33</td>
+                            <td class="symbol">ABT</td>
+                            <td class="error-count">23</td>
+                        </tr>
+
+                        <tr>
+                            <td>34</td>
+                            <td class="symbol">FIGHT</td>
+                            <td class="error-count">22</td>
+                        </tr>
+
+                        <tr>
+                            <td>35</td>
+                            <td class="symbol">SPELL</td>
+                            <td class="error-count">22</td>
+                        </tr>
+
+                        <tr>
+                            <td>36</td>
+                            <td class="symbol">EDGE</td>
+                            <td class="error-count">22</td>
+                        </tr>
+
+                        <tr>
+                            <td>37</td>
+                            <td class="symbol">CTX</td>
+                            <td class="error-count">22</td>
+                        </tr>
+
+                        <tr>
+                            <td>38</td>
+                            <td class="symbol">ARKM</td>
+                            <td class="error-count">21</td>
+                        </tr>
+
+                        <tr>
+                            <td>39</td>
+                            <td class="symbol">BIRB</td>
+                            <td class="error-count">21</td>
+                        </tr>
+
+                        <tr>
+                            <td>40</td>
+                            <td class="symbol">ALEPH</td>
+                            <td class="error-count">21</td>
+                        </tr>
+
+                        <tr>
+                            <td>41</td>
+                            <td class="symbol">SUPER</td>
+                            <td class="error-count">21</td>
+                        </tr>
+
+                        <tr>
+                            <td>42</td>
+                            <td class="symbol">FARTCOIN</td>
+                            <td class="error-count">21</td>
+                        </tr>
+
+                        <tr>
+                            <td>43</td>
+                            <td class="symbol">OXT</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>44</td>
+                            <td class="symbol">NKN</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>45</td>
+                            <td class="symbol">BAT</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>46</td>
+                            <td class="symbol">EUL</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>47</td>
+                            <td class="symbol">ALCX</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>48</td>
+                            <td class="symbol">MASK</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>49</td>
+                            <td class="symbol">CLV</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                        <tr>
+                            <td>50</td>
+                            <td class="symbol">MLN</td>
+                            <td class="error-count">20</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Symbol Chart
+            const ctxSymbol = document.getElementById('symbolChart').getContext('2d');
+            new Chart(ctxSymbol, {
+                type: 'bar',
+                data: {
+                    labels: ["GLOBAL", "ALT", "CFG", "IRYS", "TRB", "FLOCK", "CGLD", "IMU", "SEAM", "BIT", "UNI", "KARRAT", "C2Z", "COW", "AURORA"],
+                    datasets: [{
+                        label: 'Error Count',
+                        data: [4255, 40, 36, 33, 32, 30, 30, 29, 29, 29, 28, 27, 27, 27, 27],
+                        backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                        borderColor: '#ef4444',
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#1e293b' }
+                    },
+                    scales: {
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+                        x: { grid: { display: false }, ticks: { color: '#e2e8f0' } }
+                    }
+                }
+            });
+
+            // Source Chart
+            const ctxSource = document.getElementById('sourceChart').getContext('2d');
+            new Chart(ctxSource, {
+                type: 'doughnut',
+                data: {
+                    labels: ["MLOPS", "SAMPLER", "TRADING_BOT"],
+                    datasets: [{
+                        data: [0, 27, 5898],
+                        backgroundColor: [
+                            'rgba(139, 92, 246, 0.8)',
+                            'rgba(56, 189, 248, 0.8)',
+                            'rgba(239, 68, 68, 0.8)'
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { 
+                            position: 'bottom',
+                            labels: { color: '#f8fafc', padding: 20 } 
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
