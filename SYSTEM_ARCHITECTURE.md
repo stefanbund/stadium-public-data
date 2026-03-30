@@ -253,12 +253,13 @@ optional arguments:
 ---
 
 ## 10. Deployment Practices (`UNIFIED_TRADER_WORKSPACE`)
-The deployment process has been modernized into a **"Dumb" Deployment Pipeline**. Because all execution and neural network inference code is now strictly grouped into `/UNIFIED_TRADER_WORKSPACE`, the deployment helper no longer cherry-picks scripts. It acts as a pure 1:1 mirror, pushing exactly what is strictly required to execute trades.
 
-The target host requires very little pre-existing infrastructure. It does not need a pre-established virtual environment; the deployment script natively builds the environment, installs dependencies, transfers the payload, and primes the execution loop. The LOB sampler naturally lives on the target host, populating the required data folders for the trader to consume locally.
+**[UPDATE] The system has transitioned away from a distributed server model. The LOB Sampler and Neural Trader now run directly on the primary host machine. Remote syncs are no longer required for deployment.**
 
-### The Bi-Directional Pipeline
-The system relies on two autonomous push/pull tools to synchronize the `UNIFIED_TRADER_WORKSPACE` directory on the Development Laptop with the `UNIFIED_TRADER_DEPLOYMENT` directory on the Production Mac Mini.
+All execution and neural network inference code is strictly grouped into `/UNIFIED_TRADER_WORKSPACE`. Because the trader now executes natively alongside the orchestrator, it directly consumes models from the shared `M4_BACKUP` hardware bridge without the need for active network synchronization.
+
+### Legacy Bi-Directional Pipeline (Deprecated)
+*Note: The following push/pull pipeline was previously used to synchronize the `UNIFIED_TRADER_WORKSPACE` directory on the Development Laptop with the `UNIFIED_TRADER_DEPLOYMENT` directory on a Production Mac Mini. Ensure you are executing trader scripts locally instead of syncing them.*
 
 #### 1. Forward Sync (Deploying)
 - **Tool**: `python3 UNIFIED_TRADER_WORKSPACE/deployment_helper.py`
@@ -345,38 +346,29 @@ For the Neural Network trader to run successfully on a remote host, the followin
 ## 11. The Three-Pillar Operational Paradigm & Hardware Mapping
 The system architecture reflects the physical segmentation of the hardware environment, ensuring compute-heavy training remains isolated from latency-sensitive trading, while entirely decoupling remote APIs from the execution brain.
 
-### The Three Pillars
+### The Three Pillars (Unified Machine Model)
 
 1. **Pillar I: The Laboratory (The Orchestrator)**
-    - *Hardware*: Development Laptop
+    - *Hardware*: Primary Machine (Laptop)
     - *Storage Context*: **USB-Centric**. Heavy archival data and intelligence modules are primarily stored on the `/Volumes/M4_BACKUP` high-capacity drive to preserve laptop internal SSD health.
-    - *Role*: The heavy ML-Ops engine (`orchestrator_symbol_centric.py`). Aggregates historical GRUS data, trains TPOT `.joblib` modules, generates dynamic Bayesian accuracy priors, and actively pushes these finalized "brains" via `deployment_helper.py` to the target host. It operates purely on asynchronous historical batches.
+    - *Role*: The heavy ML-Ops engine (`orchestrator_symbol_centric.py`). Aggregates historical GRUS data, trains TPOT `.joblib` modules, and generates dynamic Bayesian accuracy priors. It operates over vast historical batches.
 
 2. **Pillar II: The Sensor (LOB Sampler)**
-    - *Hardware*: Mac Mini (Production)
-    - *Storage Context*: **Internal-Centric**. The sensor and trader operate directly on the high-speed local NVMe internal drive for minimum I/O latency.
-    - *Role*: A lightweight, highly available daemon that never makes trade decisions. It sits passively, continuously streaming raw Limit Order Book (LOB) depth and price actions from the Coinbase REST/WebSocket APIs, writing the results into incredibly rapid local `.csv` files.
+    - *Hardware*: Primary Machine (Laptop)
+    - *Storage Context*: **Internal-Centric**. The sensor streams explicitly to fast local storage.
+    - *Role*: A lightweight daemon streaming raw Limit Order Book (LOB) depth and price actions from the Coinbase REST/WebSocket APIs, writing results into incredibly rapid local `.csv` files.
 
 3. **Pillar III: The Execution Brain (The Trader)**
-    - *Hardware*: Mac Mini (Production)
-    - *Role*: The true intelligence of the operation (`trader_NN_HIERARCHICAL.py`). It **never** hits the internet to fetch price data. It strictly reads the `.csv` matrix continuously assembled by the Sensor. When it extracts 10 fresh rows, it triggers an inference pass through the Neural Network. If granted a "Green Light", it exclusively pings the internet via `async_trader_rewritten.py` merely to place the final actionable Limit Buy order.
+    - *Hardware*: Primary Machine (Laptop)
+    - *Role*: The true intelligence of the operation (`trader_NN_HIERARCHICAL.py`). It continuously parses the LOB CSV matrix created by the Sensor and triggers inference passes through the Neural Network using the localized `M4_BACKUP` module paths. If granted a "Green Light", it exclusively pings the internet via `async_trader_rewritten.py` to place actionable Limit Buy orders.
 
 ### Hardware Bridging: The `{data_root_i71}` Strategy
-To manage the conflict between the Laptop's USB-based storage and the Mac Mini's Internal-based storage, the system utilizes a **Dynamic Path Variable** within `config.json`:
-
-- **Shared Variable**: `data_root_i71`
-- **On Laptop**: Resolves to `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71`
-- **On Mac Mini**: Resolves to `/Users/stefanbund/Developer/STADIUM-DATA-FROM-I71`
-
-By defining intelligence paths using this placeholder (e.g., `{data_root_i71}/MODELS`), the same code and configuration files are 100% portable between development and production without manual path edits.
-
-This asynchronous handoff fundamentally eliminates API rate-limiting delays from the Trader's critical execution loop.
+Historically, the system utilized a **Dynamic Path Variable** (`data_root_i71`) within `config.json` to handle sync mappings across a network. Since the system evaluates directly on the primary host, this bridge now strictly resolves directly to `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71`.
 
 | Machine | Role | Primary Responsibility |
 | :--- | :--- | :--- |
-| **Development Laptop** | **The Laboratory (Orchestrator)** | AutoML Training, Preprocessing, Accuracy Reporting, Model Deployment |
-| **M4 Backup (USB)** | **The Bridge/Archive** | "Gold Copy" of all modules, cross-machine sync point |
-| **Mac Mini (Prod)** | **Sensor & Execution Core** | LOB Generation, Live Bayesian Inference, Real-time APIs |
+| **Primary Host** | **The Omniscient Core** | Modeling, Tracking, LOB Sampling, and Live Trade Execution |
+| **M4 Backup (USB)** | **The Vault** | "Gold Copy" of all modules and data buffers |
 
 ---
 
