@@ -15,6 +15,8 @@ The central nervous system that manages the sequential execution for each symbol
       1. Kill jobs: `pkill -f 'orchestrator_symbol_centric.py'` and `pkill -f 'preprocessor'`
       2. Wipe generated crash datasets (example): `rm -rf /Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/BBP-DRAWDOWNS/*`
       3. Run the "Global Run" `nohup` command above.
+- **Harvest-Ready Logs**: Designated as primary collectors for the Remote Stadium Harvester. Located in `/logs/`.
+
 - **Data Transfer**: [`UNIFIED_MLOPS_WORKSPACE/transfer.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/transfer.py)    - *Role*: Moves processed data and model artifacts between local storage and the high-volume backup volumes.
 - **Model Converter**: [`UNIFIED_MLOPS_WORKSPACE/model_converter.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/model_converter.py)
     - *Role*: Standardizes raw TPOT pipeline files into consistent Scikit-learn based Python modules.
@@ -149,6 +151,26 @@ The modern execution pipeline relies on structured JSON Lines for tracking globa
 
 ---
 
+## 7. Telemetry & Log Harvesting (Remote Harvesting Model)
+The system has moved away from client-side "push" scripts (`METASTADIUM-SYNC-client`). Instead, the infrastructure utilizes a **Centralized Harvesting** model where the Meta Stadium remotely harvests telemetry from the production host. 
+
+### **Primary Telemetry Harvest Points**
+The following absolute paths are designated as the source "Harvest Points" for the remote collector:
+
+1.  **MLOPS Orchestrator**: `logs/orchestrator_main.log`
+    - *Role*: Monitoring the health and progress of the A-Z symbol pipeline.
+2.  **Pipeline Events**: `UNIFIED_MLOPS_WORKSPACE/logs/events.jsonl`
+    - *Role*: Structured telemetry for every preprocessing and modeling decision.
+3.  **Neural Trader Logs (JSONL)**: `UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log`
+    - *Role*: Tracking live hierarchical probability hits and 5-tier waterfall decisions natively in clean JSON.
+4.  **Trader Runtime Logs (Standard Console)**: `UNIFIED_TRADER_WORKSPACE/logs/trader_runtime.log`
+    - *Role*: Captures Python stdout, tracebacks, environment warnings, and raw console output avoiding log corruption.
+5.  **Trade Execution Ledger**: `UNIFIED_TRADER_WORKSPACE/logs/executions_log.csv`
+    - *Role*: Real-time ledger of limit-buy fills and target-sell placement.
+
+
+---
+
 ## 7. Model Repository & NN Data Transfer
 The final storage location for the highly trained artifacts and Neural Network target data. The Multi-Phase Accuracy Transfer step packages data specifically for the Neural Network target host to ingest as historical priors.
 
@@ -251,11 +273,24 @@ The system relies on two autonomous push/pull tools to synchronize the `UNIFIED_
 #### 2. The "Start Button" (Execution)
 - **Script**: `UNIFIED_TRADER_WORKSPACE/run_pause_predictor.sh`
 - **Action**: Acts as the primary entry point for the trader on the target host. Once deployed, the user executes this bash script to bootstrap the Python trader.
+- **Direct Launch Command**: Alternatively, to launch the trader manually while ensuring that standard output and internal JSON telemetry streams do not fight for the same file, use the split-stream root command:
+  ```bash
+  nohup ./venv/bin/python3 UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL.py > UNIFIED_TRADER_WORKSPACE/logs/trader_runtime.log 2>&1 &
+  ```
 
 #### 3. Reverse Sync (Pulling)
 - **Tool**: `python3 UNIFIED_TRADER_WORKSPACE/sync_back_from_target.py`
 - **Direction**: Mac Mini (Production) → Laptop
 - **Purpose**: If immediate live bug fixes or threshold tweaks are made directly on the remote Mac Mini, executing this script on the laptop will instantly mirror the production `UNIFIED_TRADER_DEPLOYMENT` directory back down into the local `UNIFIED_TRADER_WORKSPACE`.
+
+#### 4. Pre-Flight Validation [NEW]
+- **Tool**: `python3 UNIFIED_TRADER_WORKSPACE/preflight_validator.py`
+- **Purpose**: Rigorous "Green Light" check before pushing code. It compares the `config.json` against the `TRADER_SYSTEM_MANIFEST.json` and performs deep audits on environment, paths, and tiers.
+- **Key Checks**:
+    - **Manifest Audit**: Confirms all 5 hierarchical thresholds are defined and aligned.
+    - **Tier Integrity**: Validates existence of both `.py` and `.joblib` files for each tier.
+    - **Inference Dry Run**: Executes a mock Bayesian pass for a sample symbol (e.g., BICO) to confirm all models load into VRAM successfully.
+- **Usage**: `./venv/bin/python UNIFIED_TRADER_WORKSPACE/preflight_validator.py UNIFIED_TRADER_WORKSPACE/`
 
 ### Execution File Map (`UNIFIED_TRADER_WORKSPACE/`)
 
@@ -314,15 +349,26 @@ The system architecture reflects the physical segmentation of the hardware envir
 
 1. **Pillar I: The Laboratory (The Orchestrator)**
     - *Hardware*: Development Laptop
+    - *Storage Context*: **USB-Centric**. Heavy archival data and intelligence modules are primarily stored on the `/Volumes/M4_BACKUP` high-capacity drive to preserve laptop internal SSD health.
     - *Role*: The heavy ML-Ops engine (`orchestrator_symbol_centric.py`). Aggregates historical GRUS data, trains TPOT `.joblib` modules, generates dynamic Bayesian accuracy priors, and actively pushes these finalized "brains" via `deployment_helper.py` to the target host. It operates purely on asynchronous historical batches.
 
 2. **Pillar II: The Sensor (LOB Sampler)**
     - *Hardware*: Mac Mini (Production)
+    - *Storage Context*: **Internal-Centric**. The sensor and trader operate directly on the high-speed local NVMe internal drive for minimum I/O latency.
     - *Role*: A lightweight, highly available daemon that never makes trade decisions. It sits passively, continuously streaming raw Limit Order Book (LOB) depth and price actions from the Coinbase REST/WebSocket APIs, writing the results into incredibly rapid local `.csv` files.
 
 3. **Pillar III: The Execution Brain (The Trader)**
     - *Hardware*: Mac Mini (Production)
     - *Role*: The true intelligence of the operation (`trader_NN_HIERARCHICAL.py`). It **never** hits the internet to fetch price data. It strictly reads the `.csv` matrix continuously assembled by the Sensor. When it extracts 10 fresh rows, it triggers an inference pass through the Neural Network. If granted a "Green Light", it exclusively pings the internet via `async_trader_rewritten.py` merely to place the final actionable Limit Buy order.
+
+### Hardware Bridging: The `{data_root_i71}` Strategy
+To manage the conflict between the Laptop's USB-based storage and the Mac Mini's Internal-based storage, the system utilizes a **Dynamic Path Variable** within `config.json`:
+
+- **Shared Variable**: `data_root_i71`
+- **On Laptop**: Resolves to `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71`
+- **On Mac Mini**: Resolves to `/Users/stefanbund/Developer/STADIUM-DATA-FROM-I71`
+
+By defining intelligence paths using this placeholder (e.g., `{data_root_i71}/MODELS`), the same code and configuration files are 100% portable between development and production without manual path edits.
 
 This asynchronous handoff fundamentally eliminates API rate-limiting delays from the Trader's critical execution loop.
 
@@ -351,3 +397,17 @@ To maintain the high fidelity of the 4-layer system, follow this daily workflow:
 2. **Intelligence Sync**: If the audit shows missing modules, run the full sync to push the latest `.joblib` files to the production host.
 3. **Threshold Review**: Periodically check the **Accuracy Dashboard** (GitHub Pages). If a symbol's accuracy has significantly shifted, adjust the "Beijing" thresholds in `config.json` accordingly.
 4. **Log Grooming**: Monitor `logs/orchestrator_main.log` on the Laptop to ensure the Symbol-Centric loop is proceeding through the A-Z roster without interruptions.
+
+---
+
+## 14. Model Training Caveats & Portfolio Maturity [NEW]
+The "Waterfall" hierarchical logic requires a complete 5-layer stack of `.joblib` models for a trade to be authorized. For some symbols, you may observe "Missing Model" warnings (e.g., `Imbalance model not found`) or early decision exits despite a passing Directional signal.
+
+### Common Reasons for Model Gaps
+- **Event Scarcity (Volatility Threshold)**: The Imbalance and Crash preprocessors only extract training data when they detect a definitive "Event" (e.g., a >1% surge or >3% crash) preceded by reliable LOB precursors. Low-volatility assets may trade sideways for days, failing to produce enough "Precursor -> Result" pairs for the AutoML engine to train on.
+- **Asset Maturity (Sampling History)**: New assets added to the LOB Sampler (e.g., `FLOCK`, `CORECHAIN`, `LOKA`) require a minimum threshold of historical context. If a symbol has only been sampled for 24–72 hours, it may not have encountered enough significant market cycles to populate the `BBP-IMBALANCE` or `BBP-DRAWDOWNS` training sets.
+- **Strict Filtering (Short-Circuit Logic)**: In the hierarchical engine (`nn_unified_predictor.py`), if any mandatory tier is missing for a symbol, the system defaults to a `False` decision. This is a safety feature to ensure trades are only executed on assets with a fully verified and specialized intelligence stack.
+
+### Resolution Strategy
+- **Continued Sampling**: Allow the LOB sampler to continue gathering history. As time passes, more high-resolution "Surge/Crash" events will naturally occur and be captured for these symbols.
+- **Periodic Retraining Sweeps**: Retraining the `imbalance_preprocessor.py` for the whole portfolio every few days allows the system to "discover" newly matured symbols that now have enough history for high-fidelity modeling.
