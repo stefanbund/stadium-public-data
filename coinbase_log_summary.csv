@@ -1,3 +1,4 @@
 source,info_count,warning_count,error_count,major_events_count,last_updated
-MLOPS,1,0,0,0,2026-03-30 10:01:58
-SAMPLER,32,0,88,88,2026-03-30 10:01:58
+MLOPS,1,0,0,0,2026-03-30 10:29:37
+SAMPLER,32,0,88,88,2026-03-30 10:29:37
+TRADING_BOT,1468,73,27,100,2026-03-30 10:29:37
