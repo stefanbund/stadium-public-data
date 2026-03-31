@@ -238,17 +238,25 @@
 
                 new ApexCharts(document.querySelector("#calibration-chart"), bubbleOptions).render();
 
-                // --- 2. Accuracy Horizontal Bar Chart ---
-                const sortedData = [...data].sort((a,b) => b.accuracy - a.accuracy);
+                // --- 2. Accuracy Horizontal Bar Chart (Stacked) ---
+                // Pivot data: unique symbols for Y-axis, series for each Tier
+                const uniqueSymbols = [...new Set(data.map(item => item.symbol))].sort();
+                const tiers_bar = [...new Set(data.map(item => item.tier))];
+                
+                const stackedSeries = tiers_bar.map(tier => ({
+                    name: tier,
+                    data: uniqueSymbols.map(sym => {
+                        const match = data.find(item => item.symbol === sym && item.tier === tier);
+                        return match ? parseFloat(match.accuracy.toFixed(3)) : 0;
+                    })
+                }));
                 
                 const barOptions = {
-                    series: [{
-                        name: 'Accuracy',
-                        data: sortedData.map(item => item.accuracy.toFixed(3))
-                    }],
+                    series: stackedSeries,
                     chart: { 
                         type: 'bar', 
-                        height: 9000, // Optimized density (approx 23px per row)
+                        height: uniqueSymbols.length * 40, // Responsive height based on symbol count
+                        stacked: true,
                         toolbar: { show: true }, 
                         background: 'transparent', 
                         foreColor: '#94a3b8' 
@@ -256,27 +264,41 @@
                     plotOptions: { 
                         bar: { 
                             horizontal: true, 
-                            borderRadius: 0, // Solid square edges for a "wider" look
-                            barHeight: '98%', // Near-total thickness for solid blocks
-                            dataLabels: { position: 'top' } 
+                            borderRadius: 0, 
+                            barHeight: '85%', // Solid blocks
+                            dataLabels: { position: 'center' } 
                         } 
                     },
-                    dataLabels: { enabled: true, offsetX: 50, style: { fontSize: '11px', fontWeight: 700, colors: ['#38bdf8'] } },
+                    dataLabels: { 
+                        enabled: true, 
+                        style: { fontSize: '10px', fontWeight: 700, colors: ['#fff'] },
+                        formatter: val => val > 0.1 ? val.toFixed(2) : '' // Only show if bar is wide enough
+                    },
                     xaxis: { 
-                        categories: sortedData.map(item => `${item.symbol} (${item.tier})`),
+                        categories: uniqueSymbols,
                         position: 'top',
-                        labels: { formatter: val => val.toFixed(2) }
+                        title: { text: 'Cumulative Accuracy (Stacked Tiers)' },
+                        labels: { formatter: val => val.toFixed(1) }
                     },
                     yaxis: {
                         labels: {
-                            style: { fontSize: '13px', fontWeight: 700 }, // Slightly larger and bolder
+                            style: { fontSize: '13px', fontWeight: 700 },
                             maxWidth: 300,
                             padding: 15
                         }
                     },
-                    theme: { mode: 'dark', palette: 'palette2' },
+                    legend: {
+                        position: 'top',
+                        horizontalAlign: 'left',
+                        offsetX: 40
+                    },
+                    theme: { mode: 'dark', palette: 'modern' }, // Multi-color palette
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
-                    tooltip: { y: { formatter: val => `${(val * 100).toFixed(1)}%` } }
+                    tooltip: { 
+                        shared: true,
+                        intersect: false,
+                        y: { formatter: val => `${(val * 100).toFixed(1)}%` } 
+                    }
                 };
 
                 new ApexCharts(document.querySelector("#accuracy-chart"), barOptions).render();
