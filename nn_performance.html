@@ -248,7 +248,7 @@
                     }],
                     chart: { 
                         type: 'bar', 
-                        height: 10000, // Massive height to ensure zero overlap for 380+ symbols
+                        height: 9000, // Optimized density (approx 23px per row)
                         toolbar: { show: true }, 
                         background: 'transparent', 
                         foreColor: '#94a3b8' 
@@ -256,12 +256,12 @@
                     plotOptions: { 
                         bar: { 
                             horizontal: true, 
-                            borderRadius: 3, 
-                            barHeight: '85%', // Widened bars to match text size
+                            borderRadius: 0, // Solid square edges for a "wider" look
+                            barHeight: '98%', // Near-total thickness for solid blocks
                             dataLabels: { position: 'top' } 
                         } 
                     },
-                    dataLabels: { enabled: true, offsetX: 45, style: { fontSize: '11px', colors: ['#94a3b8'] } },
+                    dataLabels: { enabled: true, offsetX: 50, style: { fontSize: '11px', fontWeight: 700, colors: ['#38bdf8'] } },
                     xaxis: { 
                         categories: sortedData.map(item => `${item.symbol} (${item.tier})`),
                         position: 'top',
@@ -269,9 +269,9 @@
                     },
                     yaxis: {
                         labels: {
-                            style: { fontSize: '12px', fontWeight: 600 },
+                            style: { fontSize: '13px', fontWeight: 700 }, // Slightly larger and bolder
                             maxWidth: 300,
-                            padding: 10
+                            padding: 15
                         }
                     },
                     theme: { mode: 'dark', palette: 'palette2' },
