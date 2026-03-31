@@ -248,7 +248,7 @@
                     }],
                     chart: { 
                         type: 'bar', 
-                        height: 2500, // Significantly taller for 380+ symbols
+                        height: 10000, // Massive height to ensure zero overlap for 380+ symbols
                         toolbar: { show: true }, 
                         background: 'transparent', 
                         foreColor: '#94a3b8' 
@@ -256,12 +256,12 @@
                     plotOptions: { 
                         bar: { 
                             horizontal: true, 
-                            borderRadius: 2, 
-                            barHeight: '70%', // More space between bars
+                            borderRadius: 3, 
+                            barHeight: '85%', // Widened bars to match text size
                             dataLabels: { position: 'top' } 
                         } 
                     },
-                    dataLabels: { enabled: true, offsetX: 40, style: { fontSize: '10px', colors: ['#94a3b8'] } },
+                    dataLabels: { enabled: true, offsetX: 45, style: { fontSize: '11px', colors: ['#94a3b8'] } },
                     xaxis: { 
                         categories: sortedData.map(item => `${item.symbol} (${item.tier})`),
                         position: 'top',
@@ -269,8 +269,8 @@
                     },
                     yaxis: {
                         labels: {
-                            style: { fontSize: '11px' },
-                            maxWidth: 200,
+                            style: { fontSize: '12px', fontWeight: 600 },
+                            maxWidth: 300,
                             padding: 10
                         }
                     },
