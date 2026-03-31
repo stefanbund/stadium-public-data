@@ -239,8 +239,10 @@
                 new ApexCharts(document.querySelector("#calibration-chart"), bubbleOptions).render();
 
                 // --- 2. Accuracy Horizontal Bar Chart (Stacked) ---
-                // Pivot data: unique symbols for Y-axis, series for each Tier
-                const uniqueSymbols = [...new Set(data.map(item => item.symbol))].sort();
+                // Sort data by last_seen (latest first) to ensure the symbol list is temporal
+                data.sort((a, b) => new Date(b.last_seen.replace(',', '.')) - new Date(a.last_seen.replace(',', '.')));
+                const uniqueSymbols = [...new Set(data.map(item => item.symbol))].reverse(); // ApexCharts renders bottom-to-top, reverse to get latest at top
+                
                 const tiers_bar = [...new Set(data.map(item => item.tier))];
                 
                 const stackedSeries = tiers_bar.map(tier => ({
@@ -255,7 +257,7 @@
                     series: stackedSeries,
                     chart: { 
                         type: 'bar', 
-                        height: uniqueSymbols.length * 40, // Responsive height based on symbol count
+                        height: uniqueSymbols.length * 40,
                         stacked: true,
                         toolbar: { show: true }, 
                         background: 'transparent', 
@@ -265,19 +267,19 @@
                         bar: { 
                             horizontal: true, 
                             borderRadius: 0, 
-                            barHeight: '85%', // Solid blocks
+                            barHeight: '85%', 
                             dataLabels: { position: 'center' } 
                         } 
                     },
                     dataLabels: { 
                         enabled: true, 
                         style: { fontSize: '10px', fontWeight: 700, colors: ['#fff'] },
-                        formatter: val => val > 0.1 ? val.toFixed(2) : '' // Only show if bar is wide enough
+                        formatter: val => val > 0.1 ? val.toFixed(2) : ''
                     },
                     xaxis: { 
                         categories: uniqueSymbols,
                         position: 'top',
-                        title: { text: 'Cumulative Accuracy (Stacked Tiers)' },
+                        title: { text: 'Latest Prediction Accuracy (Stacked)' },
                         labels: { formatter: val => val.toFixed(1) }
                     },
                     yaxis: {
@@ -287,17 +289,33 @@
                             padding: 15
                         }
                     },
-                    legend: {
-                        position: 'top',
-                        horizontalAlign: 'left',
-                        offsetX: 40
-                    },
-                    theme: { mode: 'dark', palette: 'modern' }, // Multi-color palette
+                    legend: { position: 'top', horizontalAlign: 'left', offsetX: 40 },
+                    theme: { mode: 'dark', palette: 'modern' },
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
                     tooltip: { 
                         shared: true,
                         intersect: false,
-                        y: { formatter: val => `${(val * 100).toFixed(1)}%` } 
+                        custom: function({series, seriesIndex, dataPointIndex, w}) {
+                            const sym = w.config.xaxis.categories[dataPointIndex];
+                            const symbolData = data.filter(d => d.symbol === sym);
+                            const latest = symbolData[0]?.last_seen || 'N/A';
+                            
+                            let html = `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 200px;">
+                                <div class="fw-bold mb-1" style="color: #38bdf8; font-size: 14px;">${sym}</div>
+                                <div class="text-dim small mb-2" style="color: #94a3b8;">Last Activity: ${latest}</div>
+                                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">`;
+                            
+                            series.forEach((s, i) => {
+                                if (s[dataPointIndex] > 0) {
+                                    html += `<div class="d-flex justify-content-between small mb-1">
+                                        <span><span style="color:${w.config.colors[i]}">●</span> ${w.config.series[i].name}</span>
+                                        <span class="fw-bold ml-2">${(s[dataPointIndex]*100).toFixed(1)}%</span>
+                                    </div>`;
+                                }
+                            });
+                            html += `</div></div>`;
+                            return html;
+                        }
                     }
                 };
 
