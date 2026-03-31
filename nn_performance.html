@@ -176,38 +176,69 @@
                 const response = await fetch('nn_performance_data.json');
                 const data = await response.json();
                 
-                // --- 1. Calibration Scatter Plot ---
-                const scatterOptions = {
-                    series: [{
-                        name: 'Prediction Performance',
-                        data: data.map(item => ({
-                            x: parseFloat(item.probability.toFixed(3)),
-                            y: parseFloat(item.accuracy.toFixed(3)),
-                            symbol: item.symbol,
-                            tier: item.tier
-                        }))
-                    }],
-                    chart: { type: 'scatter', height: 500, zoom: { enabled: true, type: 'xy' }, background: 'transparent', foreColor: '#94a3b8' },
+                // --- 1. Calibration Bubble Chart (Categorical) ---
+                const tiers = [...new Set(data.map(item => item.tier))];
+                const bubbleSeries = tiers.map(tier => ({
+                    name: tier,
+                    data: data.filter(item => item.tier === tier).map(item => ({
+                        x: parseFloat(item.probability.toFixed(3)),
+                        y: parseFloat(item.accuracy.toFixed(3)),
+                        z: item.count, // Size based on magnitude
+                        symbol: item.symbol
+                    }))
+                }));
+
+                const bubbleOptions = {
+                    series: bubbleSeries,
+                    chart: { 
+                        type: 'bubble', 
+                        height: 600, 
+                        zoom: { enabled: true }, 
+                        background: 'transparent', 
+                        foreColor: '#94a3b8',
+                        toolbar: { show: true }
+                    },
+                    dataLabels: { enabled: false },
+                    fill: { opacity: 0.7 },
                     theme: { mode: 'dark', palette: 'palette1' },
-                    xaxis: { title: { text: 'Model Probability' }, labels: { formatter: val => val.toFixed(2) } },
-                    yaxis: { title: { text: 'Mean Accuracy' }, labels: { formatter: val => val.toFixed(2) } },
+                    xaxis: { 
+                        title: { text: 'Model Probability', style: { color: '#38bdf8' } }, 
+                        labels: { formatter: val => val.toFixed(2) },
+                        tickAmount: 10
+                    },
+                    yaxis: { 
+                        title: { text: 'Mean Accuracy', style: { color: '#38bdf8' } }, 
+                        labels: { 
+                            formatter: val => val.toFixed(2),
+                            padding: 20 // Added padding for legibility
+                        },
+                        min: 0,
+                        max: 1,
+                        tickAmount: 5 // More space between interval labels
+                    },
+                    markers: {
+                        size: 6,
+                        hover: { size: 10 }
+                    },
                     tooltip: {
                         custom: function({series, seriesIndex, dataPointIndex, w}) {
                             const d = w.config.series[seriesIndex].data[dataPointIndex];
-                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px;">
-                                <div class="fw-bold text-info">${d.symbol} (${d.tier})</div>
+                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff;">
+                                <div class="fw-bold" style="color: #38bdf8;">${d.symbol}</div>
+                                <div class="text-dim small">${w.config.series[seriesIndex].name}</div>
+                                <hr class="my-1 border-secondary">
                                 <div>Prob: ${d.x}</div>
                                 <div>Acc: ${d.y}</div>
+                                <div>Samples: ${d.z}</div>
                             </div>`;
                         }
                     },
-                    grid: { borderColor: 'rgba(255,255,255,0.05)' }
+                    grid: { borderColor: 'rgba(255,255,255,0.05)', padding: { left: 20 } }
                 };
 
-                new ApexCharts(document.querySelector("#calibration-chart"), scatterOptions).render();
+                new ApexCharts(document.querySelector("#calibration-chart"), bubbleOptions).render();
 
                 // --- 2. Accuracy Horizontal Bar Chart ---
-                // Sort by accuracy for better visualization
                 const sortedData = [...data].sort((a,b) => b.accuracy - a.accuracy);
                 
                 const barOptions = {
@@ -215,14 +246,33 @@
                         name: 'Accuracy',
                         data: sortedData.map(item => item.accuracy.toFixed(3))
                     }],
-                    chart: { type: 'bar', height: 1000, toolbar: { show: true }, background: 'transparent', foreColor: '#94a3b8' },
-                    plotOptions: { bar: { horizontal: true, borderRadius: 2, dataLabels: { position: 'top' } } },
-                    dataLabels: { enabled: true, offsetX: -6, style: { fontSize: '10px', colors: ['#fff'] } },
-                    stroke: { show: true, width: 1, colors: ['#fff'] },
+                    chart: { 
+                        type: 'bar', 
+                        height: 2500, // Significantly taller for 380+ symbols
+                        toolbar: { show: true }, 
+                        background: 'transparent', 
+                        foreColor: '#94a3b8' 
+                    },
+                    plotOptions: { 
+                        bar: { 
+                            horizontal: true, 
+                            borderRadius: 2, 
+                            barHeight: '70%', // More space between bars
+                            dataLabels: { position: 'top' } 
+                        } 
+                    },
+                    dataLabels: { enabled: true, offsetX: 40, style: { fontSize: '10px', colors: ['#94a3b8'] } },
                     xaxis: { 
                         categories: sortedData.map(item => `${item.symbol} (${item.tier})`),
                         position: 'top',
                         labels: { formatter: val => val.toFixed(2) }
+                    },
+                    yaxis: {
+                        labels: {
+                            style: { fontSize: '11px' },
+                            maxWidth: 200,
+                            padding: 10
+                        }
                     },
                     theme: { mode: 'dark', palette: 'palette2' },
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
