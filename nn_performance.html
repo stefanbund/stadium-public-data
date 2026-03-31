@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METASTADIUM | Neural Network Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #8b5cf6;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .header-section {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 3rem;
+            letter-spacing: -0.05em;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .chart-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chart-img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .description {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom mb-4" style="background: #0f172a; border-color: rgba(255,255,255,0.1) !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #38bdf8;">METASTADIUM</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coinbase_log_dashboard.html">Coinbase Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bot_symbol_activity.html">Symbol Activity Index</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html">Strategy Efficiency</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html">Model Accuracy</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold text-info" href="nn_performance.html">NN Charts</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-section">
+        <div class="container">
+            <h1>Neural Network Analytics</h1>
+            <p class="description mx-auto" style="max-width: 600px;">
+                Real-time performance diagnostics for the METASTADIUM Directional Prediction engine. 
+                Visualizing cross-symbol accuracy and confidence calibrartion.
+            </p>
+        </div>
+    </div>
+
+    <div class="metric-container">
+        
+        <div class="chart-card">
+            <div class="chart-title">
+                Symbol Accuracy Distribution
+            </div>
+            <p class="description">
+                Tracking historical accuracy and prediction pass rates across all active trading symbols. 
+                Higher bars indicate more reliable directional signals.
+            </p>
+            <img src="nn_accuracy_by_symbol.png" alt="NN Accuracy By Symbol" class="chart-img">
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-title">
+                Probability vs. Accuracy Calibration
+            </div>
+            <p class="description">
+                Evaluating the relationship between model confidence (probability) and historical accuracy. 
+                Helps identify symbols where the model is over or under-confident.
+            </p>
+            <img src="nn_prob_vs_acc_by_symbol.png" alt="Probability vs Accuracy" class="chart-img">
+        </div>
+
+    </div>
+
+    <div class="footer">
+        &copy; 2026 METASTADIUM Quantitative Analytics Hub. Automated reporting enabled.
+    </div>
+
+</body>
+</html>
