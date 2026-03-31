@@ -45,6 +45,7 @@
             margin-bottom: 1rem;
             background: linear-gradient(to bottom, #fff, #94a3b8);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -132,17 +133,6 @@
         
         <div class="chart-card">
             <div class="chart-title">
-                Symbol Accuracy Distribution
-            </div>
-            <p class="description">
-                Tracking historical accuracy and prediction pass rates across all active trading symbols. 
-                Higher bars indicate more reliable directional signals.
-            </p>
-            <img src="nn_accuracy_by_symbol.png" alt="NN Accuracy By Symbol" class="chart-img">
-        </div>
-
-        <div class="chart-card">
-            <div class="chart-title">
                 Probability vs. Accuracy Calibration
             </div>
             <p class="description">
@@ -150,6 +140,17 @@
                 Helps identify symbols where the model is over or under-confident.
             </p>
             <img src="nn_prob_vs_acc_by_symbol.png" alt="Probability vs Accuracy" class="chart-img">
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-title">
+                Symbol Accuracy Distribution
+            </div>
+            <p class="description">
+                Tracking historical accuracy and prediction pass rates across all active trading symbols. 
+                Higher bars indicate more reliable directional signals.
+            </p>
+            <img src="nn_accuracy_by_symbol.png" alt="NN Accuracy By Symbol" class="chart-img">
         </div>
 
     </div>
