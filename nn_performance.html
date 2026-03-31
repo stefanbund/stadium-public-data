@@ -147,27 +147,100 @@
         
         <div class="chart-card">
             <div class="chart-title">
-                Probability vs. Accuracy Calibration
+                Model Confidence vs. Accuracy Calibration
             </div>
             <p class="description">
-                Evaluating the relationship between model confidence (probability) and historical accuracy. 
-                Helps identify symbols where the model is over or under-confident.
+                Interactive scatter plot identifying over/under-confident symbols. 
+                Hover over points for specific symbol metrics.
             </p>
-            <img src="nn_prob_vs_acc_by_symbol.png" alt="Probability vs Accuracy" class="chart-img">
+            <div id="calibration-chart" style="min-height: 500px;"></div>
         </div>
 
         <div class="chart-card">
             <div class="chart-title">
-                Symbol Accuracy Distribution
+                Symbol Accuracy Distribution (Horizontal)
             </div>
             <p class="description">
-                Tracking historical accuracy and prediction pass rates across all active trading symbols. 
-                Higher bars indicate more reliable directional signals.
+                Interactive performance ranking across the entire portfolio. 
+                Search or scroll to find specific symbol-tier reliability.
             </p>
-            <img src="nn_accuracy_by_symbol.png" alt="NN Accuracy By Symbol" class="chart-img">
+            <div id="accuracy-chart" style="min-height: 800px;"></div>
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        async function loadNNDashboard() {
+            try {
+                const response = await fetch('nn_performance_data.json');
+                const data = await response.json();
+                
+                // --- 1. Calibration Scatter Plot ---
+                const scatterOptions = {
+                    series: [{
+                        name: 'Prediction Performance',
+                        data: data.map(item => ({
+                            x: parseFloat(item.probability.toFixed(3)),
+                            y: parseFloat(item.accuracy.toFixed(3)),
+                            symbol: item.symbol,
+                            tier: item.tier
+                        }))
+                    }],
+                    chart: { type: 'scatter', height: 500, zoom: { enabled: true, type: 'xy' }, background: 'transparent', foreColor: '#94a3b8' },
+                    theme: { mode: 'dark', palette: 'palette1' },
+                    xaxis: { title: { text: 'Model Probability' }, labels: { formatter: val => val.toFixed(2) } },
+                    yaxis: { title: { text: 'Mean Accuracy' }, labels: { formatter: val => val.toFixed(2) } },
+                    tooltip: {
+                        custom: function({series, seriesIndex, dataPointIndex, w}) {
+                            const d = w.config.series[seriesIndex].data[dataPointIndex];
+                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px;">
+                                <div class="fw-bold text-info">${d.symbol} (${d.tier})</div>
+                                <div>Prob: ${d.x}</div>
+                                <div>Acc: ${d.y}</div>
+                            </div>`;
+                        }
+                    },
+                    grid: { borderColor: 'rgba(255,255,255,0.05)' }
+                };
+
+                new ApexCharts(document.querySelector("#calibration-chart"), scatterOptions).render();
+
+                // --- 2. Accuracy Horizontal Bar Chart ---
+                // Sort by accuracy for better visualization
+                const sortedData = [...data].sort((a,b) => b.accuracy - a.accuracy);
+                
+                const barOptions = {
+                    series: [{
+                        name: 'Accuracy',
+                        data: sortedData.map(item => item.accuracy.toFixed(3))
+                    }],
+                    chart: { type: 'bar', height: 1000, toolbar: { show: true }, background: 'transparent', foreColor: '#94a3b8' },
+                    plotOptions: { bar: { horizontal: true, borderRadius: 2, dataLabels: { position: 'top' } } },
+                    dataLabels: { enabled: true, offsetX: -6, style: { fontSize: '10px', colors: ['#fff'] } },
+                    stroke: { show: true, width: 1, colors: ['#fff'] },
+                    xaxis: { 
+                        categories: sortedData.map(item => `${item.symbol} (${item.tier})`),
+                        position: 'top',
+                        labels: { formatter: val => val.toFixed(2) }
+                    },
+                    theme: { mode: 'dark', palette: 'palette2' },
+                    grid: { borderColor: 'rgba(255,255,255,0.05)' },
+                    tooltip: { y: { formatter: val => `${(val * 100).toFixed(1)}%` } }
+                };
+
+                new ApexCharts(document.querySelector("#accuracy-chart"), barOptions).render();
+
+            } catch (error) {
+                console.error("Error loading NN data:", error);
+                document.querySelector(".metric-container").innerHTML = `
+                    <div class="alert alert-danger">Failed to load interactive data. Ensure nn_performance_data.json is present.</div>
+                `;
+            }
+        }
+
+        loadNNDashboard();
+    </script>
 
     <div class="footer">
         &copy; 2026 METASTADIUM Quantitative Analytics Hub. Automated reporting enabled.
