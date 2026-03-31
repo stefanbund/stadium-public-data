@@ -27,7 +27,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "ALCX",
@@ -57,7 +57,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "ALT",
@@ -87,17 +87,17 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "AURORA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9769230769230769,
+    "probability": 0.9771428571428571,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "AURORA",
@@ -107,7 +107,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "BARD",
@@ -137,7 +137,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "C00",
@@ -147,7 +147,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "CGLD",
@@ -173,11 +173,11 @@
     "symbol": "CLV",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.9448072772599071,
+    "probability": 0.944807277259907,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "COOKIE",
@@ -207,37 +207,37 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "FAI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9272222222222223,
+    "probability": 0.9284210526315789,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "FARTCOIN",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8590476190476191,
+    "probability": 0.859090909090909,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "FLOKI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9195833333333333,
-    "threshold": 0.8000000000000002,
+    "probability": 0.92,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 24
+    "count": 25
   },
   {
     "symbol": "HONEY",
@@ -263,11 +263,11 @@
     "symbol": "IMX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.89,
+    "probability": 0.8894117647058823,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "INDEX",
@@ -283,11 +283,11 @@
     "symbol": "IOTX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8807692307692307,
+    "probability": 0.88,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "KARRAT",
@@ -333,11 +333,11 @@
     "symbol": "MAGIC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9566666666666666,
+    "probability": 0.9573684210526314,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "MAGIC",
@@ -347,27 +347,27 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "MATH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9555555555555555,
+    "probability": 0.9549999999999998,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "MINA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9685714285714285,
-    "threshold": 0.8,
+    "probability": 0.9695833333333334,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 21
+    "count": 24
   },
   {
     "symbol": "MUSE",
@@ -393,11 +393,11 @@
     "symbol": "NEAR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9653846153846153,
+    "probability": 0.9673333333333333,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 15
   },
   {
     "symbol": "NEON",
@@ -473,21 +473,21 @@
     "symbol": "PRIME",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9692307692307692,
+    "probability": 0.9692857142857143,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "RARI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9786666666666667,
+    "probability": 0.97875,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "RARI",
@@ -497,17 +497,17 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "ROSE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9894117647058823,
+    "probability": 0.9894444444444443,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "SEAM",
@@ -533,21 +533,21 @@
     "symbol": "SHDW",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.989375,
+    "probability": 0.9894444444444443,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "SHDW",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.9999989949580804,
+    "probability": 0.9999989949580805,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "SPA",
@@ -563,21 +563,21 @@
     "symbol": "STRK",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9507692307692307,
+    "probability": 0.9507142857142856,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "STRK",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.9992307692307693,
+    "probability": 0.9992857142857143,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "SUKU",
@@ -623,11 +623,11 @@
     "symbol": "SWFTC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9727777777777776,
+    "probability": 0.9724999999999999,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "SWFTC",
@@ -637,17 +637,17 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "TRAC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9976470588235294,
+    "probability": 0.9978947368421053,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 17
+    "count": 19
   },
   {
     "symbol": "TRB",
@@ -663,21 +663,21 @@
     "symbol": "UNI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9764285714285714,
+    "probability": 0.9766666666666667,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "ZEC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9985714285714286,
+    "probability": 0.9986666666666667,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 1.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "ZEN",
@@ -723,11 +723,11 @@
     "symbol": "ICP",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8604347826086957,
+    "probability": 0.8641666666666666,
     "threshold": 0.7780130660058573,
-    "accuracy": 0.9725163325073217,
+    "accuracy": 0.9725163325073215,
     "passed": 1.0,
-    "count": 23
+    "count": 24
   },
   {
     "symbol": "CGLD",
@@ -743,41 +743,41 @@
     "symbol": "AGLD",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.939375,
+    "probability": 0.9394117647058823,
     "threshold": 0.7740156657963446,
     "accuracy": 0.9675195822454308,
     "passed": 1.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "AKT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9805882352941175,
+    "probability": 0.9816666666666668,
     "threshold": 0.7733070780002189,
-    "accuracy": 0.9666338475002735,
+    "accuracy": 0.9666338475002737,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "GNO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.99625,
+    "probability": 0.9964705882352942,
     "threshold": 0.7732816203404439,
-    "accuracy": 0.9666020254255548,
+    "accuracy": 0.9666020254255547,
     "passed": 1.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "CLV",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9876470588235293,
+    "probability": 0.9877777777777779,
     "threshold": 0.7707582454947297,
     "accuracy": 0.963447806868412,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "DIMO",
@@ -793,11 +793,11 @@
     "symbol": "CTX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8151999999999999,
+    "probability": 0.8138461538461539,
     "threshold": 0.7675324675324675,
     "accuracy": 0.9594155844155844,
     "passed": 1.0,
-    "count": 25
+    "count": 26
   },
   {
     "symbol": "ELA",
@@ -813,11 +813,11 @@
     "symbol": "ASM",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8791304347826087,
+    "probability": 0.8784000000000001,
     "threshold": 0.7652946778118718,
     "accuracy": 0.9566183472648396,
     "passed": 1.0,
-    "count": 23
+    "count": 25
   },
   {
     "symbol": "HNT",
@@ -833,11 +833,11 @@
     "symbol": "ALEPH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9523076923076922,
+    "probability": 0.9521428571428572,
     "threshold": 0.7549151091453845,
     "accuracy": 0.9436438864317306,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "ABT",
@@ -853,11 +853,11 @@
     "symbol": "FOX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.86375,
+    "probability": 0.8628,
     "threshold": 0.7507180650037794,
     "accuracy": 0.9383975812547242,
     "passed": 1.0,
-    "count": 24
+    "count": 25
   },
   {
     "symbol": "AST",
@@ -883,11 +883,11 @@
     "symbol": "COW",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.939375,
+    "probability": 0.94,
     "threshold": 0.7432596550886568,
     "accuracy": 0.929074568860821,
     "passed": 1.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "00",
@@ -903,41 +903,41 @@
     "symbol": "DEGEN",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9747619047619047,
+    "probability": 0.9754545454545455,
     "threshold": 0.7330821401657875,
     "accuracy": 0.9163526752072344,
     "passed": 1.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "EIGEN",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9264705882352942,
+    "probability": 0.9277777777777777,
     "threshold": 0.7263774912075031,
-    "accuracy": 0.9079718640093788,
+    "accuracy": 0.9079718640093789,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "CFG",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.952,
+    "probability": 0.9541176470588235,
     "threshold": 0.7246298788694482,
-    "accuracy": 0.9057873485868103,
+    "accuracy": 0.9057873485868102,
     "passed": 1.0,
-    "count": 15
+    "count": 17
   },
   {
     "symbol": "DNT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9519047619047618,
+    "probability": 0.9522727272727273,
     "threshold": 0.7245009074410164,
-    "accuracy": 0.9056261343012705,
+    "accuracy": 0.9056261343012704,
     "passed": 1.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "ETHFI",
@@ -953,11 +953,11 @@
     "symbol": "EDGE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.7808333333333333,
+    "probability": 0.7776923076923077,
     "threshold": 0.7219807983830218,
     "accuracy": 0.9024759979787772,
     "passed": 1.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "DOGINME",
@@ -973,31 +973,31 @@
     "symbol": "CLV",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.8023529411764706,
+    "probability": 0.8016666666666666,
     "threshold": 0.6391820580474934,
     "accuracy": 0.8522427440633246,
     "passed": 1.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "FIGHT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.9349999999999999,
+    "probability": 0.9359999999999999,
     "threshold": 0.6762886597938145,
     "accuracy": 0.845360824742268,
     "passed": 1.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "ALEPH",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.6661538461538462,
+    "probability": 0.6657142857142857,
     "threshold": 0.5422740524781341,
-    "accuracy": 0.7230320699708455,
+    "accuracy": 0.7230320699708456,
     "passed": 1.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "BAT",
@@ -1050,6 +1050,16 @@
     "count": 14
   },
   {
+    "symbol": "IMU",
+    "tier": "Directional",
+    "line": 187.0,
+    "probability": 0.8950000000000001,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.9285714285714286,
+    "count": 14
+  },
+  {
     "symbol": "BOBBOB",
     "tier": "Directional",
     "line": 187.0,
@@ -1060,50 +1070,60 @@
     "count": 13
   },
   {
-    "symbol": "IMU",
+    "symbol": "CAKE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8923076923076922,
-    "threshold": 0.8,
+    "probability": 0.9541666666666666,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
-    "passed": 0.9230769230769231,
-    "count": 13
+    "passed": 0.9166666666666666,
+    "count": 24
   },
   {
     "symbol": "ICP",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.9406816530917179,
-    "threshold": 0.8,
+    "probability": 0.943153250879563,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
-    "passed": 0.9130434782608695,
-    "count": 23
-  },
-  {
-    "symbol": "CAKE",
-    "tier": "Directional",
-    "line": 187.0,
-    "probability": 0.9509090909090908,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.9090909090909091,
-    "count": 22
+    "passed": 0.9166666666666666,
+    "count": 24
   },
   {
     "symbol": "DNT",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.6361904761904762,
+    "probability": 0.6368181818181818,
     "threshold": 0.5303970223325062,
     "accuracy": 0.707196029776675,
-    "passed": 0.9047619047619048,
-    "count": 21
+    "passed": 0.9090909090909091,
+    "count": 22
   },
   {
     "symbol": "AWE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.7972222222222223,
+    "probability": 0.7978947368421053,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.8947368421052632,
+    "count": 19
+  },
+  {
+    "symbol": "ENA",
+    "tier": "Directional",
+    "line": 187.0,
+    "probability": 0.9526315789473685,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.8947368421052632,
+    "count": 19
+  },
+  {
+    "symbol": "FUN1",
+    "tier": "Directional",
+    "line": 187.0,
+    "probability": 0.9022222222222224,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.8888888888888888,
@@ -1130,26 +1150,6 @@
     "count": 9
   },
   {
-    "symbol": "ENA",
-    "tier": "Directional",
-    "line": 187.0,
-    "probability": 0.9564705882352942,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.8823529411764706,
-    "count": 17
-  },
-  {
-    "symbol": "FUN1",
-    "tier": "Directional",
-    "line": 187.0,
-    "probability": 0.9011764705882354,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.8823529411764706,
-    "count": 17
-  },
-  {
     "symbol": "ZEN",
     "tier": "Imbalance",
     "line": 214.0,
@@ -1173,11 +1173,11 @@
     "symbol": "ELSA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.8045454545454546,
-    "threshold": 0.8,
+    "probability": 0.805,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
-    "passed": 0.8636363636363636,
-    "count": 22
+    "passed": 0.875,
+    "count": 24
   },
   {
     "symbol": "HNT",
@@ -1190,32 +1190,32 @@
     "count": 13
   },
   {
-    "symbol": "IRYS",
+    "symbol": "FLOCK",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.7863157894736843,
+    "probability": 0.8747368421052633,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.8421052631578947,
     "count": 19
   },
   {
-    "symbol": "FLOCK",
-    "tier": "Directional",
-    "line": 187.0,
-    "probability": 0.8733333333333334,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.8333333333333334,
-    "count": 18
-  },
-  {
     "symbol": "TRAC",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.8626428094382278,
+    "probability": 0.8771014610763092,
     "threshold": 0.8,
     "accuracy": 1.0,
+    "passed": 0.8421052631578947,
+    "count": 19
+  },
+  {
+    "symbol": "AGLD",
+    "tier": "Generalist",
+    "line": 278.0,
+    "probability": 0.558235294117647,
+    "threshold": 0.5266903914590747,
+    "accuracy": 0.7022538552787663,
     "passed": 0.8235294117647058,
     "count": 17
   },
@@ -1230,20 +1230,20 @@
     "count": 16
   },
   {
-    "symbol": "AGLD",
-    "tier": "Generalist",
-    "line": 278.0,
-    "probability": 0.556875,
-    "threshold": 0.5266903914590747,
-    "accuracy": 0.7022538552787663,
-    "passed": 0.8125,
-    "count": 16
-  },
-  {
     "symbol": "BREV",
     "tier": "Directional",
     "line": 187.0,
     "probability": 0.8355,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.8,
+    "count": 20
+  },
+  {
+    "symbol": "IRYS",
+    "tier": "Directional",
+    "line": 187.0,
+    "probability": 0.7785,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.8,
@@ -1263,21 +1263,21 @@
     "symbol": "IOTX",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.6092325133459211,
+    "probability": 0.6371444766783554,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.5384615384615384,
-    "count": 13
+    "passed": 0.5714285714285714,
+    "count": 14
   },
   {
     "symbol": "AKT",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.5966704476629692,
+    "probability": 0.5784772792685602,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.5294117647058824,
-    "count": 17
+    "passed": 0.5,
+    "count": 18
   },
   {
     "symbol": "AST",
@@ -1363,31 +1363,31 @@
     "symbol": "UNI",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.07142857142857142,
+    "probability": 0.06666666666666667,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.07142857142857142,
-    "count": 14
+    "passed": 0.06666666666666667,
+    "count": 15
   },
   {
     "symbol": "AVNT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.6806666666666668,
+    "probability": 0.676875,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.06666666666666667,
-    "count": 15
+    "passed": 0.0625,
+    "count": 16
   },
   {
     "symbol": "HOME",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.6753333333333333,
+    "probability": 0.6735294117647059,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.06666666666666667,
-    "count": 15
+    "passed": 0.058823529411764705,
+    "count": 17
   },
   {
     "symbol": "IDEX",
@@ -1413,11 +1413,11 @@
     "symbol": "ERA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.5765384615384616,
+    "probability": 0.5744444444444444,
     "threshold": 0.8,
     "accuracy": 1.0,
-    "passed": 0.038461538461538464,
-    "count": 26
+    "passed": 0.037037037037037035,
+    "count": 27
   },
   {
     "symbol": "ABT",
@@ -1433,21 +1433,21 @@
     "symbol": "ACX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.129,
+    "probability": 0.12999999999999998,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 23
   },
   {
     "symbol": "AGLD",
     "tier": "Specialist",
     "line": 315.0,
-    "probability": 0.4695833333333333,
+    "probability": 0.4660714285714286,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 12
+    "count": 14
   },
   {
     "symbol": "AKT",
@@ -1474,10 +1474,10 @@
     "tier": "Directional",
     "line": 187.0,
     "probability": 0.13,
-    "threshold": 0.8000000000000002,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "ASM",
@@ -1487,27 +1487,27 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 23
+    "count": 25
   },
   {
     "symbol": "AURORA",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.5176923076923077,
+    "probability": 0.5171428571428571,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "AXL",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0911764705882353,
+    "probability": 0.0911111111111111,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "BAT",
@@ -1543,31 +1543,31 @@
     "symbol": "BNB",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.08125,
+    "probability": 0.0811111111111111,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "BNKR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.309375,
+    "probability": 0.30833333333333335,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "C1INCH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.18733333333333332,
+    "probability": 0.18875,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "C98",
@@ -1583,11 +1583,11 @@
     "symbol": "CELR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.5604761904761905,
+    "probability": 0.5636363636363636,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "CGLD",
@@ -1653,11 +1653,11 @@
     "symbol": "DBR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.7288888888888889,
+    "probability": 0.731904761904762,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 21
   },
   {
     "symbol": "DOLO",
@@ -1713,21 +1713,21 @@
     "symbol": "FORT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.04526315789473684,
+    "probability": 0.045,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "FOX",
     "tier": "Imbalance",
     "line": 214.0,
     "probability": 0.0,
-    "threshold": 0.8000000000000002,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 24
+    "count": 25
   },
   {
     "symbol": "FX",
@@ -1747,27 +1747,27 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "GUSD",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0775,
+    "probability": 0.07954545454545454,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 22
   },
   {
     "symbol": "HFT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.021052631578947368,
+    "probability": 0.021,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "HYPE",
@@ -1797,7 +1797,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "INDEX",
@@ -1833,31 +1833,31 @@
     "symbol": "INX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.7344999999999999,
+    "probability": 0.729090909090909,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 22
   },
   {
     "symbol": "IOTX",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.48714285714285716,
+    "probability": 0.48624999999999996,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 7
+    "count": 8
   },
   {
     "symbol": "JTO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.19437500000000002,
+    "probability": 0.19470588235294117,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "KARRAT",
@@ -1883,11 +1883,11 @@
     "symbol": "KNC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.10571428571428572,
+    "probability": 0.10600000000000001,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "KRL",
@@ -1903,11 +1903,11 @@
     "symbol": "KSM",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.030000000000000002,
+    "probability": 0.029500000000000005,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "LCX",
@@ -1933,11 +1933,11 @@
     "symbol": "LINK",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03923076923076923,
+    "probability": 0.03928571428571429,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "LPT",
@@ -1954,20 +1954,20 @@
     "tier": "Directional",
     "line": 187.0,
     "probability": 0.08,
-    "threshold": 0.8,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 10
+    "count": 12
   },
   {
     "symbol": "LRC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.144375,
+    "probability": 0.14470588235294118,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "LRDS",
@@ -1983,11 +1983,11 @@
     "symbol": "LSETH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.017058823529411765,
+    "probability": 0.015263157894736841,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 19
   },
   {
     "symbol": "LTC",
@@ -2003,31 +2003,31 @@
     "symbol": "MAGIC",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.37222222222222223,
+    "probability": 0.3705263157894737,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "MANA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03217391304347826,
-    "threshold": 0.8,
+    "probability": 0.03166666666666667,
+    "threshold": 0.8000000000000002,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 23
+    "count": 24
   },
   {
     "symbol": "MASK",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.10818181818181817,
+    "probability": 0.10913043478260871,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 22
+    "count": 23
   },
   {
     "symbol": "MATH",
@@ -2037,57 +2037,57 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "MDT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03888888888888889,
+    "probability": 0.038,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "METIS",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.08263157894736843,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "count": 19
-  },
-  {
-    "symbol": "MINA",
-    "tier": "Imbalance",
-    "line": 214.0,
-    "probability": 0.0,
+    "probability": 0.08142857142857143,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
     "count": 21
   },
   {
+    "symbol": "MINA",
+    "tier": "Imbalance",
+    "line": 214.0,
+    "probability": 0.0,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "count": 24
+  },
+  {
     "symbol": "MKR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.005294117647058823,
+    "probability": 0.006842105263157895,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 19
   },
   {
     "symbol": "MLN",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.007058823529411764,
+    "probability": 0.006666666666666666,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "MNDE",
@@ -2113,21 +2113,21 @@
     "symbol": "NCT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.023,
+    "probability": 0.022727272727272728,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 22
   },
   {
     "symbol": "NEAR",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.28103681725227375,
+    "probability": 0.28140805665852064,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "NEON",
@@ -2167,7 +2167,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "OGN",
@@ -2193,11 +2193,11 @@
     "symbol": "ONDO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.050666666666666665,
+    "probability": 0.05,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "OP",
@@ -2213,41 +2213,41 @@
     "symbol": "ORCA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.21200000000000002,
+    "probability": 0.21285714285714286,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "OSMO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0788888888888889,
+    "probability": 0.07842105263157896,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "OXT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.1375,
+    "probability": 0.1376190476190476,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "PAX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.00125,
+    "probability": 0.0011764705882352942,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "PERP",
@@ -2263,11 +2263,11 @@
     "symbol": "PIRATE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.14950000000000002,
+    "probability": 0.1508695652173913,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 23
   },
   {
     "symbol": "PLU",
@@ -2293,11 +2293,11 @@
     "symbol": "POL",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.052142857142857144,
+    "probability": 0.052000000000000005,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "POLS",
@@ -2323,21 +2323,21 @@
     "symbol": "POWR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.035,
+    "probability": 0.034736842105263156,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "PRIME",
     "tier": "Imbalance",
     "line": 214.0,
-    "probability": 0.11234196914930089,
+    "probability": 0.10431754278149367,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "PRO",
@@ -2357,37 +2357,37 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "PYR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.041363636363636366,
+    "probability": 0.041304347826086954,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 22
+    "count": 23
   },
   {
     "symbol": "QI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.14900000000000002,
+    "probability": 0.15000000000000002,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "QNT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.014285714285714285,
+    "probability": 0.013636363636363636,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "RAD",
@@ -2413,11 +2413,11 @@
     "symbol": "RARI",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.478,
+    "probability": 0.476875,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "RENDER",
@@ -2443,21 +2443,21 @@
     "symbol": "RLC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.003529411764705882,
+    "probability": 0.003333333333333333,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "RONIN",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.14166666666666666,
-    "threshold": 0.8000000000000002,
+    "probability": 0.13807692307692307,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 24
+    "count": 26
   },
   {
     "symbol": "ROSE",
@@ -2467,7 +2467,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "RPL",
@@ -2483,11 +2483,11 @@
     "symbol": "SAFE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.009166666666666667,
-    "threshold": 0.8000000000000002,
+    "probability": 0.00923076923076923,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "SAND",
@@ -2503,11 +2503,11 @@
     "symbol": "SD",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.09454545454545454,
+    "probability": 0.09000000000000001,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 11
+    "count": 13
   },
   {
     "symbol": "SEAM",
@@ -2533,11 +2533,11 @@
     "symbol": "SHDW",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.42375,
+    "probability": 0.42500000000000004,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "SHIB",
@@ -2553,11 +2553,11 @@
     "symbol": "SHPING",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.07722222222222223,
+    "probability": 0.0761904761904762,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 21
   },
   {
     "symbol": "SKL",
@@ -2583,21 +2583,21 @@
     "symbol": "SOL",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.01076923076923077,
+    "probability": 0.009333333333333334,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 13
+    "count": 15
   },
   {
     "symbol": "SPELL",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.004,
+    "probability": 0.0038095238095238095,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "STG",
@@ -2613,31 +2613,31 @@
     "symbol": "STORJ",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.061111111111111116,
+    "probability": 0.06052631578947369,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "count": 19
+  },
+  {
+    "symbol": "STX",
+    "tier": "Directional",
+    "line": 187.0,
+    "probability": 0.027777777777777776,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
     "count": 18
   },
   {
-    "symbol": "STX",
-    "tier": "Directional",
-    "line": 187.0,
-    "probability": 0.02764705882352941,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "count": 17
-  },
-  {
     "symbol": "SUI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03214285714285715,
+    "probability": 0.03266666666666666,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "SUKU",
@@ -2673,11 +2673,11 @@
     "symbol": "SWFTC",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.4961111111111111,
+    "probability": 0.4955,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 20
   },
   {
     "symbol": "T",
@@ -2693,21 +2693,21 @@
     "symbol": "TIA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0013333333333333333,
+    "probability": 0.00125,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "TIME",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.1310526315789474,
+    "probability": 0.1325,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "TNSR",
@@ -2723,11 +2723,11 @@
     "symbol": "TRAC",
     "tier": "Generalist",
     "line": 278.0,
-    "probability": 0.3507142857142857,
+    "probability": 0.35,
     "threshold": 0.75,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "TRB",
@@ -2747,17 +2747,17 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "UMA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.024285714285714285,
+    "probability": 0.024090909090909093,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "UNI",
@@ -2783,11 +2783,11 @@
     "symbol": "VARA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.055238095238095246,
+    "probability": 0.05454545454545454,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "VELO",
@@ -2803,11 +2803,11 @@
     "symbol": "VET",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.027500000000000004,
+    "probability": 0.027142857142857146,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "VOXEL",
@@ -2843,11 +2843,11 @@
     "symbol": "WCFG",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.10928571428571429,
+    "probability": 0.10941176470588236,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 17
   },
   {
     "symbol": "XCN",
@@ -2863,21 +2863,21 @@
     "symbol": "XLM",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.013333333333333334,
+    "probability": 0.012857142857142859,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 18
+    "count": 21
   },
   {
     "symbol": "XRP",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.045,
+    "probability": 0.044444444444444446,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 16
+    "count": 18
   },
   {
     "symbol": "XTZ",
@@ -2893,21 +2893,21 @@
     "symbol": "XYO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.10500000000000001,
+    "probability": 0.1057142857142857,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "YFI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.027142857142857142,
+    "probability": 0.02666666666666667,
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "ZEC",
@@ -2917,7 +2917,7 @@
     "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 14
+    "count": 15
   },
   {
     "symbol": "ZEN",
@@ -2933,21 +2933,21 @@
     "symbol": "ZETA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.05000000000000001,
-    "threshold": 0.8000000000000002,
+    "probability": 0.05,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "ZRO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0425,
-    "threshold": 0.8000000000000002,
+    "probability": 0.0424,
+    "threshold": 0.8,
     "accuracy": 1.0,
     "passed": 0.0,
-    "count": 24
+    "count": 25
   },
   {
     "symbol": "ZRX",
@@ -2963,11 +2963,11 @@
     "symbol": "BTC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.019,
+    "probability": 0.01904761904761905,
     "threshold": 0.7998222288063405,
     "accuracy": 0.9997777860079256,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "ENJ",
@@ -2983,41 +2983,41 @@
     "symbol": "ETH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.1823076923076923,
+    "probability": 0.18285714285714286,
     "threshold": 0.797191692089097,
     "accuracy": 0.9964896151113712,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "CBETH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.001,
+    "probability": 0.0009523809523809524,
     "threshold": 0.7930642750373693,
     "accuracy": 0.9913303437967116,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "BCH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.023846153846153847,
+    "probability": 0.022857142857142857,
     "threshold": 0.7925425719318848,
     "accuracy": 0.990678214914856,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "BNT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.030625,
+    "probability": 0.03058823529411765,
     "threshold": 0.7913846153846155,
-    "accuracy": 0.9892307692307692,
+    "accuracy": 0.9892307692307694,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "DOT",
@@ -3043,11 +3043,11 @@
     "symbol": "ETC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.008333333333333333,
+    "probability": 0.007894736842105263,
     "threshold": 0.7906905761159863,
     "accuracy": 0.9883632201449828,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "DOGE",
@@ -3073,21 +3073,21 @@
     "symbol": "ADA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.018125,
+    "probability": 0.01764705882352941,
     "threshold": 0.7883590386397079,
     "accuracy": 0.9854487982996348,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "ANKR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.09777777777777778,
+    "probability": 0.10238095238095238,
     "threshold": 0.7882156289176765,
     "accuracy": 0.9852695361470956,
     "passed": 0.0,
-    "count": 18
+    "count": 21
   },
   {
     "symbol": "CHZ",
@@ -3113,41 +3113,41 @@
     "symbol": "AAVE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.15222222222222223,
+    "probability": 0.15263157894736842,
     "threshold": 0.7868948476251487,
-    "accuracy": 0.9836185595314357,
+    "accuracy": 0.9836185595314358,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "EOS",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.04692307692307692,
+    "probability": 0.04733333333333334,
     "threshold": 0.7856509812196666,
-    "accuracy": 0.9820637265245831,
+    "accuracy": 0.9820637265245832,
     "passed": 0.0,
-    "count": 13
+    "count": 15
   },
   {
     "symbol": "CRO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.11416666666666665,
+    "probability": 0.11461538461538462,
     "threshold": 0.7851675021882708,
-    "accuracy": 0.9814593777353385,
+    "accuracy": 0.9814593777353384,
     "passed": 0.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "ALGO",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.07368421052631578,
+    "probability": 0.074,
     "threshold": 0.7843604247295822,
     "accuracy": 0.9804505309119778,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "DESO",
@@ -3203,31 +3203,31 @@
     "symbol": "ARB",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.02142857142857143,
-    "threshold": 0.7833396728794219,
-    "accuracy": 0.9791745910992772,
+    "probability": 0.02090909090909091,
+    "threshold": 0.7833396728794217,
+    "accuracy": 0.9791745910992771,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "FIL",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.023636363636363636,
-    "threshold": 0.7831456840668714,
-    "accuracy": 0.9789321050835892,
+    "probability": 0.022608695652173914,
+    "threshold": 0.7831456840668715,
+    "accuracy": 0.9789321050835893,
     "passed": 0.0,
-    "count": 22
+    "count": 23
   },
   {
     "symbol": "EGLD",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.049444444444444444,
+    "probability": 0.048947368421052635,
     "threshold": 0.782568299966818,
     "accuracy": 0.9782103749585224,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "AERO",
@@ -3283,11 +3283,11 @@
     "symbol": "FLR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.034166666666666665,
+    "probability": 0.034,
     "threshold": 0.7799864773495605,
-    "accuracy": 0.9749830966869505,
+    "accuracy": 0.9749830966869506,
     "passed": 0.0,
-    "count": 24
+    "count": 25
   },
   {
     "symbol": "ACS",
@@ -3313,11 +3313,11 @@
     "symbol": "AVAX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.2088235294117647,
+    "probability": 0.21222222222222223,
     "threshold": 0.7781101141021379,
-    "accuracy": 0.9726376426276723,
+    "accuracy": 0.9726376426276724,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "ACH",
@@ -3363,21 +3363,21 @@
     "symbol": "BOBA",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.1432,
+    "probability": 0.1426923076923077,
     "threshold": 0.7751236749116609,
     "accuracy": 0.968904593639576,
     "passed": 0.0,
-    "count": 25
+    "count": 26
   },
   {
     "symbol": "GMT",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.02,
+    "probability": 0.019230769230769232,
     "threshold": 0.774076317383404,
     "accuracy": 0.967595396729255,
     "passed": 0.0,
-    "count": 12
+    "count": 13
   },
   {
     "symbol": "COTI",
@@ -3443,11 +3443,11 @@
     "symbol": "HBAR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0034782608695652175,
+    "probability": 0.0033333333333333335,
     "threshold": 0.7714707065290254,
     "accuracy": 0.9643383831612816,
     "passed": 0.0,
-    "count": 23
+    "count": 24
   },
   {
     "symbol": "BIGTIME",
@@ -3463,11 +3463,11 @@
     "symbol": "GFI",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.048947368421052635,
+    "probability": 0.049,
     "threshold": 0.7708086785009862,
-    "accuracy": 0.9635108481262328,
+    "accuracy": 0.9635108481262329,
     "passed": 0.0,
-    "count": 19
+    "count": 20
   },
   {
     "symbol": "FET",
@@ -3483,11 +3483,11 @@
     "symbol": "APE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03586206896551724,
+    "probability": 0.035333333333333335,
     "threshold": 0.7698963497070752,
     "accuracy": 0.962370437133844,
     "passed": 0.0,
-    "count": 29
+    "count": 30
   },
   {
     "symbol": "GLM",
@@ -3503,21 +3503,21 @@
     "symbol": "API3",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.0661111111111111,
+    "probability": 0.06578947368421052,
     "threshold": 0.7688750555802579,
     "accuracy": 0.9610938194753224,
     "passed": 0.0,
-    "count": 18
+    "count": 19
   },
   {
     "symbol": "GODS",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.10600000000000001,
+    "probability": 0.10625,
     "threshold": 0.7688724192694547,
     "accuracy": 0.9610905240868184,
     "passed": 0.0,
-    "count": 15
+    "count": 16
   },
   {
     "symbol": "FIDA",
@@ -3543,11 +3543,11 @@
     "symbol": "ALICE",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.03782608695652174,
+    "probability": 0.038,
     "threshold": 0.7672080433101316,
     "accuracy": 0.9590100541376644,
     "passed": 0.0,
-    "count": 23
+    "count": 25
   },
   {
     "symbol": "BLZ",
@@ -3573,41 +3573,41 @@
     "symbol": "CVX",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.07307692307692308,
+    "probability": 0.07285714285714286,
     "threshold": 0.7631980987947717,
-    "accuracy": 0.9539976234934646,
+    "accuracy": 0.9539976234934647,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "GHST",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.08375,
+    "probability": 0.08352941176470588,
     "threshold": 0.7630799850727703,
-    "accuracy": 0.9538499813409628,
+    "accuracy": 0.9538499813409629,
     "passed": 0.0,
-    "count": 16
+    "count": 17
   },
   {
     "symbol": "GST",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.02888888888888889,
+    "probability": 0.028999999999999998,
     "threshold": 0.7625470107638439,
-    "accuracy": 0.9531837634548048,
+    "accuracy": 0.9531837634548047,
     "passed": 0.0,
-    "count": 9
+    "count": 10
   },
   {
     "symbol": "HIGH",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.04058823529411765,
+    "probability": 0.04055555555555555,
     "threshold": 0.7617166729965819,
     "accuracy": 0.9521458412457273,
     "passed": 0.0,
-    "count": 17
+    "count": 18
   },
   {
     "symbol": "AUDIO",
@@ -3623,11 +3623,11 @@
     "symbol": "ARKM",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.12272727272727274,
-    "threshold": 0.7597142522543622,
-    "accuracy": 0.9496428153179527,
+    "probability": 0.12279999999999999,
+    "threshold": 0.7597142522543624,
+    "accuracy": 0.9496428153179528,
     "passed": 0.0,
-    "count": 22
+    "count": 25
   },
   {
     "symbol": "JASMY",
@@ -3635,19 +3635,19 @@
     "line": 187.0,
     "probability": 0.0,
     "threshold": 0.7595321282090233,
-    "accuracy": 0.9494151602612789,
+    "accuracy": 0.949415160261279,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "HOPR",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.06952380952380953,
+    "probability": 0.06954545454545455,
     "threshold": 0.758450959102425,
-    "accuracy": 0.9480636988780313,
+    "accuracy": 0.9480636988780312,
     "passed": 0.0,
-    "count": 21
+    "count": 22
   },
   {
     "symbol": "ERN",
@@ -3703,11 +3703,11 @@
     "symbol": "BLAST",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.14153846153846156,
-    "threshold": 0.7526707810172376,
+    "probability": 0.1435714285714286,
+    "threshold": 0.7526707810172377,
     "accuracy": 0.9408384762715472,
     "passed": 0.0,
-    "count": 13
+    "count": 14
   },
   {
     "symbol": "BTRST",
@@ -3773,11 +3773,11 @@
     "symbol": "GTC",
     "tier": "Directional",
     "line": 187.0,
-    "probability": 0.213,
+    "probability": 0.21428571428571427,
     "threshold": 0.6771513353115728,
     "accuracy": 0.8464391691394659,
     "passed": 0.0,
-    "count": 20
+    "count": 21
   },
   {
     "symbol": "ELA",
