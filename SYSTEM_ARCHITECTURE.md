@@ -9,14 +9,14 @@ The central nervous system that manages the sequential execution for each symbol
 
 - **Guardian Watchdog**: [`guardian.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/guardian.py) [NEW]
     - *Role*: The overarching process manager daemon that maintains continuous uptime for the LOB Sampler, MLOps Orchestrator, Hierarchical Trader, and Reporting mechanisms.
-    - *Thermal Throttling*: Because the M4 host is fanless, the watchdog strictly limits the orchestrator sub-process to 3 parallel workers and incorporates a 20-second per-symbol sleep loop to prevent extreme CPU load and thermal-related hardware reboots.
+    - *Thermal Throttling*: Because the M4 host is fanless, the watchdog strictly limits the orchestrator sub-process to 2 parallel workers and incorporates a 20-second per-symbol sleep loop to prevent extreme CPU load and thermal-related hardware reboots.
     - *Analytics Integration*: Periodically dumps live component lifecycle data (restart counts, runtime statuses) to `guardian_status.json` for external telemetry harvesting.
     - *Twilio Alerting*: Automatically senses microservice crashes or execution freezes and natively issues SMS alerts to system admins via the Twilio REST API.
     - *Age-Based Restart Policy*: On any auto-restart, the Guardian launches the orchestrator with `--skip-existing --max-age-days 14`. This instructs the orchestrator to skip any preprocessing or modeling step whose output file was modified within the last **14 days**, preventing redundant rework. Steps older than 14 days (or missing entirely) are re-executed. This applies to **all** model types including Imbalance, which can take up to 7 days to train and is therefore only triggered once every two weeks at most. To force a full re-run of everything, pass `--max-age-days 0`.
 - **Main Orchestrator**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py)
     - *Role*: The primary entry point. Manages the loop across all **261 symbols**, calling preprocessors, modelers, and transfer scripts.
     - *Symbol Discovery*: Prioritizes the "Source Truth" by scanning the `GRUS-CSV-SAMPLER-DATA/symbols` directory for per-asset CSVs. This ensures 100% coverage across the alphabet (A-Z), with fallbacks to preprocessed BBP files if the source directory is unavailable.
-    - *Usage (Global Run)*: The watchdog handles background execution, but for isolated manual runs: `nohup ./venv/bin/python UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py --host stefans-Mac-mini.local --pull --workers 3 > logs/orchestrator_main.log 2>&1 &`
+    - *Usage (Global Run)*: The watchdog handles background execution, but for isolated manual runs: `nohup ./venv/bin/python UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py --host stefans-Mac-mini.local --pull --workers 2 > logs/orchestrator_main.log 2>&1 &`
     - *Usage (Global Wipe & Restart)*: If you need to stop the pipeline, wipe all data, and start completely fresh:
       1. Kill jobs: `pkill -f 'orchestrator_symbol_centric.py'` and `pkill -f 'preprocessor'`
       2. Wipe generated crash datasets (example): `rm -rf /Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71/BBP-DRAWDOWNS/*`
@@ -269,7 +269,7 @@ optional arguments:
                         Governs all model types including Imbalance (which takes ~7 days to train).
 ```
 
-> **Guardian Default Command**: `python3 -u orchestrator_symbol_centric.py --workers 3 --skip-existing --experimental-directional-only --max-age-days 14`
+> **Guardian Default Command**: `python3 -u orchestrator_symbol_centric.py --workers 2 --skip-existing --experimental-directional-only --max-age-days 14`
 
 ---
 
