@@ -171,11 +171,11 @@
             <div class="service-name">Live LOB Sampler (Node)</div>
             <div class="metric-row">
                 <span class="metric-label">Restarts (24h)</span>
-                <span class="metric-value" style="color: var(--accent-danger)">1</span>
+                <span class="metric-value" style="color: var(--text-main)">0</span>
             </div>
             <div class="metric-row">
                 <span class="metric-label">Last Activity</span>
-                <span class="metric-value">09:37:42 AM</span>
+                <span class="metric-value">03:13:03 PM</span>
             </div>
         </div>
 
@@ -188,7 +188,7 @@
             </div>
             <div class="metric-row">
                 <span class="metric-label">Last Activity</span>
-                <span class="metric-value">09:28:22 AM</span>
+                <span class="metric-value">03:13:03 PM</span>
             </div>
         </div>
 
@@ -201,7 +201,7 @@
             </div>
             <div class="metric-row">
                 <span class="metric-label">Last Activity</span>
-                <span class="metric-value">09:28:22 AM</span>
+                <span class="metric-value">03:13:03 PM</span>
             </div>
         </div>
 
@@ -214,7 +214,7 @@
             </div>
             <div class="metric-row">
                 <span class="metric-label">Last Activity</span>
-                <span class="metric-value">09:28:27 AM</span>
+                <span class="metric-value">03:13:09 PM</span>
             </div>
         </div>
 
@@ -223,11 +223,24 @@
             <div class="service-name">Transaction Analysis Master</div>
             <div class="metric-row">
                 <span class="metric-label">Restarts (24h)</span>
-                <span class="metric-value" style="color: var(--accent-danger)">3612</span>
+                <span class="metric-value" style="color: var(--text-main)">0</span>
             </div>
             <div class="metric-row">
                 <span class="metric-label">Last Activity</span>
-                <span class="metric-value">02:57:33 PM</span>
+                <span class="metric-value">03:13:03 PM</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">Strategy Performance Master</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--accent-danger)">1</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">03:13:03 PM</span>
             </div>
         </div>
 
@@ -239,45 +252,51 @@
             <span class="badge bg-secondary" style="font-size: 0.7rem;">READ-ONLY</span>
         </div>
         <pre>{
-    "timestamp": "2026-04-01T14:57:33.075411",
+    "timestamp": "2026-04-01T15:13:51.280551",
     "host": "coinbase.local",
     "services": [
         {
             "name": "Live LOB Sampler (Node)",
             "status": "RUNNING",
-            "restarts": 1,
-            "last_restart": "09:37:42 AM"
+            "restarts": 0,
+            "last_restart": "03:13:03 PM"
         },
         {
             "name": "MLOps Orchestrator",
             "status": "RUNNING",
             "restarts": 0,
-            "last_restart": "09:28:22 AM"
+            "last_restart": "03:13:03 PM"
         },
         {
             "name": "Hierarchical Trader",
             "status": "RUNNING",
             "restarts": 0,
-            "last_restart": "09:28:22 AM"
+            "last_restart": "03:13:03 PM"
         },
         {
             "name": "Accuracy Dashboard Updater",
             "status": "RUNNING",
             "restarts": 1,
-            "last_restart": "09:28:27 AM"
+            "last_restart": "03:13:09 PM"
         },
         {
             "name": "Transaction Analysis Master",
             "status": "RUNNING",
-            "restarts": 3612,
-            "last_restart": "02:57:33 PM"
+            "restarts": 0,
+            "last_restart": "03:13:03 PM"
+        },
+        {
+            "name": "Strategy Performance Master",
+            "status": "RUNNING",
+            "restarts": 1,
+            "last_restart": "03:13:03 PM"
         }
     ]
 }</pre>
     </div>
 
     <div class="timestamp-footer">
-        Pipeline Telemetry Synchronized: 2026-04-01T14:57:33.075411
+        Pipeline Telemetry Synchronized: 2026-04-01T15:13:51.280551
     </div>
 </body>
 </html>
