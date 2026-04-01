@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METASTADIUM | Guardian Status</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-success: #10b981;
+            --accent-danger: #ef4444;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding-bottom: 5rem;
+        }
+
+        .header-section {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 3rem;
+            letter-spacing: -0.05em;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .status-running { background: rgba(16, 185, 129, 0.1); color: var(--accent-success); border: 1px solid var(--accent-success); }
+        .status-stopped { background: rgba(239, 68, 68, 0.1); color: var(--accent-danger); border: 1px solid var(--accent-danger); }
+
+        .service-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .metric-label { color: var(--text-dim); }
+        .metric-value { font-weight: 600; }
+
+        .timestamp-footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .raw-json-box {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        pre { color: #a5f3fc; font-size: 0.85rem; margin: 0; }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom mb-4" style="background: #0f172a; border-color: rgba(255,255,255,0.1) !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span style="color: #38bdf8;">METASTADIUM</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active fw-bold text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Intelligence Portals
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" style="background: #1e293b; border: 1px solid rgba(255,255,255,0.1);">
+                            <li><a class="dropdown-item" href="coinbase_log_dashboard.html">Coinbase Overview</a></li>
+                            <li><a class="dropdown-item" href="bot_symbol_activity.html">Symbol Activity Index</a></li>
+                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html">Strategy Efficiency</a></li>
+                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html">Model Accuracy</a></li>
+                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html">Transactions</a></li>
+                            <li><a class="dropdown-item active" href="guardian_status.html">Guardian Status</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="nn_performance.html">NN Charts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="header-section">
+        <div class="container">
+            <div class="status-badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-primary); border: 1px solid var(--accent-primary);">
+                Remote Node: coinbase.local
+            </div>
+            <h1>Guardian Status</h1>
+            <p class="text-dim mx-auto" style="max-width: 600px;">
+                Real-time health monitoring for the METASTADIUM autonomous pipeline core services.
+            </p>
+        </div>
+    </div>
+
+    <div class="status-grid">
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">Live LOB Sampler (Node)</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--accent-danger)">1</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">09:37:42 AM</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">MLOps Orchestrator</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--text-main)">0</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">09:15:54 AM</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">Hierarchical Trader</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--text-main)">0</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">09:15:54 AM</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">Accuracy Dashboard Updater</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--accent-danger)">2</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">09:28:25 AM</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="status-badge status-running">RUNNING</div>
+            <div class="service-name">Transaction Analysis Master</div>
+            <div class="metric-row">
+                <span class="metric-label">Restarts (24h)</span>
+                <span class="metric-value" style="color: var(--text-main)">0</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Last Activity</span>
+                <span class="metric-value">09:15:54 AM</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="raw-json-box">
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+            <h2 style="font-size: 1rem; font-weight: 700; margin: 0;">TELEMETRY SOURCE (JSON)</h2>
+            <span class="badge bg-secondary" style="font-size: 0.7rem;">READ-ONLY</span>
+        </div>
+        <pre>{
+    "timestamp": "2026-04-01T09:39:43.888612",
+    "host": "coinbase.local",
+    "services": [
+        {
+            "name": "Live LOB Sampler (Node)",
+            "status": "RUNNING",
+            "restarts": 1,
+            "last_restart": "09:37:42 AM"
+        },
+        {
+            "name": "MLOps Orchestrator",
+            "status": "RUNNING",
+            "restarts": 0,
+            "last_restart": "09:15:54 AM"
+        },
+        {
+            "name": "Hierarchical Trader",
+            "status": "RUNNING",
+            "restarts": 0,
+            "last_restart": "09:15:54 AM"
+        },
+        {
+            "name": "Accuracy Dashboard Updater",
+            "status": "RUNNING",
+            "restarts": 2,
+            "last_restart": "09:28:25 AM"
+        },
+        {
+            "name": "Transaction Analysis Master",
+            "status": "RUNNING",
+            "restarts": 0,
+            "last_restart": "09:15:54 AM"
+        }
+    ]
+}</pre>
+    </div>
+
+    <div class="timestamp-footer">
+        Pipeline Telemetry Synchronized: 2026-04-01T09:39:43.888612
+    </div>
+</body>
+</html>
