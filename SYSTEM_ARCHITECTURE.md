@@ -133,10 +133,18 @@ The public-facing results layer, fully automated to maintain an active historica
     - *Execution*: Triggered natively at the conclusion of any limit-order transaction executed by the Neural Network.
 - **Trader Operations Deployer**: [`UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/push_operations_dashboard_to_gh.py) [NEW]
     - *Role*: Transmits the live Operations Dashboard state directly from the isolated Mac Mini to GitHub Pages via REST without requiring a full code clone.
+- **Transaction Analysis Suite**: [`UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/) [NEW]
+    - **Backtest Engine**: [`analyze_approved_signals.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/analyze_approved_signals.py)
+        - *Role*: Parses historical `trading_bot.log` files for `TRADE APPROVED` events and fetches forward yfinance candle data to determine +1.01% hit/miss outcomes.
+    - **Dashboard Generator**: [`generate_transaction_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/generate_transaction_dashboard.py)
+        - *Role*: Mints a 5-panel interactive Chart.js dashboard showing entry price vs outcome, signal timelines, and a "Trades In Waiting" live-price tracker.
+    - **Transaction Deployer**: [`push_transaction_dashboard_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/push_transaction_dashboard_to_gh.py)
+        - *Role*: Automatically streams the analysis artifacts (HTML, CSV, JSON) to the public GitHub repository.
     - **Live Access URLs**:
         - **System Architecture (Public Blueprint)**: [View Blueprint](https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md)
         - **Accuracy Dashboard (Model Scores)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html)
-        - **Strategy Performance Dashboard (BacktestedShow me how you're gonna smell Strategy Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html)
+        - **Strategy Performance Dashboard (Backtested Strategy Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html)
+        - **Transaction Analysis Dashboard (Approved Signals)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html) [NEW]
         - **Trader Operations Dashboard (Live Trades)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/operations_dashboard.html)
 
 ---
