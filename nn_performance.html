@@ -223,13 +223,23 @@
                     tooltip: {
                         custom: function({series, seriesIndex, dataPointIndex, w}) {
                             const d = w.config.series[seriesIndex].data[dataPointIndex];
-                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff;">
-                                <div class="fw-bold" style="color: #38bdf8;">${d.symbol}</div>
-                                <div class="text-dim small">${w.config.series[seriesIndex].name}</div>
-                                <hr class="my-1 border-secondary">
-                                <div>Prob: ${d.x}</div>
-                                <div>Acc: ${d.y}</div>
-                                <div>Samples: ${d.z}</div>
+                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 180px;">
+                                <div class="fw-bold mb-1" style="color: #38bdf8;">${d.symbol}</div>
+                                <div class="text-dim small mb-2">${w.config.series[seriesIndex].name}</div>
+                                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span>Probability:</span>
+                                        <span class="fw-bold text-info">${(d.x * 100).toFixed(1)}%</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span>Accuracy:</span>
+                                        <span class="fw-bold text-success">${(d.y * 100).toFixed(1)}%</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between small">
+                                        <span>Samples:</span>
+                                        <span>${d.z}</span>
+                                    </div>
+                                </div>
                             </div>`;
                         }
                     },
@@ -249,7 +259,11 @@
                     name: tier,
                     data: uniqueSymbols.map(sym => {
                         const match = data.find(item => item.symbol === sym && item.tier === tier);
-                        return match ? parseFloat(match.accuracy.toFixed(3)) : 0;
+                        return {
+                            x: sym,
+                            y: match ? parseFloat(match.accuracy.toFixed(3)) : 0,
+                            prob: match ? parseFloat(match.probability.toFixed(3)) : 0
+                        };
                     })
                 }));
                 
@@ -274,7 +288,10 @@
                     dataLabels: { 
                         enabled: true, 
                         style: { fontSize: '10px', fontWeight: 700, colors: ['#fff'] },
-                        formatter: val => val > 0.1 ? val.toFixed(2) : ''
+                        formatter: (val, opt) => {
+                            const d = opt.w.config.series[opt.seriesIndex].data[opt.dataPointIndex];
+                            return d.y > 0.1 ? `${d.y}` : ''; 
+                        }
                     },
                     xaxis: { 
                         categories: uniqueSymbols,
@@ -300,16 +317,20 @@
                             const symbolData = data.filter(d => d.symbol === sym);
                             const latest = symbolData[0]?.last_seen || 'N/A';
                             
-                            let html = `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 200px;">
+                            let html = `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 250px;">
                                 <div class="fw-bold mb-1" style="color: #38bdf8; font-size: 14px;">${sym}</div>
                                 <div class="text-dim small mb-2" style="color: #94a3b8;">Last Activity: ${latest}</div>
                                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">`;
                             
                             series.forEach((s, i) => {
                                 if (s[dataPointIndex] > 0) {
+                                    const d = w.config.series[i].data[dataPointIndex];
                                     html += `<div class="d-flex justify-content-between small mb-1">
                                         <span><span style="color:${w.config.colors[i]}">●</span> ${w.config.series[i].name}</span>
-                                        <span class="fw-bold ml-2">${(s[dataPointIndex]*100).toFixed(1)}%</span>
+                                        <span class="ml-2">
+                                            <span class="fw-bold" title="Accuracy">Acc: ${(d.y*100).toFixed(1)}%</span> | 
+                                            <span class="text-info" title="Probability">Prob: ${(d.prob*100).toFixed(1)}%</span>
+                                        </span>
                                     </div>`;
                                 }
                             });
