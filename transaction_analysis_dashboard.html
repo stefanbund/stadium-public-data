@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Transaction Signal Analysis Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0d0f14;
+    --surface:  #141720;
+    --surface2: #1c2030;
+    --border:   #252a3a;
+    --accent:   #4f8ef7;
+    --green:    #22c55e;
+    --red:      #ef4444;
+    --amber:    #f59e0b;
+    --muted:    #6b7280;
+    --text:     #e2e8f0;
+    --text-dim: #94a3b8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  /* ── Header ───────────────────────────────────── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header-left h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f8ef7, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-left p {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+  }
+  .badge-green { background: rgba(34,197,94,.12); color: var(--green); border-color: rgba(34,197,94,.3); }
+  .badge-red   { background: rgba(239,68,68,.12);  color: var(--red);   border-color: rgba(239,68,68,.3); }
+  .badge-amber { background: rgba(245,158,11,.12); color: var(--amber); border-color: rgba(245,158,11,.3); }
+  .badge-blue  { background: rgba(79,142,247,.12); color: var(--accent); border-color: rgba(79,142,247,.3); }
+
+  /* ── KPI Row ──────────────────────────────────── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .kpi:hover { border-color: var(--accent); }
+  .kpi::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(79,142,247,.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .kpi-label { font-size: 0.7rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: .05em; }
+  .kpi-value { font-size: 2rem; font-weight: 700; margin-top: 6px; line-height: 1; }
+  .kpi-sub   { font-size: 0.72rem; color: var(--text-dim); margin-top: 5px; }
+  .kpi-green .kpi-value { color: var(--green); }
+  .kpi-red   .kpi-value { color: var(--red); }
+  .kpi-amber .kpi-value { color: var(--amber); }
+  .kpi-blue  .kpi-value { color: var(--accent); }
+
+  /* ── Chart Grid ───────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .card:hover {
+    border-color: rgba(79,142,247,.4);
+    box-shadow: 0 0 0 1px rgba(79,142,247,.1), 0 8px 32px rgba(0,0,0,.4);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  .card-title { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+  .card-sub   { font-size: 0.72rem; color: var(--text-dim); margin-top: 2px; }
+  .chart-wrap { position: relative; height: 280px; }
+
+  /* ── Legend ───────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.72rem; color: var(--text-dim); }
+  .legend-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── Footer ───────────────────────────────────── */
+  .footer {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ── Trades In Waiting Table ──────────────────── */
+  .waiting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .waiting-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: border-color .2s;
+  }
+  .waiting-item:hover { border-color: var(--amber); }
+  .waiting-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .waiting-sym  { font-size: 1rem; font-weight: 700; color: var(--amber); }
+  .waiting-time { font-size: 0.68rem; color: var(--text-dim); }
+  .waiting-prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+  }
+  .waiting-price-label { color: var(--text-dim); margin-bottom: 2px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: .04em; }
+  .waiting-price-val   { font-weight: 600; }
+  .price-live   { color: var(--accent); }
+  .price-target { color: var(--green); }
+  .price-entry  { color: var(--text); }
+  .progress-wrap {
+    background: rgba(255,255,255,.06);
+    border-radius: 999px;
+    height: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width .4s;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .waiting-na { font-size: 0.75rem; color: var(--muted); font-style: italic; padding: 8px 0; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="header">
+  <div class="header-left">
+    <h1>📊 Transaction Signal Analysis</h1>
+    <p>Post-hoc backtesting of APPROVED signals · +1.01% target · 24h window · Last signal: 2026-04-01T08:24 UTC</p>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <span class="badge badge-green">✅ 32 HITs</span>
+    <span class="badge badge-red">❌ 14 MISSes</span>
+    <span class="badge badge-amber">⚠️ 6 No Data</span>
+    <span class="badge badge-blue">📈 69.6% Hit Rate</span>
+  </div>
+</div>
+
+<!-- ── KPIs ── -->
+<div class="kpi-row">
+  <div class="kpi kpi-blue">
+    <div class="kpi-label">Total Signals</div>
+    <div class="kpi-value">52</div>
+    <div class="kpi-sub">across all log files</div>
+  </div>
+  <div class="kpi kpi-green">
+    <div class="kpi-label">Hit Rate</div>
+    <div class="kpi-value">69.6%</div>
+    <div class="kpi-sub">32 of 46 with data</div>
+  </div>
+  <div class="kpi kpi-green">
+    <div class="kpi-label">Median Time to Hit</div>
+    <div class="kpi-value">59m</div>
+    <div class="kpi-sub">for successful signals</div>
+  </div>
+  <div class="kpi kpi-red">
+    <div class="kpi-label">Avg Miss Gap</div>
+    <div class="kpi-value">0.12%</div>
+    <div class="kpi-sub">avg max gain on misses</div>
+  </div>
+  <div class="kpi kpi-blue">
+    <div class="kpi-label">Symbols Seen</div>
+    <div class="kpi-value">4</div>
+    <div class="kpi-sub">ABT, AST, BAT, HONEY</div>
+  </div>
+</div>
+
+<!-- ── Charts ── -->
+<div class="grid">
+
+  <!-- 1. Entry Price vs Outcome Scatter -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">⚡ Entry Price vs. Outcome</div>
+        <div class="card-sub">Each dot = one APPROVED signal. Price threshold pattern clearly visible.</div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="scatterChart"></canvas></div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>HIT</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>MISS</div>
+    </div>
+  </div>
+
+  <!-- 2. Signal Timeline -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">🕐 Signal Timeline</div>
+        <div class="card-sub">Signals over time, by symbol, colored by outcome.</div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>HIT</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>MISS</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#6b7280"></div>No Data</div>
+    </div>
+  </div>
+
+  <!-- 3. Minutes-to-Target Histogram -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">⏱️ Minutes to +1.01% Target</div>
+        <div class="card-sub">Distribution of how quickly HITs reached their target.</div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="histChart"></canvas></div>
+  </div>
+
+  <!-- 4. Hit Rate by Symbol -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">🎯 Hit Rate by Symbol</div>
+        <div class="card-sub">Signal accuracy breakdown across the portfolio.</div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="symbolChart"></canvas></div>
+  </div>
+
+</div>
+
+<!-- ── Chart 5: Trades In Waiting ── -->
+<div class="card" style="margin-top:18px;">
+  <div class="card-header">
+    <div>
+      <div class="card-title">⏳ Trades In Waiting <span style="font-size:0.75rem;font-weight:400;color:var(--amber);margin-left:8px;">14 signals · target: +1.01%</span></div>
+      <div class="card-sub">MISS signals from the analysis window. Live prices fetched at generation time (2026-04-01 16:09 UTC). Shows how close each is to the +1.01% target right now.</div>
+    </div>
+  </div>
+  <div id="waitingCards"></div>
+</div>
+
+<div class="footer">
+  Generated 2026-04-01 16:09 UTC from <code>approved_signal_analysis.csv</code> ·
+  Source: <code>analyze_approved_signals.py</code> ·
+  Schema: <code>MLOPS_DATA_DICTIONARY.json</code>
+</div>
+
+<script>
+const RAW = [{"symbol": "HONEY", "timestamp": "2026-03-31T15:46:24+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "HONEY", "timestamp": "2026-03-31T15:51:33+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "ABT", "timestamp": "2026-03-31T16:28:50+00:00", "outcome": "HIT", "entry_price": 0.30144697427749634, "detail": 1.1666666666666667}, {"symbol": "AST", "timestamp": "2026-03-31T16:33:03+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 66.95}, {"symbol": "AST", "timestamp": "2026-03-31T16:40:34+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 59.43333333333333}, {"symbol": "AST", "timestamp": "2026-03-31T16:54:05+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 45.916666666666664}, {"symbol": "AST", "timestamp": "2026-03-31T17:26:22+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 13.633333333333333}, {"symbol": "AST", "timestamp": "2026-03-31T17:37:20+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 2.6666666666666665}, {"symbol": "BAT", "timestamp": "2026-03-31T17:38:32+00:00", "outcome": "HIT", "entry_price": 0.09520994126796722, "detail": 376.46666666666664}, {"symbol": "AST", "timestamp": "2026-03-31T19:54:05+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 20.916666666666668}, {"symbol": "AST", "timestamp": "2026-03-31T20:46:49+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 53.18333333333333}, {"symbol": "AST", "timestamp": "2026-03-31T21:16:54+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 23.1}, {"symbol": "AST", "timestamp": "2026-03-31T21:39:42+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 0.3}, {"symbol": "AST", "timestamp": "2026-03-31T21:55:54+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T22:35:17+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:05:50+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:07:25+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:31:14+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:38:59+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:51:41+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-03-31T23:54:40+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-04-01T00:01:05+00:00", "outcome": "MISS", "entry_price": 0.007300000172108412, "detail": 0.16616452859035846}, {"symbol": "AST", "timestamp": "2026-04-01T00:15:25+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 159.58333333333334}, {"symbol": "HONEY", "timestamp": "2026-04-01T00:37:38+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "AST", "timestamp": "2026-04-01T00:54:45+00:00", "outcome": "HIT", "entry_price": 0.007199999876320362, "detail": 120.25}, {"symbol": "AST", "timestamp": "2026-04-01T00:56:19+00:00", "outcome": "HIT", "entry_price": 0.007200148887932301, "detail": 118.68333333333334}, {"symbol": "AST", "timestamp": "2026-04-01T01:08:46+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 106.23333333333333}, {"symbol": "AST", "timestamp": "2026-04-01T01:15:24+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 99.6}, {"symbol": "AST", "timestamp": "2026-04-01T01:25:03+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 89.95}, {"symbol": "AST", "timestamp": "2026-04-01T01:29:47+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 85.21666666666667}, {"symbol": "HONEY", "timestamp": "2026-04-01T01:31:32+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "HONEY", "timestamp": "2026-04-01T01:33:06+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "AST", "timestamp": "2026-04-01T01:36:24+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 78.6}, {"symbol": "AST", "timestamp": "2026-04-01T01:41:01+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 73.98333333333333}, {"symbol": "AST", "timestamp": "2026-04-01T01:45:40+00:00", "outcome": "HIT", "entry_price": 0.007209667935967445, "detail": 69.33333333333333}, {"symbol": "AST", "timestamp": "2026-04-01T02:05:27+00:00", "outcome": "HIT", "entry_price": 0.007209667004644871, "detail": 49.55}, {"symbol": "AST", "timestamp": "2026-04-01T02:30:08+00:00", "outcome": "HIT", "entry_price": 0.007209667004644871, "detail": 24.866666666666667}, {"symbol": "AST", "timestamp": "2026-04-01T02:41:43+00:00", "outcome": "HIT", "entry_price": 0.007209667004644871, "detail": 13.283333333333333}, {"symbol": "AST", "timestamp": "2026-04-01T03:39:16+00:00", "outcome": "MISS", "entry_price": 0.007306658662855625, "detail": 0.07488402535732426}, {"symbol": "AST", "timestamp": "2026-04-01T03:50:21+00:00", "outcome": "MISS", "entry_price": 0.007306658662855625, "detail": 0.07488402535732426}, {"symbol": "ABT", "timestamp": "2026-04-01T03:57:39+00:00", "outcome": "HIT", "entry_price": 0.3101317584514618, "detail": 7.35}, {"symbol": "ABT", "timestamp": "2026-04-01T04:02:39+00:00", "outcome": "HIT", "entry_price": 0.31349730491638184, "detail": 42.35}, {"symbol": "AST", "timestamp": "2026-04-01T04:15:30+00:00", "outcome": "MISS", "entry_price": 0.007308897562325001, "detail": 0.04422856701609061}, {"symbol": "AST", "timestamp": "2026-04-01T05:07:03+00:00", "outcome": "HIT", "entry_price": 0.007122645620256662, "detail": 12.95}, {"symbol": "AST", "timestamp": "2026-04-01T05:50:01+00:00", "outcome": "MISS", "entry_price": 0.007311682216823101, "detail": 0.0061267181081713475}, {"symbol": "AST", "timestamp": "2026-04-01T06:09:56+00:00", "outcome": "MISS", "entry_price": 0.007312130182981491, "detail": 0.0}, {"symbol": "ABT", "timestamp": "2026-04-01T06:36:42+00:00", "outcome": "HIT", "entry_price": 0.3051312565803528, "detail": 13.3}, {"symbol": "AST", "timestamp": "2026-04-01T06:38:29+00:00", "outcome": "HIT", "entry_price": 0.007120476104319096, "detail": 16.516666666666666}, {"symbol": "AST", "timestamp": "2026-04-01T07:00:08+00:00", "outcome": "HIT", "entry_price": 0.007215645629912615, "detail": 149.86666666666667}, {"symbol": "AST", "timestamp": "2026-04-01T07:10:41+00:00", "outcome": "HIT", "entry_price": 0.0072155725210905075, "detail": 139.31666666666666}, {"symbol": "HONEY", "timestamp": "2026-04-01T08:18:50+00:00", "outcome": "NO_DATA", "entry_price": null, "detail": null}, {"symbol": "AST", "timestamp": "2026-04-01T08:24:08+00:00", "outcome": "HIT", "entry_price": 0.0072156949900090694, "detail": 65.86666666666666}];
+
+// ── Shared Chart Defaults ──────────────────────────────────────────────────
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#252a3a';
+Chart.defaults.font.family = 'Inter, sans-serif';
+Chart.defaults.font.size = 11;
+
+const COLORS = { HIT: '#22c55e', MISS: '#ef4444', NO_DATA: '#6b7280' };
+const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', NO_DATA: 'rgba(107,114,128,0.15)' };
+
+// ── 1. Entry Price vs Outcome Scatter ─────────────────────────────────────
+(function() {
+  const withData = RAW.filter(r => r.outcome !== 'NO_DATA' && r.entry_price !== null);
+  const datasets = ['HIT','MISS'].map(oc => ({
+    label: oc,
+    data: withData.filter(r => r.outcome === oc).map(r => ({
+      x: new Date(r.timestamp),
+      y: r.entry_price,
+      detail: r.detail,
+      symbol: r.symbol
+    })),
+    backgroundColor: ALPHA[oc],
+    borderColor: COLORS[oc],
+    borderWidth: 1.5,
+    pointRadius: 6,
+    pointHoverRadius: 9,
+  }));
+
+  new Chart(document.getElementById('scatterChart'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { type: 'time', time: { unit: 'hour', displayFormats: { hour: 'MM/dd HH:mm' } },
+               grid: { color: '#1c2030' }, ticks: { maxRotation: 30 } },
+        y: { grid: { color: '#1c2030' },
+               title: { display: true, text: 'Entry Price (USD)' },
+               ticks: { callback: v => '$' + v.toFixed(4) } }
+      },
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const d = ctx.raw;
+              const det = d.detail !== null
+                ? (ctx.dataset.label === 'HIT' ? `Hit in ${Math.round(d.detail)}m` : `Max +${d.detail.toFixed(3)}%`)
+                : '';
+              return ` ${d.symbol} · ${ctx.dataset.label} · ${d.y.toFixed(6)} · ${det}`;
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ── 2. Timeline Scatter ────────────────────────────────────────────────────
+(function() {
+  const symbols = [...new Set(RAW.map(r => r.symbol))].sort();
+  const symIndex = Object.fromEntries(symbols.map((s,i) => [s, i]));
+
+  const datasets = ['HIT','MISS','NO_DATA'].map(oc => ({
+    label: oc === 'NO_DATA' ? 'No Data' : oc,
+    data: RAW.filter(r => r.outcome === oc).map(r => ({
+      x: new Date(r.timestamp),
+      y: symIndex[r.symbol],
+      symbol: r.symbol
+    })),
+    backgroundColor: ALPHA[oc],
+    borderColor: COLORS[oc],
+    borderWidth: 1.5,
+    pointRadius: 7,
+    pointHoverRadius: 10,
+  }));
+
+  new Chart(document.getElementById('timelineChart'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { type: 'time', time: { unit: 'hour', displayFormats: { hour: 'MM/dd HH:mm' } },
+               grid: { color: '#1c2030' }, ticks: { maxRotation: 30 } },
+        y: { grid: { color: '#1c2030' },
+               ticks: { stepSize: 1, callback: v => symbols[v] || '' } }
+      },
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.raw.symbol} · ${ctx.dataset.label}` } }
+      }
+    }
+  });
+})();
+
+// ── 3. Minutes-to-Target Histogram ────────────────────────────────────────
+(function() {
+  const hitMinutes = RAW.filter(r => r.outcome === 'HIT' && r.detail !== null).map(r => r.detail);
+  const bins = [0,30,60,90,120,180,240,360,Infinity];
+  const labels = ['<30m','30-60m','60-90m','90-120m','120-180m','180-240m','240-360m','360m+'];
+  const counts = new Array(labels.length).fill(0);
+  hitMinutes.forEach(m => {
+    for (let i = 0; i < bins.length - 1; i++) {
+      if (m >= bins[i] && m < bins[i+1]) { counts[i]++; break; }
+    }
+  });
+
+  new Chart(document.getElementById('histChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Signals',
+        data: counts,
+        backgroundColor: counts.map((_,i) => i < 3 ? 'rgba(34,197,94,0.5)' : 'rgba(79,142,247,0.4)'),
+        borderColor:     counts.map((_,i) => i < 3 ? '#22c55e' : '#4f8ef7'),
+        borderWidth: 1.5, borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: '#1c2030' } },
+        y: { grid: { color: '#1c2030' }, ticks: { stepSize: 1 },
+               title: { display: true, text: '# of Signals' } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+})();
+
+// ── 4. Hit Rate by Symbol ─────────────────────────────────────────────────
+(function() {
+  const symbols = [...new Set(RAW.map(r => r.symbol))].sort();
+  const hits   = symbols.map(s => RAW.filter(r => r.symbol===s && r.outcome==='HIT').length);
+  const misses = symbols.map(s => RAW.filter(r => r.symbol===s && r.outcome==='MISS').length);
+  const nodata = symbols.map(s => RAW.filter(r => r.symbol===s && r.outcome==='NO_DATA').length);
+
+  new Chart(document.getElementById('symbolChart'), {
+    type: 'bar',
+    data: {
+      labels: symbols,
+      datasets: [
+        { label: 'HIT',     data: hits,   backgroundColor: 'rgba(34,197,94,0.55)',  borderColor: '#22c55e', borderWidth:1.5, borderRadius:4 },
+        { label: 'MISS',    data: misses, backgroundColor: 'rgba(239,68,68,0.55)',  borderColor: '#ef4444', borderWidth:1.5, borderRadius:4 },
+        { label: 'No Data', data: nodata, backgroundColor: 'rgba(107,114,128,0.4)', borderColor: '#6b7280', borderWidth:1.5, borderRadius:4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, grid: { color: '#1c2030' } },
+        y: { stacked: true, grid: { color: '#1c2030' }, ticks: { stepSize: 5 },
+               title: { display: true, text: '# of Signals' } }
+      },
+      plugins: { legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } } }
+    }
+  });
+})();
+
+// ── 5. Trades In Waiting Cards ────────────────────────────────────────────
+(function() {
+  const WAITING = [{"symbol": "AST", "timestamp": "2026-03-31T21:55:54+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T22:35:17+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:05:50+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:07:25+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:31:14+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:38:59+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:51:41+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-03-31T23:54:40+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-04-01T00:01:05+00:00", "entry_price": 0.007300000172108412, "target_price": 0.00737373, "live_price": 0.00730837, "pct_now": 0.1147, "pct_to_go": 0.8953}, {"symbol": "AST", "timestamp": "2026-04-01T03:39:16+00:00", "entry_price": 0.007306658662855625, "target_price": 0.00738046, "live_price": 0.00730837, "pct_now": 0.0234, "pct_to_go": 0.9866}, {"symbol": "AST", "timestamp": "2026-04-01T03:50:21+00:00", "entry_price": 0.007306658662855625, "target_price": 0.00738046, "live_price": 0.00730837, "pct_now": 0.0234, "pct_to_go": 0.9866}, {"symbol": "AST", "timestamp": "2026-04-01T04:15:30+00:00", "entry_price": 0.007308897562325001, "target_price": 0.00738272, "live_price": 0.00730837, "pct_now": -0.0072, "pct_to_go": 1.0172}, {"symbol": "AST", "timestamp": "2026-04-01T05:50:01+00:00", "entry_price": 0.007311682216823101, "target_price": 0.00738553, "live_price": 0.00730837, "pct_now": -0.0453, "pct_to_go": 1.0553}, {"symbol": "AST", "timestamp": "2026-04-01T06:09:56+00:00", "entry_price": 0.007312130182981491, "target_price": 0.00738598, "live_price": 0.00730837, "pct_now": -0.0514, "pct_to_go": 1.0614}];
+  const container = document.getElementById('waitingCards');
+
+  if (!WAITING.length) {
+    container.innerHTML = '<p style="color:var(--muted);font-size:.8rem;padding:12px 0;">No MISS signals found.</p>';
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'waiting-grid';
+
+  WAITING.forEach(w => {
+    const ts = new Date(w.timestamp);
+    const tsStr = ts.toLocaleString('en-US', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'UTC'}) + ' UTC';
+
+    const hasPrices = w.live_price !== null && w.entry_price !== null;
+    const pctNow    = w.pct_now   !== null ? w.pct_now   : null;
+    const pctToGo   = w.pct_to_go !== null ? w.pct_to_go : null;
+    // Progress: 0% = entry_price, 100% = target_price. Current = pct_now / TARGET
+    const TARGET    = 1.01;
+    const progress  = hasPrices ? Math.min(100, Math.max(0, (pctNow / TARGET) * 100)) : 0;
+    const barColor  = progress >= 80 ? '#22c55e' : progress >= 40 ? '#f59e0b' : '#ef4444';
+
+    const pricesHtml = hasPrices ? `
+      <div class="waiting-prices">
+        <div>
+          <div class="waiting-price-label">Entry</div>
+          <div class="waiting-price-val price-entry">$${w.entry_price.toFixed(6)}</div>
+        </div>
+        <div>
+          <div class="waiting-price-label">Live Now</div>
+          <div class="waiting-price-val price-live">$${w.live_price.toFixed(6)}</div>
+        </div>
+        <div>
+          <div class="waiting-price-label">Target</div>
+          <div class="waiting-price-val price-target">$${w.target_price.toFixed(6)}</div>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar" style="width:${progress.toFixed(1)}%;background:${barColor};"></div>
+      </div>
+      <div class="progress-label">
+        <span>Now: ${pctNow >= 0 ? '+' : ''}${pctNow.toFixed(4)}%</span>
+        <span>Still needs: +${pctToGo.toFixed(4)}%</span>
+        <span>Target: +${TARGET}%</span>
+      </div>` : `<div class="waiting-na">Live price unavailable</div>`;
+
+    grid.innerHTML += `
+      <div class="waiting-item">
+        <div class="waiting-header">
+          <div class="waiting-sym">${w.symbol}</div>
+          <div class="waiting-time">Signal: ${tsStr}</div>
+        </div>
+        ${pricesHtml}
+      </div>`;
+  });
+
+  container.appendChild(grid);
+})();
+</script>
+</body>
+</html>
