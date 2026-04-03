@@ -1,5 +1,75 @@
 [
   {
+    "symbol": "KARRAT",
+    "tier": "Generalist",
+    "probability": 0.702258064516129,
+    "threshold": 0.75,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-02 23:39:17,076",
+    "count": 31
+  },
+  {
+    "symbol": "KARRAT",
+    "tier": "Crash",
+    "probability": 0.022258064516129033,
+    "threshold": 0.35,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-02 23:39:01,939",
+    "count": 31
+  },
+  {
+    "symbol": "KARRAT",
+    "tier": "Imbalance",
+    "probability": 1.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-02 23:38:58,676",
+    "count": 31
+  },
+  {
+    "symbol": "KARRAT",
+    "tier": "Directional",
+    "probability": 0.9980645161290324,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-02 23:38:58,214",
+    "count": 31
+  },
+  {
+    "symbol": "DESO",
+    "tier": "Directional",
+    "probability": 0.036714678468562675,
+    "threshold": 0.7841959183673469,
+    "accuracy": 0.9802448979591836,
+    "passed": 0.0,
+    "last_seen": "2026-04-02 23:36:03,609",
+    "count": 26
+  },
+  {
+    "symbol": "LCX",
+    "tier": "Directional",
+    "probability": 0.07037037037037037,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-02 23:36:03,519",
+    "count": 27
+  },
+  {
+    "symbol": "TIME",
+    "tier": "Directional",
+    "probability": 0.15555555555555556,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-02 23:36:03,262",
+    "count": 27
+  },
+  {
     "symbol": "ENJ",
     "tier": "Directional",
     "probability": 5.575689991636465e-06,
@@ -20,16 +90,6 @@
     "count": 20
   },
   {
-    "symbol": "KARRAT",
-    "tier": "Generalist",
-    "probability": 0.7066666666666667,
-    "threshold": 0.75,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-02 23:19:15,907",
-    "count": 30
-  },
-  {
     "symbol": "C00",
     "tier": "Crash",
     "probability": 0.9745454545454546,
@@ -38,16 +98,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-02 23:19:15,783",
     "count": 22
-  },
-  {
-    "symbol": "KARRAT",
-    "tier": "Crash",
-    "probability": 0.022000000000000002,
-    "threshold": 0.35,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-02 23:19:10,904",
-    "count": 30
   },
   {
     "symbol": "C00",
@@ -68,26 +118,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-02 23:19:10,473",
     "count": 22
-  },
-  {
-    "symbol": "KARRAT",
-    "tier": "Imbalance",
-    "probability": 1.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-02 23:19:10,168",
-    "count": 30
-  },
-  {
-    "symbol": "KARRAT",
-    "tier": "Directional",
-    "probability": 0.998,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-02 23:19:09,949",
-    "count": 30
   },
   {
     "symbol": "AUCTION",
@@ -698,16 +728,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-02 22:39:49,413",
     "count": 20
-  },
-  {
-    "symbol": "LCX",
-    "tier": "Directional",
-    "probability": 0.07038461538461539,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-02 22:39:49,351",
-    "count": 26
   },
   {
     "symbol": "MSOL",
@@ -2720,16 +2740,6 @@
     "count": 23
   },
   {
-    "symbol": "DESO",
-    "tier": "Directional",
-    "probability": 0.038181186454503864,
-    "threshold": 0.7841959183673469,
-    "accuracy": 0.9802448979591836,
-    "passed": 0.0,
-    "last_seen": "2026-04-02 19:34:34,375",
-    "count": 25
-  },
-  {
     "symbol": "SUSHI",
     "tier": "Directional",
     "probability": 0.030416666666666665,
@@ -2978,16 +2988,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-02 19:16:37,492",
     "count": 21
-  },
-  {
-    "symbol": "TIME",
-    "tier": "Directional",
-    "probability": 0.1553846153846154,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-02 19:12:18,187",
-    "count": 26
   },
   {
     "symbol": "SPELL",
