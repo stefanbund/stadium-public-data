@@ -1,5 +1,455 @@
 [
   {
+    "symbol": "CLV",
+    "tier": "Generalist",
+    "probability": 0.7814285714285715,
+    "threshold": 0.6391820580474933,
+    "accuracy": 0.8522427440633246,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:39:40,501",
+    "count": 7
+  },
+  {
+    "symbol": "CLV",
+    "tier": "Crash",
+    "probability": 0.0,
+    "threshold": 0.35,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:39:39,596",
+    "count": 7
+  },
+  {
+    "symbol": "CLV",
+    "tier": "Imbalance",
+    "probability": 0.9448072772599071,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:39:38,715",
+    "count": 7
+  },
+  {
+    "symbol": "JTO",
+    "tier": "Directional",
+    "probability": 0.20000000000000004,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:39:37,028",
+    "count": 6
+  },
+  {
+    "symbol": "BNKR",
+    "tier": "Directional",
+    "probability": 0.3,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:39:37,022",
+    "count": 6
+  },
+  {
+    "symbol": "MDT",
+    "tier": "Directional",
+    "probability": 0.03,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:39:36,871",
+    "count": 14
+  },
+  {
+    "symbol": "CLV",
+    "tier": "Directional",
+    "probability": 0.99,
+    "threshold": 0.7707582454947298,
+    "accuracy": 0.9634478068684119,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:39:36,353",
+    "count": 7
+  },
+  {
+    "symbol": "IMX",
+    "tier": "Imbalance",
+    "probability": 0.0,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:06,041",
+    "count": 12
+  },
+  {
+    "symbol": "G",
+    "tier": "Directional",
+    "probability": 0.13,
+    "threshold": 0.7676907829534193,
+    "accuracy": 0.959613478691774,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:05,791",
+    "count": 10
+  },
+  {
+    "symbol": "IMX",
+    "tier": "Directional",
+    "probability": 0.88,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:38:05,664",
+    "count": 12
+  },
+  {
+    "symbol": "API3",
+    "tier": "Directional",
+    "probability": 0.058333333333333334,
+    "threshold": 0.7688750555802579,
+    "accuracy": 0.9610938194753224,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:05,489",
+    "count": 18
+  },
+  {
+    "symbol": "KNC",
+    "tier": "Directional",
+    "probability": 0.11,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:05,460",
+    "count": 8
+  },
+  {
+    "symbol": "CRV",
+    "tier": "Directional",
+    "probability": 0.04,
+    "threshold": 0.7834697855750488,
+    "accuracy": 0.979337231968811,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:05,197",
+    "count": 9
+  },
+  {
+    "symbol": "ZRO",
+    "tier": "Directional",
+    "probability": 0.036,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:38:05,188",
+    "count": 10
+  },
+  {
+    "symbol": "C00",
+    "tier": "Crash",
+    "probability": 0.9800000000000001,
+    "threshold": 0.35,
+    "accuracy": 0.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:37,583",
+    "count": 10
+  },
+  {
+    "symbol": "DEXT",
+    "tier": "Directional",
+    "probability": 0.29,
+    "threshold": 0.7346938775510206,
+    "accuracy": 0.9183673469387756,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:36,335",
+    "count": 5
+  },
+  {
+    "symbol": "FLUID",
+    "tier": "Directional",
+    "probability": 0.34,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:36,299",
+    "count": 7
+  },
+  {
+    "symbol": "FET",
+    "tier": "Directional",
+    "probability": 0.05,
+    "threshold": 0.7707213578500708,
+    "accuracy": 0.9634016973125884,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:35,993",
+    "count": 15
+  },
+  {
+    "symbol": "C00",
+    "tier": "Imbalance",
+    "probability": 1.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:36:35,753",
+    "count": 10
+  },
+  {
+    "symbol": "DOOD",
+    "tier": "Directional",
+    "probability": 0.63,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:35,712",
+    "count": 10
+  },
+  {
+    "symbol": "RPL",
+    "tier": "Directional",
+    "probability": 0.01,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:36:35,602",
+    "count": 10
+  },
+  {
+    "symbol": "C00",
+    "tier": "Directional",
+    "probability": 0.99,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:36:35,527",
+    "count": 10
+  },
+  {
+    "symbol": "TRAC",
+    "tier": "Generalist",
+    "probability": 0.35500000000000004,
+    "threshold": 0.75,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:33:27,577",
+    "count": 10
+  },
+  {
+    "symbol": "TRAC",
+    "tier": "Crash",
+    "probability": 0.0,
+    "threshold": 0.35,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:33:26,145",
+    "count": 10
+  },
+  {
+    "symbol": "TRAC",
+    "tier": "Imbalance",
+    "probability": 1.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:33:24,846",
+    "count": 10
+  },
+  {
+    "symbol": "TRAC",
+    "tier": "Directional",
+    "probability": 1.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:33:24,281",
+    "count": 10
+  },
+  {
+    "symbol": "ELSA",
+    "tier": "Directional",
+    "probability": 0.8146153846153846,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:33:23,702",
+    "count": 13
+  },
+  {
+    "symbol": "VTHO",
+    "tier": "Directional",
+    "probability": 0.03,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:33:23,409",
+    "count": 16
+  },
+  {
+    "symbol": "STRK",
+    "tier": "Crash",
+    "probability": 0.94,
+    "threshold": 0.3499999999999999,
+    "accuracy": 0.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:30:27,175",
+    "count": 12
+  },
+  {
+    "symbol": "STRK",
+    "tier": "Imbalance",
+    "probability": 0.9954166666666667,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:30:25,662",
+    "count": 12
+  },
+  {
+    "symbol": "COSMOSDYDX",
+    "tier": "Directional",
+    "probability": 0.56,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:30:23,799",
+    "count": 14
+  },
+  {
+    "symbol": "SUSHI",
+    "tier": "Directional",
+    "probability": 0.03,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:30:23,445",
+    "count": 7
+  },
+  {
+    "symbol": "STRK",
+    "tier": "Directional",
+    "probability": 0.9499999999999998,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:30:23,408",
+    "count": 12
+  },
+  {
+    "symbol": "PAX",
+    "tier": "Directional",
+    "probability": 0.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:30:22,690",
+    "count": 11
+  },
+  {
+    "symbol": "ADA",
+    "tier": "Directional",
+    "probability": 0.01,
+    "threshold": 0.7883590386397079,
+    "accuracy": 0.9854487982996348,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:28:54,165",
+    "count": 8
+  },
+  {
+    "symbol": "IRYS",
+    "tier": "Directional",
+    "probability": 0.8100000000000002,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:28:53,538",
+    "count": 5
+  },
+  {
+    "symbol": "ZRX",
+    "tier": "Directional",
+    "probability": 0.019285714285714288,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:27:15,998",
+    "count": 14
+  },
+  {
+    "symbol": "OMNI",
+    "tier": "Generalist",
+    "probability": 0.63,
+    "threshold": 0.75,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:25:48,635",
+    "count": 10
+  },
+  {
+    "symbol": "OMNI",
+    "tier": "Crash",
+    "probability": 0.1,
+    "threshold": 0.35,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:25:46,947",
+    "count": 10
+  },
+  {
+    "symbol": "OMNI",
+    "tier": "Imbalance",
+    "probability": 1.0,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:25:45,434",
+    "count": 10
+  },
+  {
+    "symbol": "OMNI",
+    "tier": "Directional",
+    "probability": 0.9200000000000002,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 01:25:44,644",
+    "count": 10
+  },
+  {
+    "symbol": "OXT",
+    "tier": "Directional",
+    "probability": 0.14,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:25:44,433",
+    "count": 12
+  },
+  {
+    "symbol": "DYP",
+    "tier": "Directional",
+    "probability": 0.16399999999999998,
+    "threshold": 0.75725677830941,
+    "accuracy": 0.9465709728867624,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:25:44,308",
+    "count": 8
+  },
+  {
+    "symbol": "AUCTION",
+    "tier": "Directional",
+    "probability": 0.07,
+    "threshold": 0.7764546071994567,
+    "accuracy": 0.9705682589993208,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:24:25,103",
+    "count": 5
+  },
+  {
+    "symbol": "SUI",
+    "tier": "Directional",
+    "probability": 0.04,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 01:24:24,718",
+    "count": 11
+  },
+  {
     "symbol": "PLU",
     "tier": "Imbalance",
     "probability": 0.0,
@@ -260,16 +710,6 @@
     "count": 12
   },
   {
-    "symbol": "DYP",
-    "tier": "Directional",
-    "probability": 0.16399999999999998,
-    "threshold": 0.75725677830941,
-    "accuracy": 0.9465709728867624,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 01:11:50,365",
-    "count": 7
-  },
-  {
     "symbol": "HYPE",
     "tier": "Directional",
     "probability": 0.3971428571428572,
@@ -480,16 +920,6 @@
     "count": 7
   },
   {
-    "symbol": "TRAC",
-    "tier": "Generalist",
-    "probability": 0.3566666666666667,
-    "threshold": 0.75,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 01:01:12,085",
-    "count": 9
-  },
-  {
     "symbol": "SUKU",
     "tier": "Imbalance",
     "probability": 1.0,
@@ -498,16 +928,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-04 01:01:11,910",
     "count": 7
-  },
-  {
-    "symbol": "TRAC",
-    "tier": "Crash",
-    "probability": 0.0,
-    "threshold": 0.35,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-04 01:01:10,444",
-    "count": 9
   },
   {
     "symbol": "ALCX",
@@ -520,16 +940,6 @@
     "count": 10
   },
   {
-    "symbol": "TRAC",
-    "tier": "Imbalance",
-    "probability": 1.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-04 01:01:09,011",
-    "count": 9
-  },
-  {
     "symbol": "ALCX",
     "tier": "Imbalance",
     "probability": 1.0,
@@ -538,16 +948,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-04 01:01:08,650",
     "count": 10
-  },
-  {
-    "symbol": "TRAC",
-    "tier": "Directional",
-    "probability": 1.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-04 01:01:08,291",
-    "count": 9
   },
   {
     "symbol": "SUKU",
@@ -750,16 +1150,6 @@
     "count": 10
   },
   {
-    "symbol": "ZRO",
-    "tier": "Directional",
-    "probability": 0.04,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 00:50:29,021",
-    "count": 8
-  },
-  {
     "symbol": "PRIME",
     "tier": "Directional",
     "probability": 0.97,
@@ -848,16 +1238,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-04 00:45:57,870",
     "count": 11
-  },
-  {
-    "symbol": "BNKR",
-    "tier": "Directional",
-    "probability": 0.3,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 00:45:57,771",
-    "count": 5
   },
   {
     "symbol": "BAL",
@@ -1580,16 +1960,6 @@
     "count": 9
   },
   {
-    "symbol": "OXT",
-    "tier": "Directional",
-    "probability": 0.14,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 00:12:27,188",
-    "count": 11
-  },
-  {
     "symbol": "HBAR",
     "tier": "Directional",
     "probability": 0.0,
@@ -1598,16 +1968,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-04 00:10:59,071",
     "count": 6
-  },
-  {
-    "symbol": "COSMOSDYDX",
-    "tier": "Directional",
-    "probability": 0.56,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 00:07:58,983",
-    "count": 13
   },
   {
     "symbol": "SAND",
@@ -1678,16 +2038,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-04 00:06:20,803",
     "count": 10
-  },
-  {
-    "symbol": "ELSA",
-    "tier": "Directional",
-    "probability": 0.8150000000000001,
-    "threshold": 0.8000000000000002,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-04 00:06:20,697",
-    "count": 12
   },
   {
     "symbol": "TIME",
@@ -2090,16 +2440,6 @@
     "count": 9
   },
   {
-    "symbol": "MDT",
-    "tier": "Directional",
-    "probability": 0.030000000000000002,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:40:19,750",
-    "count": 13
-  },
-  {
     "symbol": "MUSE",
     "tier": "Crash",
     "probability": 1.0,
@@ -2270,66 +2610,6 @@
     "count": 12
   },
   {
-    "symbol": "PAX",
-    "tier": "Directional",
-    "probability": 0.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:30:58,376",
-    "count": 10
-  },
-  {
-    "symbol": "CLV",
-    "tier": "Generalist",
-    "probability": 0.7816666666666667,
-    "threshold": 0.6391820580474934,
-    "accuracy": 0.8522427440633246,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:29:27,259",
-    "count": 6
-  },
-  {
-    "symbol": "CLV",
-    "tier": "Crash",
-    "probability": 0.0,
-    "threshold": 0.3499999999999999,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:29:26,593",
-    "count": 6
-  },
-  {
-    "symbol": "CLV",
-    "tier": "Imbalance",
-    "probability": 0.944807277259907,
-    "threshold": 0.8000000000000002,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:29:25,875",
-    "count": 6
-  },
-  {
-    "symbol": "G",
-    "tier": "Directional",
-    "probability": 0.13,
-    "threshold": 0.7676907829534193,
-    "accuracy": 0.9596134786917739,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:29:22,410",
-    "count": 9
-  },
-  {
-    "symbol": "CLV",
-    "tier": "Directional",
-    "probability": 0.9899999999999999,
-    "threshold": 0.7707582454947297,
-    "accuracy": 0.963447806868412,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:29:21,023",
-    "count": 6
-  },
-  {
     "symbol": "SUPER",
     "tier": "Generalist",
     "probability": 0.43,
@@ -2468,16 +2748,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-03 23:24:40,673",
     "count": 8
-  },
-  {
-    "symbol": "DOOD",
-    "tier": "Directional",
-    "probability": 0.63,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:24:40,607",
-    "count": 9
   },
   {
     "symbol": "AVAX",
@@ -2670,26 +2940,6 @@
     "count": 8
   },
   {
-    "symbol": "CRV",
-    "tier": "Directional",
-    "probability": 0.04,
-    "threshold": 0.7834697855750488,
-    "accuracy": 0.979337231968811,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:07:43,430",
-    "count": 8
-  },
-  {
-    "symbol": "C00",
-    "tier": "Crash",
-    "probability": 0.98,
-    "threshold": 0.35,
-    "accuracy": 0.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:06:17,327",
-    "count": 9
-  },
-  {
     "symbol": "ELA",
     "tier": "Imbalance",
     "probability": 0.0,
@@ -2700,16 +2950,6 @@
     "count": 8
   },
   {
-    "symbol": "C00",
-    "tier": "Imbalance",
-    "probability": 1.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:06:12,318",
-    "count": 9
-  },
-  {
     "symbol": "ELA",
     "tier": "Directional",
     "probability": 1.0,
@@ -2718,16 +2958,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-03 23:06:11,938",
     "count": 8
-  },
-  {
-    "symbol": "C00",
-    "tier": "Directional",
-    "probability": 0.99,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 23:06:11,678",
-    "count": 9
   },
   {
     "symbol": "FLOKI",
@@ -2758,26 +2988,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-03 23:01:28,307",
     "count": 8
-  },
-  {
-    "symbol": "KNC",
-    "tier": "Directional",
-    "probability": 0.11,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 23:01:27,887",
-    "count": 7
-  },
-  {
-    "symbol": "ZRX",
-    "tier": "Directional",
-    "probability": 0.019230769230769232,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:58:21,257",
-    "count": 13
   },
   {
     "symbol": "COMP",
@@ -2850,16 +3060,6 @@
     "count": 11
   },
   {
-    "symbol": "RPL",
-    "tier": "Directional",
-    "probability": 0.01,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:47:35,454",
-    "count": 9
-  },
-  {
     "symbol": "ACS",
     "tier": "Directional",
     "probability": 0.03,
@@ -2900,16 +3100,6 @@
     "count": 8
   },
   {
-    "symbol": "AUCTION",
-    "tier": "Directional",
-    "probability": 0.07,
-    "threshold": 0.7764546071994567,
-    "accuracy": 0.9705682589993208,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:41:16,118",
-    "count": 4
-  },
-  {
     "symbol": "STORJ",
     "tier": "Directional",
     "probability": 0.07,
@@ -2918,16 +3108,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-03 22:41:15,863",
     "count": 6
-  },
-  {
-    "symbol": "SUI",
-    "tier": "Directional",
-    "probability": 0.04,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:39:44,947",
-    "count": 10
   },
   {
     "symbol": "CELR",
@@ -2970,26 +3150,6 @@
     "count": 5
   },
   {
-    "symbol": "IMX",
-    "tier": "Imbalance",
-    "probability": 0.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:31:59,000",
-    "count": 11
-  },
-  {
-    "symbol": "IMX",
-    "tier": "Directional",
-    "probability": 0.88,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 22:31:58,745",
-    "count": 11
-  },
-  {
     "symbol": "LRC",
     "tier": "Directional",
     "probability": 0.15,
@@ -3008,16 +3168,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-03 22:24:16,245",
     "count": 8
-  },
-  {
-    "symbol": "IRYS",
-    "tier": "Directional",
-    "probability": 0.81,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 22:24:15,933",
-    "count": 4
   },
   {
     "symbol": "HONEY",
@@ -3130,16 +3280,6 @@
     "count": 9
   },
   {
-    "symbol": "API3",
-    "tier": "Directional",
-    "probability": 0.05999999999999999,
-    "threshold": 0.7688750555802579,
-    "accuracy": 0.9610938194753224,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 22:07:04,147",
-    "count": 15
-  },
-  {
     "symbol": "GIGA",
     "tier": "Directional",
     "probability": 0.26,
@@ -3168,16 +3308,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-03 21:59:22,632",
     "count": 7
-  },
-  {
-    "symbol": "VTHO",
-    "tier": "Directional",
-    "probability": 0.029999999999999995,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 21:59:22,326",
-    "count": 15
   },
   {
     "symbol": "FORTH",
@@ -3280,16 +3410,6 @@
     "count": 12
   },
   {
-    "symbol": "FET",
-    "tier": "Directional",
-    "probability": 0.05,
-    "threshold": 0.7707213578500708,
-    "accuracy": 0.9634016973125884,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 21:37:33,121",
-    "count": 13
-  },
-  {
     "symbol": "COOKIE",
     "tier": "Directional",
     "probability": 0.89,
@@ -3390,16 +3510,6 @@
     "count": 8
   },
   {
-    "symbol": "SUSHI",
-    "tier": "Directional",
-    "probability": 0.03,
-    "threshold": 0.8000000000000002,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 20:55:02,609",
-    "count": 6
-  },
-  {
     "symbol": "ETC",
     "tier": "Directional",
     "probability": 0.0,
@@ -3480,16 +3590,6 @@
     "count": 11
   },
   {
-    "symbol": "FLUID",
-    "tier": "Directional",
-    "probability": 0.34,
-    "threshold": 0.8000000000000002,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 20:42:38,501",
-    "count": 6
-  },
-  {
     "symbol": "IDEX",
     "tier": "Directional",
     "probability": 0.88,
@@ -3548,46 +3648,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-03 20:37:52,271",
     "count": 4
-  },
-  {
-    "symbol": "OMNI",
-    "tier": "Generalist",
-    "probability": 0.63,
-    "threshold": 0.75,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 20:31:37,686",
-    "count": 9
-  },
-  {
-    "symbol": "OMNI",
-    "tier": "Crash",
-    "probability": 0.1,
-    "threshold": 0.35,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 20:31:36,081",
-    "count": 9
-  },
-  {
-    "symbol": "OMNI",
-    "tier": "Imbalance",
-    "probability": 1.0,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 20:31:33,447",
-    "count": 9
-  },
-  {
-    "symbol": "OMNI",
-    "tier": "Directional",
-    "probability": 0.9200000000000002,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 20:31:32,538",
-    "count": 9
   },
   {
     "symbol": "AXL",
@@ -3730,36 +3790,6 @@
     "count": 3
   },
   {
-    "symbol": "STRK",
-    "tier": "Crash",
-    "probability": 0.94,
-    "threshold": 0.35,
-    "accuracy": 0.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 19:54:03,658",
-    "count": 11
-  },
-  {
-    "symbol": "STRK",
-    "tier": "Imbalance",
-    "probability": 0.995,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 19:54:02,341",
-    "count": 11
-  },
-  {
-    "symbol": "STRK",
-    "tier": "Directional",
-    "probability": 0.95,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-03 19:54:00,209",
-    "count": 11
-  },
-  {
     "symbol": "ENS",
     "tier": "Directional",
     "probability": 0.0,
@@ -3778,16 +3808,6 @@
     "passed": 0.0,
     "last_seen": "2026-04-03 19:50:56,851",
     "count": 3
-  },
-  {
-    "symbol": "ADA",
-    "tier": "Directional",
-    "probability": 0.01,
-    "threshold": 0.7883590386397079,
-    "accuracy": 0.9854487982996348,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 19:46:13,898",
-    "count": 7
   },
   {
     "symbol": "AKT",
@@ -4020,16 +4040,6 @@
     "count": 5
   },
   {
-    "symbol": "JTO",
-    "tier": "Directional",
-    "probability": 0.2,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 17:07:40,860",
-    "count": 4
-  },
-  {
     "symbol": "CORECHAIN",
     "tier": "Directional",
     "probability": 0.24,
@@ -4087,16 +4097,6 @@
     "accuracy": 1.0,
     "passed": 1.0,
     "last_seen": "2026-04-03 13:38:21,020",
-    "count": 4
-  },
-  {
-    "symbol": "DEXT",
-    "tier": "Directional",
-    "probability": 0.29,
-    "threshold": 0.7346938775510206,
-    "accuracy": 0.9183673469387756,
-    "passed": 0.0,
-    "last_seen": "2026-04-03 13:21:05,128",
     "count": 4
   }
 ]
