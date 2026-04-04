@@ -1,5 +1,25 @@
 [
   {
+    "symbol": "AVAX",
+    "tier": "Directional",
+    "probability": 0.2700000000000001,
+    "threshold": 0.7781101141021379,
+    "accuracy": 0.9726376426276724,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 09:09:26,750",
+    "count": 15
+  },
+  {
+    "symbol": "C2Z",
+    "tier": "Directional",
+    "probability": 0.97,
+    "threshold": 0.8,
+    "accuracy": 1.0,
+    "passed": 1.0,
+    "last_seen": "2026-04-04 09:09:26,745",
+    "count": 8
+  },
+  {
     "symbol": "BOBA",
     "tier": "Directional",
     "probability": 0.13,
@@ -2720,16 +2740,6 @@
     "count": 12
   },
   {
-    "symbol": "AVAX",
-    "tier": "Directional",
-    "probability": 0.27,
-    "threshold": 0.7781101141021379,
-    "accuracy": 0.9726376426276724,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 02:25:48,110",
-    "count": 14
-  },
-  {
     "symbol": "LRC",
     "tier": "Directional",
     "probability": 0.15,
@@ -3217,16 +3227,6 @@
     "accuracy": 1.0,
     "passed": 0.0,
     "last_seen": "2026-04-04 01:02:39,106",
-    "count": 7
-  },
-  {
-    "symbol": "C2Z",
-    "tier": "Directional",
-    "probability": 0.97,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 1.0,
-    "last_seen": "2026-04-04 01:00:02,243",
     "count": 7
   },
   {
