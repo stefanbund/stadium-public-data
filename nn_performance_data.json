@@ -1,5 +1,15 @@
 [
   {
+    "symbol": "EOS",
+    "tier": "Directional",
+    "probability": 0.05,
+    "threshold": 0.7856509812196666,
+    "accuracy": 0.9820637265245832,
+    "passed": 0.0,
+    "last_seen": "2026-04-04 07:32:10,708",
+    "count": 11
+  },
+  {
     "symbol": "AST",
     "tier": "Specialist",
     "probability": 0.670625,
@@ -3258,16 +3268,6 @@
     "passed": 1.0,
     "last_seen": "2026-04-04 00:45:57,494",
     "count": 11
-  },
-  {
-    "symbol": "EOS",
-    "tier": "Directional",
-    "probability": 0.05,
-    "threshold": 0.7856509812196666,
-    "accuracy": 0.9820637265245832,
-    "passed": 0.0,
-    "last_seen": "2026-04-04 00:45:57,244",
-    "count": 10
   },
   {
     "symbol": "LOKA",
