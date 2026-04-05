@@ -321,7 +321,7 @@
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
                     tooltip: { 
                         shared: true,
-                        intersect: false,
+                        intersect: true,
                         custom: function({series, seriesIndex, dataPointIndex, w}) {
                             const sym = w.config.xaxis.categories[dataPointIndex];
                             const symbolData = data.filter(d => d.symbol === sym);
@@ -333,8 +333,9 @@
                                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">`;
                             
                             series.forEach((s, i) => {
-                                if (s[dataPointIndex] > 0) {
-                                    const d = w.config.series[i].data[dataPointIndex];
+                                const d = w.config.series[i].data[dataPointIndex];
+                                // Ensure we have data for this point; if undefined, skip gracefully
+                                if (d) {
                                     html += `<div class="d-flex justify-content-between small mb-1">
                                         <span><span style="color:${w.config.colors[i]}">●</span> ${w.config.series[i].name}</span>
                                         <span class="ml-2">
