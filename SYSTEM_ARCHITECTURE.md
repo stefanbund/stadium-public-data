@@ -458,11 +458,17 @@ The system is designed for seamless migration between MacOS workstations (e.g., 
    pip install -r requirements.txt
    ```
 3. **Verify Configuration**:
-   Update `config.json` if the external data volume (`data_root_i71`) is mounted at a different location.
+   Update `config.json` if the external data volume (`data_root_i71`) is mounted at a different location. Or if the new exchange uses a different suffix (e.g., `-USDT`).
 4. **Launch the Watchdog**:
    ```bash
    python3 guardian.py
    ```
 
-### 15.4 Workspace Maintenance
+### 15.4 Symbol & Exchange Adaptation
+The MLOps pipeline is designed to be **symbol-agnostic**. When deploying to a machine sampling a new exchange (e.g., with different symbol names or suffixes like `-USDT`):
+- **Retraining Required**: The Bayesian accuracy priors and `.joblib` models from the previous exchange will not be valid for the new data distribution. A full retraining sweep is necessary.
+- **Config Update**: Update the `quote_currency_suffix` in `config.json` to match the new exchange's naming convention.
+- **Data Integrity**: Ensure the new sampler produces CSVs that match the expected schema (Timestamp, Price, LOB levels).
+
+### 15.5 Workspace Maintenance
 Legacy scripts and test files have been moved to `SCRIPTS_ARCHIVE/` to maintain a clean project root, facilitating easier navigation on the new host.
