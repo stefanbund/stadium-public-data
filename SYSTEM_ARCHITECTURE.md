@@ -424,3 +424,45 @@ The "Waterfall" hierarchical logic requires a complete 5-layer stack of `.joblib
 ### Resolution Strategy
 - **Continued Sampling**: Allow the LOB sampler to continue gathering history. As time passes, more high-resolution "Surge/Crash" events will naturally occur and be captured for these symbols.
 - **Periodic Retraining Sweeps**: Retraining the `imbalance_preprocessor.py` for the whole portfolio every few days allows the system to "discover" newly matured symbols that now have enough history for high-fidelity modeling.
+
+---
+
+## 15. Machine Migration & Remote Synchronization (RSYNC) [NEW]
+
+The system is designed for seamless migration between MacOS workstations (e.g., migrating from an M4 Laptop to another Mac) using `rsync` instead of Git. This workflow prioritizes data economy and path portability.
+
+### 15.1 Path Portability & Rationalization
+- **Dynamic Root Detection**: The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/guardian.py) and core scripts have been refactored to use dynamic path resolution (`os.path.abspath(__file__)`). This ensures the workspace remains functional regardless of the default username or absolute path on the target machine.
+- **Workspace Economy**: To minimize transfer time, the migration utilizes a strict exclusion policy defined in `.rsync_exclude`. This skips massive log files, local virtual environments, and temporary caches.
+
+### 15.2 Deployment Artifacts
+- **Deployment Manifest**: [`deployment_manifest.json`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/deployment_manifest.json)
+    - *Role*: A system-level blueprint for Antigravity or a human admin. It defines the required directory structure, essential environment variables (Twilio SID/Tokens), and the Python dependency stack.
+- **Dependency Map**: [`requirements.txt`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/requirements.txt)
+    - *Role*: A consolidated list of all Python packages and versions required to rebuild the environment on the target Mac.
+- **Rsync Exclude List**: [`.rsync_exclude`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/.rsync_exclude)
+    - *Role*: Filters out `venv/`, `__pycache__`, and `watchdog_*.log` files to ensure a lean, fast synchronization.
+
+### 15.3 Migration Procedure (Step-by-Step)
+
+1. **Perform the Initial Sync**:
+   Execute the following command from the project root on the source machine:
+   ```bash
+   rsync -avz --progress --exclude-from='.rsync_exclude' ./ user@remote-mac:~/Developer/LAPTOP_PREPROCESSOR_MODELER
+   ```
+2. **Setup the Virtual Environment**:
+   On the target machine, initialize a fresh environment to ensure architecture compatibility:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+3. **Verify Configuration**:
+   Update `config.json` if the external data volume (`data_root_i71`) is mounted at a different location.
+4. **Launch the Watchdog**:
+   ```bash
+   python3 guardian.py
+   ```
+
+### 15.4 Workspace Maintenance
+Legacy scripts and test files have been moved to `SCRIPTS_ARCHIVE/` to maintain a clean project root, facilitating easier navigation on the new host.
