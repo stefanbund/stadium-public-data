@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,7 +87,7 @@
             width: 100%;
             height: auto;
             border-radius: 1rem;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease;
             cursor: zoom-in;
         }
@@ -110,9 +111,11 @@
         }
     </style>
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark border-bottom mb-4" style="background: #0f172a; border-color: rgba(255,255,255,0.1) !important;">
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom mb-4"
+        style="background: #0f172a; border-color: rgba(255,255,255,0.1) !important;">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="index.html">
                 <span style="color: #38bdf8;">METASTADIUM</span>
@@ -124,17 +127,27 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active fw-bold text-info" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active fw-bold text-info" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Intelligence Portals
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" style="background: #1e293b; border: 1px solid rgba(255,255,255,0.1);">
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            style="background: #1e293b; border: 1px solid rgba(255,255,255,0.1);">
                             <li><a class="dropdown-item" href="coinbase_log_dashboard.html">Coinbase Overview</a></li>
                             <li><a class="dropdown-item" href="bot_symbol_activity.html">Symbol Activity Index</a></li>
-                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html">Strategy Efficiency</a></li>
-                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html">Model Accuracy</a></li>
-                            <li><a class="dropdown-item" href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html">Transactions</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html">Strategy
+                                    Efficiency</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html">Model
+                                    Accuracy</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html">Transactions</a>
+                            </li>
                             <li><a class="dropdown-item" href="guardian_status.html">Guardian Status</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item active" href="nn_performance.html">NN Charts</a></li>
                         </ul>
                     </li>
@@ -147,20 +160,20 @@
         <div class="container">
             <h1>Neural Network Analytics</h1>
             <p class="description mx-auto" style="max-width: 600px;">
-                Real-time performance diagnostics for the METASTADIUM Directional Prediction engine. 
+                Real-time performance diagnostics for the METASTADIUM Directional Prediction engine.
                 Visualizing cross-symbol accuracy and confidence calibrartion.
             </p>
         </div>
     </div>
 
     <div class="metric-container">
-        
+
         <div class="chart-card">
             <div class="chart-title">
                 Model Confidence vs. Accuracy Calibration
             </div>
             <p class="description">
-                Interactive scatter plot identifying over/under-confident symbols. 
+                Interactive scatter plot identifying over/under-confident symbols.
                 Hover over points for specific symbol metrics.
             </p>
             <div id="calibration-chart" style="min-height: 500px;"></div>
@@ -171,7 +184,7 @@
                 Symbol Prediction Probability Distribution (Horizontal)
             </div>
             <p class="description">
-                Interactive performance ranking across the entire portfolio. 
+                Interactive performance ranking across the entire portfolio.
                 Search or scroll to find specific symbol-tier reliability.
             </p>
             <div id="accuracy-chart" style="min-height: 800px;"></div>
@@ -185,7 +198,7 @@
             try {
                 const response = await fetch('nn_performance_data.json');
                 const data = await response.json();
-                
+
                 // --- 1. Calibration Bubble Chart (Categorical) ---
                 const tiers = [...new Set(data.map(item => item.tier))];
                 const bubbleSeries = tiers.map(tier => ({
@@ -200,25 +213,25 @@
 
                 const bubbleOptions = {
                     series: bubbleSeries,
-                    chart: { 
-                        type: 'bubble', 
-                        height: 600, 
-                        zoom: { enabled: true }, 
-                        background: 'transparent', 
+                    chart: {
+                        type: 'bubble',
+                        height: 600,
+                        zoom: { enabled: true },
+                        background: 'transparent',
                         foreColor: '#94a3b8',
                         toolbar: { show: true }
                     },
                     dataLabels: { enabled: false },
                     fill: { opacity: 0.7 },
                     theme: { mode: 'dark', palette: 'palette1' },
-                    xaxis: { 
-                        title: { text: 'Model Probability', style: { color: '#38bdf8' } }, 
+                    xaxis: {
+                        title: { text: 'Model Probability', style: { color: '#38bdf8' } },
                         labels: { formatter: val => val.toFixed(2) },
                         tickAmount: 10
                     },
-                    yaxis: { 
-                        title: { text: 'Mean Accuracy', style: { color: '#38bdf8' } }, 
-                        labels: { 
+                    yaxis: {
+                        title: { text: 'Mean Accuracy', style: { color: '#38bdf8' } },
+                        labels: {
                             formatter: val => val.toFixed(2),
                             padding: 20 // Added padding for legibility
                         },
@@ -231,7 +244,7 @@
                         hover: { size: 10 }
                     },
                     tooltip: {
-                        custom: function({series, seriesIndex, dataPointIndex, w}) {
+                        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
                             const d = w.config.series[seriesIndex].data[dataPointIndex];
                             return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 180px;">
                                 <div class="fw-bold mb-1" style="color: #38bdf8;">${d.symbol}</div>
@@ -262,9 +275,9 @@
                 // Sort data by last_seen (latest first) to ensure the symbol list is temporal
                 data.sort((a, b) => new Date(b.last_seen.replace(',', '.')) - new Date(a.last_seen.replace(',', '.')));
                 const uniqueSymbols = [...new Set(data.map(item => item.symbol))].reverse(); // ApexCharts renders bottom-to-top, reverse to get latest at top
-                
+
                 const tiers_bar = [...new Set(data.map(item => item.tier))];
-                
+
                 const stackedSeries = tiers_bar.map(tier => ({
                     name: tier,
                     data: uniqueSymbols.map(sym => {
@@ -276,34 +289,34 @@
                         };
                     })
                 }));
-                
+
                 const barOptions = {
                     series: stackedSeries,
-                    chart: { 
-                        type: 'bar', 
+                    chart: {
+                        type: 'bar',
                         height: uniqueSymbols.length * 40,
                         stacked: true,
-                        toolbar: { show: true }, 
-                        background: 'transparent', 
-                        foreColor: '#94a3b8' 
+                        toolbar: { show: true },
+                        background: 'transparent',
+                        foreColor: '#94a3b8'
                     },
-                    plotOptions: { 
-                        bar: { 
-                            horizontal: true, 
-                            borderRadius: 0, 
-                            barHeight: '85%', 
-                            dataLabels: { position: 'center' } 
-                        } 
+                    plotOptions: {
+                        bar: {
+                            horizontal: true,
+                            borderRadius: 0,
+                            barHeight: '85%',
+                            dataLabels: { position: 'center' }
+                        }
                     },
-                    dataLabels: { 
-                        enabled: true, 
+                    dataLabels: {
+                        enabled: true,
                         style: { fontSize: '10px', fontWeight: 700, colors: ['#fff'] },
                         formatter: (val, opt) => {
                             const d = opt.w.config.series[opt.seriesIndex].data[opt.dataPointIndex];
-                            return d.y > 0.01 ? `${d.y}` : ''; 
+                            return d.y > 0.01 ? `${d.y}` : '';
                         }
                     },
-                    xaxis: { 
+                    xaxis: {
                         categories: uniqueSymbols,
                         position: 'top',
                         title: { text: 'Mean Prediction Probability (Stacked)' },
@@ -319,28 +332,28 @@
                     legend: { position: 'top', horizontalAlign: 'left', offsetX: 40 },
                     theme: { mode: 'dark', palette: 'modern' },
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
-                    tooltip: { 
+                    tooltip: {
                         shared: false,
                         intersect: true,
-                        custom: function({series, seriesIndex, dataPointIndex, w}) {
+                        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
                             const sym = w.config.xaxis.categories[dataPointIndex];
                             const symbolData = data.filter(d => d.symbol === sym);
                             const latest = symbolData[0]?.last_seen || 'N/A';
-                            
+
                             let html = `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 250px;">
                                 <div class="fw-bold mb-1" style="color: #38bdf8; font-size: 14px;">${sym}</div>
                                 <div class="text-dim small mb-2" style="color: #94a3b8;">Last Activity: ${latest}</div>
                                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">`;
-                            
-                            series.forEach((s, i) => {
-                                const d = w.config.series[i].data[dataPointIndex];
+
+                            w.config.series.forEach((s, i) => {
+                                const d = s.data[dataPointIndex];
                                 // Ensure we have data for this point; if undefined, skip gracefully
                                 if (d) {
                                     html += `<div class="d-flex justify-content-between small mb-1">
                                         <span><span style="color:${w.config.colors[i]}">●</span> ${w.config.series[i].name}</span>
                                         <span class="ml-2">
-                                            <span class="text-info" title="Probability">Prob: ${(d.y*100).toFixed(1)}%</span> | 
-                                            <span class="fw-bold" title="Accuracy">Acc: ${(d.acc*100).toFixed(1)}%</span>
+                                            <span class="text-info" title="Probability">Prob: ${(d.y * 100).toFixed(1)}%</span> | 
+                                            <span class="fw-bold" title="Accuracy">Acc: ${(d.acc * 100).toFixed(1)}%</span>
                                         </span>
                                     </div>`;
                                 }
@@ -367,4 +380,5 @@
     </div>
 
 </body>
+
 </html>
