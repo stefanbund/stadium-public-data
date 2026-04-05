@@ -168,16 +168,7 @@
 
     <div class="metric-container">
 
-        <div class="chart-card">
-            <div class="chart-title">
-                Model Confidence vs. Accuracy Calibration
-            </div>
-            <p class="description">
-                Interactive scatter plot identifying over/under-confident symbols.
-                Hover over points for specific symbol metrics.
-            </p>
-            <div id="calibration-chart" style="min-height: 500px;"></div>
-        </div>
+
 
         <div class="chart-card">
             <div class="chart-title">
@@ -199,79 +190,7 @@
                 const response = await fetch('nn_performance_data.json');
                 const data = await response.json();
 
-                // --- 1. Calibration Bubble Chart (Categorical) ---
-                const tiers = [...new Set(data.map(item => item.tier))];
-                const bubbleSeries = tiers.map(tier => ({
-                    name: tier,
-                    data: data.filter(item => item.tier === tier).map(item => ({
-                        x: parseFloat(item.probability.toFixed(3)),
-                        y: parseFloat(item.accuracy.toFixed(3)),
-                        z: item.count, // Size based on magnitude
-                        symbol: item.symbol
-                    }))
-                }));
-
-                const bubbleOptions = {
-                    series: bubbleSeries,
-                    chart: {
-                        type: 'bubble',
-                        height: 600,
-                        zoom: { enabled: true },
-                        background: 'transparent',
-                        foreColor: '#94a3b8',
-                        toolbar: { show: true }
-                    },
-                    dataLabels: { enabled: false },
-                    fill: { opacity: 0.7 },
-                    theme: { mode: 'dark', palette: 'palette1' },
-                    xaxis: {
-                        title: { text: 'Model Probability', style: { color: '#38bdf8' } },
-                        labels: { formatter: val => val.toFixed(2) },
-                        tickAmount: 10
-                    },
-                    yaxis: {
-                        title: { text: 'Mean Accuracy', style: { color: '#38bdf8' } },
-                        labels: {
-                            formatter: val => val.toFixed(2),
-                            padding: 20 // Added padding for legibility
-                        },
-                        min: 0,
-                        max: 1,
-                        tickAmount: 5 // More space between interval labels
-                    },
-                    markers: {
-                        size: 6,
-                        hover: { size: 10 }
-                    },
-                    tooltip: {
-                        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-                            const d = w.config.series[seriesIndex].data[dataPointIndex];
-                            return `<div class="p-2" style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 8px; color: #fff; min-width: 180px;">
-                                <div class="fw-bold mb-1" style="color: #38bdf8;">${d.symbol}</div>
-                                <div class="text-dim small mb-2">${w.config.series[seriesIndex].name}</div>
-                                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">
-                                    <div class="d-flex justify-content-between small mb-1">
-                                        <span>Probability:</span>
-                                        <span class="fw-bold text-info">${(d.x * 100).toFixed(1)}%</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small mb-1">
-                                        <span>Accuracy:</span>
-                                        <span class="fw-bold text-success">${(d.y * 100).toFixed(1)}%</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between small">
-                                        <span>Samples:</span>
-                                        <span>${d.z}</span>
-                                    </div>
-                                </div>
-                            </div>`;
-                        }
-                    },
-                    grid: { borderColor: 'rgba(255,255,255,0.05)', padding: { left: 20 } }
-                };
-
-                new ApexCharts(document.querySelector("#calibration-chart"), bubbleOptions).render();
-
-                // --- 2. Accuracy Horizontal Bar Chart (Stacked) ---
+                // --- 1. Accuracy Horizontal Bar Chart (Stacked) ---
                 // Sort data by last_seen (latest first) to ensure the symbol list is temporal
                 data.sort((a, b) => new Date(b.last_seen.replace(',', '.')) - new Date(a.last_seen.replace(',', '.')));
                 const uniqueSymbols = [...new Set(data.map(item => item.symbol))].reverse(); // ApexCharts renders bottom-to-top, reverse to get latest at top
