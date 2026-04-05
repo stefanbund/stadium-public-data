@@ -355,9 +355,7 @@
 
             } catch (error) {
                 console.error("Error loading NN data:", error);
-                document.querySelector(".metric-container").innerHTML = `
-                    <div class="alert alert-danger">Failed to load interactive data. Ensure nn_performance_data.json is present.</div>
-                `;
+                document.querySelector(".metric-container").innerHTML = `<div class="alert alert-danger">Failed to load interactive data. Ensure nn_performance_data.json is present.</div>`;
             }
         }
 
