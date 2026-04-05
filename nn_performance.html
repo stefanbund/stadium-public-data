@@ -252,8 +252,8 @@
                     theme: { mode: 'dark', palette: 'modern' },
                     grid: { borderColor: 'rgba(255,255,255,0.05)' },
                     tooltip: {
-                        shared: false,
-                        intersect: true,
+                        shared: true,
+                        intersect: false,
                         custom: function ({ series, seriesIndex, dataPointIndex, w }) {
                             const sym = w.config.xaxis.categories[dataPointIndex];
                             const symbolData = data.filter(d => d.symbol === sym);
