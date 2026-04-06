@@ -1,0 +1,96 @@
+{
+  "version": "1.1.0",
+  "description": "Data Dictionary for MLOps Event Analytics",
+  "lifecycle_categories": {
+    "SYSTEM_INIT": {
+      "event_types": ["EVENT_PIPELINE_START", "EVENT_PREP_START", "EVENT_CONFIG_LOADED"],
+      "description": "Global orchestrator or microservice launches and configuration loads."
+    },
+    "DATA_LOGISTICS": {
+      "event_types": ["EVENT_DATA_SOURCE_SELECTED", "EVENT_REMOTE_SYNC_START", "EVENT_DATA_SAVED"],
+      "description": "Handled IO operations, remote host synchronization, and storage."
+    },
+    "SYMBOL_ORCHESTRATION": {
+      "event_types": ["EVENT_SYMBOL_START", "EVENT_PROCESSING_SYMBOL", "EVENT_SYMBOL_SUCCESS", "EVENT_SYMBOL_TARGETED", "EVENT_SYMBOLS_FOUND"],
+      "description": "Per-symbol level lifecycle transitions within the MLOps waterfall."
+    },
+    "FEATURE_ENGINEERING": {
+      "event_types": ["EVENT_ONSET_DISCOVERED", "EVENT_THRESHOLD_SET"],
+      "description": "Mathematical discovery events (window sizes, thresholding)."
+    },
+    "INFERENCE": {
+      "event_types": ["EVENT_INFERENCE_TIER", "EVENT_INFERENCE_DECISION", "EVENT_METADATA_LOAD"],
+      "description": "Real-time hierarchical model decisions and metadata ingestion."
+    },
+    "FAILURE_MODES": {
+      "event_types": ["EVENT_PREP_ERROR", "EVENT_REMOTE_SYNC_FAIL", "EVENT_SYMBOL_SKIPPED", "EVENT_MODEL_LOAD_STATUS", "EVENT_PREP_SKIP"],
+      "description": "Non-fatal skips, operational errors, and model load warnings."
+    }
+  },
+  "message_normalization": {
+    "symbol_removal_patterns": [
+      "[A-Z0-9]+-USD",
+      "[A-Z0-9]+_USD",
+      "for [A-Z0-9]+",
+      "symbol [A-Z0-9]+"
+    ],
+    "message_classes": {
+      "SKIPPED_NO_DATA": "No data rows found",
+      "SKIPPED_NO_COINBASE": "No Coinbase data",
+      "SKIPPED_LOW_EVENTS": "Not enough surge/precursor events",
+      "SKIPPED_LOW_PAIRS": "Not enough alternating precursor/surge pairs",
+      "TIER_PASSED": "-> PASSED",
+      "TIER_FAILED": "-> FAILED",
+      "SAFE": "-> SAFE",
+      "CRASH_IMMINENT": "-> CRASH IMMINENT",
+      "TRADE_APPROVED": "TRADE APPROVED",
+      "TRADE_REJECTED": "TRADE REJECTED"
+    }
+  },
+  "output_schemas": {
+    "approved_signal_analysis.csv": {
+      "description": "Post-hoc backtesting output produced by analyze_approved_signals.py. Each row represents one unique APPROVED trade signal emitted by the Hierarchical Neural Network Predictor. The analysis fetches forward OHLCV candle data via yfinance to determine whether the market reached the configured profit target within the configured forward window.",
+      "source_script": "UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/analyze_approved_signals.py",
+      "source_logs": [
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log",
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log.1",
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log.2",
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log.3",
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log.4",
+        "UNIFIED_TRADER_WORKSPACE/logs/trading_bot.log.5"
+      ],
+      "analysis_parameters": {
+        "target_gain_pct": "1.01 — The minimum percentage price increase above the entry price required to classify a signal as a HIT.",
+        "forward_window_hours": "24 — The number of hours of forward candle data examined for each signal.",
+        "candle_granularity": "5 minutes — OHLCV resolution used for forward price lookups (via yfinance).",
+        "deduplication": "Signals are deduplicated by (symbol, minute) to avoid counting burst approvals within the same minute as separate events."
+      },
+      "columns": {
+        "symbol": {
+          "type": "string",
+          "description": "The Coinbase ticker symbol (without the -USD suffix) for which the APPROVED signal was generated. Sourced from the 'symbol' field in the trading_bot.log JSONL record."
+        },
+        "timestamp": {
+          "type": "ISO 8601 datetime (UTC)",
+          "description": "The exact UTC timestamp at which the Hierarchical NN Predictor emitted the TRADE APPROVED decision for this symbol. Parsed from the 'timestamp' field in the JSONL log record."
+        },
+        "outcome": {
+          "type": "enum",
+          "values": {
+            "HIT": "The price reached at least +1.01% above the entry price within the configured forward window. A hypothetical trade at this signal would have been profitable.",
+            "MISS": "The price did not reach the +1.01% target within the forward window. The 'detail' column contains the maximum gain percentage actually achieved.",
+            "NO_DATA": "Historical candle data could not be retrieved for this symbol and time range (e.g., the symbol is delisted or not available on the data provider)."
+          }
+        },
+        "entry_price": {
+          "type": "float (USD)",
+          "description": "The opening price of the first 5-minute candle at or after the signal timestamp. Represents the hypothetical trade entry price at the moment of signal generation. Null if outcome is NO_DATA."
+        },
+        "detail": {
+          "type": "float (context-dependent)",
+          "description": "Interpretation depends on outcome: (HIT) Number of minutes elapsed between the signal timestamp and the first candle whose High price exceeded the +1.01% target price. (MISS) The maximum percentage gain above the entry price observed across all forward candles within the window — indicates how close the signal came to hitting the target. (NO_DATA) Null."
+        }
+      }
+    }
+  }
+}
