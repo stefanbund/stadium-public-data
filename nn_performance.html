@@ -277,12 +277,12 @@
                         }
                     },
                     xaxis: {
-                        categories: uniqueSymbols,
                         position: 'top',
                         title: { text: 'Mean Prediction Probability (Stacked)' },
                         labels: { formatter: val => val.toFixed(2) }
                     },
                     yaxis: {
+                        categories: uniqueSymbols,
                         labels: {
                             style: { fontSize: '13px', fontWeight: 700 },
                             maxWidth: 300,
