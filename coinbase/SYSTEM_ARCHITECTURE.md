@@ -9,13 +9,22 @@ The central nervous system that manages the sequential execution for each symbol
 
 - **Guardian Watchdog**: [`guardian.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/guardian.py) [NEW]
     - *Role*: The overarching process manager daemon that maintains continuous uptime for the LOB Sampler, MLOps Orchestrator, Hierarchical Trader, and Reporting mechanisms.
+    - *Sampler Rotation*: Automatically restarts the Live LOB Sampler every **6 hours** to force a clean file rotation, preventing individual CSV files from exceeding optimal I/O size limits.
     - *Thermal Throttling*: Because the M4 host is fanless, the watchdog strictly limits the orchestrator sub-process to 2 parallel workers and incorporates a 20-second per-symbol sleep loop to prevent extreme CPU load and thermal-related hardware reboots.
     - *Analytics Integration*: Periodically dumps live component lifecycle data (restart counts, runtime statuses) to `guardian_status.json` for external telemetry harvesting.
     - *Twilio Alerting*: Automatically senses microservice crashes or execution freezes and natively issues SMS alerts to system admins via the Twilio REST API.
     - *Age-Based Restart Policy*: On any auto-restart, the Guardian launches the orchestrator with `--skip-existing --max-age-days 14`. This instructs the orchestrator to skip any preprocessing or modeling step whose output file was modified within the last **14 days**, preventing redundant rework. Steps older than 14 days (or missing entirely) are re-executed. This applies to **all** model types including Imbalance, which can take up to 7 days to train and is therefore only triggered once every two weeks at most. To force a full re-run of everything, pass `--max-age-days 0`.
-- **Main Orchestrator**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py)
-    - *Role*: The primary entry point. Manages the loop across all **261 symbols**, calling preprocessors, modelers, and transfer scripts.
+- **Main MLOps Orchestrator**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py)
+    - *Role*: The primary entry point for model training. Manages the loop across all **261 symbols**, calling preprocessors, modelers, and transfer scripts.
     - *Symbol Discovery*: Prioritizes the "Source Truth" by scanning the `GRUS-CSV-SAMPLER-DATA/symbols` directory for per-asset CSVs. This ensures 100% coverage across the alphabet (A-Z), with fallbacks to preprocessed BBP files if the source directory is unavailable.
+- **Reporting Orchestrator**: [`UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py) [NEW]
+    - *Role*: Consolidates all independent analytics heartbeats into a single, sequential pipeline.
+    - *Sequential Efficiency*: Eliminates CPU and I/O contention by running Accuracy, Transaction, and Strategy updates one after another with a 5-second "breathing gap" between tasks. 
+    - *Frequencies*: 
+        - **Accuracy & Transactions**: Every 30 minutes.
+        - **Strategy Performance**: Every 24 hours (to conserve thermal resources).
+        - **Analytics Hub**: Refreshed automatically after every successful cycle.
+- **Data Transfer**: [`UNIFIED_MLOPS_WORKSPACE/transfer.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/transfer.py)    - *Role*: Moves processed data and model artifacts between local storage and the high-volume backup volumes.
     - *Usage (Global Run)*: The watchdog handles background execution, but for isolated manual runs: `nohup ./venv/bin/python UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py --host stefans-Mac-mini.local --pull --workers 2 > logs/orchestrator_main.log 2>&1 &`
     - *Usage (Global Wipe & Restart)*: If you need to stop the pipeline, wipe all data, and start completely fresh:
       1. Kill jobs: `pkill -f 'orchestrator_symbol_centric.py'` and `pkill -f 'preprocessor'`
@@ -91,8 +100,10 @@ Tools for generating models and monitoring performance. The pipeline writes dedu
 ---
 
 ## 5. Visualization & Reporting (`UNIFIED_REPORTING_WORKSPACE`)
-The public-facing results layer, fully automated to maintain an active historical ledger. Key scripts operate strictly within the `/UNIFIED_REPORTING_WORKSPACE` directory.
+The public-facing results layer, fully automated to maintain an active historical ledger. Key scripts operate strictly within the `/UNIFIED_REPORTING_WORKSPACE` directory and are managed by the **Reporting Orchestrator**.
 
+- **Reporting Orchestrator**: [`UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py) [NEW]
+    - *Role*: The central driver for all visual analytics. It replaces multiple background loops with a single sequential heartbeat to prevent I/O contention on the fanless host.
 - **Accuracy Dashboard Generator**: [`UNIFIED_REPORTING_WORKSPACE/generate_hourly_accuracy_report.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/generate_hourly_accuracy_report.py)
     - *Role*: Aggregates model accuracy scores from `logs/archive/` and `logs/` to generate the primary Accuracy Dashboard (Bar charts & Histograms).
 - **Crash Visualizer**: [`UNIFIED_REPORTING_WORKSPACE/visualize_crashes.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/visualize_crashes.py)
@@ -135,14 +146,14 @@ The public-facing results layer, fully automated to maintain an active historica
     - *Role*: Transmits the live Operations Dashboard state directly from the isolated Mac Mini to GitHub Pages via REST without requiring a full code clone.
 - **Transaction Analysis Suite**: [`UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/) [NEW]
     - **Backtest Engine**: [`analyze_approved_signals.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/analyze_approved_signals.py)
-        - *Role*: Parses historical `trading_bot.log` files for `TRADE APPROVED` events and fetches forward yfinance candle data to determine +1.01% hit/miss outcomes.
+        - *Role*: Parses historical `trading_bot.log` files for `TRADE APPROVED` events and fetches forward yfinance candle data to determine +1.01% hit/miss outcomes. Evaluates the full trade lifecycle without a time-window bottleneck.
     - **Dashboard Generator**: [`generate_transaction_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/generate_transaction_dashboard.py)
         - *Role*: Mints a 5-panel interactive Chart.js dashboard showing entry price vs outcome, signal timelines, and a "Trades In Waiting" live-price tracker.
     - **Transaction Deployer**: [`push_transaction_dashboard_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/TRANSACTION_ANALYSIS/push_transaction_dashboard_to_gh.py)
         - *Role*: Automatically streams the analysis artifacts (HTML, CSV, JSON) to the public GitHub repository.
 - **Analytics Master Hub Generator**: [`UNIFIED_REPORTING_WORKSPACE/generate_analytics_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/generate_analytics_dashboard.py) [NEW]
     - *Role*: The primary entry point for global intelligence. Mints a premium, dark-themed master dashboard that embeds the Strategy, Accuracy, and Transaction dashboards via iframes.
-    - *Execution*: Triggered automatically at the conclusion of every sub-component update cycle.
+    - *Execution*: Triggered automatically by the **Reporting Orchestrator** at the conclusion of every sub-component update cycle.
 - **Shared GitHub Publication Utility**: [`shared_lib/github_pusher.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/shared_lib/github_pusher.py) [NEW]
     - *Role*: Centralizes all GitHub REST API logic. Key features include automatic `exchange_name` subfolder pathing, PAT-based authentication, and standardized blob préparation.
     - *Scaling*: Allows new hosts to publish to unique directories (e.g., `/coinbase`, `/binance`) without code duplication.
@@ -403,6 +414,7 @@ The system architecture reflects the physical segmentation of the hardware envir
 3. **Pillar III: The Execution Brain (The Trader)**
     - *Hardware*: Primary Machine (Laptop)
     - *Role*: The true intelligence of the operation (`trader_NN_HIERARCHICAL.py`). It continuously parses the LOB CSV matrix created by the Sensor and triggers inference passes through the Neural Network using the localized `M4_BACKUP` module paths. If granted a "Green Light", it exclusively pings the internet via `async_trader_rewritten.py` to place actionable Limit Buy orders.
+    - *Runtime Reliability*: To maintain I/O stability, the sampler is **rotated every 6 hours** by the Guardian, ensuring the trader's data ingestion remains lightning-fast.
 
 ### Hardware Bridging: The `{data_root_i71}` Strategy
 Historically, the system utilized a **Dynamic Path Variable** (`data_root_i71`) within `config.json` to handle sync mappings across a network. Since the system evaluates directly on the primary host, this bridge now strictly resolves directly to `/Volumes/M4_BACKUP/STADIUM-DATA-FROM-I71`.
