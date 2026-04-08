@@ -9,6 +9,11 @@ The central nervous system that manages the sequential execution for each symbol
 
 - **Guardian Watchdog**: [`guardian.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/guardian.py) [NEW]
     - *Role*: The overarching process manager daemon that maintains continuous uptime for the LOB Sampler, MLOps Orchestrator, Hierarchical Trader, and Reporting mechanisms.
+    - *Staged Startup Protocol*: To prevent system-wide OOM (Out Of Memory) crashes and CPU spikes during cold boots, the Guardian implements a 3-stage initialization sequence:
+        - **Stage 1 (Immediate)**: Launches the Live LOB Sampler and Mobile Log Exporter.
+        - **Stage 2 (+30s)**: Launches the MLOps and Reporting Orchestrators once data flow is initialized.
+        - **Stage 3 (+120s & Condition)**: Launches the Hierarchical Trader only after confirming that fresh LOB CSV data is actively being written to the `/STADIUM_DATA/GRUS-CSV-SAMPLER-DATA` directory.
+    - *Memory Protection (Trader)*: The watchdog manages a "Memory Firewall" within the trader initialization loop. The trader loads symbols with a 5-second stagger and forces Garbage Collection (`gc.collect()`) after every model load. If system memory exceeds **85%**, the boot sequence pauses for 30s to allow memory to stabilize.
     - *Sampler Rotation*: Automatically restarts the Live LOB Sampler every **6 hours** to force a clean file rotation, preventing individual CSV files from exceeding optimal I/O size limits.
     - *Thermal Throttling*: Because the M4 host is fanless, the watchdog strictly limits the orchestrator sub-process to 2 parallel workers and incorporates a 20-second per-symbol sleep loop to prevent extreme CPU load and thermal-related hardware reboots.
     - *Analytics Integration*: Periodically dumps live component lifecycle data (restart counts, runtime statuses) to `guardian_status.json` for external telemetry harvesting.
