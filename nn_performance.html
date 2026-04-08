@@ -434,14 +434,24 @@
                 new ApexCharts(document.querySelector("#accuracy-chart"), barOptions).render();
 
                 // --- 2. Label Interactivity Logic ---
+                console.log("Initializing Label Interactivity...");
                 const chartElement = document.querySelector("#accuracy-chart");
                 
                 chartElement.addEventListener('click', function(e) {
+                    // Try to find if we clicked a label (text element inside a yaxis-label group)
                     const labelText = e.target.closest('.apexcharts-yaxis-label');
-                    if (labelText) {
-                        const symbol = labelText.querySelector('text').textContent.trim();
-                        showIntelligence(symbol, e.clientX, e.clientY);
-                        e.stopPropagation();
+                    const isLabel = e.target.tagName === 'text' || e.target.closest('.apexcharts-yaxis-label');
+                    
+                    console.log("Chart clicked. Target:", e.target.tagName, "Is Label?", !!isLabel);
+
+                    if (isLabel) {
+                        const textEl = e.target.tagName === 'text' ? e.target : e.target.querySelector('text');
+                        if (textEl) {
+                            const symbol = textEl.textContent.trim();
+                            console.log("Opening Intelligence Portal for:", symbol);
+                            showIntelligence(symbol, e.clientX, e.clientY);
+                            e.stopPropagation();
+                        }
                     }
                 });
 
