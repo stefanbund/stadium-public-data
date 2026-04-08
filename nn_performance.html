@@ -438,20 +438,16 @@
                 const chartElement = document.querySelector("#accuracy-chart");
                 
                 chartElement.addEventListener('click', function(e) {
-                    // Try to find if we clicked a label (text element inside a yaxis-label group)
-                    const labelText = e.target.closest('.apexcharts-yaxis-label');
-                    const isLabel = e.target.tagName === 'text' || e.target.closest('.apexcharts-yaxis-label');
+                    // Detect if we clicked any part of a Y-Axis label group
+                    const labelGroup = e.target.closest('.apexcharts-yaxis-label');
                     
-                    console.log("Chart clicked. Target:", e.target.tagName, "Is Label?", !!isLabel);
+                    console.log("Chart clicked. Target:", e.target.tagName, "Found Label Group?", !!labelGroup);
 
-                    if (isLabel) {
-                        const textEl = e.target.tagName === 'text' ? e.target : e.target.querySelector('text');
-                        if (textEl) {
-                            const symbol = textEl.textContent.trim();
-                            console.log("Opening Intelligence Portal for:", symbol);
-                            showIntelligence(symbol, e.clientX, e.clientY);
-                            e.stopPropagation();
-                        }
+                    if (labelGroup) {
+                        const symbol = labelGroup.textContent.trim();
+                        console.log("Opening Intelligence Portal for:", symbol);
+                        showIntelligence(symbol, e.clientX, e.clientY);
+                        e.stopPropagation();
                     }
                 });
 
