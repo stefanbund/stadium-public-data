@@ -157,6 +157,62 @@
         .apexcharts-datalabels-group {
             pointer-events: none !important;
         }
+
+        /* Intelligence Popover Styling */
+        .apexcharts-yaxis-label text {
+            cursor: pointer !important;
+            pointer-events: all !important;
+            transition: fill 0.2s ease, font-size 0.2s ease;
+        }
+        
+        .apexcharts-yaxis-label text:hover {
+            fill: #fff !important;
+            filter: drop-shadow(0 0 8px var(--accent-primary));
+        }
+
+        #intelligence-popover {
+            position: fixed;
+            z-index: 11000;
+            display: none;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            min-width: 350px;
+            max-width: 450px;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .popover-header {
+            padding: 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popover-body {
+            padding: 1rem;
+        }
+
+        .close-popover {
+            cursor: pointer;
+            color: var(--text-dim);
+            transition: color 0.2s;
+        }
+
+        .close-popover:hover {
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -229,6 +285,18 @@
             <div id="accuracy-chart" style="min-height: 800px;"></div>
         </div>
 
+    </div>
+
+    <!-- Intelligence Popover Container -->
+    <div id="intelligence-popover">
+        <div class="popover-header">
+            <div class="d-flex align-items-center gap-2">
+                <span id="popover-symbol" class="fw-bold fs-5" style="color: var(--accent-primary);"></span>
+                <span class="badge bg-secondary small" style="font-size: 10px;">CORE INTEL</span>
+            </div>
+            <div class="close-popover" onclick="hideIntelligence()">&times;</div>
+        </div>
+        <div id="popover-content" class="popover-body"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -364,6 +432,94 @@
                 };
 
                 new ApexCharts(document.querySelector("#accuracy-chart"), barOptions).render();
+
+                // --- 2. Label Interactivity Logic ---
+                const chartElement = document.querySelector("#accuracy-chart");
+                
+                chartElement.addEventListener('click', function(e) {
+                    const labelText = e.target.closest('.apexcharts-yaxis-label');
+                    if (labelText) {
+                        const symbol = labelText.querySelector('text').textContent.trim();
+                        showIntelligence(symbol, e.clientX, e.clientY);
+                        e.stopPropagation();
+                    }
+                });
+
+                // Global click to close popover
+                document.addEventListener('click', function(e) {
+                    const popover = document.getElementById('intelligence-popover');
+                    if (popover.style.display === 'block' && !popover.contains(e.target)) {
+                        hideIntelligence();
+                    }
+                });
+
+                function showIntelligence(symbol, x, y) {
+                    const popover = document.getElementById('intelligence-popover');
+                    const content = document.getElementById('popover-content');
+                    const symbolSpan = document.getElementById('popover-symbol');
+                    
+                    const symbolData = data.filter(d => d.symbol === symbol);
+                    if (symbolData.length === 0) return;
+
+                    symbolSpan.textContent = symbol;
+                    
+                    let html = `<div class="mb-3">
+                        <div class="small text-dim mb-2 fw-bold text-uppercase" style="font-size: 10px; letter-spacing: 0.05em;">Tier Availability</div>`;
+                    
+                    symbolData.forEach(tierData => {
+                        html += `<div class="d-flex justify-content-between align-items-center mb-2 p-2 rounded" style="background: rgba(255,255,255,0.03);">
+                            <div class="small fw-semibold text-info">${tierData.tier}</div>
+                            <div class="small">
+                                <span class="text-dim">μ-Prob:</span> ${(tierData.probability * 100).toFixed(1)}% | 
+                                <span class="fw-bold">Acc: ${(tierData.accuracy * 100).toFixed(1)}%</span>
+                            </div>
+                        </div>`;
+                        
+                        if (tierData.recent_history && tierData.recent_history.length > 0) {
+                            html += `<div class="tooltip-history mb-3">
+                                <div class="small text-dim mb-2" style="font-size: 9px;">7-DAY CHRONOLOGY (${tierData.tier})</div>`;
+                            
+                            tierData.recent_history.forEach(entry => {
+                                const statusClass = entry.passed ? 'status-pass' : 'status-fail';
+                                const statusText = entry.passed ? 'PASS' : 'FAIL';
+                                const parts = entry.timestamp ? entry.timestamp.split(' ') : ['N/A', 'N/A'];
+                                const date = parts[0] || 'N/A';
+                                const time = parts[1] ? parts[1].split(',')[0] : 'N/A';
+
+                                html += `<div class="history-item">
+                                    <span class="text-dim">${time} <span style="font-size: 8px;">${date}</span></span>
+                                    <span>
+                                        <span class="me-2">${(entry.probability * 100).toFixed(0)}%</span>
+                                        <span class="status-badge ${statusClass}">${statusText}</span>
+                                    </span>
+                                </div>`;
+                            });
+                            html += `</div>`;
+                        }
+                    });
+                    
+                    html += `</div>`;
+                    content.innerHTML = html;
+                    
+                    // Positioning logic to keep it onscreen
+                    popover.style.display = 'block';
+                    const popWidth = 380;
+                    const popHeight = 500;
+                    
+                    let finalX = x + 20;
+                    let finalY = y - 50;
+                    
+                    if (finalX + popWidth > window.innerWidth) finalX = x - popWidth - 20;
+                    if (finalY + popHeight > window.innerHeight) finalY = window.innerHeight - popHeight - 20;
+                    if (finalY < 10) finalY = 10;
+                    
+                    popover.style.left = finalX + 'px';
+                    popover.style.top = finalY + 'px';
+                }
+
+                window.hideIntelligence = function() {
+                    document.getElementById('intelligence-popover').style.display = 'none';
+                }
 
             } catch (error) {
                 console.error("Error loading NN data:", error);
