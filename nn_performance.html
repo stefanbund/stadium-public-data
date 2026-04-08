@@ -164,6 +164,10 @@
             pointer-events: all !important;
             transition: fill 0.2s ease, font-size 0.2s ease;
         }
+
+        .apexcharts-yaxis foreignObject {
+            pointer-events: none !important;
+        }
         
         .apexcharts-yaxis-label text:hover {
             fill: #fff !important;
@@ -444,11 +448,13 @@
                     console.log("Chart clicked. Target:", e.target.tagName, "Found Label Group?", !!labelGroup);
 
                     if (labelGroup) {
-                        let symbol = labelGroup.textContent.trim();
+                        // ApexCharts often duplicates text for shadows/effects. 
+                        // Targeting the first tspan gives us the clean symbol name.
+                        const textEl = labelGroup.querySelector('text tspan') || labelGroup.querySelector('text');
+                        let symbol = textEl ? textEl.textContent.trim() : labelGroup.textContent.trim();
                         
-                        // ApexCharts sometimes doubles the text in the labels (e.g. "NEONNEON"). 
-                        // If it's doubled, take the first half.
-                        if (symbol.length % 2 === 0) {
+                        // Fallback deduplication if still doubled
+                        if (symbol.length > 0 && symbol.length % 2 === 0) {
                             const half = symbol.length / 2;
                             if (symbol.substring(0, half) === symbol.substring(half)) {
                                 symbol = symbol.substring(0, half);
