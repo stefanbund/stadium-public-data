@@ -444,7 +444,17 @@
                     console.log("Chart clicked. Target:", e.target.tagName, "Found Label Group?", !!labelGroup);
 
                     if (labelGroup) {
-                        const symbol = labelGroup.textContent.trim();
+                        let symbol = labelGroup.textContent.trim();
+                        
+                        // ApexCharts sometimes doubles the text in the labels (e.g. "NEONNEON"). 
+                        // If it's doubled, take the first half.
+                        if (symbol.length % 2 === 0) {
+                            const half = symbol.length / 2;
+                            if (symbol.substring(0, half) === symbol.substring(half)) {
+                                symbol = symbol.substring(0, half);
+                            }
+                        }
+
                         console.log("Opening Intelligence Portal for:", symbol);
                         showIntelligence(symbol, e.clientX, e.clientY);
                         e.stopPropagation();
@@ -460,12 +470,18 @@
                 });
 
                 function showIntelligence(symbol, x, y) {
+                    console.log("showIntelligence triggered for:", symbol);
                     const popover = document.getElementById('intelligence-popover');
                     const content = document.getElementById('popover-content');
                     const symbolSpan = document.getElementById('popover-symbol');
                     
                     const symbolData = data.filter(d => d.symbol === symbol);
-                    if (symbolData.length === 0) return;
+                    console.log("Symbol Data found:", symbolData.length, "entries");
+                    
+                    if (symbolData.length === 0) {
+                        console.warn("No data found for symbol:", symbol);
+                        return;
+                    }
 
                     symbolSpan.textContent = symbol;
                     
