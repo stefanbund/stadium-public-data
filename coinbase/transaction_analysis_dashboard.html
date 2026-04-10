@@ -313,14 +313,14 @@
   <div class="card-header">
     <div>
       <div class="card-title">⏳ Trades In Waiting <span style="font-size:0.75rem;font-weight:400;color:var(--amber);margin-left:8px;">10 signals · target: +1.01%</span></div>
-      <div class="card-sub">MISS signals from the analysis window. Live prices fetched at generation time (2026-04-10 03:07 PM PDT). Shows how close each is to the +1.01% target right now.</div>
+      <div class="card-sub">MISS signals from the analysis window. Live prices fetched at generation time (2026-04-10 03:37 PM PDT). Shows how close each is to the +1.01% target right now.</div>
     </div>
   </div>
   <div id="waitingCards"></div>
 </div>
 
 <div class="footer">
-  Generated 2026-04-10 03:07 PM PDT from <code>approved_signal_analysis.csv</code> ·
+  Generated 2026-04-10 03:37 PM PDT from <code>approved_signal_analysis.csv</code> ·
   Source: <code>analyze_approved_signals.py</code> ·
   Schema: <code>MLOPS_DATA_DICTIONARY.json</code>
 </div>
@@ -490,7 +490,7 @@ const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', NO_D
 
 // ── 5. Trades In Waiting Cards ────────────────────────────────────────────
 (function() {
-  const WAITING = [{"symbol": "ASM", "timestamp": "2026-04-09T01:32:08-07:00", "entry_price": 0.006927048787474632, "target_price": 0.00699701, "live_price": 0.00687228, "pct_now": -0.7907, "pct_to_go": 1.8007}, {"symbol": "ASM", "timestamp": "2026-04-09T10:05:47-07:00", "entry_price": 0.006916053127497435, "target_price": 0.00698591, "live_price": 0.00687228, "pct_now": -0.6329, "pct_to_go": 1.6429}, {"symbol": "ASM", "timestamp": "2026-04-09T12:12:18-07:00", "entry_price": 0.006912243086844683, "target_price": 0.00698206, "live_price": 0.00687228, "pct_now": -0.5781, "pct_to_go": 1.5881}, {"symbol": "FOX", "timestamp": "2026-04-09T14:15:54-07:00", "entry_price": 0.0064792325720191, "target_price": 0.00654467, "live_price": 0.00642526, "pct_now": -0.833, "pct_to_go": 1.843}, {"symbol": "ASM", "timestamp": "2026-04-09T15:47:36-07:00", "entry_price": 0.0069563365541398525, "target_price": 0.0070266, "live_price": 0.00687228, "pct_now": -1.2083, "pct_to_go": 2.2183}, {"symbol": "AERO", "timestamp": "2026-04-09T17:39:21-07:00", "entry_price": 3.2184198062168434e-05, "target_price": 3.251e-05, "live_price": 3.241e-05, "pct_now": 0.7016, "pct_to_go": 0.3084}, {"symbol": "FOX", "timestamp": "2026-04-09T17:41:53-07:00", "entry_price": 0.006472394336014986, "target_price": 0.00653777, "live_price": 0.00642526, "pct_now": -0.7282, "pct_to_go": 1.7382}, {"symbol": "CRV", "timestamp": "2026-04-09T22:24:08-07:00", "entry_price": 0.22260911762714386, "target_price": 0.22485747, "live_price": 0.22083156, "pct_now": -0.7985, "pct_to_go": 1.8085}, {"symbol": "CRV", "timestamp": "2026-04-09T22:46:35-07:00", "entry_price": 0.2231951653957367, "target_price": 0.22544944, "live_price": 0.22083156, "pct_now": -1.059, "pct_to_go": 2.069}, {"symbol": "ASM", "timestamp": "2026-04-09T23:50:54-07:00", "entry_price": 0.006932237185537815, "target_price": 0.00700225, "live_price": 0.00687228, "pct_now": -0.8649, "pct_to_go": 1.8749}];
+  const WAITING = [{"symbol": "ASM", "timestamp": "2026-04-09T01:32:08-07:00", "entry_price": 0.006927048787474632, "target_price": 0.00699701, "live_price": 0.00686943, "pct_now": -0.8318, "pct_to_go": 1.8418}, {"symbol": "ASM", "timestamp": "2026-04-09T10:05:47-07:00", "entry_price": 0.006916053127497435, "target_price": 0.00698591, "live_price": 0.00686943, "pct_now": -0.6741, "pct_to_go": 1.6841}, {"symbol": "ASM", "timestamp": "2026-04-09T12:12:18-07:00", "entry_price": 0.006912243086844683, "target_price": 0.00698206, "live_price": 0.00686943, "pct_now": -0.6194, "pct_to_go": 1.6294}, {"symbol": "FOX", "timestamp": "2026-04-09T14:15:54-07:00", "entry_price": 0.0064792325720191, "target_price": 0.00654467, "live_price": 0.00639153, "pct_now": -1.3536, "pct_to_go": 2.3636}, {"symbol": "ASM", "timestamp": "2026-04-09T15:47:36-07:00", "entry_price": 0.0069563365541398525, "target_price": 0.0070266, "live_price": 0.00686943, "pct_now": -1.2493, "pct_to_go": 2.2593}, {"symbol": "AERO", "timestamp": "2026-04-09T17:39:21-07:00", "entry_price": 3.2184198062168434e-05, "target_price": 3.251e-05, "live_price": 3.243e-05, "pct_now": 0.7637, "pct_to_go": 0.2463}, {"symbol": "FOX", "timestamp": "2026-04-09T17:41:53-07:00", "entry_price": 0.006472394336014986, "target_price": 0.00653777, "live_price": 0.00639153, "pct_now": -1.2494, "pct_to_go": 2.2594}, {"symbol": "CRV", "timestamp": "2026-04-09T22:24:08-07:00", "entry_price": 0.22260911762714386, "target_price": 0.22485747, "live_price": 0.22007452, "pct_now": -1.1386, "pct_to_go": 2.1486}, {"symbol": "CRV", "timestamp": "2026-04-09T22:46:35-07:00", "entry_price": 0.2231951653957367, "target_price": 0.22544944, "live_price": 0.22007452, "pct_now": -1.3982, "pct_to_go": 2.4082}, {"symbol": "ASM", "timestamp": "2026-04-09T23:50:54-07:00", "entry_price": 0.006932237185537815, "target_price": 0.00700225, "live_price": 0.00686943, "pct_now": -0.906, "pct_to_go": 1.916}];
   const container = document.getElementById('waitingCards');
 
   if (!WAITING.length) {
