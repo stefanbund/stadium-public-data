@@ -159,6 +159,10 @@ The public-facing results layer, fully automated to maintain an active historica
 - **Analytics Master Hub Generator**: [`UNIFIED_REPORTING_WORKSPACE/generate_analytics_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/generate_analytics_dashboard.py) [NEW]
     - *Role*: The primary entry point for global intelligence. Mints a premium, dark-themed master dashboard that embeds the Strategy, Accuracy, and Transaction dashboards via iframes.
     - *Execution*: Triggered automatically by the **Reporting Orchestrator** at the conclusion of every sub-component update cycle.
+- **System Infrastructure Monitor**: [`UNIFIED_REPORTING_WORKSPACE/generate_system_status_dashboard.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/generate_system_status_dashboard.py) [NEW]
+    - *Role*: Visualizes the health of the multi-host network. Aggregates local `guardian_status.json` and remote Mac Mini telemetry (CPU, RAM, MLOps log tail) into a side-by-side dashboard embedded in the Master Hub.
+    - *Remote Fetcher*: Powered by `scripts/remote_status_fetcher.py` via SSH.
+    - *Execution*: Triggered automatically every 10 minutes by the Reporting Orchestrator.
 - **Shared GitHub Publication Utility**: [`shared_lib/github_pusher.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/shared_lib/github_pusher.py) [NEW]
     - *Role*: Centralizes all GitHub REST API logic. Key features include automatic `exchange_name` subfolder pathing, PAT-based authentication, and standardized blob préparation.
     - *Scaling*: Allows new hosts to publish to unique directories (e.g., `/coinbase`, `/binance`) without code duplication.
