@@ -8,11 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
+            --bg-color: #020617;
             --card-bg: #1e293b;
             --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --glass: rgba(30, 41, 59, 0.7);
         }
         
         body {
@@ -28,13 +31,15 @@
         }
         
         header {
-            background-color: var(--card-bg);
-            padding: 1rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.75rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #334155;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
         }
         
         .header-title {
@@ -44,69 +49,116 @@
         }
         
         .header-title h1 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin: 0;
+            letter-spacing: -0.02em;
             background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-        .header-meta {
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Premium Dropdown Styling */
+        .select-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        select {
+            appearance: none;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border-radius: 0.5rem;
             font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            box-shadow: 0 0 0 0 var(--accent-glow);
+        }
+
+        select:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px 0 var(--accent-glow);
+        }
+
+        .select-wrapper::after {
+            content: "";
+            position: absolute;
+            right: 1rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+        
+        .header-meta {
+            font-size: 0.75rem;
             color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
         }
         
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 1rem;
-            padding: 1rem;
+        main {
             flex-grow: 1;
-            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
         }
-        
-        @media (min-width: 1200px) {
-            .dashboard-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 1fr 1fr;
-            }
-            .iframe-container.full-width {
-                grid-column: span 2;
-            }
-        }
-        
+
         .iframe-container {
+            flex-grow: 1;
             background-color: var(--card-bg);
-            border-radius: 0.75rem;
-            border: 1px solid #334155;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
             overflow: hidden;
             display: flex;
             flex-direction: column;
             position: relative;
-            transition: transform 0.2s;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
         }
         
-        .iframe-container:hover {
-            border-color: var(--accent-color);
-        }
-        
-        .iframe-header {
+        .iframe-toolbar {
             padding: 0.5rem 1rem;
-            background-color: #1e293b;
-            border-bottom: 1px solid #334155;
+            background-color: rgba(30, 41, 59, 0.5);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .iframe-header span {
-            font-size: 0.75rem;
-            font-weight: 600;
+        .iframe-toolbar span {
+            font-size: 0.7rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+        }
+        
+        .external-link {
             color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .external-link:hover {
+            color: var(--accent-color);
         }
         
         iframe {
@@ -114,78 +166,106 @@
             height: 100%;
             border: none;
             flex-grow: 1;
+            background: #fff; /* Some dashboards might have light bg, but meist dark */
         }
 
-        .nav-tabs {
-            display: flex;
-            gap: 1rem;
+        /* Loading Indicator */
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            background-size: 200% 100%;
+            animation: loading 2s infinite linear;
+            display: none;
         }
 
-        .nav-btn {
-            background: transparent;
-            border: 1px solid #334155;
-            color: var(--text-secondary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            font-size: 0.75rem;
-            transition: all 0.2s;
-        }
-
-        .nav-btn.active {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border-color: var(--accent-color);
-            font-weight: 600;
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-title">
-            <div style="width: 32px; height: 32px; background: var(--accent-color); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            <div style="width: 28px; height: 28px; background: var(--accent-color); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px var(--accent-glow);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#020617" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
             </div>
-            <h1>COINBASE ANALYTICS HUB</h1>
+            <h1>COINBASE INTELLIGENCE HUB</h1>
         </div>
-        <div class="header-meta">
-            Live Intelligence Network | 2026-04-10 12:50:30
+
+        <div class="nav-controls">
+            <div class="header-meta">
+                Refreshed: 2026-04-10 12:55:36
+            </div>
+            <div class="select-wrapper">
+                <select id="view-selector">
+                    <option value="strategy_performance_dashboard.html">Strategy Performance</option>
+                    <option value="hourly_accuracy_dashboard.html">Core Accuracy Matrix</option>
+                    <option value="transaction_analysis_dashboard.html">Transaction Intelligence</option>
+                    <option value="trade_decision_summary.html">Decision Ledger</option>
+                    <option value="system_status_dashboard.html">Infrastructure Status</option>
+                </select>
+            </div>
         </div>
     </header>
     
-    <div class="dashboard-grid">
-        <div class="iframe-container full-width">
-            <div class="iframe-header">
-                <span>Strategy Performance Monitor</span>
-                <a href="strategy_performance_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
-            </div>
-            <iframe src="strategy_performance_dashboard.html"></iframe>
-        </div>
-        
+    <main>
         <div class="iframe-container">
-            <div class="iframe-header">
-                <span>Core Accuracy Matrix</span>
-                <a href="hourly_accuracy_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            <div id="progress-bar" class="loader"></div>
+            <div class="iframe-toolbar">
+                <span id="current-view-title">Strategy Performance Monitor</span>
+                <a id="full-screen-link" href="strategy_performance_dashboard.html" target="_blank" class="external-link">
+                    EXPAND FULL VIEW ↗
+                </a>
             </div>
-            <iframe src="hourly_accuracy_dashboard.html"></iframe>
+            <iframe id="main-frame" src="strategy_performance_dashboard.html"></iframe>
         </div>
-        
-        <div class="iframe-container">
-            <div class="iframe-header">
-                <span>Transaction Intelligence</span>
-                <a href="transaction_analysis_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
-            </div>
-            <iframe src="transaction_analysis_dashboard.html"></iframe>
-        </div>
+    </main>
 
-        <div class="iframe-container">
-            <div class="iframe-header">
-                <span>Trade Decision Summary</span>
-                <a href="trade_decision_summary.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
-            </div>
-            <iframe src="trade_decision_summary.html"></iframe>
-        </div>
-    </div>
+    <script>
+        const selector = document.getElementById('view-selector');
+        const iframe = document.getElementById('main-frame');
+        const title = document.getElementById('current-view-title');
+        const expandLink = document.getElementById('full-screen-link');
+        const progress = document.getElementById('progress-bar');
+
+        selector.addEventListener('change', (e) => {
+            const val = e.target.value;
+            const text = e.target.options[e.target.selectedIndex].text;
+            
+            // Show loading bar
+            progress.style.display = 'block';
+            
+            // Update UI
+            title.textContent = text + " Monitor";
+            expandLink.href = val;
+            
+            // Fade out current content
+            iframe.style.opacity = '0.5';
+            
+            // Load new content
+            iframe.src = val;
+        });
+
+        iframe.addEventListener('load', () => {
+            progress.style.display = 'none';
+            iframe.style.opacity = '1';
+        });
+
+        // Responsive adjustment
+        function updateHeight() {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const mainPadding = 32; // 1rem * 2
+            document.querySelector('main').style.height = (window.innerHeight - headerHeight) + 'px';
+        }
+        
+        window.addEventListener('resize', updateHeight);
+        updateHeight();
+    </script>
 </body>
 </html>
     
