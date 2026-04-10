@@ -1,0 +1,232 @@
+import os
+import sys
+from pathlib import Path
+from datetime import datetime
+
+# Setup project root for imports
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+from shared_lib.config_loader import Config
+from shared_lib.github_pusher import push_to_github
+
+def generate_analytics_dashboard():
+    config = Config()
+    exchange_name = config.get('exchange_name', 'default').upper()
+    
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    html_content = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{exchange_name} - MLOps Analytics Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {{
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+        }}
+        
+        body {{
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }}
+        
+        header {{
+            background-color: var(--card-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }}
+        
+        .header-title {{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }}
+        
+        .header-title h1 {{
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }}
+        
+        .header-meta {{
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }}
+        
+        .dashboard-grid {{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            flex-grow: 1;
+            overflow-y: auto;
+        }}
+        
+        @media (min-width: 1200px) {{
+            .dashboard-grid {{
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 1fr 1fr;
+            }}
+            .iframe-container.full-width {{
+                grid-column: span 2;
+            }}
+        }}
+        
+        .iframe-container {{
+            background-color: var(--card-bg);
+            border-radius: 0.75rem;
+            border: 1px solid #334155;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s;
+        }}
+        
+        .iframe-container:hover {{
+            border-color: var(--accent-color);
+        }}
+        
+        .iframe-header {{
+            padding: 0.5rem 1rem;
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }}
+        
+        .iframe-header span {{
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }}
+        
+        iframe {{
+            width: 100%;
+            height: 100%;
+            border: none;
+            flex-grow: 1;
+        }}
+
+        .nav-tabs {{
+            display: flex;
+            gap: 1rem;
+        }}
+
+        .nav-btn {{
+            background: transparent;
+            border: 1px solid #334155;
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }}
+
+        .nav-btn.active {{
+            background: var(--accent-color);
+            color: var(--bg-color);
+            border-color: var(--accent-color);
+            font-weight: 600;
+        }}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <div style="width: 32px; height: 32px; background: var(--accent-color); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h1>{exchange_name} ANALYTICS HUB</h1>
+        </div>
+        <div class="header-meta">
+            Live Intelligence Network | {timestamp}
+        </div>
+    </header>
+    
+    <div class="dashboard-grid">
+        <div class="iframe-container full-width">
+            <div class="iframe-header">
+                <span>Strategy Performance Monitor</span>
+                <a href="strategy_performance_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            </div>
+            <iframe src="strategy_performance_dashboard.html"></iframe>
+        </div>
+        
+        <div class="iframe-container">
+            <div class="iframe-header">
+                <span>Core Accuracy Matrix</span>
+                <a href="hourly_accuracy_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            </div>
+            <iframe src="hourly_accuracy_dashboard.html"></iframe>
+        </div>
+        
+        <div class="iframe-container">
+            <div class="iframe-header">
+                <span>Transaction Intelligence</span>
+                <a href="transaction_analysis_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            </div>
+            <iframe src="transaction_analysis_dashboard.html"></iframe>
+        </div>
+
+        <div class="iframe-container">
+            <div class="iframe-header">
+                <span>Trade Decision Summary</span>
+                <a href="trade_decision_summary.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            </div>
+            <iframe src="trade_decision_summary.html"></iframe>
+        </div>
+
+        <div class="iframe-container full-width">
+            <div class="iframe-header">
+                <span>System Infrastructure Status (Local & Remote)</span>
+                <a href="system_status_dashboard.html" target="_blank" style="color: var(--accent-color); font-size: 10px; text-decoration: none;">OPEN FULL SCREEN ↗</a>
+            </div>
+            <iframe src="system_status_dashboard.html"></iframe>
+        </div>
+    </div>
+</body>
+</html>
+    """
+    
+    output_path = Path(config.project_root) / 'analytics_dashboard.html'
+    with open(output_path, 'w') as f:
+        f.write(html_content)
+    
+    print(f"✅ Analytics Master Dashboard generated at {output_path}")
+    
+    # Push to GitHub
+    files_to_push = [
+        {'local': 'analytics_dashboard.html', 'repo': 'analytics_dashboard.html'}
+    ]
+    push_to_github(files_to_push, f"Analytics Master Dashboard Deployment for {exchange_name}")
+
+if __name__ == "__main__":
+    generate_analytics_dashboard()
