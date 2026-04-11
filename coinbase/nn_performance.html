@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METASTADIUM | NN Prediction Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: #0f172a;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #8b5cf6;
+            --accent-success: #10b981;
+            --accent-warning: #fbbf24;
+            --accent-danger: #ef4444;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            margin: 0;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #accuracy-chart {
+            min-height: 800px;
+        }
+
+        /* Intelligence Popover Styling */
+        #intelligence-popover {
+            position: fixed;
+            z-index: 1000;
+            width: 380px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--accent-primary);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            display: none;
+            color: var(--text-main);
+            pointer-events: all;
+        }
+
+        .popover-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .symbol-badge {
+            background: var(--accent-primary);
+            color: var(--bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.8rem;
+        }
+
+        .status-badge {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .status-pass { background: rgba(16, 185, 129, 0.2); color: var(--accent-success); border: 1px solid var(--accent-success); }
+        .status-fail { background: rgba(239, 68, 68, 0.2); color: var(--accent-danger); border: 1px solid var(--accent-danger); }
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>INTELLIGENCE: NN PREDICTION PERFORMANCE</h1>
+        <div class="text-dim small">7-Day Rolling Analysis</div>
+    </div>
+
+    <div class="metric-container">
+        <div class="card">
+            <div class="card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                Mean Prediction Probabilities & Confidence
+            </div>
+            <p class="text-dim small mb-4">Hierarchical overview of model confidence vs. 75% decision threshold. Click symbol labels for full chronology.</p>
+            <div id="accuracy-chart"></div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card mb-4" style="height: 100%;">
+                    <div class="card-title">Accuracy Matrix Index</div>
+                    <img src="nn_accuracy_by_symbol.png" class="img-fluid rounded" alt="Accuracy Chart">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4" style="height: 100%;">
+                    <div class="card-title">Confidence vs. Real-World Accuracy</div>
+                    <img src="nn_prob_vs_acc_by_symbol.png" class="img-fluid rounded" alt="Scatter Plot">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Popover -->
+    <div id="intelligence-popover">
+        <div class="popover-header">
+            <span id="popover-symbol" class="symbol-badge">SYMBOL</span>
+            <button onclick="hideIntelligence()" class="btn-close btn-close-white" style="font-size: 0.7rem;"></button>
+        </div>
+        <div id="popover-content">
+            <!-- Dynamic content here -->
+        </div>
+    </div>
+
+    <script>
+        async function loadNNDashboard() {
+            try {
+                const response = await fetch('nn_performance_data.json');
+                const data = await response.json();
+
+                if (!data || data.length === 0) {
+                    document.getElementById('accuracy-chart').innerHTML = '<div class="alert alert-info">No NN performance data available. Check if logs are being parsed correctly.</div>';
+                    return;
+                }
+
+                const symbols = [...new Set(data.map(d => d.symbol))].sort();
+                
+                // Group by tier
+                const tiers = [...new Set(data.map(d => d.tier))];
+                const series = tiers.map(tier => {
+                    return {
+                        name: tier,
+                        data: symbols.map(s => {
+                            const entry = data.find(d => d.symbol === s && d.tier === tier);
+                            return entry ? entry.probability : 0;
+                        })
+                    };
+                });
+
+                const barOptions = {
+                    series: series,
+                    chart: {
+                        type: 'bar',
+                        height: Math.max(800, symbols.length * 30),
+                        stacked: false,
+                        toolbar: { show: false },
+                        animations: { enabled: true, easing: 'easeinout', speed: 800 },
+                        background: 'transparent',
+                        foreColor: '#94a3b8'
+                    },
+                    plotOptions: {
+                        bar: {
+                            horizontal: true,
+                            dataLabels: { position: 'top' },
+                            borderRadius: 4,
+                            barHeight: '70%'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function (val) { return (val * 100).toFixed(0) + "%"; },
+                        offsetX: 30,
+                        style: { fontSize: '10px', colors: ["#f8fafc"] }
+                    },
+                    stroke: { show: true, width: 1, colors: ['transparent'] },
+                    xaxis: {
+                        categories: symbols,
+                        min: 0,
+                        max: 1.0,
+                        labels: { formatter: (val) => (val * 100).toFixed(0) + "%" },
+                        axisBorder: { show: false },
+                        position: 'top'
+                    },
+                    yaxis: {
+                        labels: {
+                            style: { colors: '#38bdf8', fontWeight: 600, fontSize: '11px' },
+                            maxWidth: 150
+                        }
+                    },
+                    colors: ['#38bdf8', '#8b5cf6', '#10b981', '#fbbf24'],
+                    grid: { borderColor: 'rgba(255,255,255,0.05)', xaxis: { lines: { show: true } } },
+                    tooltip: {
+                        theme: 'dark',
+                        y: {
+                            formatter: function (val, { series, seriesIndex, dataPointIndex, w }) {
+                                const symbol = w.globals.labels[dataPointIndex];
+                                const tier = w.globals.seriesNames[seriesIndex];
+                                const entry = data.find(d => d.symbol === symbol && d.tier === tier);
+                                
+                                if (!entry) return "No Data";
+
+                                let html = `<div class="p-2" style="background: #020617;">
+                                    <div class="fw-bold text-info">${symbol} (${tier})</div>
+                                    <div class="my-1">Mean Prob: ${(val * 100).toFixed(1)}%</div>
+                                    <div class="mb-2">Historical Acc: ${(entry.accuracy * 100).toFixed(1)}%</div>`;
+                                
+                                if (entry.recent_history && entry.recent_history.length > 0) {
+                                    html += `<div style="font-size: 10px; color: #94a3b8; border-top: 1px solid #1e293b; padding-top: 5px;">RECENT DECISIONS:</div>`;
+                                    entry.recent_history.slice(0, 5).forEach(h => {
+                                        const c = h.passed ? '#10b981' : '#ef4444';
+                                        html += `<div class="d-flex justify-content-between gap-3">
+                                            <span>${h.timestamp.split(' ')[1].split(',')[0]}</span>
+                                            <span style="color: ${c}">${(h.probability * 100).toFixed(0)}%</span>
+                                        </div>`;
+                                    });
+                                }
+                                html += `</div>`;
+                                return html;
+                            }
+                        }
+                    },
+                    annotations: {
+                        xaxis: [{
+                            x: 0.75,
+                            borderColor: '#ef4444',
+                            label: {
+                                text: '75% Threshold',
+                                style: { color: '#fff', background: '#ef4444' }
+                            }
+                        }]
+                    }
+                };
+
+                const chart = new ApexCharts(document.querySelector("#accuracy-chart"), barOptions);
+                chart.render();
+
+                // Interactivity for data points/labels
+                document.querySelector("#accuracy-chart").addEventListener('click', function(e) {
+                    const label = e.target.closest('.apexcharts-yaxis-label');
+                    if (label) {
+                        const symbol = label.textContent.trim();
+                        showIntelligence(symbol, e.clientX, e.clientY, data);
+                    }
+                });
+
+            } catch (err) {
+                console.error("Dashboard error:", err);
+            }
+        }
+
+        function showIntelligence(symbol, x, y, data) {
+            const popover = document.getElementById('intelligence-popover');
+            const content = document.getElementById('popover-content');
+            const symbolSpan = document.getElementById('popover-symbol');
+            
+            const symbolData = data.filter(d => d.symbol === symbol);
+            if (symbolData.length === 0) return;
+
+            symbolSpan.textContent = symbol;
+            
+            let html = `<div class="mb-3">`;
+            symbolData.forEach(tierData => {
+                html += `<div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-info fw-bold small text-uppercase">${tierData.tier}</span>
+                        <span class="small">Acc: <span class="fw-bold">${(tierData.accuracy * 100).toFixed(1)}%</span></span>
+                    </div>`;
+                
+                if (tierData.recent_history) {
+                    tierData.recent_history.forEach(entry => {
+                        const statusClass = entry.passed ? 'status-pass' : 'status-fail';
+                        const statusText = entry.passed ? 'PASS' : 'FAIL';
+                        const time = entry.timestamp.split(' ')[1].split(',')[0];
+                        html += `<div class="history-item">
+                            <span class="text-dim small">${time}</span>
+                            <span>
+                                <span class="me-2">${(entry.probability * 100).toFixed(0)}%</span>
+                                <span class="status-badge ${statusClass}">${statusText}</span>
+                            </span>
+                        </div>`;
+                    });
+                }
+                html += `</div>`;
+            });
+            html += `</div>`;
+            
+            content.innerHTML = html;
+            popover.style.display = 'block';
+            
+            // Positioning
+            let finalX = x + 20;
+            let finalY = y - 100;
+            if (finalX + 380 > window.innerWidth) finalX = x - 400;
+            if (finalY + 500 > window.innerHeight) finalY = window.innerHeight - 520;
+            
+            popover.style.left = finalX + 'px';
+            popover.style.top = Math.max(10, finalY) + 'px';
+        }
+
+        window.hideIntelligence = function() {
+            document.getElementById('intelligence-popover').style.display = 'none';
+        }
+
+        loadNNDashboard();
+    </script>
+</body>
+</html>
