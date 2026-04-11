@@ -3,132 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METASTADIUM | Enterprise Portal</title>
+    <title>METASTADIUM | Coinbase Intelligence Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #020617;
-            --card-bg: #1e293b;
+            --card-bg: #0f172a;
+            --card-hover: #1e293b;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
             --accent-primary: #38bdf8;
             --accent-secondary: #8b5cf6;
-            --border: rgba(255, 255, 255, 0.1);
+            --border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
         }
 
-        .hero-container {
+        /* Ambient backgrounds */
+        .ambient-glow {
+            position: fixed;
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, transparent 70%);
+            top: -20%;
+            left: -10%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+            bottom: -10%;
+            right: -10%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+
+        header {
             text-align: center;
-            max-width: 800px;
-            padding: 4rem;
-            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+            margin-bottom: 5rem;
+            animation: fadeInDown 0.8s ease-out;
         }
 
-        .badge-premium {
+        .badge-portal {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            padding: 0.5rem 1.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.25rem;
             border-radius: 999px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 2rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         h1 {
+            font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 4rem;
-            letter-spacing: -0.05em;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom, #fff, #94a3b8);
+            font-size: 4.5rem;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255,255,255,0.7));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        p.lead {
+        .lead-text {
             color: var(--text-dim);
             font-size: 1.25rem;
-            margin-bottom: 3rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        .btn-portal {
-            background: #fff;
-            color: #000;
-            font-weight: 700;
-            padding: 1rem 2.5rem;
-            border-radius: 0.75rem;
+        /* Portal Grid */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .portal-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.1rem;
-            border: none;
+            color: inherit;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
         }
 
-        .btn-portal:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-8px);
+            background: var(--card-hover);
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--accent-primary);
+            transition: var(--transition);
+        }
+
+        .portal-card:hover .card-icon {
             background: var(--accent-primary);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             color: #fff;
         }
 
-        /* Ambient animation */
-        .ambient-light {
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 50%;
-            height: 50%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-            z-index: -1;
+        .card-desc {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-footer svg {
+            transition: transform 0.3s ease;
+        }
+
+        .portal-card:hover .card-footer svg {
+            transform: translateX(5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .container { padding: 2rem 1rem; }
+            .portal-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="ambient-light"></div>
-    <div class="hero-container">
-        <div class="badge-premium">Organizational Intelligence</div>
-        <h1>METASTADIUM</h1>
-        <p class="lead">Autonomous high-frequency trading observability and log intelligence pipeline.</p>
-        
-        <div class="d-flex justify-content-center gap-3">
-            <div class="d-flex flex-column align-items-center gap-3">
-                <a href="coinbase_log_dashboard.html" class="btn-portal">
-                    Launch Coinbase Insights
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html" class="btn-portal" style="background: linear-gradient(135deg, #10b981, #3b82f6); color: #fff; border: none;">
-                    Transactions Overview
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z M12 20c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path></svg>
-                </a>
-                <a href="guardian_status.html" class="btn-portal" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-success); border: 1px solid var(--accent-success);">
-                    Guardian Status
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                </a>
-                <a href="nn_performance.html" class="btn-portal" style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--border);">
-                    Neural Network Analytics
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19V5l12 7-12 7z"></path></svg>
-                </a>
-            </div>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <div class="container">
+        <header>
+            <div class="badge-portal">Observability Infrastructure</div>
+            <h1>COINBASE PORTAL</h1>
+            <p class="lead-text">Unified log intelligence, symbol activity tracking, and operational health monitoring for METASTADIUM M4 nodes.</p>
+        </header>
+
+        <div class="portal-grid">
+            <!-- 1. Log Intelligence Dashboard -->
+            <a href="coinbase_log_dashboard.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19V5l12 7-12 7z"></path></svg>
+                </div>
+                <h2>Log Intelligence</h2>
+                <p class="card-desc">Comprehensive overview of Sampler, MLOps, and Trader events. Real-time error frequency and major event mapping.</p>
+                <div class="card-footer">
+                    Launch Dashboard
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 2. Symbol Activity Index -->
+            <a href="bot_symbol_activity.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                </div>
+                <h2>Activity Index</h2>
+                <p class="card-desc">Alphabetical histogram of all traded symbols. Deep-dive into chronological pass/fail logs for every symbol in the pipeline.</p>
+                <div class="card-footer">
+                    View Symbol Index
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 3. Guardian Status -->
+            <a href="guardian_status.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h2>Guardian Status</h2>
+                <p class="card-desc">Live operational health of the Guardian watchdog. Service uptime, thermal metrics, and system memory firewalls.</p>
+                <div class="card-footer">
+                    Check Health
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 4. Strategy Efficiency -->
+            <a href="https://stefanbund.github.io/stadium-public-data/strategy_performance_dashboard.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <h2>Strategy Efficiency</h2>
+                <p class="card-desc">Real-time performance metrics for active trading strategies. PnL curves, success rates, and durational edge analysis.</p>
+                <div class="card-footer">
+                    Open Performance
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 5. Transactions overview -->
+            <a href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"></path></svg>
+                </div>
+                <h2>Transactions</h2>
+                <p class="card-desc">Detailed breakdown of individual trade decisions, execution timestamps, and lifecycle evaluation results.</p>
+                <div class="card-footer">
+                    Launch Transactions
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 6. Forecasting Accuracy -->
+            <a href="https://stefanbund.github.io/stadium-public-data/hourly_accuracy_dashboard.html" class="portal-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h2>Model Accuracy</h2>
+                <p class="card-desc">Symbolic forecasting precision metrics for Directional, Crash, and Unified Durational models across the workspace.</p>
+                <div class="card-footer">
+                    Review Accuracy
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 METASTADIUM Intelligence Ops &bull; Enterprise Log Observability Pipeline</p>
+    </footer>
 </body>
 </html>
