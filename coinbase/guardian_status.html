@@ -106,7 +106,7 @@
             </div>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">15.1%</div>
+                    <div class="metric-val">17.4%</div>
                     <div class="metric-label">CPU</div>
                 </div>
                 <div class="metric-box">
@@ -132,34 +132,34 @@
             
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">165.8%</div>
+                    <div class="metric-val">51.1%</div>
                     <div class="metric-label">CPU Load</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">48.4%</div>
+                    <div class="metric-val">40.1%</div>
                     <div class="metric-label">RAM Load</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val" style="font-size: 10px;">16:44 up 15 days</div>
+                    <div class="metric-val" style="font-size: 10px;">16:54 up 15 days</div>
                     <div class="metric-label">Uptime</div>
                 </div>
             </div>
             <span class="title" style="font-size: 10px;">Remote ML Log Tail:</span>
-            <pre>[FOX]   [Output] 1     4738
-[FOX]   [Output] Saved Layer 2 data for FOX-USD to /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/BBP-IMBALANCE/FOX-USD-imbalance-pipeline.csv
-[FOX]   [Output] INFO:__main__:Saved Layer 2 data for FOX-USD to /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/BBP-IMBALANCE/FOX-USD-imbalance-pipeline.csv
-[FOX] Executing: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/venv/bin/python3 /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py --symbol FOX --window-size 3
-[FOX]   [Output] Using sampler data from: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/GRUS-CSV-SAMPLER-DATA
-[FOX]   [Output] Analysis parameters: window_size=3, fixed_target_pct=-3.0%
-[FOX]   [Output] Targeting specific symbol: FOX-USD
-[FOX]   [Output] Loading and processing data for symbol: FOX-USD
-[FOX]   [Output] /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py:151: FutureWarning: Series.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
-[FOX]   [Output] capsFrame[col] = capsFrame[col].fillna(method='ffill')
+            <pre>[FX]   [Output] [jsonl_logger] EVENT_PREP_FINISHED | GLOBAL | Directional Preprocessing Script Finished
+[FX]   [Output] INFO:jsonl_logger_std:EVENT_PREP_FINISHED | GLOBAL | Directional Preprocessing Script Finished
+[FX]   [Output] --- V2 Directional Preprocessing Script Finished ---
+[FX]   [Output] INFO:__main__:--- V2 Directional Preprocessing Script Finished ---
+[FX] Executing: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/venv/bin/python3 /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/imbalance_preprocessor.py --symbol FX
+[FX]   [Output] Using raw sampler data from: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/GRUS-CSV-SAMPLER-DATA
+[FX]   [Output] Analysis parameters: window=1, fixed_target=1.0%
+[FX]   [Output] Starting Layer 2 Imbalance extraction for: FX-USD
+[FX]   [Output] /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/imbalance_preprocessor.py:98: FutureWarning: Series.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[FX]   [Output] capsFrame[col] = capsFrame[col].fillna(method='ffill')
 </pre>
             
         </div>
     </div>
-    <div class="refresh">Last heartbeat: 2026-04-12 16:44:27</div>
+    <div class="refresh">Last heartbeat: 2026-04-12 16:54:51</div>
 </body>
 </html>
     
