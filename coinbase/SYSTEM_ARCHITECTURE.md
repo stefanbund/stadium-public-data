@@ -163,11 +163,17 @@ The public-facing results layer, fully automated to maintain an active historica
     - *Role*: Visualizes the health of the multi-host network. Aggregates local `guardian_status.json` and remote Mac Mini telemetry (CPU, RAM, MLOps log tail) into a side-by-side dashboard embedded in the Master Hub.
     - *Remote Fetcher*: Powered by `scripts/remote_status_fetcher.py` via SSH.
     - *Execution*: Triggered automatically every 10 minutes by the Reporting Orchestrator.
+- **NN Performance Intelligence (The Beijing Visualizer)**: [`UNIFIED_REPORTING_WORKSPACE/plot_nn_performance.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/plot_nn_performance.py) [NEW]
+    - *Role*: A diagnostic parser that harvests hierarchical inference events directly from `trading_bot.log`. 
+    - *Logic*: Aggregates mean predicted probabilities and historical accuracy for all symbols over a rolling 7-day window. It visualizes the **Bayesian Logic** by mapping model confidence against a standard 75% decision threshold.
+    - *Dashboard*: Mints the interactive `nn_performance.html` (powered by ApexCharts) and static scatter plots (`nn_prob_vs_acc_by_symbol.png`).
+    - *Execution*: Triggered autonomously every 30 minutes by the Reporting Orchestrator.
 - **Shared GitHub Publication Utility**: [`shared_lib/github_pusher.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/shared_lib/github_pusher.py) [NEW]
     - *Role*: Centralizes all GitHub REST API logic. Key features include automatic `exchange_name` subfolder pathing, PAT-based authentication, and standardized blob préparation.
     - *Scaling*: Allows new hosts to publish to unique directories (e.g., `/coinbase`, `/binance`) without code duplication.
 - **Live Access URLs (Exchange: Coinbase)**:
     - **Analytics Master Hub (Primary)**: [View Analytics Hub](https://stefanbund.github.io/stadium-public-data/coinbase/analytics_dashboard.html) [NEW]
+    - **NN Performance Intelligence (Bayesian Portal)**: [View NN Charts](https://stefanbund.github.io/stadium-public-data/coinbase/nn_performance.html) [NEW]
     - **System Architecture (Public Blueprint)**: [View Blueprint](https://github.com/stefanbund/stadium-public-data/blob/main/SYSTEM_ARCHITECTURE.md)
     - **Accuracy Dashboard (Model Scores)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/coinbase/hourly_accuracy_dashboard.html)
     - **Strategy Performance Dashboard (Backtested Strategy Alpha)**: [View Dashboard](https://stefanbund.github.io/stadium-public-data/coinbase/strategy_performance_dashboard.html)
