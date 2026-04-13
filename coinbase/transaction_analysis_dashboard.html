@@ -218,7 +218,7 @@
             renderPieChart(data.kpis);
             
             // Render Table
-            renderTable(data.signals);
+            renderTable(data);
         }
 
         function renderOutcomeChart(signals) {
@@ -276,7 +276,8 @@
             Plotly.newPlot('pie-chart', data, layout, {responsive: true, displayModeBar: false});
         }
 
-        function renderTable(signals) {
+        function renderTable(data) {
+            const signals = data.signals;
             const body = document.getElementById('signals-body');
             body.innerHTML = '';
             
