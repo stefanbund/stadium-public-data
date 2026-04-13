@@ -295,8 +295,24 @@
                 
                 const entryPrice = s.entry_price ? '$' + s.entry_price.toFixed(6) : '-';
                 let detailText = '-';
-                if (s.outcome === 'HIT') detailText = `HIT in ${Math.round(s.detail)} min`;
-                else if (s.outcome === 'MISS') detailText = `Max gain: +${s.detail.toFixed(2)}%`;
+                
+                if (s.outcome === 'HIT') {
+                    detailText = `HIT in ${Math.round(s.detail)} min`;
+                } else if (s.outcome === 'MISS') {
+                    detailText = `Max gain: +${s.detail.toFixed(2)}%`;
+                } else if (s.outcome === 'NO_DATA') {
+                    // For waiting, calculate distance to target
+                    const target = data.meta.target_gain_pct || 1.01;
+                    const currentGain = s.detail || 0;
+                    const dist = target - currentGain;
+                    
+                    if (dist <= 0) {
+                        detailText = 'Target Reached (Pending Sync)';
+                    } else {
+                        const style = dist < 0.5 ? 'style="color: var(--accent-success); font-weight: 700;"' : '';
+                        detailText = `<span ${style}>${dist.toFixed(2)}% from target</span> (+${currentGain.toFixed(2)}% current)`;
+                    }
+                }
 
                 tr.innerHTML = `
                     <td><span class="symbol-tag">${s.symbol}</span></td>
