@@ -202,7 +202,7 @@
 
         <div class="nav-controls">
             <div class="header-meta">
-                Refreshed: 2026-04-12 22:07:27
+                Refreshed: 2026-04-12 22:08:05
             </div>
             <div class="select-wrapper">
                 <select id="view-selector">
@@ -252,7 +252,15 @@
             iframe.style.opacity = '0.5';
             
             // Load new content
-            iframe.src = val;
+            iframe.src = val + '?t=' + Date.now();
+        });
+
+        // Initial load cache buster
+        window.addEventListener('load', () => {
+            const currentSrc = iframe.getAttribute('src');
+            if (currentSrc) {
+                iframe.src = currentSrc + '?t=' + Date.now();
+            }
         });
 
         iframe.addEventListener('load', () => {
