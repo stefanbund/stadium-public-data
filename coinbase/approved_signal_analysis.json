@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-13 03:27 PM PDT",
+    "last_updated": "2026-04-13 03:57 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
@@ -772,7 +772,7 @@
       "timestamp": "2026-04-13T08:16:58-07:00",
       "outcome": "NO_DATA",
       "entry_price": 0.007000000216066837,
-      "detail": -2.8571445677352885
+      "detail": -1.4285756100195937
     }
   ]
 }
