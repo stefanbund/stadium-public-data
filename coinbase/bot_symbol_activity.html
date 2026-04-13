@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -146,6 +146,7 @@
         .src-SAMPLER { background: var(--accent-secondary); color: #fff; }
         .src-TRADER { background: var(--accent-primary); color: #000; }
     
+        .canvas-wrapper { height: 8170px; position: relative; padding-bottom: 50px; }
     </style>
 </head>
 <body>
@@ -184,13 +185,13 @@
     <div id="chartjs-tooltip"></div>
     <div class="container pb-5">
         <header>
-            <a href="coinbase_log_dashboard.html" class="back-link">&larr; Back to Overview</a>
-            <h1>Full Bot Symbol Activity Index</h1>
-            <p class="p-sub">Alphabetical mapping of all traded symbols. Hover over bars to view full chronological logs.</p>
-            <p class="p-sub" style="font-size: 0.8rem;">Last Updated: 2026-04-13 08:54:42</p>
+            <a href="coinbase_log_dashboard.html" class="back-link" style="color: var(--accent-primary); text-decoration: none; font-size: 0.8rem;">&larr; Back to Overview</a>
+            <h1 style="margin-top: 1rem;">Full Bot Symbol Activity Index</h1>
+            <p class="p-sub" style="color: var(--text-dim); margin-bottom: 0.5rem;">Sorted by <b>Recency</b> (Most recently traded at top). Hover over bars to view full chronological logs.</p>
+            <p class="p-sub" style="font-size: 0.75rem; color: var(--muted);">Last Updated: 2026-04-13 09:10:02 • 269 symbols tracked</p>
         </header>
 
-        <div class="chart-section">
+        <div class="chart-section" style="padding: 1rem; background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border);">
             <div class="canvas-wrapper">
                 <canvas id="verticalHistogram"></canvas>
             </div>
@@ -250,11 +251,11 @@
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["00", "A8", "AAVE", "ABT", "ACH", "ACS", "ACX", "ADA", "AERGO", "AERO", "AGLD", "AIOZ", "AKT", "ALCX", "ALEO", "ALEPH", "ALGO", "ALICE", "ALLO", "ALT", "AMP", "ANKR", "APE", "API3", "APR", "APT", "ARB", "ARKM", "ARPA", "ASM", "AST", "ASTER", "ATH", "ATOM", "AUCTION", "AUDIO", "AURORA", "AVAX", "AVNT", "AVT", "AWE", "AXL", "AXS", "B3", "BADGER", "BAL", "BAND", "BARD", "BAT", "BCH", "BERA", "BICO", "BIGTIME", "BIO", "BIRB", "BLAST", "BLUR", "BLZ", "BNB", "BNKR", "BNT", "BOBA", "BOBBOB", "BONK", "BREV", "BTC", "BTRST", "C98", "CAKE", "CBETH", "CELR", "CFG", "CGLD", "CHZ", "CLANKER", "COMP", "COOKIE", "CORECHAIN", "COSMOSDYDX", "COTI", "COW", "CRO", "CRV", "CTSI", "CTX", "CVC", "CVX", "DASH", "DBR", "DEGEN", "DEXT", "DIA", "DIMO", "DNT", "DOGE", "DOGINME", "DOLO", "DOOD", "DOT", "DRIFT", "EDGE", "EGLD", "EIGEN", "ELA", "ELSA", "ENA", "ENS", "ERA", "ETC", "ETH", "ETHFI", "EUL", "FAI", "FARM", "FARTCOIN", "FET", "FIDA", "FIGHT", "FIL", "FIS", "FLOCK", "FLOKI", "FLOW", "FLR", "FLUID", "FORT", "FORTH", "FOX", "FUN1", "G", "GFI", "GHST", "GIGA", "GLM", "GMT", "GNO", "GODS", "GRT", "GST", "GTC", "HBAR", "HFT", "HIGH", "HNT", "HOME", "HONEY", "HOPR", "HYPE", "HYPER", "ICP", "IDEX", "ILV", "IMU", "IMX", "INJ", "INV", "INX", "IOTX", "IRYS", "JASMY", "JTO", "KAVA", "KNC", "KRL", "KSM", "LCX", "LDO", "LINK", "LPT", "LQTY", "LRC", "LRDS", "LSETH", "LTC", "MAGIC", "MANA", "MASK", "MATH", "MDT", "METIS", "MINA", "MLN", "MNDE", "MSOL", "NCT", "NEAR", "NEON", "NKN", "NMR", "OCEAN", "OGN", "OMNI", "ONDO", "OP", "ORCA", "OSMO", "OXT", "PAX", "PERP", "PIRATE", "PLU", "PNG", "POL", "POLS", "POND", "POWR", "PRIME", "PRO", "PUNDIX", "PYR", "QI", "QNT", "RAD", "RARE", "RARI", "RENDER", "REQ", "RLC", "ROSE", "RPL", "SAFE", "SAND", "SD", "SEAM", "SEI", "SHDW", "SHIB", "SHPING", "SKL", "SNX", "SOL", "SPA", "SPELL", "STG", "STORJ", "STRK", "STX", "SUI", "SUKU", "SUPER", "SUSHI", "SWFTC", "T", "TIA", "TIME", "TNSR", "TRAC", "TRB", "TRU", "UMA", "UNI", "USDT", "VARA", "VELO", "VET", "VOXEL", "VTHO", "WAXL", "XCN", "XLM", "XRP", "XTZ", "XYO", "YFI", "ZEC", "ZEN", "ZETA", "ZRO", "ZRX"],
+                    labels: ["APT", "IOTX", "PNG", "BADGER", "SD", "BREV", "GHST", "DBR", "OSMO", "CELR", "SPA", "SAFE", "HOME", "FARM", "XLM", "TIME", "SEAM", "COOKIE", "FLOW", "OXT", "A8", "EDGE", "AKT", "MDT", "FIDA", "BOBBOB", "BICO", "ARB", "IRYS", "QI", "AERGO", "WAXL", "FLUID", "PLU", "CLANKER", "ACH", "ATH", "AXL", "ENA", "CTX", "ZEC", "UMA", "C98", "ABT", "PERP", "ZEN", "CFG", "INV", "PYR", "IMX", "AUCTION", "OMNI", "FLOCK", "NCT", "APR", "STRK", "DRIFT", "CRV", "DIMO", "SHPING", "GLM", "AGLD", "AWE", "PRIME", "ELA", "KRL", "GIGA", "SUPER", "USDT", "GODS", "AVNT", "COMP", "CHZ", "DIA", "DEGEN", "HYPER", "ALEO", "BNB", "BIO", "CRO", "RARI", "FLR", "FAI", "AVAX", "DOGE", "LSETH", "ACS", "ALCX", "REQ", "DOGINME", "VELO", "IMU", "FUN1", "TRB", "BARD", "POL", "DEXT", "T", "COW", "BAL", "CVX", "MLN", "ANKR", "LCX", "CORECHAIN", "BONK", "DOT", "BCH", "POND", "BIGTIME", "SUI", "LTC", "BAND", "GFI", "LQTY", "RLC", "G", "CAKE", "KAVA", "EGLD", "MINA", "YFI", "EIGEN", "GRT", "ORCA", "STX", "AIOZ", "ETHFI", "AERO", "BNKR", "BTC", "LINK", "HIGH", "AUDIO", "SNX", "DOLO", "ALLO", "ASTER", "B3", "AAVE", "UNI", "ICP", "SOL", "AVT", "ERA", "OCEAN", "BTRST", "HFT", "BIRB", "ILV", "FET", "CBETH", "XRP", "FARTCOIN", "MSOL", "BNT", "KSM", "SPELL", "INJ", "ADA", "ETH", "RAD", "HOPR", "SUSHI", "PRO", "ENS", "POLS", "COSMOSDYDX", "BAT", "SWFTC", "ZRX", "AMP", "API3", "GST", "GMT", "ACX", "SHIB", "CGLD", "LRDS", "FLOKI", "POWR", "ZETA", "ETC", "ZRO", "NEON", "HBAR", "TNSR", "ONDO", "EUL", "FORTH", "JTO", "OP", "BERA", "APE", "ARKM", "TIA", "AURORA", "STG", "BOBA", "ASM", "FIL", "QNT", "XTZ", "COTI", "AXS", "BLUR", "ELSA", "TRU", "XYO", "RENDER", "STORJ", "RPL", "ARPA", "INX", "NMR", "ALEPH", "OGN", "ALT", "TRAC", "METIS", "ROSE", "RARE", "KNC", "FORT", "BLZ", "LPT", "HYPE", "SAND", "HNT", "DASH", "BLAST", "MNDE", "MANA", "SEI", "CTSI", "LRC", "GTC", "GNO", "VET", "CVC", "LDO", "AST", "MAGIC", "SKL", "ATOM", "ALICE", "VTHO", "XCN", "JASMY", "ALGO", "PUNDIX", "NEAR", "DOOD", "NKN", "FOX", "FIGHT", "FIS", "MATH", "DNT", "VARA", "VOXEL", "IDEX", "SHDW", "PAX", "SUKU", "HONEY", "00", "MASK", "PIRATE"],
                     datasets: [
                         {
                             label: 'PASSED',
-                            data: [0, 34, 37, 24, 34, 5, 0, 31, 3, 1, 5, 21, 44, 0, 20, 22, 0, 0, 21, 7, 0, 0, 3, 1, 25, 1, 5, 7, 0, 20, 31, 0, 31, 0, 24, 0, 5, 0, 14, 9, 20, 7, 0, 23, 39, 26, 0, 30, 0, 0, 36, 56, 0, 15, 14, 35, 30, 0, 0, 3, 44, 0, 14, 0, 7, 0, 0, 0, 29, 0, 0, 30, 0, 0, 39, 87, 18, 53, 12, 35, 29, 44, 70, 0, 0, 0, 31, 0, 8, 25, 5, 0, 83, 20, 0, 47, 0, 0, 0, 0, 29, 0, 18, 121, 7, 12, 0, 18, 0, 0, 31, 29, 31, 0, 22, 0, 0, 35, 0, 0, 28, 32, 0, 0, 10, 0, 0, 157, 19, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 65, 22, 3, 0, 0, 2, 43, 38, 0, 13, 57, 0, 0, 0, 93, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 48, 0, 0, 52, 0, 0, 0, 0, 84, 28, 0, 48, 0, 0, 120, 0, 0, 0, 0, 0, 0, 5, 0, 52, 0, 0, 45, 0, 0, 71, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 67, 0, 0, 0, 0, 58, 0, 9, 0, 0, 0, 0, 0, 24, 0, 0, 0, 17, 0, 0, 18, 56, 0, 38, 0, 0, 0, 0, 64, 30, 0, 0, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 78, 42, 0, 0, 0],
+                            data: [1, 93, 0, 39, 0, 7, 0, 8, 0, 0, 24, 0, 22, 0, 0, 0, 58, 18, 0, 0, 34, 29, 44, 0, 0, 14, 56, 5, 20, 0, 3, 0, 10, 52, 39, 34, 31, 7, 12, 0, 78, 0, 0, 24, 5, 42, 30, 0, 0, 57, 24, 120, 28, 0, 25, 17, 0, 70, 83, 0, 0, 5, 20, 71, 121, 0, 0, 56, 0, 0, 14, 87, 0, 0, 25, 2, 20, 0, 15, 44, 33, 0, 31, 0, 0, 0, 5, 0, 0, 47, 0, 13, 19, 30, 30, 0, 5, 0, 29, 26, 31, 0, 0, 0, 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 52, 0, 18, 0, 0, 0, 21, 31, 1, 3, 0, 0, 0, 0, 0, 0, 21, 0, 23, 37, 76, 43, 0, 9, 18, 0, 0, 0, 14, 0, 0, 0, 0, 22, 0, 44, 0, 0, 0, 31, 0, 0, 0, 0, 0, 0, 45, 12, 0, 38, 0, 0, 1, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 28, 0, 0, 0, 29, 0, 0, 0, 36, 3, 7, 0, 5, 0, 0, 20, 0, 0, 0, 35, 0, 30, 7, 0, 0, 0, 0, 0, 0, 0, 48, 22, 0, 7, 64, 0, 67, 0, 0, 0, 0, 0, 0, 0, 65, 0, 35, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 31, 30, 0, 0, 0, 0, 0, 0, 0, 0, 84, 0, 0, 157, 35, 0, 48, 20, 0, 0, 38, 9, 0, 18, 3, 0, 0, 0],
                             backgroundColor: 'rgba(16, 185, 129, 0.6)',
                             borderColor: '#10b981',
                             borderWidth: 1,
@@ -262,7 +263,7 @@
                         },
                         {
                             label: 'FAILED',
-                            data: [5, 27, 44, 49, 72, 43, 32, 60, 21, 33, 33, 42, 63, 21, 40, 45, 33, 23, 56, 44, 9, 33, 23, 31, 62, 42, 38, 25, 15, 21, 26, 31, 72, 30, 60, 28, 28, 37, 46, 5, 59, 43, 37, 53, 32, 44, 27, 70, 28, 35, 74, 65, 29, 59, 44, 36, 55, 15, 26, 39, 59, 34, 58, 30, 38, 27, 12, 24, 65, 30, 30, 60, 33, 34, 79, 69, 56, 77, 61, 35, 63, 56, 72, 36, 24, 27, 62, 34, 37, 66, 47, 29, 87, 16, 32, 94, 30, 27, 33, 36, 58, 32, 38, 102, 36, 49, 36, 47, 34, 28, 66, 60, 67, 37, 53, 32, 31, 70, 32, 22, 68, 64, 34, 32, 40, 5, 28, 120, 64, 34, 22, 22, 26, 36, 21, 94, 20, 30, 27, 35, 32, 22, 25, 66, 65, 8, 14, 36, 49, 56, 19, 31, 32, 66, 33, 51, 25, 71, 52, 33, 31, 33, 33, 45, 35, 26, 31, 37, 35, 29, 26, 46, 40, 29, 56, 36, 4, 52, 34, 31, 69, 35, 25, 36, 19, 63, 51, 34, 64, 45, 30, 84, 39, 26, 35, 23, 24, 13, 36, 4, 47, 46, 38, 90, 16, 31, 62, 27, 35, 30, 21, 30, 18, 26, 54, 36, 22, 29, 66, 20, 39, 37, 36, 67, 31, 6, 33, 59, 8, 25, 39, 44, 38, 38, 28, 18, 41, 37, 12, 68, 34, 64, 37, 34, 52, 34, 52, 61, 29, 32, 73, 11, 5, 28, 34, 3, 31, 45, 24, 27, 34, 29, 28, 29, 68, 76, 35, 40, 28],
+                            data: [42, 71, 46, 32, 36, 38, 22, 37, 23, 30, 44, 39, 65, 37, 27, 52, 67, 56, 34, 24, 27, 58, 63, 34, 31, 58, 65, 38, 52, 21, 21, 45, 40, 47, 79, 72, 72, 43, 49, 24, 68, 32, 24, 49, 36, 76, 60, 51, 30, 66, 60, 84, 68, 19, 62, 18, 36, 72, 87, 59, 36, 33, 59, 62, 102, 45, 26, 68, 11, 20, 46, 69, 34, 29, 66, 49, 40, 26, 59, 56, 54, 32, 67, 37, 32, 40, 43, 21, 22, 94, 28, 32, 64, 61, 70, 38, 47, 37, 63, 44, 62, 35, 33, 26, 77, 30, 33, 35, 16, 29, 37, 29, 27, 22, 29, 29, 34, 65, 33, 32, 69, 29, 38, 30, 35, 41, 42, 66, 33, 39, 27, 37, 25, 28, 25, 30, 56, 31, 53, 44, 73, 56, 39, 5, 47, 45, 12, 22, 44, 31, 32, 30, 34, 53, 36, 59, 35, 38, 33, 60, 28, 18, 14, 34, 27, 36, 90, 61, 28, 64, 28, 9, 31, 27, 21, 32, 33, 33, 46, 64, 31, 35, 34, 40, 51, 32, 34, 39, 60, 28, 31, 26, 74, 23, 25, 34, 28, 38, 34, 21, 32, 30, 29, 35, 37, 55, 36, 29, 28, 36, 28, 20, 15, 25, 64, 45, 30, 44, 52, 31, 66, 26, 33, 5, 15, 35, 36, 37, 66, 34, 36, 25, 36, 31, 36, 26, 35, 94, 34, 27, 31, 26, 56, 8, 30, 23, 31, 24, 33, 33, 35, 63, 27, 34, 120, 70, 22, 52, 16, 5, 3, 19, 6, 13, 12, 8, 5, 4, 4],
                             backgroundColor: 'rgba(239, 68, 68, 0.6)',
                             borderColor: '#ef4444',
                             borderWidth: 1,
