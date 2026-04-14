@@ -1,22 +1,22 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 10:36 AM PDT",
+    "last_updated": "2026-04-14 11:07 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
   "kpis": {
     "total_signals": 102,
-    "hits": 75,
-    "misses": 22,
-    "waiting": 5,
-    "hit_rate_pct": 77.3
+    "hits": 78,
+    "misses": 23,
+    "waiting": 1,
+    "hit_rate_pct": 77.2
   },
   "symbol_summary": {
     "A8": {
-      "hits": 3,
+      "hits": 4,
       "misses": 0,
-      "no_data": 1
+      "no_data": 0
     },
     "AERO": {
       "hits": 7,
@@ -29,9 +29,9 @@
       "no_data": 0
     },
     "AKT": {
-      "hits": 8,
+      "hits": 9,
       "misses": 1,
-      "no_data": 1
+      "no_data": 0
     },
     "ALEPH": {
       "hits": 1,
@@ -54,9 +54,9 @@
       "no_data": 0
     },
     "AST": {
-      "hits": 8,
+      "hits": 9,
       "misses": 0,
-      "no_data": 1
+      "no_data": 0
     },
     "AVT": {
       "hits": 0,
@@ -95,8 +95,8 @@
     },
     "DNT": {
       "hits": 1,
-      "misses": 0,
-      "no_data": 1
+      "misses": 1,
+      "no_data": 0
     },
     "ELA": {
       "hits": 7,
@@ -789,9 +789,9 @@
     {
       "symbol": "DNT",
       "timestamp": "2026-04-13T09:53:28-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "MISS",
+      "entry_price": 0.0075401016511023045,
+      "detail": 0.794398800166376
     },
     {
       "symbol": "AST",
@@ -831,23 +831,23 @@
     {
       "symbol": "AST",
       "timestamp": "2026-04-14T02:13:55-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.006599999964237213,
+      "detail": 36.083333333333336
     },
     {
       "symbol": "AKT",
       "timestamp": "2026-04-14T02:27:19-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.45399999618530273,
+      "detail": 297.68333333333334
     },
     {
       "symbol": "A8",
       "timestamp": "2026-04-14T03:27:10-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.010499999858438969,
+      "detail": 67.83333333333333
     }
   ]
 }
