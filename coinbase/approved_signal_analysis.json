@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 09:04 AM PDT",
+    "last_updated": "2026-04-14 09:35 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
   "kpis": {
-    "total_signals": 99,
+    "total_signals": 101,
     "hits": 75,
     "misses": 22,
-    "waiting": 2,
+    "waiting": 4,
     "hit_rate_pct": 77.3
   },
   "symbol_summary": {
@@ -31,7 +31,7 @@
     "AKT": {
       "hits": 8,
       "misses": 1,
-      "no_data": 0
+      "no_data": 1
     },
     "ALEPH": {
       "hits": 1,
@@ -56,7 +56,7 @@
     "AST": {
       "hits": 8,
       "misses": 0,
-      "no_data": 0
+      "no_data": 1
     },
     "AVT": {
       "hits": 0,
@@ -827,6 +827,20 @@
       "outcome": "HIT",
       "entry_price": 0.002300000051036477,
       "detail": 184.06666666666666
+    },
+    {
+      "symbol": "AST",
+      "timestamp": "2026-04-14T02:13:55-07:00",
+      "outcome": "NO_DATA",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "AKT",
+      "timestamp": "2026-04-14T02:27:19-07:00",
+      "outcome": "NO_DATA",
+      "entry_price": null,
+      "detail": null
     }
   ]
 }
