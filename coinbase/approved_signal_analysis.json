@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 03:12 PM PDT",
+    "last_updated": "2026-04-14 03:43 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
@@ -860,8 +860,8 @@
       "symbol": "CRV",
       "timestamp": "2026-04-14T06:48:17-07:00",
       "outcome": "NO_DATA",
-      "entry_price": 0.22030000388622284,
-      "detail": -2.1334566371143886
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AST",
