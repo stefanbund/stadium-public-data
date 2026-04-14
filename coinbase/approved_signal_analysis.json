@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 08:03 AM PDT",
+    "last_updated": "2026-04-14 08:33 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
   "kpis": {
     "total_signals": 99,
-    "hits": 73,
+    "hits": 75,
     "misses": 22,
-    "waiting": 4,
-    "hit_rate_pct": 76.8
+    "waiting": 2,
+    "hit_rate_pct": 77.3
   },
   "symbol_summary": {
     "A8": {
@@ -54,9 +54,9 @@
       "no_data": 0
     },
     "AST": {
-      "hits": 7,
+      "hits": 8,
       "misses": 0,
-      "no_data": 1
+      "no_data": 0
     },
     "AVT": {
       "hits": 0,
@@ -119,9 +119,9 @@
       "no_data": 1
     },
     "IDEX": {
-      "hits": 5,
+      "hits": 6,
       "misses": 2,
-      "no_data": 1
+      "no_data": 0
     },
     "IOTX": {
       "hits": 0,
@@ -775,9 +775,9 @@
     {
       "symbol": "AST",
       "timestamp": "2026-04-13T08:16:58-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.007000000216066837,
+      "detail": 1428.0333333333333
     },
     {
       "symbol": "AST",
@@ -790,8 +790,8 @@
       "symbol": "DNT",
       "timestamp": "2026-04-13T09:53:28-07:00",
       "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.0075401016511023045,
+      "detail": -1.8580870039948134
     },
     {
       "symbol": "AST",
@@ -824,9 +824,9 @@
     {
       "symbol": "IDEX",
       "timestamp": "2026-04-14T00:55:56-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.002300000051036477,
+      "detail": 184.06666666666666
     }
   ]
 }
