@@ -1,22 +1,22 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 07:47 PM PDT",
+    "last_updated": "2026-04-14 08:18 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 24
   },
   "kpis": {
-    "total_signals": 109,
+    "total_signals": 112,
     "hits": 81,
     "misses": 23,
-    "waiting": 5,
+    "waiting": 8,
     "hit_rate_pct": 77.9
   },
   "symbol_summary": {
     "A8": {
       "hits": 4,
       "misses": 0,
-      "no_data": 0
+      "no_data": 1
     },
     "AERO": {
       "hits": 7,
@@ -91,7 +91,7 @@
     "DIMO": {
       "hits": 0,
       "misses": 2,
-      "no_data": 0
+      "no_data": 1
     },
     "DNT": {
       "hits": 1,
@@ -121,7 +121,7 @@
     "IDEX": {
       "hits": 6,
       "misses": 2,
-      "no_data": 0
+      "no_data": 1
     },
     "IOTX": {
       "hits": 0,
@@ -894,6 +894,27 @@
     {
       "symbol": "FOX",
       "timestamp": "2026-04-14T12:16:30-07:00",
+      "outcome": "NO_DATA",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "IDEX",
+      "timestamp": "2026-04-14T12:56:21-07:00",
+      "outcome": "NO_DATA",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "A8",
+      "timestamp": "2026-04-14T12:56:53-07:00",
+      "outcome": "NO_DATA",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "DIMO",
+      "timestamp": "2026-04-14T12:57:33-07:00",
       "outcome": "NO_DATA",
       "entry_price": null,
       "detail": null
