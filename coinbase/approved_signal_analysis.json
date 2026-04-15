@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-15 06:56 AM PDT",
+    "last_updated": "2026-04-15 07:24 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 115,
-    "hits": 87,
+    "total_signals": 110,
+    "hits": 83,
     "misses": 23,
-    "waiting": 5,
-    "hit_rate_pct": 79.1
+    "waiting": 4,
+    "hit_rate_pct": 78.3
   },
   "symbol_summary": {
     "A8": {
@@ -54,7 +54,7 @@
       "waiting": 0
     },
     "AST": {
-      "hits": 12,
+      "hits": 8,
       "misses": 0,
       "waiting": 0
     },
@@ -113,11 +113,6 @@
       "misses": 1,
       "waiting": 0
     },
-    "HONEY": {
-      "hits": 0,
-      "misses": 0,
-      "waiting": 1
-    },
     "IDEX": {
       "hits": 7,
       "misses": 2,
@@ -135,41 +130,6 @@
     }
   },
   "signals": [
-    {
-      "symbol": "HONEY",
-      "timestamp": "2026-04-01T22:48:05-07:00",
-      "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
-    },
-    {
-      "symbol": "AST",
-      "timestamp": "2026-04-01T23:13:11-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.0070079234428703785,
-      "detail": 371.81666666666666
-    },
-    {
-      "symbol": "AST",
-      "timestamp": "2026-04-02T00:40:52-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.00700779166072607,
-      "detail": 284.1333333333333
-    },
-    {
-      "symbol": "AST",
-      "timestamp": "2026-04-02T04:03:24-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.007000000216066837,
-      "detail": 81.6
-    },
-    {
-      "symbol": "AST",
-      "timestamp": "2026-04-02T06:09:07-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.007141046691685915,
-      "detail": 300.8833333333333
-    },
     {
       "symbol": "ASM",
       "timestamp": "2026-04-09T01:32:08-07:00",
