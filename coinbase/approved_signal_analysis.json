@@ -1,144 +1,144 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 09:19 PM PDT",
+    "last_updated": "2026-04-14 10:05 PM PDT",
     "target_gain_pct": 1.01,
-    "window_hours": 24
+    "window_hours": 168
   },
   "kpis": {
-    "total_signals": 112,
-    "hits": 81,
+    "total_signals": 115,
+    "hits": 87,
     "misses": 23,
-    "waiting": 8,
-    "hit_rate_pct": 77.9
+    "waiting": 5,
+    "hit_rate_pct": 79.1
   },
   "symbol_summary": {
     "A8": {
-      "hits": 4,
+      "hits": 6,
       "misses": 0,
-      "no_data": 1
+      "waiting": 1
     },
     "AERO": {
       "hits": 7,
       "misses": 3,
-      "no_data": 0
+      "waiting": 0
     },
     "AGLD": {
       "hits": 6,
       "misses": 1,
-      "no_data": 0
+      "waiting": 0
     },
     "AKT": {
       "hits": 9,
       "misses": 1,
-      "no_data": 0
+      "waiting": 0
     },
     "ALEPH": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "APE": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "ARKM": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "ASM": {
       "hits": 6,
       "misses": 5,
-      "no_data": 0
+      "waiting": 0
     },
     "AST": {
       "hits": 12,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "AVT": {
       "hits": 0,
       "misses": 1,
-      "no_data": 1
+      "waiting": 1
     },
     "BLUR": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "BNT": {
       "hits": 4,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "COTI": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "CRO": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     },
     "CRV": {
       "hits": 0,
       "misses": 3,
-      "no_data": 1
+      "waiting": 1
     },
     "DIMO": {
       "hits": 0,
       "misses": 2,
-      "no_data": 1
+      "waiting": 1
     },
     "DNT": {
-      "hits": 1,
+      "hits": 2,
       "misses": 1,
-      "no_data": 0
+      "waiting": 0
     },
     "ELA": {
-      "hits": 7,
+      "hits": 8,
       "misses": 0,
-      "no_data": 1
+      "waiting": 0
     },
     "FOX": {
-      "hits": 6,
+      "hits": 7,
       "misses": 2,
-      "no_data": 1
+      "waiting": 0
     },
     "GNO": {
       "hits": 6,
       "misses": 1,
-      "no_data": 0
+      "waiting": 0
     },
     "HONEY": {
       "hits": 0,
       "misses": 0,
-      "no_data": 1
+      "waiting": 1
     },
     "IDEX": {
-      "hits": 6,
+      "hits": 7,
       "misses": 2,
-      "no_data": 1
+      "waiting": 0
     },
     "IOTX": {
       "hits": 0,
       "misses": 1,
-      "no_data": 0
+      "waiting": 0
     },
     "MINA": {
       "hits": 1,
       "misses": 0,
-      "no_data": 0
+      "waiting": 0
     }
   },
   "signals": [
     {
       "symbol": "HONEY",
       "timestamp": "2026-04-01T22:48:05-07:00",
-      "outcome": "NO_DATA",
+      "outcome": "WAITING",
       "entry_price": null,
       "detail": null
     },
@@ -859,7 +859,7 @@
     {
       "symbol": "CRV",
       "timestamp": "2026-04-14T06:48:17-07:00",
-      "outcome": "NO_DATA",
+      "outcome": "WAITING",
       "entry_price": null,
       "detail": null
     },
@@ -880,44 +880,65 @@
     {
       "symbol": "ELA",
       "timestamp": "2026-04-14T11:03:01-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.45500001311302185,
+      "detail": 71.98333333333333
     },
     {
       "symbol": "AVT",
       "timestamp": "2026-04-14T11:44:26-07:00",
-      "outcome": "NO_DATA",
+      "outcome": "WAITING",
       "entry_price": null,
       "detail": null
     },
     {
       "symbol": "FOX",
       "timestamp": "2026-04-14T12:16:30-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.0064199999906122684,
+      "detail": 83.5
     },
     {
       "symbol": "IDEX",
       "timestamp": "2026-04-14T12:56:21-07:00",
-      "outcome": "NO_DATA",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.002400000113993883,
+      "detail": -1.35
     },
     {
       "symbol": "A8",
       "timestamp": "2026-04-14T12:56:53-07:00",
-      "outcome": "NO_DATA",
+      "outcome": "WAITING",
       "entry_price": null,
       "detail": null
     },
     {
       "symbol": "DIMO",
       "timestamp": "2026-04-14T12:57:33-07:00",
-      "outcome": "NO_DATA",
+      "outcome": "WAITING",
       "entry_price": null,
       "detail": null
+    },
+    {
+      "symbol": "A8",
+      "timestamp": "2026-04-14T14:26:17-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.010300000198185444,
+      "detail": 333.71666666666664
+    },
+    {
+      "symbol": "DNT",
+      "timestamp": "2026-04-14T14:35:39-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.007400000002235174,
+      "detail": 164.35
+    },
+    {
+      "symbol": "A8",
+      "timestamp": "2026-04-14T14:43:23-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.010200000368058681,
+      "detail": 261.6166666666667
     }
   ]
 }
