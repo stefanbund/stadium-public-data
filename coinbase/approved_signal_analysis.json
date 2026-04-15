@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-15 10:00 AM PDT",
+    "last_updated": "2026-04-15 10:29 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 113,
-    "hits": 88,
+    "total_signals": 115,
+    "hits": 90,
     "misses": 23,
     "waiting": 2,
-    "hit_rate_pct": 79.3
+    "hit_rate_pct": 79.6
   },
   "symbol_summary": {
     "A8": {
@@ -19,7 +19,7 @@
       "waiting": 0
     },
     "AERO": {
-      "hits": 8,
+      "hits": 9,
       "misses": 3,
       "waiting": 0
     },
@@ -54,7 +54,7 @@
       "waiting": 0
     },
     "AST": {
-      "hits": 8,
+      "hits": 9,
       "misses": 0,
       "waiting": 0
     },
@@ -849,7 +849,7 @@
       "timestamp": "2026-04-14T11:44:26-07:00",
       "outcome": "WAITING",
       "entry_price": 0.5899999737739563,
-      "detail": -5.084741139541855
+      "detail": -3.389827426361236
     },
     {
       "symbol": "FOX",
@@ -877,7 +877,7 @@
       "timestamp": "2026-04-14T12:57:33-07:00",
       "outcome": "WAITING",
       "entry_price": 0.012129999697208405,
-      "detail": 0.0
+      "detail": 0.08244469955364081
     },
     {
       "symbol": "A8",
@@ -920,6 +920,20 @@
       "outcome": "HIT",
       "entry_price": 3.190072675351985e-05,
       "detail": 301.3666666666667
+    },
+    {
+      "symbol": "AST",
+      "timestamp": "2026-04-15T03:22:57-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.0066999997943639755,
+      "detail": 262.05
+    },
+    {
+      "symbol": "AERO",
+      "timestamp": "2026-04-15T03:23:34-07:00",
+      "outcome": "HIT",
+      "entry_price": 3.188764821970835e-05,
+      "detail": 271.43333333333334
     }
   ]
 }
