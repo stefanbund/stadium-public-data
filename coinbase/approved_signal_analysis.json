@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-14 10:05 PM PDT",
+    "last_updated": "2026-04-14 10:51 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -860,8 +860,8 @@
       "symbol": "CRV",
       "timestamp": "2026-04-14T06:48:17-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.22030000388622284,
+      "detail": -1.5433490193473616
     },
     {
       "symbol": "AST",
@@ -888,8 +888,8 @@
       "symbol": "AVT",
       "timestamp": "2026-04-14T11:44:26-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.5899999737739563,
+      "detail": -5.084741139541855
     },
     {
       "symbol": "FOX",
@@ -909,8 +909,8 @@
       "symbol": "A8",
       "timestamp": "2026-04-14T12:56:53-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.010499999858438969,
+      "detail": -1.9047586947611508
     },
     {
       "symbol": "DIMO",
