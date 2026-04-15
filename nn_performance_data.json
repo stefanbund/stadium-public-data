@@ -1,5 +1,353 @@
 [
   {
+    "symbol": "DIA",
+    "tier": "Directional",
+    "probability": 0.088,
+    "threshold": 0.7788966816706795,
+    "accuracy": 0.9736208520883493,
+    "passed": 0.0,
+    "last_seen": "2026-04-15 14:09:15,745",
+    "count": 10,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:09:15,745",
+        "probability": 0.2,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 13:28:01,257",
+        "probability": 0.06,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 12:12:22,001",
+        "probability": 0.07,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 11:50:23,011",
+        "probability": 0.09,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 11:22:31,257",
+        "probability": 0.18,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 09:58:55,671",
+        "probability": 0.03,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 09:35:34,631",
+        "probability": 0.03,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 09:07:32,077",
+        "probability": 0.03,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 08:07:47,717",
+        "probability": 0.18,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      },
+      {
+        "timestamp": "2026-04-15 07:38:54,453",
+        "probability": 0.01,
+        "passed": false,
+        "accuracy": 0.9736208520883493
+      }
+    ]
+  },
+  {
+    "symbol": "BTRST",
+    "tier": "Directional",
+    "probability": 0.20555555555555557,
+    "threshold": 0.750937950937951,
+    "accuracy": 0.9386724386724388,
+    "passed": 0.0,
+    "last_seen": "2026-04-15 14:09:15,629",
+    "count": 9,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:09:15,629",
+        "probability": 0.37,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 13:11:12,707",
+        "probability": 0.07,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 11:48:52,267",
+        "probability": 0.12,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 11:00:54,322",
+        "probability": 0.16,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 10:13:01,252",
+        "probability": 0.21,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 09:45:44,888",
+        "probability": 0.21,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 09:37:52,113",
+        "probability": 0.33,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 09:04:41,630",
+        "probability": 0.16,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      },
+      {
+        "timestamp": "2026-04-15 07:37:12,612",
+        "probability": 0.22,
+        "passed": false,
+        "accuracy": 0.9386724386724388
+      }
+    ]
+  },
+  {
+    "symbol": "FORTH",
+    "tier": "Directional",
+    "probability": 0.089,
+    "threshold": 0.7838926174496645,
+    "accuracy": 0.9798657718120806,
+    "passed": 0.0,
+    "last_seen": "2026-04-15 14:09:05,520",
+    "count": 10,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:09:05,520",
+        "probability": 0.01,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 13:11:02,636",
+        "probability": 0.04,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 12:49:13,659",
+        "probability": 0.12,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 11:25:02,272",
+        "probability": 0.05,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 10:55:53,454",
+        "probability": 0.05,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 10:19:54,232",
+        "probability": 0.23,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 09:35:37,932",
+        "probability": 0.23,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 09:12:12,837",
+        "probability": 0.11,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 07:57:23,386",
+        "probability": 0.03,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      },
+      {
+        "timestamp": "2026-04-15 07:47:17,894",
+        "probability": 0.02,
+        "passed": false,
+        "accuracy": 0.9798657718120806
+      }
+    ]
+  },
+  {
+    "symbol": "FUN1",
+    "tier": "Directional",
+    "probability": 0.85,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.5,
+    "last_seen": "2026-04-15 14:08:45,620",
+    "count": 6,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:08:45,620",
+        "probability": 0.96,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 12:57:47,315",
+        "probability": 0.92,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 11:36:27,183",
+        "probability": 0.75,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 10:15:22,756",
+        "probability": 0.75,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 10:10:50,776",
+        "probability": 0.75,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 08:14:24,906",
+        "probability": 0.97,
+        "passed": true,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "symbol": "CTSI",
+    "tier": "Directional",
+    "probability": 0.06000000000000001,
+    "threshold": 0.791111773916934,
+    "accuracy": 0.9888897173961674,
+    "passed": 0.0,
+    "last_seen": "2026-04-15 14:08:15,356",
+    "count": 5,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:08:15,356",
+        "probability": 0.01,
+        "passed": false,
+        "accuracy": 0.9888897173961674
+      },
+      {
+        "timestamp": "2026-04-15 10:23:47,489",
+        "probability": 0.07,
+        "passed": false,
+        "accuracy": 0.9888897173961674
+      },
+      {
+        "timestamp": "2026-04-15 09:38:33,308",
+        "probability": 0.02,
+        "passed": false,
+        "accuracy": 0.9888897173961674
+      },
+      {
+        "timestamp": "2026-04-15 09:05:21,074",
+        "probability": 0.14,
+        "passed": false,
+        "accuracy": 0.9888897173961674
+      },
+      {
+        "timestamp": "2026-04-15 08:32:32,519",
+        "probability": 0.06,
+        "passed": false,
+        "accuracy": 0.9888897173961674
+      }
+    ]
+  },
+  {
+    "symbol": "AURORA",
+    "tier": "Directional",
+    "probability": 0.11,
+    "threshold": 0.8000000000000002,
+    "accuracy": 1.0,
+    "passed": 0.0,
+    "last_seen": "2026-04-15 14:08:05,041",
+    "count": 6,
+    "recent_history": [
+      {
+        "timestamp": "2026-04-15 14:08:05,041",
+        "probability": 0.1,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 12:13:52,588",
+        "probability": 0.14,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 11:46:11,179",
+        "probability": 0.33,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 10:50:21,055",
+        "probability": 0.01,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 10:00:46,576",
+        "probability": 0.03,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      {
+        "timestamp": "2026-04-15 07:23:03,567",
+        "probability": 0.05,
+        "passed": false,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  {
     "symbol": "GIGA",
     "tier": "Directional",
     "probability": 0.2575,
@@ -2526,72 +2874,6 @@
     ]
   },
   {
-    "symbol": "DIA",
-    "tier": "Directional",
-    "probability": 0.07555555555555554,
-    "threshold": 0.7788966816706795,
-    "accuracy": 0.9736208520883493,
-    "passed": 0.0,
-    "last_seen": "2026-04-15 13:28:01,257",
-    "count": 9,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 13:28:01,257",
-        "probability": 0.06,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 12:12:22,001",
-        "probability": 0.07,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 11:50:23,011",
-        "probability": 0.09,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 11:22:31,257",
-        "probability": 0.18,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 09:58:55,671",
-        "probability": 0.03,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 09:35:34,631",
-        "probability": 0.03,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 09:07:32,077",
-        "probability": 0.03,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 08:07:47,717",
-        "probability": 0.18,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      },
-      {
-        "timestamp": "2026-04-15 07:38:54,453",
-        "probability": 0.01,
-        "passed": false,
-        "accuracy": 0.9736208520883493
-      }
-    ]
-  },
-  {
     "symbol": "HFT",
     "tier": "Directional",
     "probability": 0.19714285714285712,
@@ -4988,132 +5270,6 @@
         "probability": 0.23,
         "passed": false,
         "accuracy": 1.0
-      }
-    ]
-  },
-  {
-    "symbol": "BTRST",
-    "tier": "Directional",
-    "probability": 0.185,
-    "threshold": 0.750937950937951,
-    "accuracy": 0.9386724386724388,
-    "passed": 0.0,
-    "last_seen": "2026-04-15 13:11:12,707",
-    "count": 8,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 13:11:12,707",
-        "probability": 0.07,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 11:48:52,267",
-        "probability": 0.12,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 11:00:54,322",
-        "probability": 0.16,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 10:13:01,252",
-        "probability": 0.21,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 09:45:44,888",
-        "probability": 0.21,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 09:37:52,113",
-        "probability": 0.33,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 09:04:41,630",
-        "probability": 0.16,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      },
-      {
-        "timestamp": "2026-04-15 07:37:12,612",
-        "probability": 0.22,
-        "passed": false,
-        "accuracy": 0.9386724386724388
-      }
-    ]
-  },
-  {
-    "symbol": "FORTH",
-    "tier": "Directional",
-    "probability": 0.09777777777777778,
-    "threshold": 0.7838926174496645,
-    "accuracy": 0.9798657718120806,
-    "passed": 0.0,
-    "last_seen": "2026-04-15 13:11:02,636",
-    "count": 9,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 13:11:02,636",
-        "probability": 0.04,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 12:49:13,659",
-        "probability": 0.12,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 11:25:02,272",
-        "probability": 0.05,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 10:55:53,454",
-        "probability": 0.05,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 10:19:54,232",
-        "probability": 0.23,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 09:35:37,932",
-        "probability": 0.23,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 09:12:12,837",
-        "probability": 0.11,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 07:57:23,386",
-        "probability": 0.03,
-        "passed": false,
-        "accuracy": 0.9798657718120806
-      },
-      {
-        "timestamp": "2026-04-15 07:47:17,894",
-        "probability": 0.02,
-        "passed": false,
-        "accuracy": 0.9798657718120806
       }
     ]
   },
@@ -11904,48 +12060,6 @@
     ]
   },
   {
-    "symbol": "FUN1",
-    "tier": "Directional",
-    "probability": 0.828,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.4,
-    "last_seen": "2026-04-15 12:57:47,315",
-    "count": 5,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 12:57:47,315",
-        "probability": 0.92,
-        "passed": true,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 11:36:27,183",
-        "probability": 0.75,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 10:15:22,756",
-        "probability": 0.75,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 10:10:50,776",
-        "probability": 0.75,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 08:14:24,906",
-        "probability": 0.97,
-        "passed": true,
-        "accuracy": 1.0
-      }
-    ]
-  },
-  {
     "symbol": "ORCA",
     "tier": "Directional",
     "probability": 0.15142857142857144,
@@ -15984,48 +16098,6 @@
     ]
   },
   {
-    "symbol": "AURORA",
-    "tier": "Directional",
-    "probability": 0.11200000000000002,
-    "threshold": 0.8,
-    "accuracy": 1.0,
-    "passed": 0.0,
-    "last_seen": "2026-04-15 12:13:52,588",
-    "count": 5,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 12:13:52,588",
-        "probability": 0.14,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 11:46:11,179",
-        "probability": 0.33,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 10:50:21,055",
-        "probability": 0.01,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 10:00:46,576",
-        "probability": 0.03,
-        "passed": false,
-        "accuracy": 1.0
-      },
-      {
-        "timestamp": "2026-04-15 07:23:03,567",
-        "probability": 0.05,
-        "passed": false,
-        "accuracy": 1.0
-      }
-    ]
-  },
-  {
     "symbol": "MINA",
     "tier": "Generalist",
     "probability": 0.5449999999999999,
@@ -17942,42 +18014,6 @@
         "probability": 0.07,
         "passed": false,
         "accuracy": 0.9846222278706234
-      }
-    ]
-  },
-  {
-    "symbol": "CTSI",
-    "tier": "Directional",
-    "probability": 0.07250000000000001,
-    "threshold": 0.791111773916934,
-    "accuracy": 0.9888897173961674,
-    "passed": 0.0,
-    "last_seen": "2026-04-15 10:23:47,489",
-    "count": 4,
-    "recent_history": [
-      {
-        "timestamp": "2026-04-15 10:23:47,489",
-        "probability": 0.07,
-        "passed": false,
-        "accuracy": 0.9888897173961674
-      },
-      {
-        "timestamp": "2026-04-15 09:38:33,308",
-        "probability": 0.02,
-        "passed": false,
-        "accuracy": 0.9888897173961674
-      },
-      {
-        "timestamp": "2026-04-15 09:05:21,074",
-        "probability": 0.14,
-        "passed": false,
-        "accuracy": 0.9888897173961674
-      },
-      {
-        "timestamp": "2026-04-15 08:32:32,519",
-        "probability": 0.06,
-        "passed": false,
-        "accuracy": 0.9888897173961674
       }
     ]
   },
