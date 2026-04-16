@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-16 12:06 AM PDT",
+    "last_updated": "2026-04-16 12:37 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
     "total_signals": 112,
-    "hits": 85,
+    "hits": 87,
     "misses": 23,
-    "waiting": 4,
-    "hit_rate_pct": 78.7
+    "waiting": 2,
+    "hit_rate_pct": 79.1
   },
   "symbol_summary": {
     "A8": {
@@ -74,9 +74,9 @@
       "waiting": 0
     },
     "BONK": {
-      "hits": 0,
+      "hits": 1,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "COTI": {
       "hits": 1,
@@ -89,9 +89,9 @@
       "waiting": 0
     },
     "CRV": {
-      "hits": 1,
+      "hits": 2,
       "misses": 3,
-      "waiting": 1
+      "waiting": 0
     },
     "DIMO": {
       "hits": 0,
@@ -853,8 +853,8 @@
       "symbol": "AVT",
       "timestamp": "2026-04-14T11:44:26-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.5899999737739563,
+      "detail": -1.694913713180618
     },
     {
       "symbol": "FOX",
@@ -881,8 +881,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-14T12:57:33-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.012129999697208405,
+      "detail": -0.5770821854955066
     },
     {
       "symbol": "A8",
@@ -908,16 +908,16 @@
     {
       "symbol": "CRV",
       "timestamp": "2026-04-15T03:16:35-07:00",
-      "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 0.21899999678134918,
+      "detail": 88.41666666666667
     },
     {
       "symbol": "BONK",
       "timestamp": "2026-04-15T10:18:38-07:00",
-      "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "outcome": "HIT",
+      "entry_price": 6.050000138202449e-06,
+      "detail": 136.36666666666667
     }
   ]
 }
