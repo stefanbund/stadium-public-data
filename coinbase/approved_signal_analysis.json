@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-15 06:34 PM PDT",
+    "last_updated": "2026-04-15 07:04 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 116,
+    "total_signals": 117,
     "hits": 91,
     "misses": 23,
-    "waiting": 2,
+    "waiting": 3,
     "hit_rate_pct": 79.8
   },
   "symbol_summary": {
@@ -91,7 +91,7 @@
     "DIMO": {
       "hits": 0,
       "misses": 2,
-      "waiting": 1
+      "waiting": 2
     },
     "DNT": {
       "hits": 3,
@@ -941,6 +941,13 @@
       "outcome": "HIT",
       "entry_price": 0.5699999928474426,
       "detail": -1.55
+    },
+    {
+      "symbol": "DIMO",
+      "timestamp": "2026-04-15T11:54:39-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
     }
   ]
 }
