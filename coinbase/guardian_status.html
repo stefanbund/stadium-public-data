@@ -109,20 +109,20 @@
             </div>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">27.1%</div>
+                    <div class="metric-val">2.1%</div>
                     <div class="metric-label">CPU</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">53.2%</div>
+                    <div class="metric-val">64.1%</div>
                     <div class="metric-label">RAM</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">3.74G</div>
+                    <div class="metric-val">5.74G</div>
                     <div class="metric-label">FREE</div>
                 </div>
             </div>
             <div class="service-list">
-                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>MLOps Orchestrator</span><span style="color: var(--green)">RUNNING</span></div>
+                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div>
             </div>
         </div>
 
@@ -130,15 +130,39 @@
         <div class="card">
             <div class="header">
                 <span class="title">Remote MLOps (Mac Mini)</span>
-                <span class="status offline">OFFLINE</span>
+                <span class="status online">ONLINE</span>
             </div>
-            <div style="text-align: center; padding: 2rem; color: var(--red);">Host unreachable: Permission denied, please try again.
-Received disconnect from ::1 port 22:2: Too many authentication failures
-Disconnected from ::1 port 22
-</div>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-val">217.9%</div>
+                    <div class="metric-label">CPU Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">47.9%</div>
+                    <div class="metric-label">RAM Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val" style="font-size: 10px;"> 2:58 up 17:11</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+            <span class="title" style="font-size: 10px;">Remote ML Log Tail:</span>
+            <pre>[AIOZ]   [Output] 0     3043
+[AIOZ]   [Output] Saved Layer 2 data for AIOZ-USD to /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/BBP-IMBALANCE/AIOZ-USD-imbalance-pipeline.csv
+[AIOZ]   [Output] INFO:__main__:Saved Layer 2 data for AIOZ-USD to /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/BBP-IMBALANCE/AIOZ-USD-imbalance-pipeline.csv
+[AIOZ] Executing: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/venv/bin/python3 /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py --symbol AIOZ --window-size 5
+[AIOZ]   [Output] Using sampler data from: /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA/GRUS-CSV-SAMPLER-DATA
+[AIOZ]   [Output] Analysis parameters: window_size=5, fixed_target_pct=-3.0%
+[AIOZ]   [Output] Targeting specific symbol: AIOZ-USD
+[AIOZ]   [Output] Loading and processing data for symbol: AIOZ-USD
+[AIOZ]   [Output] /Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py:151: FutureWarning: Series.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[AIOZ]   [Output] capsFrame[col] = capsFrame[col].fillna(method='ffill')
+</pre>
+            
         </div>
     </div>
-    <div class="refresh">Last heartbeat: 2026-04-17 02:56:54</div>
+    <div class="refresh">Last heartbeat: 2026-04-17 02:58:45</div>
 </body>
 </html>
     
