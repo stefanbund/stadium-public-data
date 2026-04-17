@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 01:16 AM PDT",
+    "last_updated": "2026-04-17 01:46 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -335,7 +335,7 @@
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -5.774647887323953
+      "detail": -5.492957746478881
     },
     {
       "symbol": "AERO",
@@ -412,7 +412,7 @@
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0124,
-      "detail": -2.8225806451612874
+      "detail": -2.9838709677419257
     },
     {
       "symbol": "ARKM",
