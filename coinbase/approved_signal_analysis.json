@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 08:23 AM PDT",
+    "last_updated": "2026-04-17 08:53 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 85,
+    "total_signals": 86,
     "hits": 82,
     "misses": 0,
-    "waiting": 3,
-    "hit_rate_pct": 96.5,
+    "waiting": 4,
+    "hit_rate_pct": 95.3,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -82,7 +82,7 @@
     "BONK": {
       "hits": 2,
       "misses": 0,
-      "waiting": 0
+      "waiting": 1
     },
     "COTI": {
       "hits": 1,
@@ -335,7 +335,7 @@
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -3.8028169014084545
+      "detail": -3.9436619718309958
     },
     {
       "symbol": "AERO",
@@ -412,7 +412,7 @@
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0124,
-      "detail": -3.3870967741935503
+      "detail": -3.2258064516128977
     },
     {
       "symbol": "ARKM",
@@ -735,6 +735,13 @@
       "outcome": "HIT",
       "entry_price": 0.461,
       "detail": 59.083333333333336
+    },
+    {
+      "symbol": "BONK",
+      "timestamp": "2026-04-17T08:27:10-07:00",
+      "outcome": "WAITING",
+      "entry_price": 6.63e-06,
+      "detail": -1.206636500754149
     }
   ]
 }
