@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-16 10:43 PM PDT",
+    "last_updated": "2026-04-16 11:14 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 83,
+    "total_signals": 84,
     "hits": 79,
     "misses": 0,
-    "waiting": 4,
-    "hit_rate_pct": 95.2,
+    "waiting": 5,
+    "hit_rate_pct": 94.0,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -82,7 +82,7 @@
     "BONK": {
       "hits": 1,
       "misses": 0,
-      "waiting": 0
+      "waiting": 1
     },
     "COTI": {
       "hits": 1,
@@ -622,7 +622,7 @@
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -7.042253521126766
+      "detail": -5.633802816901411
     },
     {
       "symbol": "AKT",
@@ -720,7 +720,14 @@
       "timestamp": "2026-04-16T22:36:20-07:00",
       "outcome": "WAITING",
       "entry_price": 0.2528,
-      "detail": 0.11867088607593629
+      "detail": 0.039556962025312094
+    },
+    {
+      "symbol": "BONK",
+      "timestamp": "2026-04-16T22:58:58-07:00",
+      "outcome": "WAITING",
+      "entry_price": 6.28e-06,
+      "detail": 0.31847133757961477
     }
   ]
 }
