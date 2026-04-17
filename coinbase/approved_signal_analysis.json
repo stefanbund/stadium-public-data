@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-16 05:20 PM PDT",
+    "last_updated": "2026-04-16 07:17 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -376,15 +376,15 @@
       "symbol": "ASM",
       "timestamp": "2026-04-10T22:05:46-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007086629047989845,
-      "detail": -5.17353312630352
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ASM",
       "timestamp": "2026-04-10T22:56:47-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007084729615598917,
-      "detail": -5.148109931281283
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
@@ -411,8 +411,8 @@
       "symbol": "ASM",
       "timestamp": "2026-04-11T00:10:46-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007084484212100506,
-      "detail": -5.144824302439875
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AERO",
@@ -432,8 +432,8 @@
       "symbol": "ASM",
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007102679461240768,
-      "detail": -5.387819014995718
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AGLD",
@@ -446,8 +446,8 @@
       "symbol": "ASM",
       "timestamp": "2026-04-11T04:39:19-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007098522502928972,
-      "detail": -5.332413275001162
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AERO",
@@ -558,8 +558,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012436117976903915,
-      "detail": -3.104810988843107
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ARKM",
@@ -621,8 +621,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-12T08:44:28-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012441335245966911,
-      "detail": -3.1454439484078716
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ELA",
@@ -817,8 +817,8 @@
       "symbol": "AST",
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.0071000000461936,
-      "detail": -2.816903163571593
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
@@ -901,8 +901,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-14T19:57:33-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012129999697208405,
-      "detail": -0.6595192072041527
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "A8",
@@ -971,8 +971,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-15T18:54:39-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.01205000001937151,
-      "detail": 0.0
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AERO",
@@ -985,8 +985,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-15T19:22:35-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012160000391304493,
-      "detail": -0.9046082927073232
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AST",
@@ -999,8 +999,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-15T19:52:19-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012090000323951244,
-      "detail": -0.33085445415986503
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AERO",
@@ -1013,8 +1013,8 @@
       "symbol": "ABT",
       "timestamp": "2026-04-15T20:07:21-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.3043000102043152,
-      "detail": -3.7791654840737294
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AERO",
@@ -1027,8 +1027,8 @@
       "symbol": "POLS",
       "timestamp": "2026-04-15T20:20:40-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.053199999034404755,
-      "detail": -0.7518784356525413
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
@@ -1069,22 +1069,22 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-15T21:46:33-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012079999782145023,
-      "detail": -0.2483424115442061
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "DIMO",
       "timestamp": "2026-04-15T22:36:57-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012059999629855156,
-      "detail": -0.08291551235948497
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ABT",
       "timestamp": "2026-04-15T22:37:58-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.3028999865055084,
-      "detail": -3.334426445966144
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "DNT",
@@ -1118,22 +1118,22 @@
       "symbol": "ABT",
       "timestamp": "2026-04-15T23:31:47-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.30160000920295715,
-      "detail": -2.917771778446617
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AST",
       "timestamp": "2026-04-15T23:34:50-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.0071000000461936,
-      "detail": -2.816903163571593
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ABT",
       "timestamp": "2026-04-15T23:37:22-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.30160000920295715,
-      "detail": -2.917771778446617
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ACH",
@@ -1146,15 +1146,15 @@
       "symbol": "ABT",
       "timestamp": "2026-04-16T00:00:24-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.3025999963283539,
-      "detail": -3.2385945791879527
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AVT",
       "timestamp": "2026-04-16T00:14:28-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.5799999833106995,
-      "detail": 0.0
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AGLD",
@@ -1174,8 +1174,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-16T01:50:54-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012059999629855156,
-      "detail": -0.08291551235948497
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "DNT",
@@ -1188,8 +1188,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-16T02:37:01-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012059999629855156,
-      "detail": -0.08291551235948497
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
@@ -1202,8 +1202,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-16T03:05:33-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012040000408887863,
-      "detail": 0.0830532403991011
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AST",
@@ -1216,8 +1216,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-16T03:27:10-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.01205000001937151,
-      "detail": 0.0
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "DNT",
@@ -1286,8 +1286,8 @@
       "symbol": "AERO",
       "timestamp": "2026-04-16T06:43:39-07:00",
       "outcome": "WAITING",
-      "entry_price": 3.594047302613035e-05,
-      "detail": 0.0839436871776195
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "ABT",
@@ -1342,8 +1342,8 @@
       "symbol": "00",
       "timestamp": "2026-04-16T09:02:26-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.004800000227987766,
-      "detail": -4.1666690919857565
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
@@ -1377,15 +1377,15 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-16T11:43:47-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.012029999867081642,
-      "detail": 0.1662523068233353
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AKT",
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.5149999856948853,
-      "detail": -1.7475735122043696
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "AST",
@@ -1398,15 +1398,15 @@
       "symbol": "DNT",
       "timestamp": "2026-04-16T14:04:55-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007400000002235174,
-      "detail": 0.0
+      "entry_price": null,
+      "detail": null
     },
     {
       "symbol": "DNT",
       "timestamp": "2026-04-16T14:54:00-07:00",
       "outcome": "WAITING",
-      "entry_price": 0.007400000002235174,
-      "detail": 0.0
+      "entry_price": null,
+      "detail": null
     }
   ]
 }
