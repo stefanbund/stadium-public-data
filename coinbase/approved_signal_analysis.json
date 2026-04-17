@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-16 08:43 PM PDT",
+    "last_updated": "2026-04-16 09:10 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 182,
+    "total_signals": 184,
     "hits": 147,
     "misses": 0,
-    "waiting": 35,
+    "waiting": 37,
     "hit_rate_pct": 100.0
   },
   "symbol_summary": {
@@ -21,7 +21,7 @@
     "A8": {
       "hits": 8,
       "misses": 0,
-      "waiting": 0
+      "waiting": 1
     },
     "ABT": {
       "hits": 3,
@@ -116,7 +116,7 @@
     "DNT": {
       "hits": 16,
       "misses": 0,
-      "waiting": 3
+      "waiting": 4
     },
     "ELA": {
       "hits": 8,
@@ -1425,6 +1425,20 @@
     {
       "symbol": "DNT",
       "timestamp": "2026-04-16T20:36:11-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "A8",
+      "timestamp": "2026-04-16T20:43:42-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "DNT",
+      "timestamp": "2026-04-16T21:04:35-07:00",
       "outcome": "WAITING",
       "entry_price": null,
       "detail": null
