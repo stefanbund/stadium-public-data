@@ -244,13 +244,13 @@
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">20 Tranches Profit</div>
-    <div class="kpi-value">+5.55%</div>
-    <div class="kpi-sub">+$554.80 PNL</div>
+    <div class="kpi-value">+5.95%</div>
+    <div class="kpi-sub">+$595.43 PNL</div>
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">12 Tranches Profit</div>
-    <div class="kpi-value">+9.25%</div>
-    <div class="kpi-sub">+$924.67 PNL</div>
+    <div class="kpi-value">+9.92%</div>
+    <div class="kpi-sub">+$992.38 PNL</div>
   </div>
   <div class="kpi kpi-amber">
     <div class="kpi-label">Target Tranches</div>
@@ -259,7 +259,7 @@
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">Optimal Profit</div>
-    <div class="kpi-value">+4.62%</div>
+    <div class="kpi-value">+4.96%</div>
     <div class="kpi-sub">24 Tranche Sizing</div>
   </div>
   <div class="kpi kpi-blue">
@@ -317,14 +317,14 @@
   <div class="card-header">
     <div>
       <div class="card-title">⏳ Trades In Waiting <span style="font-size:0.75rem;font-weight:400;color:var(--amber);margin-left:8px;">12 signals · target: +1.01%</span></div>
-      <div class="card-sub">Signals currently in the active lifecycle window (up to 1 week). Live prices fetched at generation time (2026-04-18 10:05 AM PDT).</div>
+      <div class="card-sub">Signals currently in the active lifecycle window (up to 1 week). Live prices fetched at generation time (2026-04-18 10:11 AM PDT).</div>
     </div>
   </div>
   <div id="waitingCards"></div>
 </div>
 
 <div class="footer">
-  Generated 2026-04-18 10:05 AM PDT from <code>approved_signal_analysis.csv</code> ·
+  Generated 2026-04-18 10:11 AM PDT from <code>approved_signal_analysis.csv</code> ·
   Source: <code>analyze_approved_signals.py</code> ·
   Schema: <code>MLOPS_DATA_DICTIONARY.json</code>
 </div>
@@ -451,7 +451,7 @@ const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', WAIT
 
 // ── 5. Trades In Waiting Cards ────────────────────────────────────────────
 (function() {
-  const WAITING = [{"symbol": "DIMO", "timestamp": "2026-04-16T01:50:54-07:00", "entry_price": 0.01205, "target_price": 0.0121717, "live_price": 0.012, "pct_now": -0.4149, "pct_to_go": 1.4249}, {"symbol": "DIMO", "timestamp": "2026-04-15T22:36:57-07:00", "entry_price": 0.01206, "target_price": 0.01218181, "live_price": 0.012, "pct_now": -0.4975, "pct_to_go": 1.5075}, {"symbol": "DIMO", "timestamp": "2026-04-15T18:54:39-07:00", "entry_price": 0.01209, "target_price": 0.01221211, "live_price": 0.012, "pct_now": -0.7444, "pct_to_go": 1.7544}, {"symbol": "ASM", "timestamp": "2026-04-11T03:29:29-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.007, "pct_now": -1.4085, "pct_to_go": 2.4185}, {"symbol": "DIMO", "timestamp": "2026-04-12T04:47:56-07:00", "entry_price": 0.0124, "target_price": 0.01252524, "live_price": 0.012, "pct_now": -3.2258, "pct_to_go": 4.2358}, {"symbol": "AST", "timestamp": "2026-04-17T09:07:28-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0066, "pct_now": -4.3478, "pct_to_go": 5.3578}, {"symbol": "AST", "timestamp": "2026-04-17T23:26:25-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0066, "pct_now": -4.3478, "pct_to_go": 5.3578}, {"symbol": "AKT", "timestamp": "2026-04-17T09:07:50-07:00", "entry_price": 0.507, "target_price": 0.5121207, "live_price": 0.474, "pct_now": -6.5089, "pct_to_go": 7.5189}, {"symbol": "AST", "timestamp": "2026-04-14T09:13:55-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.0066, "pct_now": -7.0423, "pct_to_go": 8.0523}, {"symbol": "AKT", "timestamp": "2026-04-16T13:05:41-07:00", "entry_price": 0.515, "target_price": 0.5202015, "live_price": 0.474, "pct_now": -7.9612, "pct_to_go": 8.9712}, {"symbol": "HONEY", "timestamp": "2026-04-17T13:42:58-07:00", "entry_price": 0.0022, "target_price": 0.00222222, "live_price": 0.002, "pct_now": -9.0909, "pct_to_go": 10.1009}, {"symbol": "SHPING", "timestamp": "2026-04-18T09:30:20-07:00", "entry_price": null, "target_price": null, "live_price": 0.00115, "pct_now": null, "pct_to_go": null}];
+  const WAITING = [{"symbol": "AST", "timestamp": "2026-04-17T09:07:28-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0069, "pct_now": 0.0, "pct_to_go": 1.01}, {"symbol": "AST", "timestamp": "2026-04-17T23:26:25-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0069, "pct_now": 0.0, "pct_to_go": 1.01}, {"symbol": "DIMO", "timestamp": "2026-04-16T01:50:54-07:00", "entry_price": 0.01205, "target_price": 0.0121717, "live_price": 0.012, "pct_now": -0.4149, "pct_to_go": 1.4249}, {"symbol": "DIMO", "timestamp": "2026-04-15T22:36:57-07:00", "entry_price": 0.01206, "target_price": 0.01218181, "live_price": 0.012, "pct_now": -0.4975, "pct_to_go": 1.5075}, {"symbol": "DIMO", "timestamp": "2026-04-15T18:54:39-07:00", "entry_price": 0.01209, "target_price": 0.01221211, "live_price": 0.012, "pct_now": -0.7444, "pct_to_go": 1.7544}, {"symbol": "ASM", "timestamp": "2026-04-11T03:29:29-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.00701, "pct_now": -1.2676, "pct_to_go": 2.2776}, {"symbol": "AST", "timestamp": "2026-04-14T09:13:55-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.0069, "pct_now": -2.8169, "pct_to_go": 3.8269}, {"symbol": "DIMO", "timestamp": "2026-04-12T04:47:56-07:00", "entry_price": 0.0124, "target_price": 0.01252524, "live_price": 0.012, "pct_now": -3.2258, "pct_to_go": 4.2358}, {"symbol": "AKT", "timestamp": "2026-04-17T09:07:50-07:00", "entry_price": 0.507, "target_price": 0.5121207, "live_price": 0.473, "pct_now": -6.7061, "pct_to_go": 7.7161}, {"symbol": "AKT", "timestamp": "2026-04-16T13:05:41-07:00", "entry_price": 0.515, "target_price": 0.5202015, "live_price": 0.473, "pct_now": -8.1553, "pct_to_go": 9.1653}, {"symbol": "HONEY", "timestamp": "2026-04-17T13:42:58-07:00", "entry_price": 0.0022, "target_price": 0.00222222, "live_price": 0.0019, "pct_now": -13.6364, "pct_to_go": 14.6464}, {"symbol": "SHPING", "timestamp": "2026-04-18T09:30:20-07:00", "entry_price": null, "target_price": null, "live_price": 0.001147, "pct_now": null, "pct_to_go": null}];
   const container = document.getElementById('waitingCards');
 
   if (!WAITING.length) {
