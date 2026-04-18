@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 10:35 PM PDT",
+    "last_updated": "2026-04-17 11:06 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -390,7 +390,7 @@
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -2.53521126760564
+      "detail": -2.2535211267605693
     },
     {
       "symbol": "AERO",
@@ -677,7 +677,7 @@
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -4.225352112676068
+      "detail": -2.8169014084507116
     },
     {
       "symbol": "AKT",
@@ -1076,7 +1076,7 @@
       "timestamp": "2026-04-17T09:07:28-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0069,
-      "detail": -1.4492753623188444
+      "detail": 0.0
     },
     {
       "symbol": "AKT",
@@ -1111,7 +1111,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -1.0044642857142871
+      "detail": -1.4079670329670333
     },
     {
       "symbol": "00",
@@ -1125,7 +1125,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -0.8846153846153939
+      "detail": -0.6538461538461673
     },
     {
       "symbol": "HONEY",
@@ -1223,7 +1223,7 @@
       "timestamp": "2026-04-17T21:57:36-07:00",
       "outcome": "WAITING",
       "entry_price": 0.2392,
-      "detail": 0.5434782608695634
+      "detail": 0.250836120401345
     }
   ]
 }
