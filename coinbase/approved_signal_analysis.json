@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-18 10:18 AM PDT",
+    "last_updated": "2026-04-18 10:48 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 167,
-    "hits": 149,
+    "total_signals": 169,
+    "hits": 151,
     "misses": 0,
     "waiting": 18,
-    "hit_rate_pct": 89.2,
+    "hit_rate_pct": 89.3,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -174,6 +174,11 @@
       "misses": 0,
       "waiting": 0
     },
+    "KARRAT": {
+      "hits": 0,
+      "misses": 0,
+      "waiting": 1
+    },
     "MINA": {
       "hits": 1,
       "misses": 0,
@@ -182,7 +187,7 @@
     "PLU": {
       "hits": 3,
       "misses": 0,
-      "waiting": 0
+      "waiting": 1
     },
     "POLS": {
       "hits": 1,
@@ -190,9 +195,9 @@
       "waiting": 0
     },
     "SHPING": {
-      "hits": 2,
+      "hits": 4,
       "misses": 0,
-      "waiting": 2
+      "waiting": 0
     },
     "STORJ": {
       "hits": 0,
@@ -482,7 +487,7 @@
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0124,
-      "detail": -3.467741935483869
+      "detail": -3.2258064516128977
     },
     {
       "symbol": "ARKM",
@@ -811,7 +816,7 @@
       "timestamp": "2026-04-15T18:54:39-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01209,
-      "detail": -0.9925558312655113
+      "detail": -0.7444168734491299
     },
     {
       "symbol": "AERO",
@@ -860,7 +865,7 @@
       "timestamp": "2026-04-15T22:36:57-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01206,
-      "detail": -0.7462686567164163
+      "detail": -0.49751243781093935
     },
     {
       "symbol": "AERO",
@@ -916,7 +921,7 @@
       "timestamp": "2026-04-16T01:50:54-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01205,
-      "detail": -0.6639004149377611
+      "detail": -0.41493775933609706
     },
     {
       "symbol": "AKT",
@@ -1028,7 +1033,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -7.961165048543696
+      "detail": -8.15533980582525
     },
     {
       "symbol": "DNT",
@@ -1098,7 +1103,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -6.508875739644976
+      "detail": -6.7061143984220974
     },
     {
       "symbol": "AVT",
@@ -1126,7 +1131,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -4.026442307692306
+      "detail": -3.605769230769233
     },
     {
       "symbol": "00",
@@ -1140,7 +1145,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -4.423076923076927
+      "detail": -3.961538461538463
     },
     {
       "symbol": "HONEY",
@@ -1308,7 +1313,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -0.9345794392523372
+      "detail": -0.5192107995846318
     },
     {
       "symbol": "TIME",
@@ -1327,9 +1332,9 @@
     {
       "symbol": "SHPING",
       "timestamp": "2026-04-18T06:06:55-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.001144,
-      "detail": 0.5244755244755183
+      "detail": 253.08333333333334
     },
     {
       "symbol": "FET",
@@ -1371,14 +1376,28 @@
       "timestamp": "2026-04-18T09:06:46-07:00",
       "outcome": "WAITING",
       "entry_price": 0.1047,
-      "detail": -1.0506208213944639
+      "detail": -0.4775549188156642
     },
     {
       "symbol": "SHPING",
       "timestamp": "2026-04-18T09:30:20-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.001144,
-      "detail": 0.5244755244755183
+      "detail": 49.666666666666664
+    },
+    {
+      "symbol": "KARRAT",
+      "timestamp": "2026-04-18T10:47:32-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "PLU",
+      "timestamp": "2026-04-18T10:48:09-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
     }
   ]
 }
