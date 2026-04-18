@@ -109,20 +109,20 @@
             </div>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">27.3%</div>
+                    <div class="metric-val">3.9%</div>
                     <div class="metric-label">CPU</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">60.1%</div>
+                    <div class="metric-val">55.9%</div>
                     <div class="metric-label">RAM</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">3.19G</div>
+                    <div class="metric-val">7.06G</div>
                     <div class="metric-label">FREE</div>
                 </div>
             </div>
             <div class="service-list">
-                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>MLOps Orchestrator</span><span style="color: var(--green)">RUNNING</span></div>
+                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div>
             </div>
         </div>
 
@@ -130,15 +130,39 @@
         <div class="card">
             <div class="header">
                 <span class="title">Remote MLOps (Mac Mini)</span>
-                <span class="status offline">OFFLINE</span>
+                <span class="status online">ONLINE</span>
             </div>
-            <div style="text-align: center; padding: 2rem; color: var(--red);">Host unreachable: Permission denied, please try again.
-Received disconnect from ::1 port 22:2: Too many authentication failures
-Disconnected from ::1 port 22
-</div>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-val">294.5%</div>
+                    <div class="metric-label">CPU Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">72.9%</div>
+                    <div class="metric-label">RAM Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val" style="font-size: 10px;"> 6:19 up 1 day</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+            <span class="title" style="font-size: 10px;">Remote ML Log Tail:</span>
+            <pre>[FIS]   [Output] Optimization Progress:  52%|█████▏    | 31/60 [04:22<05:17, 10.93s/pipeline]
+[FIS]   [Output] Optimization Progress:  53%|█████▎    | 32/60 [04:33<05:06, 10.94s/pipeline]
+[FIS]   [Output] Optimization Progress:  57%|█████▋    | 34/60 [05:11<06:24, 14.80s/pipeline]
+[FIS]   [Output] Optimization Progress:  58%|█████▊    | 35/60 [05:16<05:05, 12.22s/pipeline]
+[FIS]   [Output] Optimization Progress:  60%|██████    | 36/60 [05:54<07:33, 18.90s/pipeline]
+[FIS]   [Output] Optimization Progress:  62%|██████▏   | 37/60 [05:55<05:24, 14.10s/pipeline]
+[FIS]   [Output] Optimization Progress:  63%|██████▎   | 38/60 [05:57<03:57, 10.81s/pipeline]
+[FIS]   [Output] Optimization Progress:  65%|██████▌   | 39/60 [06:01<03:04,  8.79s/pipeline]
+[FIS]   [Output] Optimization Progress:  67%|██████▋   | 40/60 [06:05<02:26,  7.34s/pipeline]
+[FIS]   [Output] Generation 1 - Current best internal CV score: 0.9847673049492502
+</pre>
+            
         </div>
     </div>
-    <div class="refresh">Last heartbeat: 2026-04-18 06:18:59</div>
+    <div class="refresh">Last heartbeat: 2026-04-18 06:19:42</div>
 </body>
 </html>
     
