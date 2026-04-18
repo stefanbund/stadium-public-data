@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-18 09:16 AM PDT",
+    "last_updated": "2026-04-18 09:47 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 166,
+    "total_signals": 167,
     "hits": 148,
     "misses": 0,
-    "waiting": 18,
-    "hit_rate_pct": 89.2,
+    "waiting": 19,
+    "hit_rate_pct": 88.6,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -192,7 +192,7 @@
     "SHPING": {
       "hits": 2,
       "misses": 0,
-      "waiting": 1
+      "waiting": 2
     },
     "STORJ": {
       "hits": 0,
@@ -1028,7 +1028,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -7.184466019417482
+      "detail": -7.57281553398059
     },
     {
       "symbol": "DNT",
@@ -1098,7 +1098,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -5.719921104536494
+      "detail": -6.114398422090735
     },
     {
       "symbol": "AVT",
@@ -1126,7 +1126,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -3.2623626373626347
+      "detail": -3.2795329670329734
     },
     {
       "symbol": "00",
@@ -1140,7 +1140,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -3.653846153846157
+      "detail": -3.769230769230781
     },
     {
       "symbol": "HONEY",
@@ -1308,7 +1308,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -0.7268951194184845
+      "detail": -0.6230529595015583
     },
     {
       "symbol": "TIME",
@@ -1369,6 +1369,13 @@
     {
       "symbol": "STORJ",
       "timestamp": "2026-04-18T09:06:46-07:00",
+      "outcome": "WAITING",
+      "entry_price": 0.1047,
+      "detail": -0.4775549188156642
+    },
+    {
+      "symbol": "SHPING",
+      "timestamp": "2026-04-18T09:30:20-07:00",
       "outcome": "WAITING",
       "entry_price": null,
       "detail": null
