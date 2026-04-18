@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 05:49 PM PDT",
+    "last_updated": "2026-04-17 06:20 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -988,7 +988,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -4.660194174757286
+      "detail": -4.271844660194178
     },
     {
       "symbol": "DNT",
@@ -1058,7 +1058,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -3.155818540433928
+      "detail": -2.7613412228796865
     },
     {
       "symbol": "AVT",
@@ -1086,7 +1086,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -1.4251373626373718
+      "detail": -1.0989010989010999
     },
     {
       "symbol": "00",
@@ -1100,14 +1100,14 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -0.8461538461538597
+      "detail": -0.3076923076923165
     },
     {
       "symbol": "HONEY",
       "timestamp": "2026-04-17T13:42:58-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0022,
-      "detail": -4.545454545454557
+      "detail": -9.090909090909093
     },
     {
       "symbol": "AGLD",
@@ -1141,8 +1141,8 @@
       "symbol": "ASM",
       "timestamp": "2026-04-17T17:48:04-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.00684,
+      "detail": 0.0
     }
   ]
 }
