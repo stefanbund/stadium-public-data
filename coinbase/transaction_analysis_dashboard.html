@@ -238,19 +238,19 @@
   <div class="kpi kpi-green">
     <div class="kpi-label">Median Time to Hit</div>
     <div class="kpi-value">
-      168
+      175
     </div>
     <div class="kpi-sub">for successful signals</div>
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">20 Tranches Profit</div>
-    <div class="kpi-value">+5.97%</div>
-    <div class="kpi-sub">+$596.84 PNL</div>
+    <div class="kpi-value">+5.55%</div>
+    <div class="kpi-sub">+$554.80 PNL</div>
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">12 Tranches Profit</div>
-    <div class="kpi-value">+9.95%</div>
-    <div class="kpi-sub">+$994.74 PNL</div>
+    <div class="kpi-value">+9.25%</div>
+    <div class="kpi-sub">+$924.67 PNL</div>
   </div>
   <div class="kpi kpi-amber">
     <div class="kpi-label">Target Tranches</div>
@@ -259,7 +259,7 @@
   </div>
   <div class="kpi kpi-green">
     <div class="kpi-label">Optimal Profit</div>
-    <div class="kpi-value">+4.97%</div>
+    <div class="kpi-value">+4.62%</div>
     <div class="kpi-sub">24 Tranche Sizing</div>
   </div>
   <div class="kpi kpi-blue">
@@ -272,30 +272,15 @@
 <!-- ── Charts ── -->
 <div class="grid">
 
-  <!-- 1. Entry Price vs Outcome Scatter -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-title">⚡ Entry Price vs. Outcome</div>
-        <div class="card-sub">Each dot = one APPROVED signal. Price threshold pattern clearly visible.</div>
-      </div>
-    </div>
-    <div class="chart-wrap"><canvas id="scatterChart"></canvas></div>
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>HIT</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>MISS</div>
-    </div>
-  </div>
-
-  <!-- 2. Signal Timeline -->
-  <div class="card">
+  <!-- 1. Signal Timeline (Now Full Width and Expanded Height) -->
+  <div class="card" style="grid-column: 1 / -1;">
     <div class="card-header">
       <div>
         <div class="card-title">🕐 Signal Timeline</div>
-        <div class="card-sub">Signals over time, by symbol, colored by outcome.</div>
+        <div class="card-sub">Signals over time, by symbol, colored by outcome. All symbols displayed on vertical axis.</div>
       </div>
     </div>
-    <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
+    <div class="chart-wrap" style="height:858px;"><canvas id="timelineChart"></canvas></div>
     <div class="legend">
       <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>HIT</div>
       <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>MISS</div>
@@ -332,14 +317,14 @@
   <div class="card-header">
     <div>
       <div class="card-title">⏳ Trades In Waiting <span style="font-size:0.75rem;font-weight:400;color:var(--amber);margin-left:8px;">12 signals · target: +1.01%</span></div>
-      <div class="card-sub">Signals currently in the active lifecycle window (up to 1 week). Live prices fetched at generation time (2026-04-18 09:47 AM PDT).</div>
+      <div class="card-sub">Signals currently in the active lifecycle window (up to 1 week). Live prices fetched at generation time (2026-04-18 10:05 AM PDT).</div>
     </div>
   </div>
   <div id="waitingCards"></div>
 </div>
 
 <div class="footer">
-  Generated 2026-04-18 09:47 AM PDT from <code>approved_signal_analysis.csv</code> ·
+  Generated 2026-04-18 10:05 AM PDT from <code>approved_signal_analysis.csv</code> ·
   Source: <code>analyze_approved_signals.py</code> ·
   Schema: <code>MLOPS_DATA_DICTIONARY.json</code>
 </div>
@@ -356,53 +341,6 @@ Chart.defaults.font.size = 11;
 const COLORS = { HIT: '#22c55e', MISS: '#ef4444', WAITING: '#f59e0b' };
 const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', WAITING: 'rgba(245,158,11,0.15)' };
 
-// ── 1. Entry Price vs Outcome Scatter ─────────────────────────────────────
-(function() {
-  const withData = RAW.filter(r => r.outcome !== 'NO_DATA' && r.entry_price !== null);
-  const datasets = ['HIT','MISS'].map(oc => ({
-    label: oc,
-    data: withData.filter(r => r.outcome === oc).map(r => ({
-      x: new Date(r.timestamp),
-      y: r.entry_price,
-      detail: r.detail,
-      symbol: r.symbol
-    })),
-    backgroundColor: ALPHA[oc],
-    borderColor: COLORS[oc],
-    borderWidth: 1.5,
-    pointRadius: 6,
-    pointHoverRadius: 9,
-  }));
-
-  new Chart(document.getElementById('scatterChart'), {
-    type: 'scatter',
-    data: { datasets },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        x: { type: 'time', time: { unit: 'hour', displayFormats: { hour: 'MM/dd HH:mm' } },
-               grid: { color: '#1c2030' }, ticks: { maxRotation: 30 } },
-        y: { grid: { color: '#1c2030' },
-               title: { display: true, text: 'Entry Price (USD)' },
-               ticks: { callback: v => '$' + v.toFixed(4) } }
-      },
-      plugins: {
-        legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const d = ctx.raw;
-              const det = d.detail !== null
-                ? (ctx.dataset.label === 'HIT' ? `Hit in ${Math.round(d.detail)}m` : `Max +${d.detail.toFixed(3)}%`)
-                : '';
-              return ` ${d.symbol} · ${ctx.dataset.label} · ${d.y.toFixed(6)} · ${det}`;
-            }
-          }
-        }
-      }
-    }
-  });
-})();
 
 // ── 2. Timeline Scatter ────────────────────────────────────────────────────
 (function() {
@@ -432,7 +370,11 @@ const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', WAIT
         x: { type: 'time', time: { unit: 'hour', displayFormats: { hour: 'MM/dd HH:mm' } },
                grid: { color: '#1c2030' }, ticks: { maxRotation: 30 } },
         y: { grid: { color: '#1c2030' },
-               ticks: { stepSize: 1, callback: v => symbols[v] || '' } }
+               ticks: { 
+                 stepSize: 1, 
+                 autoSkip: false,
+                 callback: v => symbols[v] || '' 
+               } }
       },
       plugins: {
         legend: { position: 'top', labels: { boxWidth: 10, padding: 16 } },
@@ -509,7 +451,7 @@ const ALPHA  = { HIT: 'rgba(34,197,94,0.15)', MISS: 'rgba(239,68,68,0.15)', WAIT
 
 // ── 5. Trades In Waiting Cards ────────────────────────────────────────────
 (function() {
-  const WAITING = [{"symbol": "DIMO", "timestamp": "2026-04-16T01:50:54-07:00", "entry_price": 0.01205, "target_price": 0.0121717, "live_price": 0.01197, "pct_now": -0.6639, "pct_to_go": 1.6739}, {"symbol": "DIMO", "timestamp": "2026-04-15T22:36:57-07:00", "entry_price": 0.01206, "target_price": 0.01218181, "live_price": 0.01197, "pct_now": -0.7463, "pct_to_go": 1.7563}, {"symbol": "DIMO", "timestamp": "2026-04-15T18:54:39-07:00", "entry_price": 0.01209, "target_price": 0.01221211, "live_price": 0.01197, "pct_now": -0.9926, "pct_to_go": 2.0026}, {"symbol": "ASM", "timestamp": "2026-04-11T03:29:29-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.007, "pct_now": -1.4085, "pct_to_go": 2.4185}, {"symbol": "AST", "timestamp": "2026-04-17T09:07:28-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0068, "pct_now": -1.4493, "pct_to_go": 2.4593}, {"symbol": "AST", "timestamp": "2026-04-17T23:26:25-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0068, "pct_now": -1.4493, "pct_to_go": 2.4593}, {"symbol": "DIMO", "timestamp": "2026-04-12T04:47:56-07:00", "entry_price": 0.0124, "target_price": 0.01252524, "live_price": 0.01197, "pct_now": -3.4677, "pct_to_go": 4.4777}, {"symbol": "AST", "timestamp": "2026-04-14T09:13:55-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.0068, "pct_now": -4.2254, "pct_to_go": 5.2354}, {"symbol": "AKT", "timestamp": "2026-04-17T09:07:50-07:00", "entry_price": 0.507, "target_price": 0.5121207, "live_price": 0.476, "pct_now": -6.1144, "pct_to_go": 7.1244}, {"symbol": "AKT", "timestamp": "2026-04-16T13:05:41-07:00", "entry_price": 0.515, "target_price": 0.5202015, "live_price": 0.476, "pct_now": -7.5728, "pct_to_go": 8.5828}, {"symbol": "HONEY", "timestamp": "2026-04-17T13:42:58-07:00", "entry_price": 0.0022, "target_price": 0.00222222, "live_price": 0.002, "pct_now": -9.0909, "pct_to_go": 10.1009}, {"symbol": "SHPING", "timestamp": "2026-04-18T09:30:20-07:00", "entry_price": null, "target_price": null, "live_price": 0.001133, "pct_now": null, "pct_to_go": null}];
+  const WAITING = [{"symbol": "DIMO", "timestamp": "2026-04-16T01:50:54-07:00", "entry_price": 0.01205, "target_price": 0.0121717, "live_price": 0.012, "pct_now": -0.4149, "pct_to_go": 1.4249}, {"symbol": "DIMO", "timestamp": "2026-04-15T22:36:57-07:00", "entry_price": 0.01206, "target_price": 0.01218181, "live_price": 0.012, "pct_now": -0.4975, "pct_to_go": 1.5075}, {"symbol": "DIMO", "timestamp": "2026-04-15T18:54:39-07:00", "entry_price": 0.01209, "target_price": 0.01221211, "live_price": 0.012, "pct_now": -0.7444, "pct_to_go": 1.7544}, {"symbol": "ASM", "timestamp": "2026-04-11T03:29:29-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.007, "pct_now": -1.4085, "pct_to_go": 2.4185}, {"symbol": "DIMO", "timestamp": "2026-04-12T04:47:56-07:00", "entry_price": 0.0124, "target_price": 0.01252524, "live_price": 0.012, "pct_now": -3.2258, "pct_to_go": 4.2358}, {"symbol": "AST", "timestamp": "2026-04-17T09:07:28-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0066, "pct_now": -4.3478, "pct_to_go": 5.3578}, {"symbol": "AST", "timestamp": "2026-04-17T23:26:25-07:00", "entry_price": 0.0069, "target_price": 0.00696969, "live_price": 0.0066, "pct_now": -4.3478, "pct_to_go": 5.3578}, {"symbol": "AKT", "timestamp": "2026-04-17T09:07:50-07:00", "entry_price": 0.507, "target_price": 0.5121207, "live_price": 0.474, "pct_now": -6.5089, "pct_to_go": 7.5189}, {"symbol": "AST", "timestamp": "2026-04-14T09:13:55-07:00", "entry_price": 0.0071, "target_price": 0.00717171, "live_price": 0.0066, "pct_now": -7.0423, "pct_to_go": 8.0523}, {"symbol": "AKT", "timestamp": "2026-04-16T13:05:41-07:00", "entry_price": 0.515, "target_price": 0.5202015, "live_price": 0.474, "pct_now": -7.9612, "pct_to_go": 8.9712}, {"symbol": "HONEY", "timestamp": "2026-04-17T13:42:58-07:00", "entry_price": 0.0022, "target_price": 0.00222222, "live_price": 0.002, "pct_now": -9.0909, "pct_to_go": 10.1009}, {"symbol": "SHPING", "timestamp": "2026-04-18T09:30:20-07:00", "entry_price": null, "target_price": null, "live_price": 0.00115, "pct_now": null, "pct_to_go": null}];
   const container = document.getElementById('waitingCards');
 
   if (!WAITING.length) {
