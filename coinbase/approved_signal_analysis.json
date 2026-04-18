@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-18 06:43 AM PDT",
+    "last_updated": "2026-04-18 07:14 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 161,
-    "hits": 140,
+    "total_signals": 163,
+    "hits": 142,
     "misses": 0,
     "waiting": 21,
-    "hit_rate_pct": 87.0,
+    "hit_rate_pct": 87.1,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -30,9 +30,9 @@
       "waiting": 1
     },
     "ABT": {
-      "hits": 6,
+      "hits": 7,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "ACH": {
       "hits": 2,
@@ -122,7 +122,7 @@
     "DEXT": {
       "hits": 1,
       "misses": 0,
-      "waiting": 2
+      "waiting": 3
     },
     "DIMO": {
       "hits": 4,
@@ -140,9 +140,9 @@
       "waiting": 0
     },
     "FET": {
-      "hits": 0,
+      "hits": 1,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "FIL": {
       "hits": 0,
@@ -182,7 +182,7 @@
     "PLU": {
       "hits": 1,
       "misses": 0,
-      "waiting": 1
+      "waiting": 2
     },
     "POLS": {
       "hits": 1,
@@ -477,7 +477,7 @@
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0124,
-      "detail": -3.467741935483869
+      "detail": -3.629032258064508
     },
     {
       "symbol": "ARKM",
@@ -806,7 +806,7 @@
       "timestamp": "2026-04-15T18:54:39-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01209,
-      "detail": -0.9925558312655113
+      "detail": -1.1579818031430893
     },
     {
       "symbol": "AERO",
@@ -855,7 +855,7 @@
       "timestamp": "2026-04-15T22:36:57-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01206,
-      "detail": -0.7462686567164163
+      "detail": -0.9121061359867246
     },
     {
       "symbol": "AERO",
@@ -911,7 +911,7 @@
       "timestamp": "2026-04-16T01:50:54-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01205,
-      "detail": -0.6639004149377611
+      "detail": -0.8298755186721941
     },
     {
       "symbol": "AKT",
@@ -1023,7 +1023,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -7.766990291262142
+      "detail": -7.184466019417482
     },
     {
       "symbol": "DNT",
@@ -1093,7 +1093,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -6.311637080867856
+      "detail": -5.719921104536494
     },
     {
       "symbol": "AVT",
@@ -1121,7 +1121,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -4.670329670329668
+      "detail": -4.000686813186823
     },
     {
       "symbol": "00",
@@ -1135,7 +1135,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -3.653846153846157
+      "detail": -3.384615384615396
     },
     {
       "symbol": "HONEY",
@@ -1275,7 +1275,7 @@
       "timestamp": "2026-04-18T01:34:15-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0653,
-      "detail": -3.522205206738126
+      "detail": -3.675344563552832
     },
     {
       "symbol": "PLU",
@@ -1303,7 +1303,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -1.0384215991692636
+      "detail": -0.830737279335411
     },
     {
       "symbol": "TIME",
@@ -1315,23 +1315,37 @@
     {
       "symbol": "ABT",
       "timestamp": "2026-04-18T06:01:39-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.2989,
-      "detail": 0.368016058882566
+      "detail": 53.35
     },
     {
       "symbol": "SHPING",
       "timestamp": "2026-04-18T06:06:55-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.001144,
+      "detail": -0.3496503496503581
     },
     {
       "symbol": "FET",
       "timestamp": "2026-04-18T06:28:37-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.2251,
-      "detail": -0.2221235006663707
+      "detail": 31.383333333333333
+    },
+    {
+      "symbol": "PLU",
+      "timestamp": "2026-04-18T06:57:42-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
+    },
+    {
+      "symbol": "DEXT",
+      "timestamp": "2026-04-18T06:59:03-07:00",
+      "outcome": "WAITING",
+      "entry_price": null,
+      "detail": null
     }
   ]
 }
