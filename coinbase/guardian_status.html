@@ -109,7 +109,7 @@
             </div>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">100.0%</div>
+                    <div class="metric-val">38.0%</div>
                     <div class="metric-label">CPU</div>
                 </div>
                 <div class="metric-box">
@@ -117,12 +117,12 @@
                     <div class="metric-label">RAM</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">3.21G</div>
+                    <div class="metric-val">6.42G</div>
                     <div class="metric-label">FREE</div>
                 </div>
             </div>
             <div class="service-list">
-                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>MLOps Orchestrator</span><span style="color: var(--green)">RUNNING</span></div>
+                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div>
             </div>
         </div>
 
@@ -130,15 +130,39 @@
         <div class="card">
             <div class="header">
                 <span class="title">Remote MLOps (Mac Mini)</span>
-                <span class="status offline">OFFLINE</span>
+                <span class="status online">ONLINE</span>
             </div>
-            <div style="text-align: center; padding: 2rem; color: var(--red);">Host unreachable: Permission denied, please try again.
-Received disconnect from ::1 port 22:2: Too many authentication failures
-Disconnected from ::1 port 22
-</div>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-val">312.7%</div>
+                    <div class="metric-label">CPU Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">79.8%</div>
+                    <div class="metric-label">RAM Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val" style="font-size: 10px;">19:14 up 1 day</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+            <span class="title" style="font-size: 10px;">Remote ML Log Tail:</span>
+            <pre>[COMP]   [Output] Optimization Progress:  68%|██████▊   | 41/60 [12:26<09:10, 28.96s/pipeline]
+[COMP]   [Output] Optimization Progress:  70%|███████   | 42/60 [13:56<14:07, 47.07s/pipeline]
+[COMP]   [Output] Optimization Progress:  72%|███████▏  | 43/60 [14:04<10:01, 35.41s/pipeline]
+[COMP]   [Output] Optimization Progress:  73%|███████▎  | 44/60 [15:07<11:37, 43.60s/pipeline]
+[COMP]   [Output] Optimization Progress:  75%|███████▌  | 45/60 [16:31<13:57, 55.82s/pipeline]
+[COMP]   [Output] Optimization Progress:  77%|███████▋  | 46/60 [16:37<09:30, 40.77s/pipeline]
+[COMP]   [Output] Optimization Progress:  78%|███████▊  | 47/60 [16:39<06:19, 29.19s/pipeline]
+[COMP]   [Output] Optimization Progress:  80%|████████  | 48/60 [17:50<08:19, 41.66s/pipeline]
+[COMP]   [Output] Optimization Progress:  82%|████████▏ | 49/60 [18:55<08:55, 48.72s/pipeline]
+[COMP]   [Output] Optimization Progress:  83%|████████▎ | 50/60 [19:03<06:04, 36.43s/pipeline]
+</pre>
+            
         </div>
     </div>
-    <div class="refresh">Last heartbeat: 2026-04-17 19:13:31</div>
+    <div class="refresh">Last heartbeat: 2026-04-17 19:14:31</div>
 </body>
 </html>
     
