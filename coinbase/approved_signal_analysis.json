@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 06:20 PM PDT",
+    "last_updated": "2026-04-17 06:51 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 139,
-    "hits": 125,
+    "total_signals": 140,
+    "hits": 126,
     "misses": 0,
     "waiting": 14,
-    "hit_rate_pct": 89.9,
+    "hit_rate_pct": 90.0,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -165,6 +165,11 @@
       "waiting": 0
     },
     "POLS": {
+      "hits": 1,
+      "misses": 0,
+      "waiting": 0
+    },
+    "STRK": {
       "hits": 1,
       "misses": 0,
       "waiting": 0
@@ -652,7 +657,7 @@
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -8.450704225352123
+      "detail": -7.042253521126766
     },
     {
       "symbol": "AKT",
@@ -988,7 +993,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -4.271844660194178
+      "detail": -4.660194174757286
     },
     {
       "symbol": "DNT",
@@ -1051,14 +1056,14 @@
       "timestamp": "2026-04-17T09:07:28-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0069,
-      "detail": -5.797101449275365
+      "detail": -4.347826086956521
     },
     {
       "symbol": "AKT",
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -2.7613412228796865
+      "detail": -3.155818540433928
     },
     {
       "symbol": "AVT",
@@ -1086,7 +1091,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -1.0989010989010999
+      "detail": -1.0388049450549517
     },
     {
       "symbol": "00",
@@ -1100,14 +1105,14 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -0.3076923076923165
+      "detail": -0.9999999999999966
     },
     {
       "symbol": "HONEY",
       "timestamp": "2026-04-17T13:42:58-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0022,
-      "detail": -9.090909090909093
+      "detail": -4.545454545454557
     },
     {
       "symbol": "AGLD",
@@ -1143,6 +1148,13 @@
       "outcome": "WAITING",
       "entry_price": 0.00684,
       "detail": 0.0
+    },
+    {
+      "symbol": "STRK",
+      "timestamp": "2026-04-17T18:25:28-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.037,
+      "detail": -0.4666666666666667
     }
   ]
 }
