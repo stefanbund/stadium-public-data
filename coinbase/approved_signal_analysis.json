@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-17 11:08 PM PDT",
+    "last_updated": "2026-04-17 11:40 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 87,
+    "total_signals": 88,
     "hits": 83,
     "misses": 0,
-    "waiting": 4,
-    "hit_rate_pct": 95.4,
+    "waiting": 5,
+    "hit_rate_pct": 94.3,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -112,7 +112,7 @@
     "ELA": {
       "hits": 9,
       "misses": 0,
-      "waiting": 0
+      "waiting": 1
     },
     "FOX": {
       "hits": 7,
@@ -335,7 +335,7 @@
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -2.2535211267605693
+      "detail": -2.1126760563380396
     },
     {
       "symbol": "AERO",
@@ -741,7 +741,7 @@
       "timestamp": "2026-04-17T08:27:10-07:00",
       "outcome": "WAITING",
       "entry_price": 6.63e-06,
-      "detail": -3.016591251885366
+      "detail": -2.8657616892910993
     },
     {
       "symbol": "ELA",
@@ -749,6 +749,13 @@
       "outcome": "HIT",
       "entry_price": 0.468,
       "detail": 116.6
+    },
+    {
+      "symbol": "ELA",
+      "timestamp": "2026-04-17T23:21:01-07:00",
+      "outcome": "WAITING",
+      "entry_price": 0.47,
+      "detail": -0.21276595744680873
     }
   ]
 }
