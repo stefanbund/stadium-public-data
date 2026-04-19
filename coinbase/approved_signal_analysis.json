@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-18 05:55 PM PDT",
+    "last_updated": "2026-04-18 06:27 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -182,8 +182,8 @@
       "symbol": "ASM",
       "timestamp": "2026-04-11T03:29:29-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.0071,
+      "detail": -2.3943661971830985
     },
     {
       "symbol": "AERO",
@@ -259,8 +259,8 @@
       "symbol": "DIMO",
       "timestamp": "2026-04-12T04:47:56-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.0124,
+      "detail": -2.9032258064516068
     },
     {
       "symbol": "ARKM",
@@ -469,8 +469,8 @@
       "symbol": "AST",
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.0071,
+      "detail": -8.450704225352123
     },
     {
       "symbol": "AKT",
@@ -588,8 +588,8 @@
       "symbol": "BONK",
       "timestamp": "2026-04-17T08:27:10-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 6.63e-06,
+      "detail": -9.049773755656112
     },
     {
       "symbol": "ELA",
@@ -602,8 +602,8 @@
       "symbol": "ELA",
       "timestamp": "2026-04-17T23:21:01-07:00",
       "outcome": "WAITING",
-      "entry_price": null,
-      "detail": null
+      "entry_price": 0.47,
+      "detail": -3.829787234042545
     }
   ]
 }
