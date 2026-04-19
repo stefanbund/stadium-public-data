@@ -109,20 +109,20 @@
             </div>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-val">28.0%</div>
+                    <div class="metric-val">31.9%</div>
                     <div class="metric-label">CPU</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">57.5%</div>
+                    <div class="metric-val">61.3%</div>
                     <div class="metric-label">RAM</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-val">3.4G</div>
+                    <div class="metric-val">6.19G</div>
                     <div class="metric-label">FREE</div>
                 </div>
             </div>
             <div class="service-list">
-                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>MLOps Orchestrator</span><span style="color: var(--green)">RUNNING</span></div>
+                <div class="service-item"><span>Live LOB Sampler (Node)</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Mobile Log Exporter</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Hierarchical Trader</span><span style="color: var(--green)">RUNNING</span></div><div class="service-item"><span>Reporting Orchestrator</span><span style="color: var(--green)">RUNNING</span></div>
             </div>
         </div>
 
@@ -130,15 +130,39 @@
         <div class="card">
             <div class="header">
                 <span class="title">Remote MLOps (Mac Mini)</span>
-                <span class="status offline">OFFLINE</span>
+                <span class="status online">ONLINE</span>
             </div>
-            <div style="text-align: center; padding: 2rem; color: var(--red);">Host unreachable: Permission denied, please try again.
-Received disconnect from ::1 port 22:2: Too many authentication failures
-Disconnected from ::1 port 22
-</div>
+            
+            <div class="metric-grid">
+                <div class="metric-box">
+                    <div class="metric-val">216.4%</div>
+                    <div class="metric-label">CPU Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">54.1%</div>
+                    <div class="metric-label">RAM Load</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val" style="font-size: 10px;"> 2:00 up 2 days</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+            <span class="title" style="font-size: 10px;">Remote ML Log Tail:</span>
+            <pre>[OSMO]   [Output] Optimization Progress:  37%|███▋      | 22/60 [01:15<02:20,  3.71s/pipeline]
+[OSMO]   [Output] Optimization Progress:  38%|███▊      | 23/60 [01:17<01:56,  3.15s/pipeline]
+[OSMO]   [Output] Optimization Progress:  42%|████▏     | 25/60 [01:17<01:08,  1.95s/pipeline]
+[OSMO]   [Output] Optimization Progress:  43%|████▎     | 26/60 [01:19<01:06,  1.94s/pipeline]
+[OSMO]   [Output] Optimization Progress:  47%|████▋     | 28/60 [01:33<02:05,  3.92s/pipeline]
+[OSMO]   [Output] Optimization Progress:  48%|████▊     | 29/60 [01:33<01:36,  3.10s/pipeline]
+[OSMO]   [Output] Optimization Progress:  52%|█████▏    | 31/60 [01:47<02:12,  4.56s/pipeline]
+[OSMO]   [Output] Optimization Progress:  53%|█████▎    | 32/60 [02:00<02:58,  6.38s/pipeline]
+[OSMO]   [Output] Optimization Progress:  55%|█████▌    | 33/60 [02:08<03:02,  6.76s/pipeline]
+[OSMO]   [Output] Optimization Progress:  57%|█████▋    | 34/60 [02:08<02:14,  5.17s/pipeline]
+</pre>
+            
         </div>
     </div>
-    <div class="refresh">Last heartbeat: 2026-04-19 01:58:49</div>
+    <div class="refresh">Last heartbeat: 2026-04-19 02:00:16</div>
 </body>
 </html>
     
