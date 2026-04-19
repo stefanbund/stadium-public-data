@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-18 09:29 PM PDT",
+    "last_updated": "2026-04-18 10:00 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -589,7 +589,7 @@
       "timestamp": "2026-04-17T08:27:10-07:00",
       "outcome": "WAITING",
       "entry_price": 6.63e-06,
-      "detail": -9.049773755656112
+      "detail": -9.200603318250378
     },
     {
       "symbol": "ELA",
