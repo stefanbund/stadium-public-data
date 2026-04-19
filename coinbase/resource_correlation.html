@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Resource & Event Correlation</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Use pinned versions for stability -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.0.1"></script>
     <style>
         :root {
@@ -19,7 +20,7 @@
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             margin: 0;
             padding: 2rem;
         }
@@ -35,23 +36,25 @@
             border-bottom: 1px solid #334155;
             padding-bottom: 1rem;
         }
-        h1 { margin: 0; font-size: 1.5rem; color: var(--accent); text-transform: uppercase; }
+        h1 { margin: 0; font-size: 1.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
         .card {
             background: var(--card);
             border: 1px solid #334155;
             border-radius: 1rem;
             padding: 1.5rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
-        .refresh { font-size: 12px; color: var(--text-dim); text-align: right; margin-top: 1rem; }
+        .refresh { font-size: 11px; color: var(--text-dim); text-align: right; margin-top: 1rem; opacity: 0.7; }
         .legend {
             display: flex;
             gap: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 13px;
+            margin-bottom: 1.5rem;
+            font-size: 12px;
+            font-weight: 600;
         }
         .legend-item { display: flex; align-items: center; gap: 0.5rem; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot { width: 12px; height: 12px; border-radius: 3px; }
     </style>
 </head>
 <body>
@@ -59,88 +62,111 @@
         <div class="header">
             <h1>Resource & Event Correlation</h1>
             <div style="text-align: right">
-                <div style="font-size: 12px; color: var(--text-dim)">Reporting Workspace</div>
-                <div style="font-weight: bold; color: var(--accent)">System Monitor</div>
+                <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Node Health Monitor</div>
+                <div style="font-weight: 800; color: var(--text); font-family: 'Outfit', sans-serif;">coinbase.local</div>
             </div>
         </div>
 
         <div class="card">
             <div class="legend">
-                <div class="legend-item"><div class="dot" style="background: #38bdf8;"></div> CPU Load (%)</div>
-                <div class="legend-item"><div class="dot" style="background: #a855f7;"></div> RAM Usage (%)</div>
-                <div class="legend-item"><div class="dot" style="background: #f472b6;"></div> System Event marker</div>
+                <div class="legend-item"><div class="dot" style="background: #38bdf8;"></div> CPU %</div>
+                <div class="legend-item"><div class="dot" style="background: #a855f7;"></div> RAM %</div>
+                <div class="legend-item"><div class="dot" style="background: #f472b6;"></div> SYSTEM EVENTS</div>
             </div>
-            <canvas id="resourceChart" height="400"></canvas>
+            <div style="height: 450px; width: 100%;">
+                <canvas id="resourceChart"></canvas>
+            </div>
         </div>
 
-        <div class="refresh">Last update: 2026-04-19 10:46:53 | Window: Last 1 hours</div>
+        <div class="refresh">Updated: 2026-04-19 12:07:57 | Sample Count: 3</div>
     </div>
 
     <script>
-        const ctx = document.getElementById('resourceChart').getContext('2d');
-        
-        const annotations = [{"x": "04-19 10:46", "text": "Inference: True (SHPING)"}, {"x": "04-19 10:46", "text": "Inference: True (TIME)"}].map((evt, idx) => ({
-            type: 'line',
-            xMin: evt.x,
-            xMax: evt.x,
-            borderColor: 'rgba(244, 114, 182, 0.5)',
-            borderWidth: 2,
-            borderDash: [5, 5],
-            label: {
-                display: true,
-                content: evt.text,
-                backgroundColor: 'rgba(244, 114, 182, 0.8)',
-                color: '#fff',
-                font: { size: 10 },
-                position: 'start'
-            }
-        }));
+        const labels = ["04-19 10:46", "04-19 11:46", "04-19 12:00"];
+        const cpuData = [14.2, 18.5, 15.0];
+        const memData = [60.6, 61.2, 60.8];
+        const rawEvents = [{"x": "04-19 10:46", "text": "Inference: True (SHPING)"}, {"x": "04-19 10:46", "text": "Inference: True (TIME)"}, {"x": "04-19 11:46", "text": "Inference: True (BTC)"}];
 
+        // Convert events to correct annotation objects for Chart.js Annotation Plugin 2.x
+        const eventAnnotations = {};
+        rawEvents.forEach((evt, idx) => {
+            eventAnnotations['event' + idx] = {
+                type: 'line',
+                xMin: evt.x,
+                xMax: evt.x,
+                borderColor: 'rgba(244, 114, 182, 0.6)',
+                borderWidth: 2,
+                borderDash: [5, 5],
+                label: {
+                    display: true,
+                    content: evt.text,
+                    backgroundColor: 'rgba(244, 114, 182, 0.9)',
+                    color: '#fff',
+                    font: { size: 10, weight: 'bold' },
+                    position: 'start',
+                    yAdjust: -10 * (idx % 5) // Stagger labels if multiple events at same time
+                }
+            };
+        });
+
+        const ctx = document.getElementById('resourceChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["04-19 10:46"],
+                labels: labels,
                 datasets: [
                     {
                         label: 'CPU %',
-                        data: [14.2],
+                        data: cpuData,
                         borderColor: '#38bdf8',
-                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                        backgroundColor: 'rgba(56, 189, 248, 0.15)',
                         fill: true,
-                        tension: 0.3,
-                        yAxisID: 'y'
+                        tension: 0.2,
+                        pointRadius: labels.length === 1 ? 5 : 2,
+                        borderWidth: 2
                     },
                     {
                         label: 'MEM %',
-                        data: [60.6],
+                        data: memData,
                         borderColor: '#a855f7',
-                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        backgroundColor: 'rgba(168, 85, 247, 0.15)',
                         fill: true,
-                        tension: 0.3,
-                        yAxisID: 'y'
+                        tension: 0.2,
+                        pointRadius: labels.length === 1 ? 5 : 2,
+                        borderWidth: 2
                     }
                 ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                animation: { duration: 500 },
                 scales: {
                     y: {
                         beginAtZero: true,
                         max: 100,
-                        grid: { color: '#334155' },
-                        ticks: { color: '#94a3b8' },
-                        title: { display: true, text: 'Utilization %', color: '#94a3b8' }
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: '#94a3b8', font: { size: 11 } },
+                        title: { display: true, text: 'USAGE %', color: '#64748b', font: { size: 10, weight: 'bold' } }
                     },
                     x: {
                         grid: { display: false },
-                        ticks: { color: '#94a3b8', maxRotation: 45, minRotation: 45 }
+                        ticks: { color: '#94a3b8', font: { size: 11 }, maxRotation: 45, minRotation: 45 }
                     }
                 },
                 plugins: {
                     legend: { display: false },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: False,
+                        backgroundColor: '#1e293b',
+                        titleColor: '#38bdf8',
+                        bodyColor: '#f8fafc',
+                        borderColor: '#334155',
+                        borderWidth: 1
+                    },
                     annotation: {
-                        annotations: Object.assign({}, ...annotations.map((a, i) => ({ ['a' + i]: a })))
+                        annotations: eventAnnotations
                     }
                 }
             }
