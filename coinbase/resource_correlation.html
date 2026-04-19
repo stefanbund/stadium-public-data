@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resource & Event Correlation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.0.1"></script>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --accent: #38bdf8;
+            --green: #4ade80;
+            --red: #f87171;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 1rem;
+        }
+        h1 { margin: 0; font-size: 1.5rem; color: var(--accent); text-transform: uppercase; }
+        .card {
+            background: var(--card);
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .refresh { font-size: 12px; color: var(--text-dim); text-align: right; margin-top: 1rem; }
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 13px;
+        }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resource & Event Correlation</h1>
+            <div style="text-align: right">
+                <div style="font-size: 12px; color: var(--text-dim)">Reporting Workspace</div>
+                <div style="font-weight: bold; color: var(--accent)">System Monitor</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="legend">
+                <div class="legend-item"><div class="dot" style="background: #38bdf8;"></div> CPU Load (%)</div>
+                <div class="legend-item"><div class="dot" style="background: #a855f7;"></div> RAM Usage (%)</div>
+                <div class="legend-item"><div class="dot" style="background: #f472b6;"></div> System Event marker</div>
+            </div>
+            <canvas id="resourceChart" height="400"></canvas>
+        </div>
+
+        <div class="refresh">Last update: 2026-04-19 10:46:53 | Window: Last 1 hours</div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('resourceChart').getContext('2d');
+        
+        const annotations = [{"x": "04-19 10:46", "text": "Inference: True (SHPING)"}, {"x": "04-19 10:46", "text": "Inference: True (TIME)"}].map((evt, idx) => ({
+            type: 'line',
+            xMin: evt.x,
+            xMax: evt.x,
+            borderColor: 'rgba(244, 114, 182, 0.5)',
+            borderWidth: 2,
+            borderDash: [5, 5],
+            label: {
+                display: true,
+                content: evt.text,
+                backgroundColor: 'rgba(244, 114, 182, 0.8)',
+                color: '#fff',
+                font: { size: 10 },
+                position: 'start'
+            }
+        }));
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["04-19 10:46"],
+                datasets: [
+                    {
+                        label: 'CPU %',
+                        data: [14.2],
+                        borderColor: '#38bdf8',
+                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'MEM %',
+                        data: [60.6],
+                        borderColor: '#a855f7',
+                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' },
+                        title: { display: true, text: 'Utilization %', color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', maxRotation: 45, minRotation: 45 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    annotation: {
+                        annotations: Object.assign({}, ...annotations.map((a, i) => ({ ['a' + i]: a })))
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+    
