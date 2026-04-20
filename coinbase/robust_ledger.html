@@ -4,834 +4,443 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="900">
-    <title>ROBUST LEDGER | stefans-Mac-mini.local</title>
+    <title>HARDENED LEDGER | stefans-Mac-mini.local</title>
     <style>
         :root {
-            --bg: #0a0a0b;
-            --text: #e2e8f0;
-            --dim: #64748b;
-            --border: #1e293b;
-            --pass: #22c55e;
-            --fail: #ef4444;
-            --crit: #f97316;
-            --tier: #38bdf8;
-            --accent: #8b5cf6;
+            --bg: #0a0a0b; --card: #111113; --text: #e2e8f0; --dim: #64748b;
+            --border: #1e293b; --pass: #22c55e; --fail: #ef4444; --accent: #8b5cf6;
         }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
-            margin: 0;
-            padding: 20px;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .metrics {
-            display: flex;
-            gap: 20px;
-        }
-        .metric {
-            background: #111;
-            padding: 5px 15px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
+        body { background: var(--bg); color: var(--text); font-family: 'SF Mono', monospace; margin: 0; padding: 20px; font-size: 12px; }
+        header { display: flex; justify-content: space-between; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 5px; }
+        .metrics { display: flex; gap: 15px; align-items: center; }
+        .metric { background: #000; padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; }
         .metric label { color: var(--dim); margin-right: 5px; }
         .metric span { color: var(--accent); font-weight: bold; }
         
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
+        /* Tabs */
+        .tabs { display: flex; gap: 2px; margin-top: 10px; }
+        .tab-btn { 
+            padding: 10px 20px; background: #1a1a1c; border: 1px solid var(--border); border-bottom: none;
+            cursor: pointer; color: var(--dim); font-weight: bold; text-transform: uppercase;
         }
-        th {
-            text-align: left;
-            background: #1a1a1c;
-            color: var(--dim);
-            padding: 10px;
-            border-bottom: 1px solid var(--border);
-            text-transform: uppercase;
-            font-size: 11px;
-        }
-        td {
-            padding: 8px 10px;
-            border-bottom: 1px solid #161618;
-            word-wrap: break-word;
-            vertical-align: top;
-        }
-        tr:hover td { background: #1a1a1c; }
+        .tab-content { display: none; background: var(--card); border: 1px solid var(--border); padding: 10px; min-height: 60vh; }
         
-        .status-pass .badge { background: var(--pass); color: #000; }
-        .status-fail .badge { background: var(--fail); color: #fff; }
-        .status-crit .badge { background: var(--crit); color: #000; }
-        .status-tier .badge { background: var(--tier); color: #000; }
-        
-        .badge {
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: bold;
-            font-size: 10px;
+        input[type="radio"] { display: none; }
+        #tab1:checked ~ .tabs label[for="tab1"], #tab2:checked ~ .tabs label[for="tab2"], #tab3:checked ~ .tabs label[for="tab3"] {
+            background: var(--card); color: var(--text); border-top: 2px solid var(--accent);
         }
+        #tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3 { display: block; }
+
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; color: var(--dim); padding: 8px; border-bottom: 1px solid var(--border); font-size: 10px; }
+        td { padding: 6px 8px; border-bottom: 1px solid #161618; vertical-align: top; }
         
-        strong { color: #fff; }
+        .status-pass { color: var(--pass); }
+        .status-fail { color: var(--fail); }
+        .badge { padding: 2px 4px; border-radius: 2px; font-weight: bold; background: #000; border: 1px solid currentColor; font-size: 9px; }
+        .tier-chip { font-size: 9px; padding: 1px 4px; margin-right: 4px; border-radius: 2px; background: #222; color: #fff; opacity: 0.8; }
+        .tier-pass { border-left: 2px solid var(--pass); }
+        .tier-fail { border-left: 2px solid var(--fail); }
         
-        footer {
-            margin-top: 30px;
-            color: var(--dim);
-            text-align: center;
-            font-size: 11px;
-        }
-        
-        .hard-refresh {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 800px) {
-            header { flex-direction: column; gap: 15px; }
-            table, thead, tbody, th, td, tr { display: block; }
-            th { display: none; }
-            tr { margin-bottom: 15px; border: 1px solid var(--border); }
-            td { border: none; padding: 5px 10px; }
-        }
+        .hard-refresh { background: var(--accent); color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
     <header>
         <div>
-            <h1 style="margin:0; font-size: 18px;">SYSTEM LEDGER <span style="color:var(--dim); font-weight: normal;">| stefans-Mac-mini.local</span></h1>
-            <p style="margin:5px 0 0 0; color:var(--dim);">Last Updated: 2026-04-20 09:30:41 (Auto-refresh 15m)</p>
+            <h1 style="margin:0; font-size: 16px;">HARDENED SYSTEM LEDGER</h1>
+            <p style="margin:2px 0 0 0; color:var(--dim);">v4.2 Robust Edition &bull; 2026-04-20 09:39:07 (Auto: 15m)</p>
         </div>
         <div class="metrics">
             <div class="metric"><label>CPU</label><span>22.3%</span></div>
             <div class="metric"><label>MEM</label><span>73.5%</span></div>
-            <div class="metric"><label>UPTIME</label><span> 9:30 up 3 days</span></div>
-            <button class="hard-refresh" onclick="location.reload()">FORCE REFRESH</button>
+            <button class="hard-refresh" onclick="location.reload()">REFRESH</button>
         </div>
     </header>
 
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 80px;">Time</th>
-                <th style="width: 100px;">Symbol</th>
-                <th style="width: 70px;">Status</th>
-                <th>Event Message / Intelligence Pulse</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        <tr class="status-info">
-            <td>09:30:01</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[SNX] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:30:01</td>
-            <td><strong>SNX</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[SNX] Tier: Directional | Prob: 8.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:29:51</td>
-            <td><strong>LRDS</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[LRDS] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:29:51</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[LRDS] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:29:51</td>
-            <td><strong>LRDS</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[LRDS] Tier: Generalist | Prob: 58.00% | Target: 75.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:29:51</td>
-            <td><strong>LRDS</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[LRDS] Tier: Crash | Prob: 2.00% | Target: 35.00% -> SAFE</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:29:51</td>
-            <td><strong>LRDS</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[LRDS] Tier: Imbalance | Prob: 97.84% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:29:51</td>
-            <td><strong>LRDS</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[LRDS] Tier: Directional | Prob: 100.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:28:50</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[MSOL] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:28:50</td>
-            <td><strong>MSOL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[MSOL] Tier: Directional | Prob: 2.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:28:31</td>
-            <td><strong>DOGINME</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[DOGINME] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:28:31</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[DOGINME] Inference: False</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:28:31</td>
-            <td><strong>DOGINME</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[DOGINME] Missing Imbalance Model</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:28:31</td>
-            <td><strong>DOGINME</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[DOGINME] Tier: Directional | Prob: 100.00% | Target: 71.86% (Acc: 89.83%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:28:00</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[SUKU] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:28:00</td>
-            <td><strong>SUKU</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[SUKU] Tier: Directional | Prob: 9.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:27:51</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[SKL] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:27:51</td>
-            <td><strong>SKL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[SKL] Tier: Directional | Prob: 7.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:27:50</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[QNT] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:27:50</td>
-            <td><strong>QNT</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[QNT] Tier: Directional | Prob: 4.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:27:40</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[BOBA] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:27:40</td>
-            <td><strong>BOBA</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[BOBA] Tier: Directional | Prob: 23.00% | Target: 77.51% (Acc: 96.89%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:27:09</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[SNX] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:27:09</td>
-            <td><strong>SNX</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[SNX] Tier: Directional | Prob: 7.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:49</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[TRAC] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:26:49</td>
-            <td><strong>TRAC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[TRAC] Tier: Directional | Prob: 2.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:39</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ETC] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:26:39</td>
-            <td><strong>ETC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ETC] Tier: Directional | Prob: 12.00% | Target: 79.07% (Acc: 98.84%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:39</td>
-            <td><strong>ATH</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ATH] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:39</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ATH] Inference: False</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:39</td>
-            <td><strong>ATH</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ATH] Missing Imbalance Model</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:26:39</td>
-            <td><strong>ATH</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ATH] Tier: Directional | Prob: 98.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:08</td>
-            <td><strong>UNI</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[UNI] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:26:08</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[UNI] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:26:08</td>
-            <td><strong>UNI</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[UNI] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:26:08</td>
-            <td><strong>UNI</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[UNI] Tier: Directional | Prob: 98.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:25:58</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[PAX] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:25:58</td>
-            <td><strong>PAX</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[PAX] Tier: Directional | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:25:48</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>HEARTBEAT: Loop took 0.41s. Open FDs: 37748</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:25:48</td>
-            <td><strong>BADGER</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[BADGER] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:25:48</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[BADGER] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:25:48</td>
-            <td><strong>BADGER</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[BADGER] Tier: Imbalance | Prob: 48.36% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:25:48</td>
-            <td><strong>BADGER</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[BADGER] Tier: Directional | Prob: 96.00% | Target: 74.04% (Acc: 92.54%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:24:57</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[LDO] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:24:57</td>
-            <td><strong>LDO</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[LDO] Tier: Directional | Prob: 1.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:24:37</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[APR] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:24:37</td>
-            <td><strong>APR</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[APR] Tier: Directional | Prob: 77.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:24:17</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ANKR] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:24:17</td>
-            <td><strong>ANKR</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ANKR] Tier: Directional | Prob: 23.00% | Target: 78.82% (Acc: 98.53%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:57</td>
-            <td><strong>RARI</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[RARI] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:57</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[RARI] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:57</td>
-            <td><strong>RARI</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[RARI] Tier: Imbalance | Prob: 69.52% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:57</td>
-            <td><strong>RARI</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[RARI] Tier: Directional | Prob: 99.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:47</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[BOBBOB] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:47</td>
-            <td><strong>BOBBOB</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[BOBBOB] Tier: Directional | Prob: 72.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:16</td>
-            <td><strong>ICP</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ICP] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:16</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ICP] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:16</td>
-            <td><strong>ICP</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ICP] Tier: Imbalance | Prob: 33.72% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:16</td>
-            <td><strong>ICP</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ICP] Tier: Directional | Prob: 89.00% | Target: 77.80% (Acc: 97.25%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:16</td>
-            <td><strong>CFG</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CFG] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:16</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CFG] Inference: False</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:23:16</td>
-            <td><strong>CFG</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CFG] Missing Imbalance Model</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:23:16</td>
-            <td><strong>CFG</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[CFG] Tier: Directional | Prob: 80.00% | Target: 72.46% (Acc: 90.58%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:57</td>
-            <td><strong>ALEPH</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ALEPH] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:57</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ALEPH] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:57</td>
-            <td><strong>ALEPH</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ALEPH] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:57</td>
-            <td><strong>ALEPH</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ALEPH] Tier: Directional | Prob: 100.00% | Target: 75.49% (Acc: 94.36%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:56</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[GMT] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:56</td>
-            <td><strong>GMT</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[GMT] Tier: Directional | Prob: 8.00% | Target: 77.41% (Acc: 96.76%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:46</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[GST] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:46</td>
-            <td><strong>GST</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[GST] Tier: Directional | Prob: 7.00% | Target: 76.25% (Acc: 95.32%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:46</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[WAXL] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:46</td>
-            <td><strong>WAXL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[WAXL] Tier: Directional | Prob: 40.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:36</td>
-            <td><strong>AERGO</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[AERGO] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:36</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[AERGO] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:36</td>
-            <td><strong>AERGO</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[AERGO] Tier: Imbalance | Prob: 71.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:36</td>
-            <td><strong>AERGO</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[AERGO] Tier: Directional | Prob: 100.00% | Target: 77.15% (Acc: 96.44%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:36</td>
-            <td><strong>CAKE</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CAKE] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:36</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CAKE] Inference: False</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:36</td>
-            <td><strong>CAKE</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[CAKE] Missing Imbalance Model</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:36</td>
-            <td><strong>CAKE</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[CAKE] Tier: Directional | Prob: 85.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:15</td>
-            <td><strong>AXL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[AXL] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:15</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[AXL] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:15</td>
-            <td><strong>AXL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[AXL] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:15</td>
-            <td><strong>AXL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[AXL] Tier: Directional | Prob: 93.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:06</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[JASMY] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:06</td>
-            <td><strong>JASMY</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[JASMY] Tier: Directional | Prob: 4.00% | Target: 75.95% (Acc: 94.94%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:22:05</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[BNB] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:22:05</td>
-            <td><strong>BNB</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[BNB] Tier: Directional | Prob: 11.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:21:45</td>
-            <td><strong>ZEC</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ZEC] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:21:45</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[ZEC] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:21:45</td>
-            <td><strong>ZEC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ZEC] Tier: Generalist | Prob: 47.00% | Target: 75.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:21:45</td>
-            <td><strong>ZEC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ZEC] Tier: Crash | Prob: 5.00% | Target: 35.00% -> SAFE</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:21:45</td>
-            <td><strong>ZEC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ZEC] Tier: Imbalance | Prob: 100.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:21:45</td>
-            <td><strong>ZEC</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[ZEC] Tier: Directional | Prob: 95.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:21:45</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[SOL] Inference: False</td>
-        </tr>
-        
-        <tr class="status-tier">
-            <td>09:21:45</td>
-            <td><strong>SOL</strong></td>
-            <td><span class="badge">TIER</span></td>
-            <td>[SOL] Tier: Directional | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:21:25</td>
-            <td><strong>IOTX</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[IOTX] Prediction filed.</td>
-        </tr>
-        
-        <tr class="status-info">
-            <td>09:21:25</td>
-            <td><strong>GLOBAL</strong></td>
-            <td><span class="badge">INFO</span></td>
-            <td>[IOTX] Inference: False</td>
-        </tr>
-        
-        </tbody>
-    </table>
+    <input type="radio" name="tabs" id="tab1" checked>
+    <input type="radio" name="tabs" id="tab2">
+    <input type="radio" name="tabs" id="tab3">
 
-    <footer>
-        &copy; 2026 METASTADIUM HARDENED REPORTING &bull; BLAND TEXTUAL SUPREMACY
+    <div class="tabs">
+        <label for="tab1" class="tab-btn">System Feed</label>
+        <label for="tab2" class="tab-btn">NN Intelligence</label>
+        <label for="tab3" class="tab-btn">Exec Ledger</label>
+    </div>
+
+    <div id="content1" class="tab-content">
+        <table>
+            <thead><tr><th style="width:80px">Time</th><th>System Event / Telemetry</th></tr></thead>
+            <tbody><tr><td>09:38:59</td><td style='color:#94a3b8'>[BTC] Inference: False</td></tr><tr><td>09:38:59</td><td style='color:#94a3b8'>[FOX] Prediction filed.</td></tr><tr><td>09:38:59</td><td style='color:#94a3b8'>[FOX] Inference: False</td></tr><tr><td>09:38:59</td><td style='color:#94a3b8'>[SOL] Inference: False</td></tr><tr><td>09:38:58</td><td style='color:#94a3b8'>[MSOL] Inference: False</td></tr><tr><td>09:38:38</td><td style='color:#94a3b8'>[DIMO] Inference: False</td></tr><tr><td>09:38:28</td><td style='color:#94a3b8'>[KNC] Inference: False</td></tr><tr><td>09:37:58</td><td style='color:#94a3b8'>[EUL] Prediction filed.</td></tr><tr><td>09:37:58</td><td style='color:#94a3b8'>[EUL] Inference: False</td></tr><tr><td>09:37:58</td><td style='color:#94a3b8'>[EUL] Missing Imbalance Model</td></tr><tr><td>09:37:48</td><td style='color:#94a3b8'>[API3] Inference: False</td></tr><tr><td>09:37:27</td><td style='color:#94a3b8'>[ACS] Prediction filed.</td></tr><tr><td>09:37:27</td><td style='color:#94a3b8'>[ACS] Inference: False</td></tr><tr><td>09:36:57</td><td style='color:#94a3b8'>[FORTH] Inference: False</td></tr><tr><td>09:36:27</td><td style='color:#94a3b8'>[QI] Inference: False</td></tr><tr><td>09:36:17</td><td style='color:#94a3b8'>[BONK] Inference: False</td></tr><tr><td>09:36:16</td><td style='color:#94a3b8'>[RENDER] Inference: False</td></tr><tr><td>09:36:07</td><td style='color:#94a3b8'>[ADA] Inference: False</td></tr><tr><td>09:36:07</td><td style='color:#94a3b8'>[XRP] Inference: False</td></tr><tr><td>09:36:06</td><td style='color:#94a3b8'>[MSOL] Inference: False</td></tr><tr><td>09:35:57</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.73s. Open FDs: 37748</td></tr><tr><td>09:35:56</td><td style='color:#94a3b8'>[GLM] Inference: False</td></tr><tr><td>09:35:47</td><td style='color:#94a3b8'>[DOGINME] Prediction filed.</td></tr><tr><td>09:35:47</td><td style='color:#94a3b8'>[DOGINME] Inference: False</td></tr><tr><td>09:35:47</td><td style='color:#94a3b8'>[DOGINME] Missing Imbalance Model</td></tr><tr><td>09:35:46</td><td style='color:#94a3b8'>[DIMO] Inference: False</td></tr><tr><td>09:35:36</td><td style='color:#94a3b8'>[DRIFT] Cooldown active.</td></tr><tr><td>09:35:36</td><td style='color:#94a3b8'>[DRIFT] Prediction filed.</td></tr><tr><td>09:35:36</td><td style='color:#94a3b8'>[DRIFT] Inference: True</td></tr><tr><td>09:35:26</td><td style='color:#94a3b8'>[B3] Inference: False</td></tr><tr><td>09:35:06</td><td style='color:#94a3b8'>[QNT] Inference: False</td></tr><tr><td>09:34:15</td><td style='color:#94a3b8'>[OGN] Inference: False</td></tr><tr><td>09:34:15</td><td style='color:#94a3b8'>[FIS] Prediction filed.</td></tr><tr><td>09:34:15</td><td style='color:#94a3b8'>[FIS] Inference: False</td></tr><tr><td>09:34:05</td><td style='color:#94a3b8'>[IMU] Prediction filed.</td></tr><tr><td>09:34:05</td><td style='color:#94a3b8'>[IMU] Inference: False</td></tr><tr><td>09:34:05</td><td style='color:#94a3b8'>[IMU] Missing Imbalance Model</td></tr><tr><td>09:33:55</td><td style='color:#94a3b8'>[RLC] Inference: False</td></tr><tr><td>09:33:55</td><td style='color:#94a3b8'>[FLOW] Inference: False</td></tr><tr><td>09:33:34</td><td style='color:#94a3b8'>[GODS] Inference: False</td></tr><tr><td>09:32:23</td><td style='color:#94a3b8'>[LCX] Prediction filed.</td></tr><tr><td>09:32:23</td><td style='color:#94a3b8'>[LCX] Inference: False</td></tr><tr><td>09:31:23</td><td style='color:#94a3b8'>[DOGINME] Prediction filed.</td></tr><tr><td>09:31:23</td><td style='color:#94a3b8'>[DOGINME] Inference: False</td></tr><tr><td>09:31:23</td><td style='color:#94a3b8'>[DOGINME] Missing Imbalance Model</td></tr><tr><td>09:31:13</td><td style='color:#94a3b8'>[ELA] Inference: False</td></tr><tr><td>09:30:52</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.28s. Open FDs: 37748</td></tr><tr><td>09:30:42</td><td style='color:#94a3b8'>[AKT] Prediction filed.</td></tr><tr><td>09:30:42</td><td style='color:#94a3b8'>[AKT] Inference: False</td></tr><tr><td>09:30:42</td><td style='color:#94a3b8'>[MDT] Inference: False</td></tr><tr><td>09:30:01</td><td style='color:#94a3b8'>[SNX] Inference: False</td></tr><tr><td>09:29:51</td><td style='color:#94a3b8'>[LRDS] Prediction filed.</td></tr><tr><td>09:29:51</td><td style='color:#94a3b8'>[LRDS] Inference: False</td></tr><tr><td>09:28:50</td><td style='color:#94a3b8'>[MSOL] Inference: False</td></tr><tr><td>09:28:31</td><td style='color:#94a3b8'>[DOGINME] Prediction filed.</td></tr><tr><td>09:28:31</td><td style='color:#94a3b8'>[DOGINME] Inference: False</td></tr><tr><td>09:28:31</td><td style='color:#94a3b8'>[DOGINME] Missing Imbalance Model</td></tr><tr><td>09:28:00</td><td style='color:#94a3b8'>[SUKU] Inference: False</td></tr><tr><td>09:27:51</td><td style='color:#94a3b8'>[SKL] Inference: False</td></tr><tr><td>09:27:50</td><td style='color:#94a3b8'>[QNT] Inference: False</td></tr><tr><td>09:27:40</td><td style='color:#94a3b8'>[BOBA] Inference: False</td></tr><tr><td>09:27:09</td><td style='color:#94a3b8'>[SNX] Inference: False</td></tr><tr><td>09:26:49</td><td style='color:#94a3b8'>[TRAC] Inference: False</td></tr><tr><td>09:26:39</td><td style='color:#94a3b8'>[ETC] Inference: False</td></tr><tr><td>09:26:39</td><td style='color:#94a3b8'>[ATH] Prediction filed.</td></tr><tr><td>09:26:39</td><td style='color:#94a3b8'>[ATH] Inference: False</td></tr><tr><td>09:26:39</td><td style='color:#94a3b8'>[ATH] Missing Imbalance Model</td></tr><tr><td>09:26:08</td><td style='color:#94a3b8'>[UNI] Prediction filed.</td></tr><tr><td>09:26:08</td><td style='color:#94a3b8'>[UNI] Inference: False</td></tr><tr><td>09:25:58</td><td style='color:#94a3b8'>[PAX] Inference: False</td></tr><tr><td>09:25:48</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.41s. Open FDs: 37748</td></tr><tr><td>09:25:48</td><td style='color:#94a3b8'>[BADGER] Prediction filed.</td></tr><tr><td>09:25:48</td><td style='color:#94a3b8'>[BADGER] Inference: False</td></tr><tr><td>09:24:57</td><td style='color:#94a3b8'>[LDO] Inference: False</td></tr><tr><td>09:24:37</td><td style='color:#94a3b8'>[APR] Inference: False</td></tr><tr><td>09:24:17</td><td style='color:#94a3b8'>[ANKR] Inference: False</td></tr><tr><td>09:23:57</td><td style='color:#94a3b8'>[RARI] Prediction filed.</td></tr><tr><td>09:23:57</td><td style='color:#94a3b8'>[RARI] Inference: False</td></tr><tr><td>09:23:47</td><td style='color:#94a3b8'>[BOBBOB] Inference: False</td></tr><tr><td>09:23:16</td><td style='color:#94a3b8'>[ICP] Prediction filed.</td></tr><tr><td>09:23:16</td><td style='color:#94a3b8'>[ICP] Inference: False</td></tr><tr><td>09:23:16</td><td style='color:#94a3b8'>[CFG] Prediction filed.</td></tr><tr><td>09:23:16</td><td style='color:#94a3b8'>[CFG] Inference: False</td></tr><tr><td>09:23:16</td><td style='color:#94a3b8'>[CFG] Missing Imbalance Model</td></tr><tr><td>09:22:57</td><td style='color:#94a3b8'>[ALEPH] Prediction filed.</td></tr><tr><td>09:22:57</td><td style='color:#94a3b8'>[ALEPH] Inference: False</td></tr><tr><td>09:22:56</td><td style='color:#94a3b8'>[GMT] Inference: False</td></tr><tr><td>09:22:46</td><td style='color:#94a3b8'>[GST] Inference: False</td></tr><tr><td>09:22:46</td><td style='color:#94a3b8'>[WAXL] Inference: False</td></tr><tr><td>09:22:36</td><td style='color:#94a3b8'>[AERGO] Prediction filed.</td></tr><tr><td>09:22:36</td><td style='color:#94a3b8'>[AERGO] Inference: False</td></tr><tr><td>09:22:36</td><td style='color:#94a3b8'>[CAKE] Prediction filed.</td></tr><tr><td>09:22:36</td><td style='color:#94a3b8'>[CAKE] Inference: False</td></tr><tr><td>09:22:36</td><td style='color:#94a3b8'>[CAKE] Missing Imbalance Model</td></tr><tr><td>09:22:15</td><td style='color:#94a3b8'>[AXL] Prediction filed.</td></tr><tr><td>09:22:15</td><td style='color:#94a3b8'>[AXL] Inference: False</td></tr><tr><td>09:22:06</td><td style='color:#94a3b8'>[JASMY] Inference: False</td></tr><tr><td>09:22:05</td><td style='color:#94a3b8'>[BNB] Inference: False</td></tr><tr><td>09:21:45</td><td style='color:#94a3b8'>[ZEC] Prediction filed.</td></tr><tr><td>09:21:45</td><td style='color:#94a3b8'>[ZEC] Inference: False</td></tr></tbody>
+        </table>
+    </div>
+
+    <div id="content2" class="tab-content">
+        <table>
+            <thead><tr><th style="width:80px">Time</th><th style="width:80px">Asset</th><th style="width:60px">Decision</th><th>Tier Pulse (Prob vs Target)</th></tr></thead>
+            <tbody>
+        <tr class="status-pending">
+            <td>09:38:59</td>
+            <td><strong>SOL</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:59</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:59</td>
+            <td><strong>FOX</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 91.0%</span><span class='tier-chip tier-fail'>Imb: 0.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:59</td>
+            <td><strong>BTC</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:58</td>
+            <td><strong>MSOL</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 2.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:58</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:38</td>
+            <td><strong>DIMO</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 19.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:38</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:28</td>
+            <td><strong>KNC</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:38:28</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:58</td>
+            <td><strong>EUL</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 86.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:58</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:48</td>
+            <td><strong>API3</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:48</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:27</td>
+            <td><strong>ACS</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 99.0%</span><span class='tier-chip tier-fail'>Imb: 72.7%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:37:27</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:57</td>
+            <td><strong>FORTH</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 57.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:57</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:27</td>
+            <td><strong>QI</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 22.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:27</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:17</td>
+            <td><strong>BONK</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:17</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:16</td>
+            <td><strong>RENDER</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 7.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:16</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:07</td>
+            <td><strong>XRP</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 14.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:07</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:07</td>
+            <td><strong>ADA</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 8.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:06</td>
+            <td><strong>MSOL</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 16.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:36:06</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:57</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:56</td>
+            <td><strong>GLM</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 4.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:56</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:47</td>
+            <td><strong>DOGINME</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 98.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:47</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:46</td>
+            <td><strong>DIMO</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 18.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:46</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pass">
+            <td>09:35:36</td>
+            <td><strong>DRIFT</strong></td>
+            <td><span class='badge'>PASS</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 99.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 14.0%</span><span class='tier-chip tier-pass'>Gen: 75.0%</span><span class='tier-chip tier-pass'>Spe: 92.4%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:36</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:26</td>
+            <td><strong>B3</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 61.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:26</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:06</td>
+            <td><strong>QNT</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 3.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:35:06</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>09:34:15</td>
+            <td><strong>FIS</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 100.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 2.0%</span><span class='tier-chip tier-pass'>Gen: 68.0%</span><span class='tier-chip tier-fail'>Spe: 0.4%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:34:15</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:34:15</td>
+            <td><strong>OGN</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 6.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:34:05</td>
+            <td><strong>IMU</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 87.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:34:05</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:33:55</td>
+            <td><strong>FLOW</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 7.0%</span></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:33:55</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-pending">
+            <td>09:33:55</td>
+            <td><strong>RLC</strong></td>
+            <td><span class='badge'>PENDING</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 0.0%</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div id="content3" class="tab-content">
+        <table>
+            <thead><tr><th style="width:80px">Time</th><th style="width:80px">Asset</th><th style="width:100px">Size</th><th>Price (Buy &rarr; Sell)</th><th style="width:80px">Status</th></tr></thead>
+            <tbody><tr><td colspan='5' style='text-align:center; padding:40px; color:#64748b'>No recent executions found in CSV.</td></tr></tbody>
+        </table>
+    </div>
+
+    <footer style="margin-top:15px; color:var(--dim); text-align:center; font-size: 10px;">
+        &copy; 2026 METASTADIUM Intelligence Portal &bull; <a href="index.html" style="color:var(--dim)">Return to Master</a>
     </footer>
 </body>
 </html>
