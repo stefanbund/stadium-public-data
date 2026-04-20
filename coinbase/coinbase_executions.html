@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Coinbase Execution Ledger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #38bdf8;
+            --success: #10b981;
+            --fail: #ef4444;
+            --warning: #f59e0b;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at top right, #1e293b, transparent), radial-gradient(circle at bottom left, #020617, transparent);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .title-group h1 { font-size: 2.2rem; color: var(--accent); letter-spacing: -0.02em; }
+        .title-group p { color: var(--text-dim); font-size: 0.95rem; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h3 { color: var(--text-dim); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+        .stat-card .value { font-size: 2.4rem; font-weight: 600; color: var(--text); font-family: 'Outfit'; }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 1.25rem 1.5rem;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.04);
+            transition: background 0.3s ease;
+        }
+
+        .symbol-badge {
+            font-family: 'Outfit';
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.6rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            display: inline-block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .status-success { background: rgba(16, 185, 129, 0.15); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-fail { background: rgba(239, 68, 68, 0.15); color: var(--fail); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        .time-cell {
+            font-variant-numeric: tabular-nums;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .price-text {
+            font-family: 'Inter', monospace;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .order-ids {
+            font-family: 'Inter', monospace;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .error-msg {
+            color: var(--fail);
+            font-size: 0.8rem;
+            font-style: italic;
+            max-width: 250px;
+            word-wrap: break-word;
+        }
+
+        .empty-state {
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-dim);
+        }
+
+        .refresh-btn {
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-family: 'Outfit';
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1024px) {
+            body { padding: 1rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-group">
+                <h1>Coinbase Execution Ledger</h1>
+                <p>Comprehensive audit of buy/sell cycles, order status, and execution telemetry.</p>
+                <div style="margin-top: 12px; display: flex; gap: 15px; align-items: center;">
+                    <a href="index.html" style="color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600;">← Master Hub</a>
+                    <a href="trade_decision_summary.html" style="color: var(--text-dim); text-decoration: none; font-size: 0.85rem;">Decision Log</a>
+                </div>
+            </div>
+            <div style="text-align: right">
+                <div style="font-size: 0.9rem; font-weight: 600; color: var(--accent)">LIVE TELEMETRY ACTIVE</div>
+                <div style="color: var(--text-dim); font-size: 0.75rem;">Last update: 2026-04-20 07:08:56</div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Cycles</h3>
+                <div class="value">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Success (Cleared)</h3>
+                <div class="value" style="color: var(--success)">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Failed (Aborted)</h3>
+                <div class="value" style="color: var(--fail)">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Execution Efficiency</h3>
+                <div class="value" style="color: var(--accent)">0.0%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Asset / Side</th>
+                        <th>Cycle Time</th>
+                        <th>Status</th>
+                        <th>Entry / Exit Time</th>
+                        <th>Prices (USD)</th>
+                        <th>Result / Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+        <tr>
+            <td colspan="6" class="empty-state">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📭 No Executions Recorded</div>
+                <p>The trade execution ledger is currently empty. Check the hierarchy for upcoming signals.</p>
+            </td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            Built by Antigravity AI &bull; Coinbase Advanced Trade Integration &bull; 2026
+        </footer>
+    </div>
+</body>
+</html>
