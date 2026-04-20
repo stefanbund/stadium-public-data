@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-19 05:27 PM PDT",
+    "last_updated": "2026-04-19 05:57 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -647,7 +647,7 @@
       "timestamp": "2026-04-14T09:13:55-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0071,
-      "detail": -7.042253521126766
+      "detail": -5.633802816901411
     },
     {
       "symbol": "AKT",
@@ -983,7 +983,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -11.067961165048542
+      "detail": -10.679611650485436
     },
     {
       "symbol": "DNT",
@@ -1053,7 +1053,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -9.664694280078894
+      "detail": -9.270216962524652
     },
     {
       "symbol": "AVT",
@@ -1074,14 +1074,14 @@
       "timestamp": "2026-04-19T06:42:35-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0546,
-      "detail": -2.0146520146520213
+      "detail": -1.6483516483516574
     },
     {
       "symbol": "AERGO",
       "timestamp": "2026-04-19T12:41:26-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0539,
-      "detail": -0.7421150278293219
+      "detail": -0.37105751391466735
     },
     {
       "symbol": "TIME",
