@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-20 04:42 AM PDT",
+    "last_updated": "2026-04-20 05:13 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -766,7 +766,7 @@
       "timestamp": "2026-04-15T18:54:39-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01209,
-      "detail": -1.8196856906534302
+      "detail": -1.7369727047146413
     },
     {
       "symbol": "AERO",
@@ -815,7 +815,7 @@
       "timestamp": "2026-04-15T22:36:57-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01206,
-      "detail": -1.5754560530679869
+      "detail": -1.4925373134328326
     },
     {
       "symbol": "AERO",
@@ -871,7 +871,7 @@
       "timestamp": "2026-04-16T01:50:54-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01205,
-      "detail": -1.4937759336099552
+      "detail": -1.4107883817427387
     },
     {
       "symbol": "AKT",
@@ -983,7 +983,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -10.873786407766989
+      "detail": -10.485436893203882
     },
     {
       "symbol": "DNT",
@@ -1053,7 +1053,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -9.467455621301772
+      "detail": -9.072978303747531
     },
     {
       "symbol": "AVT",
