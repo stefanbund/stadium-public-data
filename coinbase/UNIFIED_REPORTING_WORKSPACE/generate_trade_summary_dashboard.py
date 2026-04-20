@@ -48,7 +48,7 @@ def get_trade_data(log_dir):
                                 event = {
                                     "symbol": symbol,
                                     "timestamp": timestamp,
-                                    "status": "FAIL" if not passed else "PENDING",
+                                    "status": "FAIL",
                                     "insight": f"Dir: {prob:.1%} vs {target:.1%}" if not passed else f"Dir: {prob:.1%}",
                                     "last_tier": tier,
                                     "prob": prob,
