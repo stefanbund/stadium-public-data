@@ -272,6 +272,10 @@ def generate_html(decisions):
             <div class="title-group">
                 <h1>Trading Decision Chronology</h1>
                 <p>Real-time sequence of hierarchical model inference outcomes, sorted by freshnes.</p>
+                <div style="margin-top: 10px; display: flex; gap: 15px;">
+                    <a href="index.html" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 600;">← Master Hub</a>
+                    <a href="resource_correlation.html" style="color: var(--pending); text-decoration: none; font-size: 0.8rem; font-weight: 600;">Correlated Events</a>
+                </div>
             </div>
             <div class="timestamp">
                 Last updated: {now}
