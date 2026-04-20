@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="900">
+    <title>ROBUST LEDGER | stefans-Mac-mini.local</title>
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --text: #e2e8f0;
+            --dim: #64748b;
+            --border: #1e293b;
+            --pass: #22c55e;
+            --fail: #ef4444;
+            --crit: #f97316;
+            --tier: #38bdf8;
+            --accent: #8b5cf6;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            margin: 0;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .metrics {
+            display: flex;
+            gap: 20px;
+        }
+        .metric {
+            background: #111;
+            padding: 5px 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+        .metric label { color: var(--dim); margin-right: 5px; }
+        .metric span { color: var(--accent); font-weight: bold; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th {
+            text-align: left;
+            background: #1a1a1c;
+            color: var(--dim);
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #161618;
+            word-wrap: break-word;
+            vertical-align: top;
+        }
+        tr:hover td { background: #1a1a1c; }
+        
+        .status-pass .badge { background: var(--pass); color: #000; }
+        .status-fail .badge { background: var(--fail); color: #fff; }
+        .status-crit .badge { background: var(--crit); color: #000; }
+        .status-tier .badge { background: var(--tier); color: #000; }
+        
+        .badge {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        
+        strong { color: #fff; }
+        
+        footer {
+            margin-top: 30px;
+            color: var(--dim);
+            text-align: center;
+            font-size: 11px;
+        }
+        
+        .hard-refresh {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 800px) {
+            header { flex-direction: column; gap: 15px; }
+            table, thead, tbody, th, td, tr { display: block; }
+            th { display: none; }
+            tr { margin-bottom: 15px; border: 1px solid var(--border); }
+            td { border: none; padding: 5px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin:0; font-size: 18px;">SYSTEM LEDGER <span style="color:var(--dim); font-weight: normal;">| stefans-Mac-mini.local</span></h1>
+            <p style="margin:5px 0 0 0; color:var(--dim);">Last Updated: 2026-04-20 09:30:41 (Auto-refresh 15m)</p>
+        </div>
+        <div class="metrics">
+            <div class="metric"><label>CPU</label><span>22.3%</span></div>
+            <div class="metric"><label>MEM</label><span>73.5%</span></div>
+            <div class="metric"><label>UPTIME</label><span> 9:30 up 3 days</span></div>
+            <button class="hard-refresh" onclick="location.reload()">FORCE REFRESH</button>
+        </div>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 80px;">Time</th>
+                <th style="width: 100px;">Symbol</th>
+                <th style="width: 70px;">Status</th>
+                <th>Event Message / Intelligence Pulse</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="status-info">
+            <td>09:30:01</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[SNX] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:30:01</td>
+            <td><strong>SNX</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[SNX] Tier: Directional | Prob: 8.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:29:51</td>
+            <td><strong>LRDS</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[LRDS] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:29:51</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[LRDS] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:29:51</td>
+            <td><strong>LRDS</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[LRDS] Tier: Generalist | Prob: 58.00% | Target: 75.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:29:51</td>
+            <td><strong>LRDS</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[LRDS] Tier: Crash | Prob: 2.00% | Target: 35.00% -> SAFE</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:29:51</td>
+            <td><strong>LRDS</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[LRDS] Tier: Imbalance | Prob: 97.84% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:29:51</td>
+            <td><strong>LRDS</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[LRDS] Tier: Directional | Prob: 100.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:28:50</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[MSOL] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:28:50</td>
+            <td><strong>MSOL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[MSOL] Tier: Directional | Prob: 2.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:28:31</td>
+            <td><strong>DOGINME</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[DOGINME] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:28:31</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[DOGINME] Inference: False</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:28:31</td>
+            <td><strong>DOGINME</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[DOGINME] Missing Imbalance Model</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:28:31</td>
+            <td><strong>DOGINME</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[DOGINME] Tier: Directional | Prob: 100.00% | Target: 71.86% (Acc: 89.83%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:28:00</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[SUKU] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:28:00</td>
+            <td><strong>SUKU</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[SUKU] Tier: Directional | Prob: 9.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:27:51</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[SKL] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:27:51</td>
+            <td><strong>SKL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[SKL] Tier: Directional | Prob: 7.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:27:50</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[QNT] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:27:50</td>
+            <td><strong>QNT</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[QNT] Tier: Directional | Prob: 4.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:27:40</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[BOBA] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:27:40</td>
+            <td><strong>BOBA</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[BOBA] Tier: Directional | Prob: 23.00% | Target: 77.51% (Acc: 96.89%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:27:09</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[SNX] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:27:09</td>
+            <td><strong>SNX</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[SNX] Tier: Directional | Prob: 7.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:49</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[TRAC] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:26:49</td>
+            <td><strong>TRAC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[TRAC] Tier: Directional | Prob: 2.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:39</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ETC] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:26:39</td>
+            <td><strong>ETC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ETC] Tier: Directional | Prob: 12.00% | Target: 79.07% (Acc: 98.84%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:39</td>
+            <td><strong>ATH</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ATH] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:39</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ATH] Inference: False</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:39</td>
+            <td><strong>ATH</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ATH] Missing Imbalance Model</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:26:39</td>
+            <td><strong>ATH</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ATH] Tier: Directional | Prob: 98.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:08</td>
+            <td><strong>UNI</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[UNI] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:26:08</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[UNI] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:26:08</td>
+            <td><strong>UNI</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[UNI] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:26:08</td>
+            <td><strong>UNI</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[UNI] Tier: Directional | Prob: 98.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:25:58</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[PAX] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:25:58</td>
+            <td><strong>PAX</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[PAX] Tier: Directional | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:25:48</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>HEARTBEAT: Loop took 0.41s. Open FDs: 37748</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:25:48</td>
+            <td><strong>BADGER</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[BADGER] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:25:48</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[BADGER] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:25:48</td>
+            <td><strong>BADGER</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[BADGER] Tier: Imbalance | Prob: 48.36% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:25:48</td>
+            <td><strong>BADGER</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[BADGER] Tier: Directional | Prob: 96.00% | Target: 74.04% (Acc: 92.54%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:24:57</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[LDO] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:24:57</td>
+            <td><strong>LDO</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[LDO] Tier: Directional | Prob: 1.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:24:37</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[APR] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:24:37</td>
+            <td><strong>APR</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[APR] Tier: Directional | Prob: 77.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:24:17</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ANKR] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:24:17</td>
+            <td><strong>ANKR</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ANKR] Tier: Directional | Prob: 23.00% | Target: 78.82% (Acc: 98.53%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:57</td>
+            <td><strong>RARI</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[RARI] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:57</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[RARI] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:57</td>
+            <td><strong>RARI</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[RARI] Tier: Imbalance | Prob: 69.52% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:57</td>
+            <td><strong>RARI</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[RARI] Tier: Directional | Prob: 99.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:47</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[BOBBOB] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:47</td>
+            <td><strong>BOBBOB</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[BOBBOB] Tier: Directional | Prob: 72.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:16</td>
+            <td><strong>ICP</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ICP] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:16</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ICP] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:16</td>
+            <td><strong>ICP</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ICP] Tier: Imbalance | Prob: 33.72% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:16</td>
+            <td><strong>ICP</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ICP] Tier: Directional | Prob: 89.00% | Target: 77.80% (Acc: 97.25%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:16</td>
+            <td><strong>CFG</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CFG] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:16</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CFG] Inference: False</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:23:16</td>
+            <td><strong>CFG</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CFG] Missing Imbalance Model</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:23:16</td>
+            <td><strong>CFG</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[CFG] Tier: Directional | Prob: 80.00% | Target: 72.46% (Acc: 90.58%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:57</td>
+            <td><strong>ALEPH</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ALEPH] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:57</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ALEPH] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:57</td>
+            <td><strong>ALEPH</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ALEPH] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:57</td>
+            <td><strong>ALEPH</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ALEPH] Tier: Directional | Prob: 100.00% | Target: 75.49% (Acc: 94.36%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:56</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[GMT] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:56</td>
+            <td><strong>GMT</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[GMT] Tier: Directional | Prob: 8.00% | Target: 77.41% (Acc: 96.76%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:46</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[GST] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:46</td>
+            <td><strong>GST</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[GST] Tier: Directional | Prob: 7.00% | Target: 76.25% (Acc: 95.32%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:46</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[WAXL] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:46</td>
+            <td><strong>WAXL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[WAXL] Tier: Directional | Prob: 40.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:36</td>
+            <td><strong>AERGO</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[AERGO] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:36</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[AERGO] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:36</td>
+            <td><strong>AERGO</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[AERGO] Tier: Imbalance | Prob: 71.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:36</td>
+            <td><strong>AERGO</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[AERGO] Tier: Directional | Prob: 100.00% | Target: 77.15% (Acc: 96.44%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:36</td>
+            <td><strong>CAKE</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CAKE] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:36</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CAKE] Inference: False</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:36</td>
+            <td><strong>CAKE</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[CAKE] Missing Imbalance Model</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:36</td>
+            <td><strong>CAKE</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[CAKE] Tier: Directional | Prob: 85.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:15</td>
+            <td><strong>AXL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[AXL] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:15</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[AXL] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:15</td>
+            <td><strong>AXL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[AXL] Tier: Imbalance | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:15</td>
+            <td><strong>AXL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[AXL] Tier: Directional | Prob: 93.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:06</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[JASMY] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:06</td>
+            <td><strong>JASMY</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[JASMY] Tier: Directional | Prob: 4.00% | Target: 75.95% (Acc: 94.94%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:22:05</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[BNB] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:22:05</td>
+            <td><strong>BNB</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[BNB] Tier: Directional | Prob: 11.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:21:45</td>
+            <td><strong>ZEC</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ZEC] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:21:45</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[ZEC] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:21:45</td>
+            <td><strong>ZEC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ZEC] Tier: Generalist | Prob: 47.00% | Target: 75.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:21:45</td>
+            <td><strong>ZEC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ZEC] Tier: Crash | Prob: 5.00% | Target: 35.00% -> SAFE</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:21:45</td>
+            <td><strong>ZEC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ZEC] Tier: Imbalance | Prob: 100.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:21:45</td>
+            <td><strong>ZEC</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[ZEC] Tier: Directional | Prob: 95.00% | Target: 80.00% (Acc: 100.00%) -> PASSED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:21:45</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[SOL] Inference: False</td>
+        </tr>
+        
+        <tr class="status-tier">
+            <td>09:21:45</td>
+            <td><strong>SOL</strong></td>
+            <td><span class="badge">TIER</span></td>
+            <td>[SOL] Tier: Directional | Prob: 0.00% | Target: 80.00% (Acc: 100.00%) -> FAILED</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:21:25</td>
+            <td><strong>IOTX</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[IOTX] Prediction filed.</td>
+        </tr>
+        
+        <tr class="status-info">
+            <td>09:21:25</td>
+            <td><strong>GLOBAL</strong></td>
+            <td><span class="badge">INFO</span></td>
+            <td>[IOTX] Inference: False</td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+    <footer>
+        &copy; 2026 METASTADIUM HARDENED REPORTING &bull; BLAND TEXTUAL SUPREMACY
+    </footer>
+</body>
+</html>
+    
