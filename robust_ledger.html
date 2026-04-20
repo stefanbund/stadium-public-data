@@ -26,10 +26,10 @@
         .tab-content { display: none; background: var(--card); border: 1px solid var(--border); padding: 10px; min-height: 60vh; }
         
         input[type="radio"] { display: none; }
-        #tab1:checked ~ .tabs label[for="tab1"], #tab2:checked ~ .tabs label[for="tab2"], #tab3:checked ~ .tabs label[for="tab3"] {
+        #tab1:checked ~ .tabs label[for="tab1"], #tab2:checked ~ .tabs label[for="tab2"], #tab3:checked ~ .tabs label[for="tab3"], #tab4:checked ~ .tabs label[for="tab4"] {
             background: var(--card); color: var(--text); border-top: 2px solid var(--accent);
         }
-        #tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3 { display: block; }
+        #tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3, #tab4:checked ~ #content4 { display: block; }
 
         table { width: 100%; border-collapse: collapse; }
         th { text-align: left; color: var(--dim); padding: 8px; border-bottom: 1px solid var(--border); font-size: 10px; }
@@ -49,11 +49,11 @@
     <header>
         <div>
             <h1 style="margin:0; font-size: 16px;">HARDENED SYSTEM LEDGER</h1>
-            <p style="margin:2px 0 0 0; color:var(--dim);">v4.2 Robust Edition &bull; 2026-04-20 15:21:34 (Auto: 15m)</p>
+            <p style="margin:2px 0 0 0; color:var(--dim);">v4.2 Robust Edition &bull; 2026-04-20 15:34:57 (Auto: 15m)</p>
         </div>
         <div class="metrics">
-            <div class="metric"><label>CPU</label><span>13.6%</span></div>
-            <div class="metric"><label>MEM</label><span>74.5%</span></div>
+            <div class="metric"><label>CPU</label><span>14.3%</span></div>
+            <div class="metric"><label>MEM</label><span>71.7%</span></div>
             <button class="hard-refresh" onclick="location.reload()">REFRESH</button>
         </div>
     </header>
@@ -61,17 +61,19 @@
     <input type="radio" name="tabs" id="tab1" checked>
     <input type="radio" name="tabs" id="tab2">
     <input type="radio" name="tabs" id="tab3">
-
+    <input type="radio" name="tabs" id="tab4">
+ 
     <div class="tabs">
         <label for="tab1" class="tab-btn">System Feed</label>
         <label for="tab2" class="tab-btn">NN Intelligence</label>
         <label for="tab3" class="tab-btn">Exec Ledger</label>
+        <label for="tab4" class="tab-btn">Live Orders</label>
     </div>
 
     <div id="content1" class="tab-content">
         <table>
             <thead><tr><th style="width:80px">Time</th><th>System Event / Telemetry</th></tr></thead>
-            <tbody><tr><td>15:21:26</td><td style='color:#94a3b8'>[HYPE] Inference: False</td></tr><tr><td>15:21:26</td><td style='color:#94a3b8'>[XRP] Inference: False</td></tr><tr><td>15:21:16</td><td style='color:#94a3b8'>[COW] Prediction filed.</td></tr><tr><td>15:21:16</td><td style='color:#94a3b8'>[COW] Inference: False</td></tr><tr><td>15:21:16</td><td style='color:#94a3b8'>[COW] Missing Imbalance Model</td></tr><tr><td>15:21:16</td><td style='color:#94a3b8'>[KAVA] Inference: False</td></tr><tr><td>15:21:06</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.93s. Open FDs: 37961</td></tr><tr><td>15:21:06</td><td style='color:#94a3b8'>[LQTY] Inference: False</td></tr><tr><td>15:21:06</td><td style='color:#94a3b8'>[DAI] Inference: False</td></tr><tr><td>15:20:46</td><td style='color:#94a3b8'>[APE] Inference: False</td></tr><tr><td>15:20:46</td><td style='color:#94a3b8'>[PRO] Inference: False</td></tr><tr><td>15:20:45</td><td style='color:#94a3b8'>[FLOW] Inference: False</td></tr><tr><td>15:20:45</td><td style='color:#94a3b8'>[ETC] Inference: False</td></tr><tr><td>15:20:36</td><td style='color:#94a3b8'>[SEI] Inference: False</td></tr><tr><td>15:20:35</td><td style='color:#94a3b8'>[SAFE] Inference: False</td></tr><tr><td>15:20:35</td><td style='color:#94a3b8'>[FLOKI] Prediction filed.</td></tr><tr><td>15:20:35</td><td style='color:#94a3b8'>[FLOKI] Inference: False</td></tr><tr><td>15:20:35</td><td style='color:#94a3b8'>[FLOKI] Missing Imbalance Model</td></tr><tr><td>15:20:25</td><td style='color:#94a3b8'>[ZEN] Prediction filed.</td></tr><tr><td>15:20:25</td><td style='color:#94a3b8'>[ZEN] Inference: False</td></tr><tr><td>15:20:16</td><td style='color:#94a3b8'>[FIL] Inference: False</td></tr><tr><td>15:20:16</td><td style='color:#94a3b8'>[JASMY] Inference: False</td></tr><tr><td>15:20:15</td><td style='color:#94a3b8'>[APT] Inference: False</td></tr><tr><td>15:20:05</td><td style='color:#94a3b8'>[ICP] Prediction filed.</td></tr><tr><td>15:20:05</td><td style='color:#94a3b8'>[ICP] Inference: False</td></tr><tr><td>15:19:55</td><td style='color:#94a3b8'>[UNI] Prediction filed.</td></tr><tr><td>15:19:55</td><td style='color:#94a3b8'>[UNI] Inference: False</td></tr><tr><td>15:19:45</td><td style='color:#94a3b8'>[MATH] Prediction filed.</td></tr><tr><td>15:19:45</td><td style='color:#94a3b8'>[MATH] Inference: False</td></tr><tr><td>15:19:35</td><td style='color:#94a3b8'>[ALEPH] Prediction filed.</td></tr><tr><td>15:19:35</td><td style='color:#94a3b8'>[ALEPH] Inference: False</td></tr><tr><td>15:19:25</td><td style='color:#94a3b8'>[RPL] Prediction filed.</td></tr><tr><td>15:19:25</td><td style='color:#94a3b8'>[RPL] Inference: False</td></tr><tr><td>15:18:54</td><td style='color:#94a3b8'>[FLUID] Prediction filed.</td></tr><tr><td>15:18:54</td><td style='color:#94a3b8'>[FLUID] Inference: False</td></tr><tr><td>15:18:54</td><td style='color:#94a3b8'>[FLUID] Missing Imbalance Model</td></tr><tr><td>15:18:34</td><td style='color:#94a3b8'>[CORECHAIN] Prediction filed.</td></tr><tr><td>15:18:34</td><td style='color:#94a3b8'>[CORECHAIN] Inference: False</td></tr><tr><td>15:18:24</td><td style='color:#94a3b8'>[FORT] Inference: False</td></tr><tr><td>15:18:14</td><td style='color:#94a3b8'>[BONK] Inference: False</td></tr><tr><td>15:18:14</td><td style='color:#94a3b8'>[AAVE] Inference: False</td></tr><tr><td>15:18:04</td><td style='color:#94a3b8'>[T] Inference: False</td></tr><tr><td>15:17:54</td><td style='color:#94a3b8'>[SNX] Inference: False</td></tr><tr><td>15:17:44</td><td style='color:#94a3b8'>[AWE] Prediction filed.</td></tr><tr><td>15:17:44</td><td style='color:#94a3b8'>[AWE] Inference: False</td></tr><tr><td>15:17:44</td><td style='color:#94a3b8'>[AWE] Missing Imbalance Model</td></tr><tr><td>15:17:34</td><td style='color:#94a3b8'>[ASTER] Inference: False</td></tr><tr><td>15:17:33</td><td style='color:#94a3b8'>[ARKM] Inference: False</td></tr><tr><td>15:17:24</td><td style='color:#94a3b8'>[NMR] Inference: False</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[B3] Prediction filed.</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[B3] Inference: False</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[B3] Missing Imbalance Model</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[ATH] Prediction filed.</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[ATH] Inference: False</td></tr><tr><td>15:17:23</td><td style='color:#94a3b8'>[ATH] Missing Imbalance Model</td></tr><tr><td>15:17:13</td><td style='color:#94a3b8'>[SUSHI] Prediction filed.</td></tr><tr><td>15:17:13</td><td style='color:#94a3b8'>[SUSHI] Inference: False</td></tr><tr><td>15:17:03</td><td style='color:#94a3b8'>[ATOM] Inference: False</td></tr><tr><td>15:16:53</td><td style='color:#94a3b8'>[BLUR] Inference: False</td></tr><tr><td>15:16:33</td><td style='color:#94a3b8'>[G] Prediction filed.</td></tr><tr><td>15:16:33</td><td style='color:#94a3b8'>[G] Inference: False</td></tr><tr><td>15:16:03</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.51s. Open FDs: 37961</td></tr><tr><td>15:16:03</td><td style='color:#94a3b8'>[SAND] Inference: False</td></tr><tr><td>15:15:53</td><td style='color:#94a3b8'>[FARM] Inference: False</td></tr><tr><td>15:15:22</td><td style='color:#94a3b8'>[ARB] Inference: False</td></tr><tr><td>15:15:22</td><td style='color:#94a3b8'>[SUPER] Prediction filed.</td></tr><tr><td>15:15:22</td><td style='color:#94a3b8'>[SUPER] Inference: False</td></tr><tr><td>15:15:12</td><td style='color:#94a3b8'>[HBAR] Prediction filed.</td></tr><tr><td>15:15:12</td><td style='color:#94a3b8'>[HBAR] Inference: False</td></tr><tr><td>15:15:02</td><td style='color:#94a3b8'>[STORJ] Inference: False</td></tr><tr><td>15:14:52</td><td style='color:#94a3b8'>[COOKIE] Inference: False</td></tr><tr><td>15:14:52</td><td style='color:#94a3b8'>[ACS] Prediction filed.</td></tr><tr><td>15:14:52</td><td style='color:#94a3b8'>[ACS] Inference: False</td></tr><tr><td>15:14:32</td><td style='color:#94a3b8'>[KSM] Inference: False</td></tr><tr><td>15:14:22</td><td style='color:#94a3b8'>[ACH] Inference: False</td></tr><tr><td>15:14:01</td><td style='color:#94a3b8'>[API3] Inference: False</td></tr><tr><td>15:13:31</td><td style='color:#94a3b8'>[ALT] Prediction filed.</td></tr><tr><td>15:13:31</td><td style='color:#94a3b8'>[ALT] Inference: False</td></tr><tr><td>15:13:31</td><td style='color:#94a3b8'>[ALT] Missing Imbalance Model</td></tr><tr><td>15:13:21</td><td style='color:#94a3b8'>[SPELL] Inference: False</td></tr><tr><td>15:13:21</td><td style='color:#94a3b8'>[HOME] Prediction filed.</td></tr><tr><td>15:13:21</td><td style='color:#94a3b8'>[HOME] Inference: False</td></tr><tr><td>15:13:21</td><td style='color:#94a3b8'>[HOME] Missing Imbalance Model</td></tr><tr><td>15:13:21</td><td style='color:#94a3b8'>[C98] Inference: False</td></tr><tr><td>15:13:11</td><td style='color:#94a3b8'>[AERGO] Prediction filed.</td></tr><tr><td>15:13:11</td><td style='color:#94a3b8'>[AERGO] Inference: False</td></tr><tr><td>15:13:11</td><td style='color:#94a3b8'>[MAGIC] Inference: False</td></tr><tr><td>15:13:11</td><td style='color:#94a3b8'>[EGLD] Inference: False</td></tr><tr><td>15:13:00</td><td style='color:#94a3b8'>[STX] Inference: False</td></tr><tr><td>15:12:40</td><td style='color:#94a3b8'>[AVNT] Prediction filed.</td></tr><tr><td>15:12:40</td><td style='color:#94a3b8'>[AVNT] Inference: False</td></tr><tr><td>15:12:40</td><td style='color:#94a3b8'>[AVNT] Missing Imbalance Model</td></tr><tr><td>15:12:30</td><td style='color:#94a3b8'>[CRV] Inference: False</td></tr><tr><td>15:12:30</td><td style='color:#94a3b8'>[JTO] Inference: False</td></tr><tr><td>15:12:20</td><td style='color:#94a3b8'>[PAX] Inference: False</td></tr><tr><td>15:12:10</td><td style='color:#94a3b8'>[PLU] Prediction filed.</td></tr><tr><td>15:12:10</td><td style='color:#94a3b8'>[PLU] Inference: False</td></tr><tr><td>15:12:00</td><td style='color:#94a3b8'>[GMT] Inference: False</td></tr><tr><td>15:11:19</td><td style='color:#94a3b8'>[IMX] Inference: False</td></tr><tr><td>15:10:59</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.28s. Open FDs: 37961</td></tr></tbody>
+            <tbody><tr><td>15:34:13</td><td style='color:#94a3b8'>[EUL] Prediction filed.</td></tr><tr><td>15:34:13</td><td style='color:#94a3b8'>[EUL] Inference: False</td></tr><tr><td>15:34:13</td><td style='color:#94a3b8'>[EUL] Missing Imbalance Model</td></tr><tr><td>15:33:02</td><td style='color:#94a3b8'>[BOBA] Inference: False</td></tr><tr><td>15:32:22</td><td style='color:#94a3b8'>[INJ] Inference: False</td></tr><tr><td>15:32:22</td><td style='color:#94a3b8'>[CHZ] Inference: False</td></tr><tr><td>15:31:12</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.69s. Open FDs: 37961</td></tr><tr><td>15:31:11</td><td style='color:#94a3b8'>[NKN] Inference: False</td></tr><tr><td>15:31:11</td><td style='color:#94a3b8'>[DEGEN] Prediction filed.</td></tr><tr><td>15:31:11</td><td style='color:#94a3b8'>[DEGEN] Inference: False</td></tr><tr><td>15:31:11</td><td style='color:#94a3b8'>[DEGEN] Missing Imbalance Model</td></tr><tr><td>15:30:11</td><td style='color:#94a3b8'>[UMA] Inference: False</td></tr><tr><td>15:30:01</td><td style='color:#94a3b8'>[PYR] Inference: False</td></tr><tr><td>15:30:00</td><td style='color:#94a3b8'>[BNT] Inference: False</td></tr><tr><td>15:29:51</td><td style='color:#94a3b8'>[LRC] Prediction filed.</td></tr><tr><td>15:29:51</td><td style='color:#94a3b8'>[LRC] Inference: False</td></tr><tr><td>15:29:30</td><td style='color:#94a3b8'>[RAD] Inference: False</td></tr><tr><td>15:29:10</td><td style='color:#94a3b8'>[LDO] Inference: False</td></tr><tr><td>15:29:00</td><td style='color:#94a3b8'>[NEAR] Inference: False</td></tr><tr><td>15:29:00</td><td style='color:#94a3b8'>[DOGE] Inference: False</td></tr><tr><td>15:28:30</td><td style='color:#94a3b8'>[ELA] Prediction filed.</td></tr><tr><td>15:28:30</td><td style='color:#94a3b8'>[ELA] Inference: False</td></tr><tr><td>15:28:30</td><td style='color:#94a3b8'>[DOOD] Inference: False</td></tr><tr><td>15:28:20</td><td style='color:#94a3b8'>[CELR] Inference: False</td></tr><tr><td>15:28:00</td><td style='color:#94a3b8'>[GODS] Inference: False</td></tr><tr><td>15:27:59</td><td style='color:#94a3b8'>[TNSR] Prediction filed.</td></tr><tr><td>15:27:59</td><td style='color:#94a3b8'>[TNSR] Inference: False</td></tr><tr><td>15:27:39</td><td style='color:#94a3b8'>[BCH] Inference: False</td></tr><tr><td>15:27:29</td><td style='color:#94a3b8'>[HIGH] Prediction filed.</td></tr><tr><td>15:27:29</td><td style='color:#94a3b8'>[HIGH] Inference: False</td></tr><tr><td>15:26:39</td><td style='color:#94a3b8'>[FLOKI] Prediction filed.</td></tr><tr><td>15:26:39</td><td style='color:#94a3b8'>[FLOKI] Inference: False</td></tr><tr><td>15:26:39</td><td style='color:#94a3b8'>[FLOKI] Missing Imbalance Model</td></tr><tr><td>15:26:38</td><td style='color:#94a3b8'>[EUL] Prediction filed.</td></tr><tr><td>15:26:38</td><td style='color:#94a3b8'>[EUL] Inference: False</td></tr><tr><td>15:26:38</td><td style='color:#94a3b8'>[EUL] Missing Imbalance Model</td></tr><tr><td>15:26:29</td><td style='color:#94a3b8'>[BERA] Prediction filed.</td></tr><tr><td>15:26:29</td><td style='color:#94a3b8'>[BERA] Inference: False</td></tr><tr><td>15:26:29</td><td style='color:#94a3b8'>[BERA] Missing Imbalance Model</td></tr><tr><td>15:26:18</td><td style='color:#94a3b8'>[XCN] Inference: False</td></tr><tr><td>15:26:08</td><td style='color:#94a3b8'>HEARTBEAT: Loop took 0.29s. Open FDs: 37961</td></tr><tr><td>15:25:59</td><td style='color:#94a3b8'>[SUI] Inference: False</td></tr><tr><td>15:25:58</td><td style='color:#94a3b8'>[BTC] Inference: False</td></tr><tr><td>15:25:58</td><td style='color:#94a3b8'>[SOL] Inference: False</td></tr><tr><td>15:25:58</td><td style='color:#94a3b8'>[MSOL] Inference: False</td></tr><tr><td>15:25:48</td><td style='color:#94a3b8'>[NEON] Inference: False</td></tr><tr><td>15:25:38</td><td style='color:#94a3b8'>[STG] Inference: False</td></tr><tr><td>15:25:08</td><td style='color:#94a3b8'>[MANA] Inference: False</td></tr><tr><td>15:24:58</td><td style='color:#94a3b8'>[CLANKER] Prediction filed.</td></tr><tr><td>15:24:58</td><td style='color:#94a3b8'>[CLANKER] Inference: False</td></tr><tr><td>15:24:58</td><td style='color:#94a3b8'>[CLANKER] Missing Imbalance Model</td></tr><tr><td>15:24:47</td><td style='color:#94a3b8'>[VET] Inference: False</td></tr><tr><td>15:24:38</td><td style='color:#94a3b8'>[ZEC] Prediction filed.</td></tr><tr><td>15:24:38</td><td style='color:#94a3b8'>[ZEC] Inference: False</td></tr><tr><td>15:24:38</td><td style='color:#94a3b8'>[XLM] Inference: False</td></tr><tr><td>15:24:38</td><td style='color:#94a3b8'>[FET] Inference: False</td></tr><tr><td>15:24:38</td><td style='color:#94a3b8'>[ETH] Inference: False</td></tr><tr><td>15:24:37</td><td style='color:#94a3b8'>[FARTCOIN] Prediction filed.</td></tr><tr><td>15:24:37</td><td style='color:#94a3b8'>[FARTCOIN] Inference: False</td></tr><tr><td>15:24:37</td><td style='color:#94a3b8'>[FARTCOIN] Missing Imbalance Model</td></tr><tr><td>15:24:37</td><td style='color:#94a3b8'>[LINK] Inference: False</td></tr><tr><td>15:24:28</td><td style='color:#94a3b8'>[HYPER] Inference: False</td></tr><tr><td>15:24:28</td><td style='color:#94a3b8'>[OMNI] Prediction filed.</td></tr><tr><td>15:24:28</td><td style='color:#94a3b8'>[OMNI] Inference: False</td></tr><tr><td>15:24:27</td><td style='color:#94a3b8'>[INV] Inference: False</td></tr><tr><td>15:24:27</td><td style='color:#94a3b8'>[GNO] Inference: False</td></tr><tr><td>15:23:57</td><td style='color:#94a3b8'>[GRT] Inference: False</td></tr><tr><td>15:23:57</td><td style='color:#94a3b8'>[CAKE] Inference: False</td></tr><tr><td>15:23:47</td><td style='color:#94a3b8'>[PNG] Inference: False</td></tr><tr><td>15:23:37</td><td style='color:#94a3b8'>[ORCA] Inference: False</td></tr><tr><td>15:23:37</td><td style='color:#94a3b8'>[CRO] Inference: False</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[OP] Inference: False</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[CBETH] Inference: False</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[NCT] Prediction filed.</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[NCT] Inference: False</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[ALGO] Inference: False</td></tr><tr><td>15:23:27</td><td style='color:#94a3b8'>[FLOCK] Inference: False</td></tr><tr><td>15:23:17</td><td style='color:#94a3b8'>[RENDER] Inference: False</td></tr><tr><td>15:23:17</td><td style='color:#94a3b8'>[AVAX] Inference: False</td></tr><tr><td>15:23:16</td><td style='color:#94a3b8'>[ONDO] Inference: False</td></tr><tr><td>15:23:07</td><td style='color:#94a3b8'>[LTC] Inference: False</td></tr><tr><td>15:23:07</td><td style='color:#94a3b8'>[KRL] Prediction filed.</td></tr><tr><td>15:23:07</td><td style='color:#94a3b8'>[KRL] Inference: False</td></tr><tr><td>15:23:06</td><td style='color:#94a3b8'>[ADA] Inference: False</td></tr><tr><td>15:22:57</td><td style='color:#94a3b8'>[AURORA] Prediction filed.</td></tr><tr><td>15:22:57</td><td style='color:#94a3b8'>[AURORA] Inference: False</td></tr><tr><td>15:22:37</td><td style='color:#94a3b8'>[BOBBOB] Inference: False</td></tr><tr><td>15:22:36</td><td style='color:#94a3b8'>[TIME] Prediction filed.</td></tr><tr><td>15:22:36</td><td style='color:#94a3b8'>[TIME] Inference: False</td></tr><tr><td>15:22:36</td><td style='color:#94a3b8'>[COTI] Inference: False</td></tr><tr><td>15:22:27</td><td style='color:#94a3b8'>[LPT] Inference: False</td></tr><tr><td>15:22:27</td><td style='color:#94a3b8'>[ASM] Prediction filed.</td></tr><tr><td>15:22:27</td><td style='color:#94a3b8'>[ASM] Inference: False</td></tr><tr><td>15:22:26</td><td style='color:#94a3b8'>[B3] Prediction filed.</td></tr><tr><td>15:22:26</td><td style='color:#94a3b8'>[B3] Inference: False</td></tr><tr><td>15:22:26</td><td style='color:#94a3b8'>[B3] Missing Imbalance Model</td></tr><tr><td>15:22:06</td><td style='color:#94a3b8'>[ETHFI] Prediction filed.</td></tr><tr><td>15:22:06</td><td style='color:#94a3b8'>[ETHFI] Inference: False</td></tr><tr><td>15:22:06</td><td style='color:#94a3b8'>[ETHFI] Missing Imbalance Model</td></tr><tr><td>15:21:56</td><td style='color:#94a3b8'>[ROSE] Inference: False</td></tr></tbody>
         </table>
     </div>
 
@@ -80,350 +82,350 @@
             <thead><tr><th style="width:80px">Time</th><th style="width:80px">Asset</th><th style="width:60px">Decision</th><th>Tier Pulse (Prob vs Target)</th></tr></thead>
             <tbody>
         <tr class="status-fail">
-            <td>15:21:26</td>
-            <td><strong>XRP</strong></td>
+            <td>15:34:13</td>
+            <td><strong>EUL</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 6.0%</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 85.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:21:26</td>
+            <td>15:34:13</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:21:26</td>
-            <td><strong>HYPE</strong></td>
+            <td>15:33:02</td>
+            <td><strong>BOBA</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 72.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 38.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:21:16</td>
-            <td><strong>KAVA</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 30.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:21:16</td>
+            <td>15:33:02</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:21:16</td>
-            <td><strong>COW</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 94.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:21:06</td>
-            <td><strong>DAI</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: N/A</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:21:06</td>
-            <td><strong>N/A</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:21:06</td>
-            <td><strong>LQTY</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 6.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:46</td>
-            <td><strong>PRO</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 77.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:46</td>
-            <td><strong>N/A</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:46</td>
-            <td><strong>APE</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 7.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:45</td>
-            <td><strong>ETC</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 0.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:45</td>
-            <td><strong>N/A</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:45</td>
-            <td><strong>FLOW</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 19.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:20:36</td>
-            <td><strong>SEI</strong></td>
+            <td>15:32:22</td>
+            <td><strong>CHZ</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td><span class='tier-chip tier-fail'>Dir: 5.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:36</td>
+            <td>15:32:22</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:35</td>
-            <td><strong>FLOKI</strong></td>
+            <td>15:32:22</td>
+            <td><strong>INJ</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 16.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:31:12</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:31:11</td>
+            <td><strong>DEGEN</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td><span class='tier-chip tier-pass'>Dir: 100.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:35</td>
+            <td>15:31:11</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:35</td>
-            <td><strong>SAFE</strong></td>
+            <td>15:31:11</td>
+            <td><strong>NKN</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 9.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 41.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:25</td>
-            <td><strong>ZEN</strong></td>
+            <td>15:30:11</td>
+            <td><strong>UMA</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 99.0%</span><span class='tier-chip tier-fail'>Imb: 0.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 4.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:25</td>
+            <td>15:30:11</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:16</td>
-            <td><strong>JASMY</strong></td>
+            <td>15:30:01</td>
+            <td><strong>PYR</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 11.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:30:01</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:30:00</td>
+            <td><strong>BNT</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 0.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:30:00</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:51</td>
+            <td><strong>LRC</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 97.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 6.0%</span><span class='tier-chip tier-fail'>Gen: 51.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:51</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:30</td>
+            <td><strong>RAD</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 17.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:30</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:10</td>
+            <td><strong>LDO</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 3.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:10</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:29:00</td>
+            <td><strong>DOGE</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td><span class='tier-chip tier-fail'>Dir: 2.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:16</td>
+            <td>15:29:00</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:16</td>
-            <td><strong>FIL</strong></td>
+            <td>15:29:00</td>
+            <td><strong>NEAR</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 8.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 0.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:15</td>
-            <td><strong>APT</strong></td>
+            <td>15:28:30</td>
+            <td><strong>DOOD</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 15.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 49.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:15</td>
+            <td>15:28:30</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:05</td>
-            <td><strong>ICP</strong></td>
+            <td>15:28:30</td>
+            <td><strong>ELA</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 98.0%</span><span class='tier-chip tier-fail'>Imb: 0.0%</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 87.0%</span><span class='tier-chip tier-fail'>Imb: 2.5%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:20:05</td>
+            <td>15:28:20</td>
+            <td><strong>CELR</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 4.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:28:20</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:55</td>
-            <td><strong>UNI</strong></td>
+            <td>15:28:00</td>
+            <td><strong>GODS</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 99.0%</span><span class='tier-chip tier-fail'>Imb: 0.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 3.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:55</td>
+            <td>15:28:00</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:45</td>
-            <td><strong>MATH</strong></td>
+            <td>15:27:59</td>
+            <td><strong>TNSR</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 100.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 0.0%</span><span class='tier-chip tier-fail'>Gen: 55.0%</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 99.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 1.0%</span><span class='tier-chip tier-fail'>Gen: 66.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:45</td>
+            <td>15:27:59</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:35</td>
-            <td><strong>ALEPH</strong></td>
+            <td>15:27:39</td>
+            <td><strong>BCH</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 97.0%</span><span class='tier-chip tier-fail'>Imb: 0.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 4.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:35</td>
+            <td>15:27:39</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:25</td>
-            <td><strong>RPL</strong></td>
+            <td>15:27:29</td>
+            <td><strong>HIGH</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 93.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 0.0%</span><span class='tier-chip tier-fail'>Gen: 28.0%</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 98.0%</span><span class='tier-chip tier-pass'>Imb: 100.0%</span><span class='tier-chip tier-pass'>Cra: 34.0%</span><span class='tier-chip tier-fail'>Gen: 31.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:19:25</td>
+            <td>15:27:29</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:54</td>
-            <td><strong>FLUID</strong></td>
+            <td>15:26:39</td>
+            <td><strong>FLOKI</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 90.0%</span></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:26:39</td>
+            <td><strong>N/A</strong></td>
+            <td><span class='badge'>FAIL</span></td>
+            <td></td>
+        </tr>
+        
+        <tr class="status-fail">
+            <td>15:26:38</td>
+            <td><strong>EUL</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td><span class='tier-chip tier-pass'>Dir: 89.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:54</td>
+            <td>15:26:38</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:34</td>
-            <td><strong>CORECHAIN</strong></td>
+            <td>15:26:29</td>
+            <td><strong>BERA</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-pass'>Dir: 86.0%</span><span class='tier-chip tier-fail'>Imb: 37.5%</span></td>
+            <td><span class='tier-chip tier-pass'>Dir: 94.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:34</td>
+            <td>15:26:29</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:24</td>
-            <td><strong>FORT</strong></td>
+            <td>15:26:18</td>
+            <td><strong>XCN</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 7.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 30.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:24</td>
+            <td>15:26:18</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:14</td>
-            <td><strong>AAVE</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:18:14</td>
+            <td>15:26:08</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:14</td>
-            <td><strong>BONK</strong></td>
+            <td>15:25:59</td>
+            <td><strong>SUI</strong></td>
             <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 6.0%</span></td>
+            <td><span class='tier-chip tier-fail'>Dir: 11.0%</span></td>
         </tr>
         
         <tr class="status-fail">
-            <td>15:18:04</td>
-            <td><strong>T</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 1.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:18:04</td>
-            <td><strong>N/A</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:17:54</td>
-            <td><strong>SNX</strong></td>
-            <td><span class='badge'>FAIL</span></td>
-            <td><span class='tier-chip tier-fail'>Dir: 6.0%</span></td>
-        </tr>
-        
-        <tr class="status-fail">
-            <td>15:17:54</td>
+            <td>15:25:59</td>
             <td><strong>N/A</strong></td>
             <td><span class='badge'>FAIL</span></td>
             <td></td>
@@ -474,6 +476,29 @@
             <td style="color:#38bdf8">20.9</td>
             <td>$0.0956 &rarr; $0.0966</td>
             <td><span class="badge">CLEARED</span></td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div id="content4" class="tab-content">
+        <table>
+            <thead><tr><th style="width:80px">Time</th><th style="width:80px">Asset</th><th style="width:100px">Quantity</th><th>Price Target</th><th style="width:80px">Type</th></tr></thead>
+            <tbody>
+        <tr>
+            <td>19:15:51</td>
+            <td><strong>DOGE-USD</strong></td>
+            <td>20.8</td>
+            <td>$0.0966</td>
+            <td><span class="badge status-fail">SELL</span></td>
+        </tr>
+        
+        <tr>
+            <td>21:08:22</td>
+            <td><strong>DOGE-USD</strong></td>
+            <td>20.8</td>
+            <td>$0.0969</td>
+            <td><span class="badge status-fail">SELL</span></td>
         </tr>
         </tbody>
         </table>
