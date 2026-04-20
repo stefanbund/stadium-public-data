@@ -63,7 +63,7 @@
             <h1>Resource & Event Correlation</h1>
             <div style="text-align: right">
                 <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Node Health Monitor</div>
-                <div style="font-weight: 800; color: var(--text); font-family: 'Outfit', sans-serif;">stefans-Mac-mini.local</div>
+                <div style="font-weight: 800; color: var(--text); font-family: 'Outfit', sans-serif;">coinbase.local</div>
             </div>
         </div>
 
@@ -78,14 +78,14 @@
             </div>
         </div>
 
-        <div class="refresh">Updated: 2026-04-19 23:56:24 | Sample Count: 15</div>
+        <div class="refresh">Updated: 2026-04-19 12:21:40 | Sample Count: 3</div>
     </div>
 
     <script>
-        const labels = ["04-19 10:46", "04-19 11:46", "04-19 12:00", "04-19 12:52", "04-19 13:51", "04-19 14:51", "04-19 15:52", "04-19 16:52", "04-19 17:52", "04-19 18:53", "04-19 19:53", "04-19 20:53", "04-19 21:54", "04-19 22:55", "04-19 23:56"];
-        const cpuData = [14.2, 18.5, 15.0, 34.4, 3.9, 2.1, 4.2, 15.6, 15.6, 5.1, 0.7, 1.0, 14.5, 18.1, 14.0];
-        const memData = [60.6, 61.2, 60.8, 60.2, 52.0, 57.0, 58.3, 60.5, 61.8, 60.9, 59.6, 59.5, 60.5, 64.8, 64.5];
-        const rawEvents = [{"x": "04-19 10:46", "text": "Inference: True (SHPING)"}, {"x": "04-19 10:46", "text": "Inference: True (TIME)"}, {"x": "04-19 11:46", "text": "Inference: True (BTC)"}, {"x": "04-19 12:52", "text": "BOOT_COMPLETE"}, {"x": "04-19 12:52", "text": "WATCHDOG_RESTART"}];
+        const labels = ["04-19 10:46", "04-19 11:46", "04-19 12:00"];
+        const cpuData = [14.2, 18.5, 15.0];
+        const memData = [60.6, 61.2, 60.8];
+        const rawEvents = [{"x": "04-19 10:46", "text": "Inference: True (SHPING)"}, {"x": "04-19 10:46", "text": "Inference: True (TIME)"}, {"x": "04-19 11:46", "text": "Inference: True (BTC)"}];
 
         // Convert events to correct annotation objects for Chart.js Annotation Plugin 2.x
         const eventAnnotations = {};
