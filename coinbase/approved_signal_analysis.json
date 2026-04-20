@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-20 09:29 AM PDT",
+    "last_updated": "2026-04-20 09:59 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -724,7 +724,7 @@
       "timestamp": "2026-04-15T18:54:39-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01209,
-      "detail": -2.315963606286193
+      "detail": -1.7369727047146413
     },
     {
       "symbol": "AERO",
@@ -773,7 +773,7 @@
       "timestamp": "2026-04-15T22:36:57-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01206,
-      "detail": -2.0729684908789405
+      "detail": -1.4925373134328326
     },
     {
       "symbol": "AERO",
@@ -829,7 +829,7 @@
       "timestamp": "2026-04-16T01:50:54-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01205,
-      "detail": -1.9917012448132831
+      "detail": -1.4107883817427387
     },
     {
       "symbol": "AKT",
@@ -1039,7 +1039,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -24.544986263736266
+      "detail": -24.527815934065938
     },
     {
       "symbol": "00",
@@ -1053,7 +1053,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -5.1538461538461515
+      "detail": -5.500000000000003
     },
     {
       "symbol": "HONEY",
@@ -1221,7 +1221,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -4.153686396677044
+      "detail": -4.465212876427822
     },
     {
       "symbol": "TIME",
@@ -1284,7 +1284,7 @@
       "timestamp": "2026-04-18T09:06:46-07:00",
       "outcome": "WAITING",
       "entry_price": 0.1047,
-      "detail": -3.5339063992359074
+      "detail": -3.7249283667621786
     },
     {
       "symbol": "SHPING",
@@ -1431,7 +1431,7 @@
       "timestamp": "2026-04-19T00:11:05-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0344,
-      "detail": -4.651162790697667
+      "detail": -4.069767441860461
     },
     {
       "symbol": "TNSR",
@@ -1501,7 +1501,7 @@
       "timestamp": "2026-04-19T05:29:08-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0113,
-      "detail": -4.424778761061936
+      "detail": -5.309734513274336
     },
     {
       "symbol": "LRDS",
@@ -1522,7 +1522,7 @@
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -2.586206896551721
+      "detail": -3.3975659229208843
     },
     {
       "symbol": "SHPING",
@@ -1592,7 +1592,7 @@
       "timestamp": "2026-04-19T15:15:57-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3219,
-      "detail": -4.380242311276794
+      "detail": -5.591798695246976
     },
     {
       "symbol": "00",
@@ -1641,7 +1641,7 @@
       "timestamp": "2026-04-19T20:29:30-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3091,
-      "detail": -0.4205758654157126
+      "detail": -1.6823034616628867
     },
     {
       "symbol": "FIS",
@@ -1690,7 +1690,7 @@
       "timestamp": "2026-04-20T04:48:05-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0343,
-      "detail": -4.373177842565582
+      "detail": -3.790087463556839
     },
     {
       "symbol": "ABT",
@@ -1711,7 +1711,7 @@
       "timestamp": "2026-04-20T08:27:32-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3099,
-      "detail": -0.6776379477250696
+      "detail": -1.9361084220716376
     },
     {
       "symbol": "IOTX",
