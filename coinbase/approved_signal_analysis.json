@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-21 01:25 PM PDT",
+    "last_updated": "2026-04-21 01:56 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -1049,7 +1049,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -21.419986263736266
+      "detail": -21.514423076923077
     },
     {
       "symbol": "00",
@@ -1063,7 +1063,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -4.807692307692312
+      "detail": -4.53846153846154
     },
     {
       "symbol": "HONEY",
@@ -1231,7 +1231,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -4.361370716510896
+      "detail": -4.465212876427822
     },
     {
       "symbol": "TIME",
@@ -1294,7 +1294,7 @@
       "timestamp": "2026-04-18T09:06:46-07:00",
       "outcome": "WAITING",
       "entry_price": 0.1047,
-      "detail": -4.9665711556829
+      "detail": -4.297994269340978
     },
     {
       "symbol": "SHPING",
@@ -1532,7 +1532,7 @@
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -5.223123732251509
+      "detail": -5.147058823529408
     },
     {
       "symbol": "SHPING",
@@ -1847,7 +1847,7 @@
       "timestamp": "2026-04-21T06:20:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01159,
-      "detail": -0.6902502157031942
+      "detail": 0.6902502157031942
     },
     {
       "symbol": "00",
@@ -1875,7 +1875,7 @@
       "timestamp": "2026-04-21T07:32:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0068,
-      "detail": -2.94117647058823
+      "detail": -4.4117647058823515
     },
     {
       "symbol": "ABT",
@@ -1903,7 +1903,7 @@
       "timestamp": "2026-04-21T12:37:26-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0066,
-      "detail": 0.0
+      "detail": -1.5151515151515191
     }
   ]
 }
