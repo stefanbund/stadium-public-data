@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-20 07:00 PM PDT",
+    "last_updated": "2026-04-20 07:31 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
     "total_signals": 132,
-    "hits": 124,
+    "hits": 127,
     "misses": 0,
-    "waiting": 8,
-    "hit_rate_pct": 93.9,
+    "waiting": 5,
+    "hit_rate_pct": 96.2,
     "recommended_tranches": 24
   },
   "symbol_summary": {
@@ -115,9 +115,9 @@
       "waiting": 0
     },
     "DIMO": {
-      "hits": 3,
+      "hits": 6,
       "misses": 0,
-      "waiting": 4
+      "waiting": 1
     },
     "DNT": {
       "hits": 11,
@@ -764,9 +764,9 @@
     {
       "symbol": "DIMO",
       "timestamp": "2026-04-15T18:54:39-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.01209,
-      "detail": -0.7444168734491299
+      "detail": 7230.35
     },
     {
       "symbol": "AERO",
@@ -813,9 +813,9 @@
     {
       "symbol": "DIMO",
       "timestamp": "2026-04-15T22:36:57-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.01206,
-      "detail": -0.49751243781093935
+      "detail": 7008.05
     },
     {
       "symbol": "AERO",
@@ -869,9 +869,9 @@
     {
       "symbol": "DIMO",
       "timestamp": "2026-04-16T01:50:54-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.01205,
-      "detail": -0.41493775933609706
+      "detail": 6814.1
     },
     {
       "symbol": "AKT",
@@ -983,7 +983,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -9.90291262135922
+      "detail": -10.097087378640774
     },
     {
       "symbol": "DNT",
@@ -1053,7 +1053,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -8.48126232741617
+      "detail": -8.67850098619329
     },
     {
       "symbol": "AVT",
