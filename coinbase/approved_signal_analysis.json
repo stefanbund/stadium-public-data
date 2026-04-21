@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-21 11:15 AM PDT",
+    "last_updated": "2026-04-21 11:45 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -983,7 +983,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -11.067961165048542
+      "detail": -10.873786407766989
     },
     {
       "symbol": "DNT",
@@ -1053,7 +1053,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -9.664694280078894
+      "detail": -9.467455621301772
     },
     {
       "symbol": "AVT",
