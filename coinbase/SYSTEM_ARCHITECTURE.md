@@ -59,6 +59,9 @@ These scripts transform raw market data into the high-order feature matrices req
 - **Crash V5 Preprocessor**: [`UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/crash_labeling_preprocessor_v5.py)
     - *Role*: Calculates the most severe crashes using grouped precursor signatures. It leverages the highly stable Coinbase Kline (OHLC) price stream for forward target verification, exclusively labeling a sequence as a Crash (`1`) if the forward `Low` drops **< -3.0%** below the entry price over the target window.
     - *Output Format*: `[SYMBOL]-USD-drawdown-precursor-data.csv`
+- **Markov Risk Preprocessor (The Regime Confirmation Layer)**: [`UNIFIED_MLOPS_WORKSPACE/markov_risk_preprocessor.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/markov_risk_preprocessor.py) [NEW]
+    - *Role*: (Layer 3) Quantifies market risk and relative strength using Hidden Markov Models (HMM) on order-book imbalance data. It classifies the market into **Weak (Risk)**, **Neutral**, and **Strong (Accumulation)** regimes. It provides the system with a "Relative strength" gauge and specific "Surge Likelihood" metrics based on state transition probabilities.
+    - *Output Format*: `[SYMBOL]-USD-markov-risk.csv`
 - **Unified Durational V2 Preprocessor (The Generalist)**: [`forecaster/unified_durational_preprocessor_v2.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/forecaster/unified_durational_preprocessor_v2.py)
     - *Role*: Synthesizes and merges the preceding models into a master feature matrix across **all** market events. It computes high-order technical indicators (EMAs, RSI, MACD, Cyclical Time) to predict the exact *duration* before a profitable target is hit for any symbol.
     - *Context*: Prepares the broad market feature space for the general Durational modeling tier.
@@ -74,12 +77,13 @@ These scripts transform raw market data into the high-order feature matrices req
 The latest evolution of the system, located in the dedicated `neural_network/` folder.
 
 - **Predictor Engine**: [`UNIFIED_TRADER_WORKSPACE/neural_network/nn_unified_predictor.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/neural_network/nn_unified_predictor.py)
-    - *Architecture*: A PyTorch hierarchical wrapper employing a **5-Layer Intelligence Chain**:
+    - *Architecture*: A PyTorch hierarchical wrapper employing a **6-Layer Intelligence Chain**:
         1. **Directional (Trend)**: Determines the primary macro-price vector (Bullish/Bearish).
         2. **Imbalance (Micro-Confirmation)**: Investigates explicit queue ratio order-flow to physically validate the Directional hypothesis.
-        3. **Crash (Safety)**: A defensive filter that suppresses signals if a >3.0% drop is imminent.
-        4. **Generalist (Duration)**: Predicts the broad market time-to-profit matrix.
-        5. **Specialist (Efficiency)**: A high-velocity filter that prioritizes trades reaching targets in <3 hours.
+        3. **Markov Risk (Regime Confirmation)**: Leverages Hidden Markov Model probabilities to determine if the local market is in an "Accumulation" or "Distribution" regime before committing capital.
+        4. **Crash (Safety)**: A defensive filter that suppresses signals if a >3.0% drop is imminent.
+        5. **Generalist (Duration)**: Predicts the broad market time-to-profit matrix.
+        6. **Specialist (Efficiency)**: A high-velocity filter that prioritizes trades reaching targets in <3 hours.
     - **Bayesian Accuracy Scaling (The Beijing Logic)**: The engine dynamically adjusts decision thresholds based on the historical accuracy of each specific model. For every tier, it calculates a `Dynamic Threshold = Base Threshold * Accuracy`. If the signal probability exceeds this bar, the tier returns a "Green Light," ensuring the system only trades when local performance justifies the risk.
 - **CLI Test Utility**: [`UNIFIED_TRADER_WORKSPACE/neural_network/unified_predict.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/neural_network/unified_predict.py)
     - *Usage*: `python3 UNIFIED_TRADER_WORKSPACE/neural_network/unified_predict.py --symbol <NAME>`
