@@ -1,17 +1,17 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-21 10:46 PM PDT",
+    "last_updated": "2026-04-21 10:57 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 224,
-    "hits": 204,
+    "total_signals": 220,
+    "hits": 203,
     "misses": 0,
-    "waiting": 20,
-    "hit_rate_pct": 91.1,
-    "recommended_tranches": 29
+    "waiting": 17,
+    "hit_rate_pct": 92.3,
+    "recommended_tranches": 31
   },
   "symbol_summary": {
     "00": {
@@ -30,7 +30,7 @@
       "waiting": 1
     },
     "ABT": {
-      "hits": 20,
+      "hits": 19,
       "misses": 0,
       "waiting": 0
     },
@@ -43,6 +43,11 @@
       "hits": 0,
       "misses": 0,
       "waiting": 1
+    },
+    "AERGO": {
+      "hits": 2,
+      "misses": 0,
+      "waiting": 0
     },
     "AERO": {
       "hits": 4,
@@ -140,7 +145,7 @@
       "waiting": 0
     },
     "DRIFT": {
-      "hits": 5,
+      "hits": 4,
       "misses": 0,
       "waiting": 0
     },
@@ -175,7 +180,7 @@
       "waiting": 0
     },
     "HIGH": {
-      "hits": 7,
+      "hits": 6,
       "misses": 0,
       "waiting": 0
     },
@@ -192,7 +197,7 @@
     "IOTX": {
       "hits": 9,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "KARRAT": {
       "hits": 1,
@@ -267,17 +272,12 @@
     "TIME": {
       "hits": 16,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "TNSR": {
       "hits": 1,
       "misses": 0,
       "waiting": 0
-    },
-    "ZEC": {
-      "hits": 0,
-      "misses": 0,
-      "waiting": 1
     }
   },
   "signals": [
@@ -839,7 +839,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -6.990291262135928
+      "detail": -7.378640776699036
     },
     {
       "symbol": "DNT",
@@ -909,7 +909,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -5.522682445759373
+      "detail": -5.917159763313615
     },
     {
       "symbol": "AVT",
@@ -937,7 +937,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -19.21359890109891
+      "detail": -19.48832417582418
     },
     {
       "symbol": "00",
@@ -1119,7 +1119,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -0.31152647975077913
+      "detail": -0.5192107995846318
     },
     {
       "symbol": "TIME",
@@ -1416,11 +1416,18 @@
       "detail": 96.2
     },
     {
+      "symbol": "AERGO",
+      "timestamp": "2026-04-19T06:42:35-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.0546,
+      "detail": 1222.4166666666667
+    },
+    {
       "symbol": "TIA",
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -2.129817444219058
+      "detail": -2.2312373225152067
     },
     {
       "symbol": "SHPING",
@@ -1456,6 +1463,13 @@
       "outcome": "WAITING",
       "entry_price": 0.001058,
       "detail": -3.49716446124763
+    },
+    {
+      "symbol": "AERGO",
+      "timestamp": "2026-04-19T12:41:26-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.0539,
+      "detail": 623.5666666666667
     },
     {
       "symbol": "DRIFT",
@@ -1763,7 +1777,7 @@
       "timestamp": "2026-04-21T07:32:56-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0068,
-      "detail": -1.4705882352941089
+      "detail": 0.0
     },
     {
       "symbol": "ABT",
@@ -1806,48 +1820,6 @@
       "outcome": "HIT",
       "entry_price": 0.01151,
       "detail": 120.53333333333333
-    },
-    {
-      "symbol": "HIGH",
-      "timestamp": "2026-04-21T18:07:32-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.291,
-      "detail": 17.466666666666665
-    },
-    {
-      "symbol": "DRIFT",
-      "timestamp": "2026-04-21T18:40:46-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.038,
-      "detail": 49.233333333333334
-    },
-    {
-      "symbol": "TIME",
-      "timestamp": "2026-04-21T21:03:51-07:00",
-      "outcome": "WAITING",
-      "entry_price": 3.86,
-      "detail": -13.471502590673575
-    },
-    {
-      "symbol": "IOTX",
-      "timestamp": "2026-04-21T21:05:53-07:00",
-      "outcome": "WAITING",
-      "entry_price": 0.01175,
-      "detail": -1.276595744680858
-    },
-    {
-      "symbol": "ABT",
-      "timestamp": "2026-04-21T22:10:01-07:00",
-      "outcome": "HIT",
-      "entry_price": 0.4111,
-      "detail": 9.983333333333333
-    },
-    {
-      "symbol": "ZEC",
-      "timestamp": "2026-04-21T22:44:15-07:00",
-      "outcome": "WAITING",
-      "entry_price": 324.05,
-      "detail": -0.13578151519827117
     }
   ]
 }
