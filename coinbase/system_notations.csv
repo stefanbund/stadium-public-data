@@ -1,0 +1,4 @@
+date,time,title,description
+2026-04-20,12:00:00,System Upgrade,Migrated to Hierarchical NN v4.2 with Markov Risk Layer.
+2026-04-21,09:30:00,Threshold Adjustment,Increased Markov confidence gate to 80% for all symbols.
+2026-04-22,10:15:00,Exchange API Update,Switched to direct Coinbase Advanced Trade REST endpoints for faster execution.
