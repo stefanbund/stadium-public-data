@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-22 09:24 PM PDT",
+    "last_updated": "2026-04-22 09:54 PM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -839,7 +839,7 @@
       "timestamp": "2026-04-16T13:05:41-07:00",
       "outcome": "WAITING",
       "entry_price": 0.515,
-      "detail": -10.873786407766989
+      "detail": -10.679611650485436
     },
     {
       "symbol": "DNT",
@@ -909,7 +909,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -9.467455621301772
+      "detail": -9.270216962524652
     },
     {
       "symbol": "AVT",
@@ -937,7 +937,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -20.853365384615387
+      "detail": -20.930631868131876
     },
     {
       "symbol": "00",
@@ -1119,7 +1119,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -4.776739356178601
+      "detail": -4.569055036344748
     },
     {
       "symbol": "TIME",
@@ -1427,7 +1427,7 @@
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -10.167342799188633
+      "detail": -10.268762677484784
     },
     {
       "symbol": "SHPING",
