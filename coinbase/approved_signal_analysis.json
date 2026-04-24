@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-24 04:32 AM PDT",
+    "last_updated": "2026-04-24 05:02 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -909,7 +909,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -4.536489151873771
+      "detail": -4.930966469428013
     },
     {
       "symbol": "AVT",
@@ -937,7 +937,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -18.406593406593405
+      "detail": -18.32074175824176
     },
     {
       "symbol": "00",
@@ -951,7 +951,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -3.153846153846148
+      "detail": -3.4615384615384643
     },
     {
       "symbol": "HONEY",
@@ -1119,7 +1119,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -2.076843198338527
+      "detail": -2.1806853582554537
     },
     {
       "symbol": "TIME",
@@ -1301,7 +1301,7 @@
       "timestamp": "2026-04-18T20:58:34-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0011,
-      "detail": -7.000000000000002
+      "detail": -6.818181818181817
     },
     {
       "symbol": "TIME",
@@ -1427,14 +1427,14 @@
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -8.164300202839744
+      "detail": -8.189655172413794
     },
     {
       "symbol": "SHPING",
       "timestamp": "2026-04-19T08:39:39-07:00",
       "outcome": "WAITING",
       "entry_price": 0.00108,
-      "detail": -5.277777777777776
+      "detail": -5.092592592592586
     },
     {
       "symbol": "TIME",
@@ -1462,7 +1462,7 @@
       "timestamp": "2026-04-19T12:33:45-07:00",
       "outcome": "WAITING",
       "entry_price": 0.001058,
-      "detail": -3.308128544423429
+      "detail": -3.119092627599228
     },
     {
       "symbol": "AERGO",
