@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-24 08:07 AM PDT",
+    "last_updated": "2026-04-24 08:38 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
@@ -909,7 +909,7 @@
       "timestamp": "2026-04-17T09:07:50-07:00",
       "outcome": "WAITING",
       "entry_price": 0.507,
-      "detail": -3.5502958579881687
+      "detail": -3.3530571992110487
     },
     {
       "symbol": "AVT",
@@ -937,7 +937,7 @@
       "timestamp": "2026-04-17T13:41:54-07:00",
       "outcome": "WAITING",
       "entry_price": 116.48,
-      "detail": -20.115041208791215
+      "detail": -19.36813186813187
     },
     {
       "symbol": "00",
@@ -951,7 +951,7 @@
       "timestamp": "2026-04-17T13:42:42-07:00",
       "outcome": "WAITING",
       "entry_price": 0.26,
-      "detail": -4.1923076923077
+      "detail": -3.615384615384623
     },
     {
       "symbol": "HONEY",
@@ -1119,7 +1119,7 @@
       "timestamp": "2026-04-18T03:29:06-07:00",
       "outcome": "WAITING",
       "entry_price": 0.963,
-      "detail": -2.8037383177570003
+      "detail": -2.6998961578400738
     },
     {
       "symbol": "TIME",
@@ -1399,7 +1399,7 @@
       "timestamp": "2026-04-19T05:29:08-07:00",
       "outcome": "WAITING",
       "entry_price": 0.0113,
-      "detail": -4.424778761061936
+      "detail": -6.194690265486719
     },
     {
       "symbol": "LRDS",
@@ -1427,7 +1427,7 @@
       "timestamp": "2026-04-19T07:35:07-07:00",
       "outcome": "WAITING",
       "entry_price": 0.3944,
-      "detail": -9.30527383367139
+      "detail": -8.950304259634889
     },
     {
       "symbol": "SHPING",
