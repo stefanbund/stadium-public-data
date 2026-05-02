@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-04-28 08:37 PM PDT",
+    "last_updated": "2026-05-02 10:13 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 41,
-    "hits": 39,
+    "total_signals": 43,
+    "hits": 40,
     "misses": 0,
-    "waiting": 2,
-    "hit_rate_pct": 95.1,
+    "waiting": 3,
+    "hit_rate_pct": 93.0,
     "recommended_tranches": 11
   },
   "symbol_summary": {
@@ -73,6 +73,11 @@
       "hits": 1,
       "misses": 0,
       "waiting": 0
+    },
+    "SHDW": {
+      "hits": 1,
+      "misses": 0,
+      "waiting": 1
     },
     "TIME": {
       "hits": 5,
@@ -294,7 +299,7 @@
       "timestamp": "2026-04-21T21:05:53-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01175,
-      "detail": -6.893617021276595
+      "detail": -7.4042553191489295
     },
     {
       "symbol": "ABT",
@@ -322,7 +327,7 @@
       "timestamp": "2026-04-22T02:40:30-07:00",
       "outcome": "WAITING",
       "entry_price": 0.01168,
-      "detail": -6.335616438356159
+      "detail": -5.650684931506842
     },
     {
       "symbol": "FIS",
@@ -372,6 +377,20 @@
       "outcome": "HIT",
       "entry_price": 0.0107,
       "detail": 2203.6666666666665
+    },
+    {
+      "symbol": "SHDW",
+      "timestamp": "2026-04-30T06:33:34-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.03041,
+      "detail": 246.43333333333334
+    },
+    {
+      "symbol": "SHDW",
+      "timestamp": "2026-05-02T04:52:28-07:00",
+      "outcome": "WAITING",
+      "entry_price": 0.02987,
+      "detail": 0.200870438567116
     }
   ]
 }

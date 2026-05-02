@@ -3,3 +3,4 @@ date,time,title,description
 2026-04-21,09:30:00,Threshold Adjustment,Increased Markov confidence gate to 80% for all symbols.
 2026-04-22,10:15:00,Exchange API Update,Switched to direct Coinbase Advanced Trade REST endpoints for faster execution.
 2026-04-22,13:00:00,Markhov Layer Added to NN,Hidden Markhov Models are detected per symbol. Acts as a new layer in our NN based trader.
+2026-04-26,05:09:00,"Models Halt, Zero Result",

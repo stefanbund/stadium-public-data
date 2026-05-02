@@ -41,3 +41,5 @@ timestamp,success,failure_reason,order_id,buy_order_id,sell_order_id,symbol,buy_
 2026-04-23 13:26:40,False,BUY order failed: INSUFFICIENT_FUND - Insufficient balance in source account,,,,AST-USD,N/A,N/A,0.0,0.0,
 2026-04-23 17:45:28,False,BUY order failed: INSUFFICIENT_FUND - Insufficient balance in source account,,,,CTSI-USD,N/A,N/A,0.0,0.0,
 2026-04-25 07:16:20,False,BUY order failed: INSUFFICIENT_FUND - Insufficient balance in source account,,,,FIS-USD,N/A,N/A,0.0,0.0,
+2026-04-30 06:33:34,False,BUY order failed: INSUFFICIENT_FUND - Insufficient balance in source account,,,,SHDW-USD,N/A,N/A,0.0,0.0,
+2026-05-02 04:52:28,False,BUY order failed: INSUFFICIENT_FUND - Insufficient balance in source account,,,,SHDW-USD,N/A,N/A,0.0,0.0,
