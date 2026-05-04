@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "MLOps Transaction Analysis",
-    "last_updated": "2026-05-02 10:13 AM PDT",
+    "last_updated": "2026-05-04 11:55 AM PDT",
     "target_gain_pct": 1.01,
     "window_hours": 168
   },
   "kpis": {
-    "total_signals": 43,
-    "hits": 40,
+    "total_signals": 48,
+    "hits": 46,
     "misses": 0,
-    "waiting": 3,
-    "hit_rate_pct": 93.0,
+    "waiting": 2,
+    "hit_rate_pct": 95.8,
     "recommended_tranches": 11
   },
   "symbol_summary": {
@@ -29,8 +29,18 @@
       "misses": 0,
       "waiting": 0
     },
+    "API3": {
+      "hits": 1,
+      "misses": 0,
+      "waiting": 0
+    },
     "AST": {
       "hits": 4,
+      "misses": 0,
+      "waiting": 0
+    },
+    "BIGTIME": {
+      "hits": 1,
       "misses": 0,
       "waiting": 0
     },
@@ -75,12 +85,12 @@
       "waiting": 0
     },
     "SHDW": {
-      "hits": 1,
+      "hits": 2,
       "misses": 0,
-      "waiting": 1
+      "waiting": 0
     },
     "TIME": {
-      "hits": 5,
+      "hits": 8,
       "misses": 0,
       "waiting": 0
     },
@@ -388,9 +398,44 @@
     {
       "symbol": "SHDW",
       "timestamp": "2026-05-02T04:52:28-07:00",
-      "outcome": "WAITING",
+      "outcome": "HIT",
       "entry_price": 0.02987,
-      "detail": 0.200870438567116
+      "detail": 517.5333333333333
+    },
+    {
+      "symbol": "TIME",
+      "timestamp": "2026-05-02T16:41:25-07:00",
+      "outcome": "HIT",
+      "entry_price": 3.82,
+      "detail": 3.5833333333333335
+    },
+    {
+      "symbol": "TIME",
+      "timestamp": "2026-05-02T20:57:39-07:00",
+      "outcome": "HIT",
+      "entry_price": 5.15,
+      "detail": -2.65
+    },
+    {
+      "symbol": "API3",
+      "timestamp": "2026-05-03T08:23:06-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.379,
+      "detail": 366.9
+    },
+    {
+      "symbol": "TIME",
+      "timestamp": "2026-05-03T10:51:23-07:00",
+      "outcome": "HIT",
+      "entry_price": 3.67,
+      "detail": -1.3833333333333333
+    },
+    {
+      "symbol": "BIGTIME",
+      "timestamp": "2026-05-03T11:54:41-07:00",
+      "outcome": "HIT",
+      "entry_price": 0.01372,
+      "detail": 465.31666666666666
     }
   ]
 }

@@ -1,134 +1,290 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METASTADIUM | Enterprise Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>COINBASE - MLOps Analytics Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #020617;
+            --bg-color: #020617;
             --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent-primary: #38bdf8;
-            --accent-secondary: #8b5cf6;
-            --border: rgba(255, 255, 255, 0.1);
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --glass: rgba(30, 41, 59, 0.7);
         }
-
+        
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             overflow: hidden;
         }
-
-        .hero-container {
-            text-align: center;
-            max-width: 800px;
-            padding: 4rem;
-            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+        
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
         }
-
-        .badge-premium {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            padding: 0.5rem 1.5rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-
-        h1 {
-            font-weight: 800;
-            font-size: 4rem;
-            letter-spacing: -0.05em;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom, #fff, #94a3b8);
+        
+        .header-title h1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        p.lead {
-            color: var(--text-dim);
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-portal {
-            background: #fff;
-            color: #000;
-            font-weight: 700;
-            padding: 1rem 2.5rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
+        
+        .nav-controls {
+            display: flex;
             align-items: center;
-            gap: 0.75rem;
-            font-size: 1.1rem;
-            border: none;
+            gap: 1.5rem;
         }
 
-        .btn-portal:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-            background: var(--accent-primary);
-            color: #fff;
+        /* Premium Dropdown Styling */
+        .select-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
-        /* Ambient animation */
-        .ambient-light {
+        select {
+            appearance: none;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            box-shadow: 0 0 0 0 var(--accent-glow);
+        }
+
+        select:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px 0 var(--accent-glow);
+        }
+
+        .select-wrapper::after {
+            content: "";
             position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 50%;
-            height: 50%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-            z-index: -1;
+            right: 1rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+        
+        .header-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
+        }
+        
+        main {
+            flex-grow: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 100%);
+        }
+
+        .iframe-container {
+            flex-grow: 1;
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+        }
+        
+        .iframe-toolbar {
+            padding: 0.5rem 1rem;
+            background-color: rgba(30, 41, 59, 0.5);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .iframe-toolbar span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+        }
+        
+        .external-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .external-link:hover {
+            color: var(--accent-color);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            flex-grow: 1;
+            background: #fff; /* Some dashboards might have light bg, but meist dark */
+        }
+
+        /* Loading Indicator */
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            background-size: 200% 100%;
+            animation: loading 2s infinite linear;
+            display: none;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
 <body>
-    <div class="ambient-light"></div>
-    <div class="hero-container">
-        <div class="badge-premium">Organizational Intelligence</div>
-        <h1>METASTADIUM</h1>
-        <p class="lead">Autonomous high-frequency trading observability and log intelligence pipeline.</p>
-        
-        <div class="d-flex justify-content-center gap-3">
-            <div class="d-flex flex-column align-items-center gap-3">
-                <a href="coinbase_log_dashboard.html" class="btn-portal">
-                    Launch Coinbase Insights
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://stefanbund.github.io/stadium-public-data/transaction_analysis_dashboard.html" class="btn-portal" style="background: linear-gradient(135deg, #10b981, #3b82f6); color: #fff; border: none;">
-                    Transactions Overview
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z M12 20c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path></svg>
-                </a>
-                <a href="guardian_status.html" class="btn-portal" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-success); border: 1px solid var(--accent-success);">
-                    Guardian Status
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                </a>
-                <a href="nn_performance.html" class="btn-portal" style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--border);">
-                    Neural Network Analytics
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19V5l12 7-12 7z"></path></svg>
-                </a>
+    <header>
+        <div class="header-title">
+            <div style="width: 28px; height: 28px; background: var(--accent-color); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px var(--accent-glow);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#020617" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h1>COINBASE INTELLIGENCE HUB <span style="font-size: 0.6rem; opacity: 0.5;">v2.4.0</span></h1>
+        </div>
+
+        <div class="nav-controls">
+            <div class="header-meta">
+                Refreshed: 2026-05-04 12:21:19
+            </div>
+            <div class="select-wrapper">
+                <select id="view-selector">
+                    <option value="nn_performance.html">NN Performance Intelligence</option>
+                    <option value="strategy_performance_dashboard.html">Strategy Performance</option>
+                    <option value="hourly_accuracy_dashboard.html">Core Accuracy Matrix (Charts)</option>
+                    <option value="premium_accuracy_matrix.html">Hardened Accuracy Matrix (Table)</option>
+                    <option value="signal_intelligence.html">Signal Intelligence</option>
+                    <option value="coinbase_log_dashboard.html">Log Intelligence</option>
+                    <option value="bot_symbol_activity.html">Symbol Activity Index</option>
+                    <option value="trade_decision_summary.html">Decision Ledger</option>
+                    <option value="robust_ledger.html">Hardened Ledger (Audit-Ready)</option>
+                    <option value="coinbase_executions.html">Coinbase Execution Ledger</option>
+                    <option value="system_architecture.html">System Architecture Blueprint</option>
+                    <option value="resource_correlation.html">Correlated Events (Node Health)</option>
+                    <option value="system_status_dashboard.html">Infrastructure Status</option>
+                </select>
             </div>
         </div>
-    </div>
+    </header>
+    
+    <main>
+        <div class="iframe-container">
+            <div id="progress-bar" class="loader"></div>
+            <div class="iframe-toolbar">
+                <span id="current-view-title">Strategy Performance Monitor</span>
+                <a id="full-screen-link" href="strategy_performance_dashboard.html" target="_blank" class="external-link">
+                    EXPAND FULL VIEW ↗
+                </a>
+            </div>
+            <iframe id="main-frame" src="strategy_performance_dashboard.html"></iframe>
+        </div>
+    </main>
+
+    <script>
+        const selector = document.getElementById('view-selector');
+        const iframe = document.getElementById('main-frame');
+        const title = document.getElementById('current-view-title');
+        const expandLink = document.getElementById('full-screen-link');
+        const progress = document.getElementById('progress-bar');
+
+        selector.addEventListener('change', (e) => {
+            const val = e.target.value;
+            const text = e.target.options[e.target.selectedIndex].text;
+            
+            // Show loading bar
+            progress.style.display = 'block';
+            
+            // Update UI
+            title.textContent = text + " Monitor";
+            expandLink.href = val;
+            
+            // Fade out current content
+            iframe.style.opacity = '0.5';
+            
+            // Load new content
+            iframe.src = val + '?t=' + Date.now();
+        });
+
+        // Initial load cache buster
+        window.addEventListener('load', () => {
+            const currentSrc = iframe.getAttribute('src');
+            if (currentSrc) {
+                iframe.src = currentSrc + '?t=' + Date.now();
+            }
+        });
+
+        iframe.addEventListener('load', () => {
+            progress.style.display = 'none';
+            iframe.style.opacity = '1';
+        });
+
+        // Responsive adjustment
+        function updateHeight() {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const mainPadding = 32; // 1rem * 2
+            document.querySelector('main').style.height = (window.innerHeight - headerHeight) + 'px';
+        }
+        
+        window.addEventListener('resize', updateHeight);
+        updateHeight();
+    </script>
 </body>
 </html>
+    
