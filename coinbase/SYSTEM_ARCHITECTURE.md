@@ -31,9 +31,10 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
 ## 2. Neural Intelligence Hierarchy
 The system now operates on a **3-Tier Ultra-Lean Waterfall** decision engine, optimized for high-velocity execution and alpha preservation. This stack was finalized during the `FIS_INDUSTRIAL_LEAN_v1` experiment, which proved that bypassing durational complexity leads to superior risk-adjusted returns.
 
-1.  **Tier 0: DAW Causality Gate (Macro)**
+1.  **Tier 0: Dynamic Volatility Governor (DVG)**
     - *Source*: `DAW_CAUSALITY_LAYER/causality_layer.py`
-    - *Mechanism*: Gates execution based on BTC Volatility (DVOL) exhaustion. Only fires when the "Causal Alpha" window is open. Replaces legacy regime-switching layers.
+    - *Mechanism*: Acts as a macro-risk firewall by modulating the fused execution threshold based on the **DVOL Z-score**. 
+    - *Adaptive Logic*: `Effective_Threshold = Base * (1 + max(0, Z/2))`. This ensures the "Lean Shield" tightens automatically during high-volatility exhaustion regimes.
 2.  **Tier 1: Directional (Trend)**
     - *Threshold*: Configured in `global_config.json` (default 0.85).
     - *Role*: Identifies primary upward price vectors.
