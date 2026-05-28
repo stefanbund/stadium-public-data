@@ -19,6 +19,8 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
     - **MLOps Orchestrator (Local)**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py)
         - *Mode*: `--fast-rf` (Standard Random Forest baseline for high-velocity deployment).
         - *Role*: Manages the A-Z symbol modeling loop.
+    - **Mega Cap LSTM Orchestrator**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_mega_cap_lstm.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_mega_cap_lstm.py)
+        - *Role*: Sequentially trains 100 mega-cap cryptocurrency LSTM models in a **continuous retraining state** (re-initiating immediately upon cycle completion) and automatically uploads completed models to the remote AWS EC2 production host.
     - **Hierarchical Trader**: [`UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL.py)
         - *Condition*: Only starts after confirming active LOB data flow.
         - *Role*: Processes live signals through the neural hierarchy.
@@ -86,6 +88,8 @@ The system utilizes a unified machine model where all processing is co-located t
 - **Telemetry Sync**:
   - **Local to Data Science Host**: Hourly synchronization of critical local MLOps runtime logs to the centralized data science host (`okx-ml.local`) is managed by the Guardian Watchdog calling `scripts/sync_logs_to_ml_host.sh`.
   - **EC2 to Reporting Workspace**: Because the active trader and LOB sampler now run in the cloud on EC2, logs (`trading_bot.log`, `executions_log.csv`, and audit logs) are dynamically pulled from the remote host (`98.93.0.208`) to local (`logs/remote`) via `scripts/pull_remote_logs.sh` at the start of each execution loop inside the Reporting Workspace (`generate_ledger_data.py`).
+  - **Preferred Markets Upload**: Upon regeneration of `preferred_markets.json` by the local MLOps script (`yield_stability_profiler.py`), the file is automatically transferred via rsync/SSH to the production Amazon instance (`98.93.0.208`) at `/opt/hft_trader/FLEET_INFORMATION_SYSTEM/preferred_markets.json` using the local SSH private key (`hft-trader-key.pem`), keeping the AWS trader in sync with local MLOps asset selection.
+  - **Continuous LSTM Model Upload**: Immediately upon successful completion of each individual symbol training cycle inside the Mega Cap LSTM Orchestrator, the new `.pt` model is uploaded using the local private key (`hft-trader-key.pem`) to the remote EC2 instance (`98.93.0.208`) under `/opt/hft_trader/STADIUM_DATA/MODELS/CORE_MODULES/`, keeping the cloud neural network synchronized with local model retraining in real time.
 
 ---
 
@@ -108,11 +112,13 @@ The system utilizes a unified machine model where all processing is co-located t
 ---
 
 ## 6. Analytics & Public Telemetry
-All visual intelligence is published to GitHub Pages via the **Reporting Orchestrator**.
+All visual intelligence is compiled and published via the system reporting scripts.
 
-- **Analytics Master Hub**: [View Hub](https://stefanbund.github.io/stadium-public-data/coinbase/analytics_dashboard.html)
-- **Reporting Engine**: `UNIFIED_REPORTING_WORKSPACE/generate_analytics_dashboard.py`
-- **Exchange Isolation**: Data is automatically siloed by exchange name (e.g., `/coinbase`, `/binance`) to allow multi-host scaling within a single repository.
+- **Legacy GitHub Pages Hub**: [View Hub](https://stefanbund.github.io/stadium-public-data/coinbase/analytics_dashboard.html) (Updates siloed by exchange name, e.g., `/coinbase`).
+- **Modern Unified Dashboard (metastadium.web.app)**: Hosted on Google Firebase.
+  - **Reporting Workspace**: Managed inside [`MODERN_REPORTING_WORKSPACE/`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/MODERN_REPORTING_WORKSPACE/) and governed by `orchestrator.py` on a 15-minute run cycle.
+  - **Dynamic Compilation**: Computes and updates `dashboard_data.json` (via `generate_data.py`), `ledger_data.json` (via `generate_ledger_data.py`), and `landscape_data.json` (via `generate_data.py`).
+  - **Market Volatility & NN Audits**: Regenerates live DVOL oracle metrics and parses the last 200 neural network evaluations to dynamically refresh the Go-List tree hierarchy and DVG regime status on the website's Market Landscape page (`landscape.html`) on every update cycle.
 
 ---
 
@@ -125,7 +131,18 @@ The industrial backtesting arm of the project, used for yield discovery and para
 
 ---
 
+## 8. Operational Workflows
+The system defines standard operational workflows inside `.agents/workflows/` to simplify diagnostics, auditing, and deployment.
+
+- **Market Landscape View**: [`.agents/workflows/market_landscape.md`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/.agents/workflows/market_landscape.md)
+  - *Utility*: Runs `summarize_market_landscape.py` to query the live DVOL Oracle (Z-score, trend, RSI) and parse the last 200 neural network evaluations to diagnose execution pauses.
+- **Summarize Recent Trades**: [`.agents/workflows/summarize_recent.md`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/.agents/workflows/summarize_recent.md)
+  - *Utility*: Aggregates trade statuses (PASS/FAIL/PENDING) per symbol to see live execution history.
+
+---
+
 ## 15. Archival Note
 The legacy documentation and decommissioned tools (Pre-CCXT/Pre-DVOL) have been moved to `TECHNICAL_DEBT/`:
 - [`OLD_SYSTEM_ARCHITECTURE.md`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/TECHNICAL_DEBT/OLD_SYSTEM_ARCHITECTURE.md)
 - `advanced-sdk-ts/` (Legacy Node.js LOB Sampler)
+
