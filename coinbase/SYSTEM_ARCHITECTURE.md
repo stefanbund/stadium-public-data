@@ -12,6 +12,7 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
     - **CCXT LOB Sampler**: [`UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py)
         - *Role*: Continuously streams Limit Order Book (LOB) depth and price data using the CCXT library.
         - *Rotation*: Automatically rotated every 6 hours to ensure file I/O efficiency.
+        - *Disk Space Optimization*: Supports config-driven automated pruning (`dur_pipe.prune_old_lob_files` in `config.local.json`) to keep only the 3 most recent files, preventing file accumulation on remote servers where historical backtesting files are not needed.
     - **Mobile Log Exporter**: [`periodic_log_export.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/periodic_log_export.py)
         - *Role*: Syncs critical telemetry to Google Drive for remote monitoring via Gemini.
 - **Stage 2: Intelligence & Execution**
@@ -29,7 +30,7 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
 ---
 
 ## 2. Neural Intelligence Hierarchy
-The system now operates on a **3-Tier Ultra-Lean Waterfall** decision engine, optimized for high-velocity execution and alpha preservation. This stack was finalized during the `FIS_INDUSTRIAL_LEAN_v1` experiment, which proved that bypassing durational complexity leads to superior risk-adjusted returns.
+The system now operates on a **2-Tier Ultra-Lean Waterfall** decision engine, optimized for high-velocity execution and alpha preservation. This stack was finalized during the `FIS_INDUSTRIAL_LEAN_v1` experiment, which proved that bypassing durational complexity leads to superior risk-adjusted returns.
 
 1.  **Tier 0: Dynamic Volatility Governor (DVG)**
     - *Source*: `DAW_CAUSALITY_LAYER/causality_layer.py`
@@ -38,11 +39,9 @@ The system now operates on a **3-Tier Ultra-Lean Waterfall** decision engine, op
 2.  **Tier 1: Directional (Trend)**
     - *Threshold*: Configured in `global_config.json` (default 0.85).
     - *Role*: Identifies primary upward price vectors.
-3.  **Tier 2: Crash (Safety)**
-    - *Threshold*: Configured in `global_config.json` (default 0.35).
-    - *Role*: Vetoes trades if a significant drawdown (>3%) is imminent.
 
 > **Legacy/Retired Tiers**:
+> - **Crash (Safety)**: Retired May 2026. Vetoed trades if a significant drawdown (>3%) was imminent.
 > - **Imbalance (Tier 2)**: Retired May 2026. Superseded by the DAW Causal Gate.
 > - **Markov Risk (Tier 3)**: Retired May 2026. Superseded by the DAW Causal Gate.
 > - **Generalist (Tier 5)**: Retired May 2026. Bypassed in favor of the Lean stack.
@@ -56,8 +55,24 @@ The system now operates on a **3-Tier Ultra-Lean Waterfall** decision engine, op
 3.  **Hierarchical Evaluation (Lean Stack)**:
     - **Step 1**: Does the macro regime allow for alpha? (**DAW Gate**)
     - **Step 2**: Should I buy? (**Directional Trend**)
-    - **Step 3**: Is it safe to execute? (**Crash Safety**)
-4.  **Action Handoff**: Executable signal is generated only if all 3 tiers provide a "Green Light." It then hands off control to the `async_trader_rewritten.py` layer.
+4.  **Action Handoff**: Executable signal is generated only if both active tiers provide a "Green Light." It then hands off control to the `async_trader_rewritten.py` layer.
+
+### The Brain vs. The Hands (Role Separation)
+An important distinction in the architecture is the strict separation of responsibilities between `trader_NN_HIERARCHICAL.py` (The Brain) and `async_trader.py` (The Hands).
+
+- **The Brain: `trader_NN_HIERARCHICAL.py` (The Orchestrator)**
+  - **Data Intake & Modeling:** Continuously monitors live market data, calculates technical indicators (ATR, RSI, etc.), and feeds them into machine learning models for predictions.
+  - **Risk Management:** Applies strict waterfall logic—checking the DAW Causality volatility firewall, ensuring trend confidence, and verifying the symbol isn't blacklisted.
+  - **Capital Allocation:** Checks the live USD account balance, classifies the coin as a Mega Cap or Mid Cap, and calculates the exact dollar size and dynamic profit target (e.g., using ATR).
+  - **Delegation:** Once it decides exactly *what* to do, it launches `async_trader.py` and hands it the specific execution instructions.
+
+- **The Hands: `async_trader.py` (The Execution Engine)**
+  - **Broker Interface:** Receives the symbol, dollar amount, and profit target from the Orchestrator, logs into the exchange API, and submits the Limit Buy order.
+  - **Order Management:** Waits for the Buy order to be filled. Once filled, it mathematically calculates the take-profit price and submits the Sell order.
+  - **Safety Protocols:** Handles retries for API errors and monitors the 4-hour "Circuit Breaker." If a Sell order sits for too long, it cancels it and executes an emergency liquidation.
+  - **Telemetry:** Records the exact profit, latency, and success into the CSV logs and triggers the reporting scripts.
+
+By splitting these roles, the system is highly efficient—the heavy machine learning loop never gets paused or delayed while waiting for a slow exchange API to fill a trade.
 
 ---
 
@@ -65,9 +80,12 @@ The system now operates on a **3-Tier Ultra-Lean Waterfall** decision engine, op
 The system utilizes a unified machine model where all processing is co-located to minimize latency and synchronization overhead.
 
 - **Primary Data Root**: `/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA`
-- **Model Vault**: `STADIUM_DATA/MODELS` (Subdivided into Directional and Crash).
-- **LOB Source Truth**: `STADIUM_DATA/GRUS-CSV-SAMPLER-DATA`
+- **Model Vault**: `STADIUM_DATA/MODELS` (Subdivided into Directional; Crash is legacy).
+- **LOB Source Truth**: `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA`
 - **Hardware Bridging**: The system is designed to run entirely on the host SSD for execution speed, with scheduled backups to external volumes handled by `local_usb_backup.sh`.
+- **Telemetry Sync**:
+  - **Local to Data Science Host**: Hourly synchronization of critical local MLOps runtime logs to the centralized data science host (`okx-ml.local`) is managed by the Guardian Watchdog calling `scripts/sync_logs_to_ml_host.sh`.
+  - **EC2 to Reporting Workspace**: Because the active trader and LOB sampler now run in the cloud on EC2, logs (`trading_bot.log`, `executions_log.csv`, and audit logs) are dynamically pulled from the remote host (`98.93.0.208`) to local (`logs/remote`) via `scripts/pull_remote_logs.sh` at the start of each execution loop inside the Reporting Workspace (`generate_ledger_data.py`).
 
 ---
 
@@ -80,6 +98,12 @@ The system utilizes a unified machine model where all processing is co-located t
     - `scripts/start_guardian.sh`: Launches the system.
     - `scripts/stop_guardian.sh`: Safe shutdown.
     - `scripts/status.sh`: System health snapshot.
+
+### **Deployment & Post-Deployment Verification**
+- **Deployment Helper**: [`UNIFIED_TRADER_WORKSPACE/deployment_helper.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/deployment_helper.py)
+    - *Role*: Handles code/config sync, builds virtual environments, and sets execution flags.
+- **Certification Verifier**: [`scripts/deployment_verifier.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/scripts/deployment_verifier.py)
+    - *Role*: Automatically executes on the remote host post-deploy to certify system integrity (checking for credentials/key leaks, virtual environment health, LSTM and Directional model availability, and AWS Secrets Manager integration).
 
 ---
 
