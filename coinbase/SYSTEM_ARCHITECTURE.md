@@ -150,6 +150,30 @@ The system defines standard operational workflows inside `.agents/workflows/` to
 
 ---
 
+## 9. DVOL Volatility Index Caching Bridge
+
+### **Role (What it is)**
+The `dvol_live_cache.json` file is a lightweight telemetry cache containing the latest BTC option implied volatility (DVOL) metrics: close, Z-score, RSI, 1-hour linear regression momentum, and VPIN exhaustion/toxicity level.
+
+### **Relevance (Why it is necessary)**
+AWS EC2 IP address ranges are consistently blocked or rate-limited by exchanges (via Cloudflare/WAF) on their public unauthenticated API endpoints. Directly querying Deribit's DVOL index from your cloud instance fails, resulting in a fallback `fused_score = 0.0000` (vetoing all trade opportunities like GNO and AVAX). Caching the index state on the local machine (which is not blocked) and copying it to the remote server allows the DAW Causality Layer to operate flawlessly without direct public REST API dependencies from EC2.
+
+### **Operation (How it works)**
+```mermaid
+graph TD
+    A[Local Machine: residential IP] -->|Every 120s: requests.get| B(Deribit Volatility API)
+    B -->|Calculates Z-Score & VPIN Exhaustion| C[dvol_live_cache.json on Local]
+    C -->|Secure Copy: SCP| D[dvol_live_cache.json on EC2 Host]
+    E[Remote: trader_NN_HIERARCHICAL.py] -->|Checks DAW causal rules| F[dvol_oracle.py on EC2]
+    F -->|Reads if fresh < 15m| D
+```
+
+1. **Generation**: The local `DVOL Live Sync Daemon` (monitored by Guardian) queries the Deribit DVOL API every 120 seconds.
+2. **Transfer**: The daemon writes the state to `dvol_live_cache.json` and copies it via SCP using the SSH private key to `/opt/hft_trader/DAW_CAUSALITY_LAYER/` on the remote EC2 instance.
+3. **Consumption**: When evaluating live signals on the cloud server, `dvol_oracle.py` checks `dvol_live_cache.json`. If it's less than 15 minutes old, it reads the cache metrics instead of querying the API, bypassing the EC2 firewall block.
+
+---
+
 ## 15. Archival Note
 The legacy documentation and decommissioned tools (Pre-CCXT/Pre-DVOL) have been moved to `TECHNICAL_DEBT/`:
 - [`OLD_SYSTEM_ARCHITECTURE.md`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/TECHNICAL_DEBT/OLD_SYSTEM_ARCHITECTURE.md)
