@@ -9,6 +9,8 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
 
 ### **Staged Boot Sequence**
 - **Stage 1: The Sensors**
+    - **DVOL Live Sync Daemon**: [`scripts/sync_dvol_live.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/scripts/sync_dvol_live.py)
+        - *Role*: Periodically fetches implied volatility (DVOL) from Deribit (every 120s), writes it to a local JSON cache, and copies it to the EC2 host via SCP.
     - **CCXT LOB Sampler**: [`UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py)
         - *Role*: Continuously streams Limit Order Book (LOB) depth and price data using the CCXT library.
         - *Rotation*: Automatically rotated every 6 hours to ensure file I/O efficiency.
@@ -90,6 +92,7 @@ The system utilizes a unified machine model where all processing is co-located t
   - **EC2 to Reporting Workspace**: Because the active trader and LOB sampler now run in the cloud on EC2, logs (`trading_bot.log`, `executions_log.csv`, and audit logs) are dynamically pulled from the remote host (`98.93.0.208`) to local (`logs/remote`) via `scripts/pull_remote_logs.sh` at the start of each execution loop inside the Reporting Workspace (`generate_ledger_data.py`).
   - **Preferred Markets Upload**: Upon regeneration of `preferred_markets.json` by the local MLOps script (`yield_stability_profiler.py`), the file is automatically transferred via rsync/SSH to the production Amazon instance (`98.93.0.208`) at `/opt/hft_trader/FLEET_INFORMATION_SYSTEM/preferred_markets.json` using the local SSH private key (`hft-trader-key.pem`), keeping the AWS trader in sync with local MLOps asset selection.
   - **Continuous LSTM Model Upload**: Immediately upon successful completion of each individual symbol training cycle inside the Mega Cap LSTM Orchestrator, the new `.pt` model is uploaded using the local private key (`hft-trader-key.pem`) to the remote EC2 instance (`98.93.0.208`) under `/opt/hft_trader/STADIUM_DATA/MODELS/CORE_MODULES/`, keeping the cloud neural network synchronized with local model retraining in real time.
+  - **Local-to-EC2 Volatility Sync (DVOL Cache)**: Because the EC2 instance is blocked by Deribit/Cloudflare firewalls for public REST API calls, the local machine (which is not blocked) runs the `DVOL Live Sync Daemon` to retrieve BTC implied volatility state from Deribit every 120 seconds. It caches this locally as `dvol_live_cache.json` and copies it via SCP to `/opt/hft_trader/DAW_CAUSALITY_LAYER/` on the EC2 host. The remote `dvol_oracle.py` then reads from this fresh cache file to verify the DAW regime.
 
 ---
 
@@ -102,6 +105,11 @@ The system utilizes a unified machine model where all processing is co-located t
     - `scripts/start_guardian.sh`: Launches the system.
     - `scripts/stop_guardian.sh`: Safe shutdown.
     - `scripts/status.sh`: System health snapshot.
+
+### **HFT Pricing Target Configuration**
+- **Price Target Parameter**: The HFT trading mechanism strictly insists on a **`0.025` (2.5%)** price target (configured as `take_profit` in `hardened_config.json`). 
+- **No 1% Target**: Any legacy references to a 1% price target are obsolete and deprecated; the system enforces the 2.5% (`0.025`) threshold to align with volatility regimes and MLOps constraints.
+
 
 ### **Deployment & Post-Deployment Verification**
 - **Deployment Helper**: [`UNIFIED_TRADER_WORKSPACE/deployment_helper.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/deployment_helper.py)
@@ -117,8 +125,9 @@ All visual intelligence is compiled and published via the system reporting scrip
 - **Legacy GitHub Pages Hub**: [View Hub](https://stefanbund.github.io/stadium-public-data/coinbase/analytics_dashboard.html) (Updates siloed by exchange name, e.g., `/coinbase`).
 - **Modern Unified Dashboard (metastadium.web.app)**: Hosted on Google Firebase.
   - **Reporting Workspace**: Managed inside [`MODERN_REPORTING_WORKSPACE/`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/MODERN_REPORTING_WORKSPACE/) and governed by `orchestrator.py` on a 15-minute run cycle.
-  - **Dynamic Compilation**: Computes and updates `dashboard_data.json` (via `generate_data.py`), `ledger_data.json` (via `generate_ledger_data.py`), and `landscape_data.json` (via `generate_data.py`).
+  - **Dynamic Compilation**: Computes and updates `dashboard_data.json` (via `generate_data.py`), `ledger_data.json` (via `generate_ledger_data.py`), `landscape_data.json` (via `generate_data.py`), and `deployments_data.json` (via `generate_data.py`).
   - **Market Volatility & NN Audits**: Regenerates live DVOL oracle metrics and parses the last 200 neural network evaluations to dynamically refresh the Go-List tree hierarchy and DVG regime status on the website's Market Landscape page (`landscape.html`) on every update cycle.
+  - **DVOL Sync Monitoring**: Inspects the modification time of `dvol_live_cache.json` on the remote EC2 host to display the **DVOL Volatility Sync** status card on the deployments dashboard (`deployments.html`), certifying that live volatility metrics are syncing to the AWS trading instance in real time.
 
 ---
 
