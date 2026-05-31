@@ -13,6 +13,7 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
         - *Role*: Periodically fetches implied volatility (DVOL) from Deribit (every 120s), writes it to a local JSON cache, and copies it to the EC2 host via SCP.
     - **CCXT LOB Sampler**: [`UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py)
         - *Role*: Continuously streams Limit Order Book (LOB) depth and price data using the CCXT library.
+        - *Storage & Performance Optimization*: Writes all live data to the local hard drive (`STADIUM_DATA/GRUS-CSV-SAMPLER-DATA`) to avoid continuous I/O block issues on USB filesystems. Files older than 24 hours are migrated to the USB directory automatically by the backup process.
         - *Rotation*: Automatically rotated every 6 hours to ensure file I/O efficiency.
         - *Disk Space Optimization*: Supports config-driven automated pruning (`dur_pipe.prune_old_lob_files` in `config.local.json`) to keep only the 3 most recent files, preventing file accumulation on remote servers where historical backtesting files are not needed.
     - **Mobile Log Exporter**: [`periodic_log_export.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/periodic_log_export.py)
@@ -85,10 +86,11 @@ The system utilizes a unified machine model where all processing is co-located t
 
 - **Primary Data Root**: `/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA`
 - **Model Vault**: `STADIUM_DATA/MODELS` (Subdivided into Directional; Crash is legacy).
-- **LOB Source Truth**: `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA`
-- **Hardware Bridging**: The system is designed to run entirely on the host SSD for execution speed, with scheduled backups to external volumes handled by `local_usb_backup.sh`.
+- **LOB Active Storage**: `STADIUM_DATA/GRUS-CSV-SAMPLER-DATA` (Local SSD for high-performance and crash-free writes).
+- **LOB Historical Vault**: `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA` (USB archive space).
+- **Hardware Bridging & File Migration**: The system runs entirely on the host SSD for execution speed. Local sampler files older than 24 hours are automatically migrated to `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA/` by `local_usb_backup.sh` every 4 hours, preserving local disk space while accumulating year-round history for MLOps backtests.
 - **Telemetry Sync**:
-  - **Local to Data Science Host**: Hourly synchronization of critical local MLOps runtime logs to the centralized data science host (`okx-ml.local`) is managed by the Guardian Watchdog calling `scripts/sync_logs_to_ml_host.sh`.
+  - **Local to Data Science Host**: Hourly synchronization of critical local MLOps logs to the centralized data science host (`okx-ml.local`) is managed by the Guardian Watchdog calling `scripts/sync_logs_to_ml_host.sh`.
   - **EC2 to Reporting Workspace**: Because the active trader and LOB sampler now run in the cloud on EC2, logs (`trading_bot.log`, `executions_log.csv`, and audit logs) are dynamically pulled from the remote host (`98.93.0.208`) to local (`logs/remote`) via `scripts/pull_remote_logs.sh` at the start of each execution loop inside the Reporting Workspace (`generate_ledger_data.py`).
   - **Preferred Markets Upload**: Upon regeneration of `preferred_markets.json` by the local MLOps script (`yield_stability_profiler.py`), the file is automatically transferred via rsync/SSH to the production Amazon instance (`98.93.0.208`) at `/opt/hft_trader/FLEET_INFORMATION_SYSTEM/preferred_markets.json` using the local SSH private key (`hft-trader-key.pem`), keeping the AWS trader in sync with local MLOps asset selection.
   - **Continuous LSTM Model Upload**: Immediately upon successful completion of each individual symbol training cycle inside the Mega Cap LSTM Orchestrator, the new `.pt` model is uploaded using the local private key (`hft-trader-key.pem`) to the remote EC2 instance (`98.93.0.208`) under `/opt/hft_trader/STADIUM_DATA/MODELS/CORE_MODULES/`, keeping the cloud neural network synchronized with local model retraining in real time.
