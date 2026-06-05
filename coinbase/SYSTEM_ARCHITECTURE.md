@@ -11,19 +11,38 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
 - **Stage 1: The Sensors**
     - **DVOL Live Sync Daemon**: [`scripts/sync_dvol_live.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/scripts/sync_dvol_live.py)
         - *Role*: Periodically fetches implied volatility (DVOL) from Deribit (every 120s), writes it to a local JSON cache, and copies it to the EC2 host via SCP.
-    - **CCXT LOB Sampler**: [`UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py)
-        - *Role*: Continuously streams Limit Order Book (LOB) depth and price data using the CCXT library.
-        - *Storage & Performance Optimization*: Writes all live data to the local hard drive (`STADIUM_DATA/GRUS-CSV-SAMPLER-DATA`) to avoid continuous I/O block issues on USB filesystems. Files older than 24 hours are migrated to the USB directory automatically by the backup process.
+    - **CCXT LOB Sampler (Coinbase)**: [`UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/ccxt_sampler.py)
+        - *Role*: Continuously streams Limit Order Book (LOB) depth and price data using the CCXT library for the Coinbase exchange.
+        - *Storage & Performance Optimization*: Writes all live data to the local hard drive (`STADIUM_DATA/GRUS-CSV-SAMPLER-DATA`). Files older than 24 hours are migrated to the USB directory `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA/` automatically by the backup process.
         - *Rotation*: Automatically rotated every 6 hours to ensure file I/O efficiency.
-        - *Disk Space Optimization*: Supports config-driven automated pruning (`dur_pipe.prune_old_lob_files` in `config.local.json`) to keep only the 3 most recent files, preventing file accumulation on remote servers where historical backtesting files are not needed.
+    - **OKX LOB Sampler**: [`NEW_LOB_SAMPLER/okx_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/NEW_LOB_SAMPLER/okx_sampler.py)
+        - *Role*: Continuously streams LOB depth and price data for OKX.
+        - *Storage & Backup*: Writes live data to `NEW_LOB_SAMPLER/data/`. Files older than 24 hours are automatically migrated to `/Volumes/M4_BACKUP/NEW-LOB-SAMPLER-DATA/` every 4 hours.
+    - **Kraken LOB Sampler**: [`KRAKEN_LOB_SAMPLER/kraken_sampler.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/KRAKEN_LOB_SAMPLER/kraken_sampler.py)
+        - *Role*: Continuously streams LOB depth and price data for Kraken.
+        - *Storage & Backup*: Writes live data to `KRAKEN_LOB_SAMPLER/data/`. Files older than 24 hours are automatically migrated to `/Volumes/M4_BACKUP/KRAKEN-LOB-SAMPLER-DATA/` every 4 hours.
     - **Mobile Log Exporter**: [`periodic_log_export.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/periodic_log_export.py)
         - *Role*: Syncs critical telemetry to Google Drive for remote monitoring via Gemini.
 - **Stage 2: Intelligence & Execution**
-    - **MLOps Orchestrator (Local)**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_symbol_centric.py)
-        - *Mode*: `--fast-rf` (Standard Random Forest baseline for high-velocity deployment).
-        - *Role*: Manages the A-Z symbol modeling loop.
-    - **Mega Cap LSTM Orchestrator**: [`UNIFIED_MLOPS_WORKSPACE/orchestrator_mega_cap_lstm.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/orchestrator_mega_cap_lstm.py)
-        - *Role*: Sequentially trains 100 mega-cap cryptocurrency LSTM models in a **continuous retraining state** (re-initiating immediately upon cycle completion) and automatically uploads completed models to the remote AWS EC2 production host.
+    - **Unified Post-Go-List MLOps Runner**: [`UNIFIED_MLOPS_WORKSPACE/unified_weekly_mlops_runner.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/unified_weekly_mlops_runner.py)
+        - *Role*: Executes the weekly Walk-Forward modeling pipeline directly after Go-List generation on Sunday.
+        - *Mechanism*:
+            - Evaluates the 15 active Go-List symbols (`preferred_markets.json`).
+            - **Mega-Caps** (e.g. `BTC`, `ETH`, `SOL`) are routed to the **PyTorch LSTM time-series modeler** (`mega_cap_lstm_modeler.py`) utilizing Apple Silicon hardware acceleration (`torch.device("mps")`).
+            - **Mid-Caps** (all other symbols on the Go-List) are routed to the **Balanced Random Forest preprocessor and modeler** (`unified_modeler.py`).
+            - Completed models are **immediately uploaded** (via scp/rsync) to the EC2 production trader once trained, ensuring absolute freshness.
+            - Updates and deploys the unified Firebase dashboard (`deploy_dashboard.py`).
+        - *Workflow Diagram*:
+            ```mermaid
+            graph TD
+                A[1. Run yield_stability_profiler.py] -->|Generates preferred_markets.json| B[2. Parse Go-List Symbols]
+                B --> C{Is Asset Mega-Cap?}
+                C -->|Yes| D[3. Train LSTM Model]
+                C -->|No| E[3. Train Balanced RF Model]
+                D --> F[4. Immediate SCP/Rsync Upload]
+                E --> F
+                F --> G[5. Regenerate & Push Dashboard]
+            ```
     - **Hierarchical Trader**: [`UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL.py)
         - *Condition*: Only starts after confirming active LOB data flow.
         - *Role*: Processes live signals through the neural hierarchy.
@@ -32,18 +51,30 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
     - **Reporting Orchestrator**: [`UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py)
         - *Role*: Sequential execution of all reporting heartbeats (Accuracy, Strategy, Operations).
 
+### **Watchdog Notification Timeout & Resilience**
+- **Non-Blocking Twilio SMS Alerts**: To prevent network outages from freezing the Guardian loop, a strict `timeout=10` constraint is configured on all outbound HTTP POST requests to the Twilio API. This protects the main daemon thread from hanging indefinitely, ensuring that local process monitoring and aggressive memory reclamation routines (`pkill -9 -f`) remain active even if the host loses external internet connectivity.
+
 ---
 
 ## 2. Neural Intelligence Hierarchy
 The system now operates on a **2-Tier Ultra-Lean Waterfall** decision engine, optimized for high-velocity execution and alpha preservation. This stack was finalized during the `FIS_INDUSTRIAL_LEAN_v1` experiment, which proved that bypassing durational complexity leads to superior risk-adjusted returns.
 
 1.  **Tier 0: Dynamic Volatility Governor (DVG)**
-    - *Source*: `DAW_CAUSALITY_LAYER/causality_layer.py`
+    - *Source*: [causality_layer.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/DAW_CAUSALITY_LAYER/causality_layer.py)
     - *Mechanism*: Acts as a macro-risk firewall by modulating the fused execution threshold based on the **DVOL Z-score**. 
     - *Adaptive Logic*: `Effective_Threshold = Base * (1 + max(0, Z/2))`. This ensures the "Lean Shield" tightens automatically during high-volatility exhaustion regimes.
 2.  **Tier 1: Directional (Trend)**
     - *Threshold*: Configured in `global_config.json` (default 0.85).
     - *Role*: Identifies primary upward price vectors.
+
+### **Versioned Heuristic Regimes**
+The system supports toggleable heuristic versions configured via `"heuristic_regime_version"` in the settings. This allows switching dynamically between historical baselines and newly optimized risk management rules.
+
+| Rule / Filter | `MAY_17` Regime | `JUNE_02` Regime |
+| :--- | :--- | :--- |
+| **Volatility Compression** | Strict limit: DVOL $Z \le 0.5$ | Dynamic limit: DVOL $Z \le 1.0$ if Trend Confidence $\ge 0.75$, else $Z \le 0.5$ |
+| **VPIN Toxicity Gate** | Exhaustion score $< 30$ | Exhaustion score $< 30$ |
+| **Reversion Gate (UWR)** | Bypassed (Not evaluated) | Upper Wick Ratio (UWR) $< 0.40$ (low resistance) |
 
 > **Legacy/Retired Tiers**:
 > - **Crash (Safety)**: Retired May 2026. Vetoed trades if a significant drawdown (>3%) was imminent.
@@ -86,14 +117,21 @@ The system utilizes a unified machine model where all processing is co-located t
 
 - **Primary Data Root**: `/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/STADIUM_DATA`
 - **Model Vault**: `STADIUM_DATA/MODELS` (Subdivided into Directional; Crash is legacy).
-- **LOB Active Storage**: `STADIUM_DATA/GRUS-CSV-SAMPLER-DATA` (Local SSD for high-performance and crash-free writes).
-- **LOB Historical Vault**: `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA` (USB archive space).
-- **Hardware Bridging & File Migration**: The system runs entirely on the host SSD for execution speed. Local sampler files older than 24 hours are automatically migrated to `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA/` by `local_usb_backup.sh` every 4 hours, preserving local disk space while accumulating year-round history for MLOps backtests.
+- **LOB Active Storage Locations (SSD)**:
+  - Coinbase: `STADIUM_DATA/GRUS-CSV-SAMPLER-DATA`
+  - OKX: `NEW_LOB_SAMPLER/data`
+  - Kraken: `KRAKEN_LOB_SAMPLER/data`
+- **LOB Historical Vaults (USB Drive)**:
+  - Coinbase: `/Volumes/M4_BACKUP/GRUS-CSV-SAMPLER-DATA`
+  - OKX: `/Volumes/M4_BACKUP/NEW-LOB-SAMPLER-DATA`
+  - Kraken: `/Volumes/M4_BACKUP/KRAKEN-LOB-SAMPLER-DATA`
+- **Hardware Bridging & File Migration**: The system runs entirely on the host SSD for execution speed. Local sampler files older than 24 hours are automatically migrated to their respective `/Volumes/M4_BACKUP/` targets by [local_usb_backup.sh](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/local_usb_backup.sh) every 4 hours, preserving local disk space while accumulating year-round history for MLOps backtests.
 - **Telemetry Sync**:
   - **Local to Data Science Host**: Hourly synchronization of critical local MLOps logs to the centralized data science host (`okx-ml.local`) is managed by the Guardian Watchdog calling `scripts/sync_logs_to_ml_host.sh`.
   - **EC2 to Reporting Workspace**: Because the active trader and LOB sampler now run in the cloud on EC2, logs (`trading_bot.log`, `executions_log.csv`, and audit logs) are dynamically pulled from the remote host (`98.93.0.208`) to local (`logs/remote`) via `scripts/pull_remote_logs.sh` at the start of each execution loop inside the Reporting Workspace (`generate_ledger_data.py`).
   - **Preferred Markets Upload**: Upon regeneration of `preferred_markets.json` by the local MLOps script (`yield_stability_profiler.py`), the file is automatically transferred via rsync/SSH to the production Amazon instance (`98.93.0.208`) at `/opt/hft_trader/FLEET_INFORMATION_SYSTEM/preferred_markets.json` using the local SSH private key (`hft-trader-key.pem`), keeping the AWS trader in sync with local MLOps asset selection.
   - **Continuous LSTM Model Upload**: Immediately upon successful completion of each individual symbol training cycle inside the Mega Cap LSTM Orchestrator, the new `.pt` model is uploaded using the local private key (`hft-trader-key.pem`) to the remote EC2 instance (`98.93.0.208`) under `/opt/hft_trader/STADIUM_DATA/MODELS/CORE_MODULES/`, keeping the cloud neural network synchronized with local model retraining in real time.
+  - **Automated Remote Model Pruner**: To prevent disk congestion on the remote EC2 host, the MLOps runners automatically execute a model pruner ([prune_remote_models.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/prune_remote_models.py)) at the end of every upload cycle. The pruner resolves active Go-List symbols from `preferred_markets.json`, matches their corresponding model filenames (LSTM `.pt` for mega-caps, RF `.joblib`/`.py` and reversion speed estimators for mid-caps), and executes SSH pruning commands to delete all stale/inactive models from the remote directories.
   - **Local-to-EC2 Volatility Sync (DVOL Cache)**: Because the EC2 instance is blocked by Deribit/Cloudflare firewalls for public REST API calls, the local machine (which is not blocked) runs the `DVOL Live Sync Daemon` to retrieve BTC implied volatility state from Deribit every 120 seconds. It caches this locally as `dvol_live_cache.json` and copies it via SCP to `/opt/hft_trader/DAW_CAUSALITY_LAYER/` on the EC2 host. The remote `dvol_oracle.py` then reads from this fresh cache file to verify the DAW regime.
 
 ---
