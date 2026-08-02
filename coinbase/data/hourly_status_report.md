@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-01 16:00:31 
+Generated at: 2026-08-01 17:00:11 
 
 ```text
 ================================================================================
@@ -9,17 +9,17 @@ Generated at: 2026-08-01 16:00:31
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.51 | Z-Score=-0.20 (Thresh <= 0.5) | RSI=41.0 | Exhaustion=0/100
+• DVOL BTC: Close=35.55 | Z-Score=0.32 (Thresh <= 0.5) | RSI=48.8 | Exhaustion=0/100
   Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=50.78 | Z-Score=1.36 (Thresh <= 0.5) | RSI=47.9 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+• DVOL ETH: Close=50.80 | Z-Score=1.24 (Thresh <= 0.5) | RSI=41.3 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   Volatility Expansion (Z-Score=1.36 > 0.5)
+  Veto Rationale:   Volatility Expansion (Z-Score=1.24 > 0.5)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
-⚠️ Unable to query Mac Mini PM2 daemon: ssh: Could not resolve hostname stefans-mac-mini.local: nodename nor servname provided, or not known
+⚠️ Unable to query Mac Mini PM2 daemon: ssh: connect to host stefans-mac-mini.local port 22: No route to host
 
 
 [3] Remote Trading Engine Processes (AWS EC2)
@@ -36,11 +36,11 @@ Generated at: 2026-08-01 16:00:31
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-01 19:00:15 to 2026-08-01 23:00:06
+• Report Window (Recent Decisions): 2026-08-01 20:00:12 to 2026-08-02 00:00:04
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 130985 (13098500.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 132173 (13217300.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -57,13 +57,13 @@ Generated at: 2026-08-01 16:00:31
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  27.0 hour(s) (1d 2h 59m)
+• Time Until Next Optimizer:  26.0 hour(s) (1d 1h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-01 04:00:18 PM PDT
-• Rebuilt in last 8 hrs?: 🟢 (0.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (1.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 
 [7] Day Trade Orchestrator (Mac Mini)
