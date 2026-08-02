@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 11:35:29 
+Generated at: 2026-08-02 11:35:44 
 
 ```text
 ================================================================================
@@ -25,7 +25,7 @@ Disconnected from ::1 port 22
 
 [3] Remote Trading Engine Processes (AWS EC2)
 --------------------------------------------------
-🟢 Watchdog (guardian_sfgk):  ACTIVE
+🔴 Watchdog (guardian_sfgk):  INACTIVE
 🟢 L3 Order Book Feed:        ACTIVE
 🟢 Active Traders:             0 asset loop(s) running
 • Recent EC2 Errors:
@@ -37,11 +37,10 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 14:35:28 to 2026-08-02 18:35:22
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 154293 (15429300.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 121083 (12108300.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -49,10 +48,10 @@ Disconnected from ::1 port 22
 • Asset Performance & Drift Status:
   Asset        | Trades   | Win Rate   | Loss Streak 
   --------------------------------------------------
-  ADA-USD      | 532      |    100.0% | 0            🟢 OK
-  AVAX-USD     | 532      |    100.0% | 0            🟢 OK
-  LINK-USD     | 532      |    100.0% | 0            🟢 OK
   SOL-USD      | 458      |     99.1% | 2            🟢 OK
+  LINK-USD     | 532      |    100.0% | 0            🟢 OK
+  AVAX-USD     | 532      |    100.0% | 0            🟢 OK
+  ADA-USD      | 532      |    100.0% | 0            🟢 OK
 
 [5] VSTEF Optimizer & Parameter Schedule
 --------------------------------------------------
