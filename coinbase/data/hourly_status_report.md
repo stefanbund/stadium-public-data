@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 12:00:08 
+Generated at: 2026-08-02 13:00:08 
 
 ```text
 ================================================================================
@@ -9,10 +9,10 @@ Generated at: 2026-08-02 12:00:08
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.89 | Z-Score=-2.54 (Thresh <= 0.5) | RSI=32.5 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+• DVOL BTC: Close=34.90 | Z-Score=-2.04 (Thresh <= 0.5) | RSI=46.1 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=49.85 | Z-Score=-3.64 (Thresh <= 0.5) | RSI=45.8 | Exhaustion=20/100
+• DVOL ETH: Close=49.67 | Z-Score=-3.02 (Thresh <= 0.5) | RSI=62.4 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
@@ -27,7 +27,8 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 🟢 Watchdog (guardian_sfgk):  ACTIVE
 🟢 L3 Order Book Feed:        ACTIVE
-🟢 Active Traders:             0 asset loop(s) running
+🟢 Active Traders:             7 asset loop(s) running
+   Traders active on:          DOT-USD, ETH-USD, ADA-USD, DOGE-USD, BTC-USD, LTC-USD, SOL-USD
 • Recent EC2 Errors:
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - WARNING - [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.21s... | Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
@@ -37,11 +38,11 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 18:36:07 to 2026-08-02 19:00:00
+• Report Window (Recent Decisions): 2026-08-02 18:36:07 to 2026-08-02 19:59:44
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 121587 (12158700.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 122819 (12281900.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -60,13 +61,13 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  7.0 hour(s) (0d 6h 59m)
+• Time Until Next Optimizer:  6.0 hour(s) (0d 5h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-02 08:00:18 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (4.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (5.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
