@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 09:00:12 
+Generated at: 2026-08-02 10:00:12 
 
 ```text
 ================================================================================
@@ -9,25 +9,23 @@ Generated at: 2026-08-02 09:00:12
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.33 | Z-Score=-0.19 (Thresh <= 0.5) | RSI=74.3 | Exhaustion=40/100
-  Volatility Trend: UPWARD (Expansion)
-  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
-• DVOL ETH: Close=50.33 | Z-Score=-1.14 (Thresh <= 0.5) | RSI=44.8 | Exhaustion=20/100
+• DVOL BTC: Close=35.24 | Z-Score=-0.78 (Thresh <= 0.5) | RSI=51.8 | Exhaustion=20/100
+  Volatility Trend: DOWNWARD (Compression)
+  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
+• DVOL ETH: Close=50.30 | Z-Score=-1.22 (Thresh <= 0.5) | RSI=57.0 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
-🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=121.1h
-🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=25.5h
+🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=122.1h
+🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=26.5h
 
 [3] Remote Trading Engine Processes (AWS EC2)
 --------------------------------------------------
 🟢 Watchdog (guardian_sfgk):  ACTIVE
 🟢 L3 Order Book Feed:        ACTIVE
-🟢 Active Traders:             1 asset loop(s) running
-   Traders active on:          ETH-USD
+🟢 Active Traders:             0 asset loop(s) running
 • Recent EC2 Errors:
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - WARNING - [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.21s... | Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
@@ -37,11 +35,11 @@ Generated at: 2026-08-02 09:00:12
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 12:00:12 to 2026-08-02 16:00:01
+• Report Window (Recent Decisions): 2026-08-02 13:00:08 to 2026-08-02 17:00:03
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 151205 (15120500.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 152398 (15239800.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -58,14 +56,14 @@ Generated at: 2026-08-02 09:00:12
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  10.0 hour(s) (0d 9h 59m)
+• Time Until Next Optimizer:  9.0 hour(s) (0d 8h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 • Scheduled (cron):       0 */8 * * *
 • Last Rebuild Started:   2026-08-02T15:00:00.003Z
 • EC2 DB Last Updated:    2026-08-02 08:00:18 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (1.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (2.0 hours ago)
 • Recent Mac Mini Errors:
     File "/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/generate_timesfm_forecasts.py", line 6, in <module>
         import torch
