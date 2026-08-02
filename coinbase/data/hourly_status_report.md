@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 06:01:13 
+Generated at: 2026-08-02 07:13:00 
 
 ```text
 ================================================================================
@@ -9,25 +9,24 @@ Generated at: 2026-08-02 06:01:13
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.28 | Z-Score=-0.82 (Thresh <= 0.5) | RSI=74.0 | Exhaustion=40/100
+• DVOL BTC: Close=35.24 | Z-Score=-0.98 (Thresh <= 0.5) | RSI=33.5 | Exhaustion=0/100
   Volatility Trend: UPWARD (Expansion)
-  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
-• DVOL ETH: Close=50.56 | Z-Score=-0.07 (Thresh <= 0.5) | RSI=74.6 | Exhaustion=40/100
-  Volatility Trend: UPWARD (Expansion)
-  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
+  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
+• DVOL ETH: Close=50.55 | Z-Score=-0.01 (Thresh <= 0.5) | RSI=33.0 | Exhaustion=20/100
+  Volatility Trend: DOWNWARD (Compression)
+  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
-🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=118.1h
-🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=22.5h
+🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=119.3h
+🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=23.7h
 
 [3] Remote Trading Engine Processes (AWS EC2)
 --------------------------------------------------
 🟢 Watchdog (guardian_sfgk):  ACTIVE
 🟢 L3 Order Book Feed:        ACTIVE
-🟢 Active Traders:             0 asset loop(s) running
+🟢 Active Traders:             4 asset loop(s) running
+   Traders active on:          AVAX-USD, DOGE-USD, BTC-USD, SOL-USD
 • Recent EC2 Errors:
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
     logs/watchdog_Trader_SOL_USD.log:2026-07-28 23:50:22,693 - WARNING - [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.21s... | Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
@@ -37,11 +36,11 @@ Generated at: 2026-08-02 06:01:13
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 09:01:11 to 2026-08-02 13:01:06
+• Report Window (Recent Decisions): 2026-08-02 10:12:56 to 2026-08-02 14:12:44
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 147649 (14764900.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 149073 (14907300.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -58,14 +57,14 @@ Generated at: 2026-08-02 06:01:13
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  13.0 hour(s) (0d 12h 58m)
+• Time Until Next Optimizer:  11.8 hour(s) (0d 11h 47m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 • Scheduled (cron):       0 */8 * * *
 • Last Rebuild Started:   2026-08-02T07:00:00.002Z
 • EC2 DB Last Updated:    2026-08-02 12:00:17 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (6.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (7.2 hours ago)
 • Recent Mac Mini Errors:
     File "/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/generate_timesfm_forecasts.py", line 6, in <module>
         import torch
