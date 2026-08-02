@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 10:00:12 
+Generated at: 2026-08-02 11:00:13 
 
 ```text
 ================================================================================
@@ -9,17 +9,17 @@ Generated at: 2026-08-02 10:00:12
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.24 | Z-Score=-0.78 (Thresh <= 0.5) | RSI=51.8 | Exhaustion=20/100
+• DVOL BTC: Close=34.91 | Z-Score=-2.97 (Thresh <= 0.5) | RSI=7.7 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=50.30 | Z-Score=-1.22 (Thresh <= 0.5) | RSI=57.0 | Exhaustion=20/100
+• DVOL ETH: Close=50.19 | Z-Score=-1.93 (Thresh <= 0.5) | RSI=21.9 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
-🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=122.1h
-🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=26.5h
+🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=123.1h
+🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=27.5h
 
 [3] Remote Trading Engine Processes (AWS EC2)
 --------------------------------------------------
@@ -35,11 +35,11 @@ Generated at: 2026-08-02 10:00:12
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 13:00:08 to 2026-08-02 17:00:03
+• Report Window (Recent Decisions): 2026-08-02 14:00:14 to 2026-08-02 18:00:04
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 152398 (15239800.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 153592 (15359200.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -56,14 +56,14 @@ Generated at: 2026-08-02 10:00:12
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  9.0 hour(s) (0d 8h 59m)
+• Time Until Next Optimizer:  8.0 hour(s) (0d 7h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 • Scheduled (cron):       0 */8 * * *
 • Last Rebuild Started:   2026-08-02T15:00:00.003Z
 • EC2 DB Last Updated:    2026-08-02 08:00:18 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (2.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (3.0 hours ago)
 • Recent Mac Mini Errors:
     File "/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/generate_timesfm_forecasts.py", line 6, in <module>
         import torch
