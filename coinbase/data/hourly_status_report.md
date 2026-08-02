@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-01 17:00:11 
+Generated at: 2026-08-01 18:00:13 
 
 ```text
 ================================================================================
@@ -9,18 +9,18 @@ Generated at: 2026-08-01 17:00:11
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.55 | Z-Score=0.32 (Thresh <= 0.5) | RSI=48.8 | Exhaustion=0/100
-  Volatility Trend: UPWARD (Expansion)
+• DVOL BTC: Close=35.55 | Z-Score=0.36 (Thresh <= 0.5) | RSI=30.1 | Exhaustion=20/100
+  Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=50.80 | Z-Score=1.24 (Thresh <= 0.5) | RSI=41.3 | Exhaustion=0/100
+• DVOL ETH: Close=50.86 | Z-Score=1.23 (Thresh <= 0.5) | RSI=59.6 | Exhaustion=0/100
   Volatility Trend: UPWARD (Expansion)
   Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   Volatility Expansion (Z-Score=1.24 > 0.5)
+  Veto Rationale:   Volatility Expansion (Z-Score=1.23 > 0.5)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
-⚠️ Unable to query Mac Mini PM2 daemon: ssh: connect to host stefans-mac-mini.local port 22: No route to host
-
+🟢 Mac Mini PM2 [dvol-sync]:        Status=ONLINE | Restarts=21 | Uptime=106.1h
+🟢 Mac Mini PM2 [vol-surface-sync]: Status=ONLINE | Restarts=0 | Uptime=10.5h
 
 [3] Remote Trading Engine Processes (AWS EC2)
 --------------------------------------------------
@@ -36,11 +36,11 @@ Generated at: 2026-08-01 17:00:11
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-01 20:00:12 to 2026-08-02 00:00:04
+• Report Window (Recent Decisions): 2026-08-01 21:00:11 to 2026-08-02 00:59:59
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 132173 (13217300.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 133358 (13335800.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -57,18 +57,39 @@ Generated at: 2026-08-01 17:00:11
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  26.0 hour(s) (1d 1h 59m)
+• Time Until Next Optimizer:  25.0 hour(s) (1d 0h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
-⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
+• Scheduled (cron):       0 */8 * * *
+• Last Rebuild Started:   2026-08-01T23:00:00.002Z
 • EC2 DB Last Updated:    2026-08-01 04:00:18 PM PDT
-• Rebuilt in last 8 hrs?: 🟢 (1.0 hours ago)
-• Recent Mac Mini Errors: None or could not read log.
+• Rebuilt in last 8 hrs?: 🟢 (2.0 hours ago)
+• Recent Mac Mini Errors:
+    File "/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/generate_timesfm_forecasts.py", line 6, in <module>
+        import torch
+      File "/Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/venv/lib/python3.9/site-packages/torch/__init__.py", line 416, in <module>
+        from torch._C import *  # noqa: F403
+    KeyboardInterrupt
 
 [7] Day Trade Orchestrator (Mac Mini)
 --------------------------------------------------
-🔴 Could not fetch Day Trade logs from Mac Mini.
+• Recent Day Trade Efforts & Logs:
+    2026-07-27 07:55:00 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:07 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:12 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:17 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:22 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:27 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:32 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:37 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:44 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:49 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:54 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:55:59 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:56:04 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:56:09 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
+    2026-07-27 07:56:14 [INFO] No valid actionable day trade recommendations found at this time. Sleeping...
 ================================================================================
 
 ```
