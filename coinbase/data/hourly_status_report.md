@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 17:00:10 
+Generated at: 2026-08-02 18:00:10 
 
 ```text
 ================================================================================
@@ -9,11 +9,11 @@ Generated at: 2026-08-02 17:00:10
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.05 | Z-Score=-0.64 (Thresh <= 0.5) | RSI=53.1 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+• DVOL BTC: Close=35.07 | Z-Score=-0.50 (Thresh <= 0.5) | RSI=53.8 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=49.74 | Z-Score=-1.23 (Thresh <= 0.5) | RSI=37.6 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+• DVOL ETH: Close=49.85 | Z-Score=-0.82 (Thresh <= 0.5) | RSI=39.3 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
@@ -32,11 +32,11 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 22:36:20 to 2026-08-02 23:59:55
+• Report Window (Recent Decisions): 2026-08-02 22:36:20 to 2026-08-03 01:00:03
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 122819 (12281900.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 122284 (12228400.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
@@ -55,13 +55,13 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  2.0 hour(s) (0d 1h 59m)
+• Time Until Next Optimizer:  1.0 hour(s) (0d 0h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-02 04:00:18 PM PDT
-• Rebuilt in last 8 hrs?: 🟢 (1.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (2.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
