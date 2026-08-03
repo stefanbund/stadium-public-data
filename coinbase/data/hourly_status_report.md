@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-02 18:00:10 
+Generated at: 2026-08-02 19:00:10 
 
 ```text
 ================================================================================
@@ -9,10 +9,10 @@ Generated at: 2026-08-02 18:00:10
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=35.07 | Z-Score=-0.50 (Thresh <= 0.5) | RSI=53.8 | Exhaustion=0/100
+• DVOL BTC: Close=35.11 | Z-Score=-0.24 (Thresh <= 0.5) | RSI=41.9 | Exhaustion=0/100
   Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=49.85 | Z-Score=-0.82 (Thresh <= 0.5) | RSI=39.3 | Exhaustion=0/100
+• DVOL ETH: Close=50.25 | Z-Score=0.36 (Thresh <= 0.5) | RSI=62.2 | Exhaustion=0/100
   Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
@@ -32,36 +32,46 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-02 22:36:20 to 2026-08-03 01:00:03
-• Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
-• Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
+(Note: Using local/synced status snapshot)
+• Cumulative Performance Metrics  : Total Trades=89 | System Win Rate=74.16% (Cumulative since daemon launch)
+• Decision Funnel:    Evaluated=200 | Approved=18 | Rejected=182
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 122284 (12228400.0%)
-  - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
-  - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
-  - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
-  - timesfm_gating                                    :    0 (0.0%)
-  - sdr_liquidity_gate                                :    0 (0.0%)
+  - Layer 2.5: Neural Network Low Trend Conviction    :  165 (90.7%)
+  - Layer 1: DAW Causal Volatility Veto               :   17 (9.3%)
+  - System: Asset Cooldown Active                     :    0 (0.0%)
+  - System: Asset Blacklist Gate                      :    0 (0.0%)
 
 • Asset Performance & Drift Status:
   Asset        | Trades   | Win Rate   | Loss Streak 
   --------------------------------------------------
-  ADA-USD      | 532      |    100.0% | 0            🟢 OK
-  AVAX-USD     | 532      |    100.0% | 0            🟢 OK
-  LINK-USD     | 532      |    100.0% | 0            🟢 OK
-  SOL-USD      | 458      |     99.1% | 2            🟢 OK
+  DOGE-USD     | 2        |    100.0% | 0            🟢 OK
+  CHZ-USD      | 15       |     80.0% | 1            🟢 OK
+  CRV-USD      | 16       |     90.0% | 0            🟢 OK
+  CRO-USD      | 5        |    100.0% | 0            🟢 OK
+  ACH-USD      | 4        |     75.0% | 1            🟢 OK
+  ALGO-USD     | 19       |     40.0% | 1            ⚠️ DRIFT
+  BCH-USD      | 4        |    100.0% | 0            🟢 OK
+  CBETH-USD    | 5        |     60.0% | 2            🟢 OK
+  BNT-USD      | 12       |     50.0% | 0            🟢 OK
+  GNO-USD      | 7        |     57.1% | 0            🟢 OK
+
+🚨 System Telemetry Alerts:
+  - Drift alert for ALGO-USD: Win rate is 40.0% (< 70.0%) over last 10 trades.
+  - Drift alert for CBETH-USD: Win rate is 60.0% (< 70.0%) over last 5 trades.
+  - Drift alert for BNT-USD: Win rate is 50.0% (< 70.0%) over last 10 trades.
+  - Drift alert for GNO-USD: Win rate is 57.1% (< 70.0%) over last 7 trades.
 
 [5] VSTEF Optimizer & Parameter Schedule
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
-• Next Scheduled VSTEF Run:  2026-08-02 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  1.0 hour(s) (0d 0h 59m)
+• Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
+• Time Until Next Optimizer:  168.0 hour(s) (6d 23h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-02 04:00:18 PM PDT
-• Rebuilt in last 8 hrs?: 🟢 (2.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (3.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
