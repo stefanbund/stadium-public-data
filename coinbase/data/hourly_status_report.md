@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-04 04:00:14 
+Generated at: 2026-08-04 05:00:13 
 
 ```text
 ================================================================================
@@ -9,10 +9,11 @@ Generated at: 2026-08-04 04:00:14
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=33.91 | Z-Score=-2.10 (Thresh <= 0.5) | RSI=47.6 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
-  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=48.39 | Z-Score=-2.67 (Thresh <= 0.5) | RSI=17.5 | Exhaustion=20/100
+• DVOL BTC: Close=34.14 | Z-Score=-1.03 (Thresh <= 0.5) | RSI=84.7 | Exhaustion=40/100
+  Volatility Trend: UPWARD (Expansion)
+  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
+  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
+• DVOL ETH: Close=48.35 | Z-Score=-2.22 (Thresh <= 0.5) | RSI=51.1 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
@@ -35,15 +36,15 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-04 07:00:26 to 2026-08-04 10:59:54
+• Report Window (Recent Decisions): 2026-08-04 08:00:09 to 2026-08-04 12:00:00
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 126828 (12682800.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 127003 (12700300.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
-  - Layer 4: SFGK Execution Horizon Gate              : 4281 (428100.0%)
-  - timesfm_gating                                    : 3561 (356100.0%)
+  - Layer 4: SFGK Execution Horizon Gate              : 4981 (498100.0%)
+  - timesfm_gating                                    : 3911 (391100.0%)
   - sdr_liquidity_gate                                :    0 (0.0%)
 
 • Asset Performance & Drift Status:
@@ -59,13 +60,13 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  135.0 hour(s) (5d 14h 59m)
+• Time Until Next Optimizer:  134.0 hour(s) (5d 13h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-04 12:00:17 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (4.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (5.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
