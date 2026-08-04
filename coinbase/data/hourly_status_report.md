@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-04 16:37:53 
+Generated at: 2026-08-04 16:38:31 
 
 ```text
 ================================================================================
@@ -9,10 +9,10 @@ Generated at: 2026-08-04 16:37:53
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.02 | Z-Score=-1.05 (Thresh <= 0.5) | RSI=45.3 | Exhaustion=20/100
+• DVOL BTC: Close=34.01 | Z-Score=-1.10 (Thresh <= 0.5) | RSI=39.1 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=47.79 | Z-Score=-1.63 (Thresh <= 0.5) | RSI=34.1 | Exhaustion=20/100
+• DVOL ETH: Close=47.79 | Z-Score=-1.62 (Thresh <= 0.5) | RSI=34.1 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
@@ -33,16 +33,15 @@ Generated at: 2026-08-04 16:37:53
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-04 19:37:50 to 2026-08-04 23:37:41
+• Report Window (Recent Decisions): 2026-08-04 19:38:31 to 2026-08-04 23:38:22
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 130246 (93.9%)
+  - Layer 1: DAW Causal Volatility Veto               : 130260 (93.9%)
   - Layer 2.5: TimesFM Forecast Gate                  : 3952 (2.8%)
   - Layer 3: SDR Liquidity Filter                     :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              : 4542 (3.3%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
-  - low_dir_prob                                      :    0 (0.0%)
 
 • Asset Performance & Drift Status:
   Asset        | Trades   | Win Rate   | Loss Streak 
@@ -57,7 +56,7 @@ Generated at: 2026-08-04 16:37:53
 --------------------------------------------------
 • Last Weekly VSTEF Run:      2026-07-24 10:35:39 AM UTC-07:00
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  122.4 hour(s) (5d 2h 22m)
+• Time Until Next Optimizer:  122.4 hour(s) (5d 2h 21m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
