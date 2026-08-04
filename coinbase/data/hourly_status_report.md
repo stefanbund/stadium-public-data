@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-04 07:00:13 
+Generated at: 2026-08-04 08:00:12 
 
 ```text
 ================================================================================
@@ -9,14 +9,13 @@ Generated at: 2026-08-04 07:00:13
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.52 | Z-Score=0.57 (Thresh <= 0.5) | RSI=94.1 | Exhaustion=40/100
-  Volatility Trend: UPWARD (Expansion)
+• DVOL BTC: Close=34.50 | Z-Score=0.52 (Thresh <= 0.5) | RSI=57.2 | Exhaustion=20/100
+  Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   Volatility Expansion (Z-Score=0.57 > 0.5), High Volatility Toxicity (Exhaustion=40 >= 30)
-• DVOL ETH: Close=48.73 | Z-Score=-0.61 (Thresh <= 0.5) | RSI=87.7 | Exhaustion=40/100
-  Volatility Trend: UPWARD (Expansion)
-  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
+  Veto Rationale:   Volatility Expansion (Z-Score=0.52 > 0.5)
+• DVOL ETH: Close=48.58 | Z-Score=-0.97 (Thresh <= 0.5) | RSI=32.5 | Exhaustion=20/100
+  Volatility Trend: DOWNWARD (Compression)
+  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
@@ -29,8 +28,7 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 🟢 Watchdog (guardian_sfgk):  ACTIVE
 🟢 L3 Order Book Feed:        ACTIVE
-🟢 Active Traders:             7 asset loop(s) running
-   Traders active on:          DOT-USD, ETH-USD, ADA-USD, DOGE-USD, BTC-USD, LTC-USD, SOL-USD
+🟢 Active Traders:             0 asset loop(s) running
 • Recent EC2 Errors:
     logs/watchdog_Trader_BTC_USD.log:2026-08-03 22:27:27 - coinbase.RESTClient - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
     logs/watchdog_Trader_BTC_USD.log:2026-08-03 22:27:27,228 - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
@@ -38,15 +36,15 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-04 10:00:12 to 2026-08-04 13:59:50
+• Report Window (Recent Decisions): 2026-08-04 11:00:14 to 2026-08-04 14:59:53
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 127398 (12739800.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 127561 (12756100.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
-  - Layer 4: SFGK Execution Horizon Gate              : 5061 (506100.0%)
-  - timesfm_gating                                    : 4125 (412500.0%)
+  - Layer 4: SFGK Execution Horizon Gate              : 4542 (454200.0%)
+  - timesfm_gating                                    : 3952 (395200.0%)
   - sdr_liquidity_gate                                :    0 (0.0%)
 
 • Asset Performance & Drift Status:
@@ -62,13 +60,13 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  132.0 hour(s) (5d 11h 59m)
+• Time Until Next Optimizer:  131.0 hour(s) (5d 10h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
-• EC2 DB Last Updated:    2026-08-04 12:00:17 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (7.0 hours ago)
+• EC2 DB Last Updated:    2026-08-04 08:00:10 AM PDT
+• Rebuilt in last 8 hrs?: 🟢 (0.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
