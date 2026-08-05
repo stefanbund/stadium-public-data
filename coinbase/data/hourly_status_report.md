@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-04 22:00:15 
+Generated at: 2026-08-04 23:00:15 
 
 ```text
 ================================================================================
@@ -9,12 +9,14 @@ Generated at: 2026-08-04 22:00:15
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.27 | Z-Score=0.20 (Thresh <= 0.5) | RSI=27.9 | Exhaustion=0/100
+• DVOL BTC: Close=34.42 | Z-Score=0.96 (Thresh <= 0.5) | RSI=81.6 | Exhaustion=40/100
   Volatility Trend: UPWARD (Expansion)
-  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
-• DVOL ETH: Close=48.12 | Z-Score=-0.05 (Thresh <= 0.5) | RSI=55.5 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
-  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
+  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
+  Veto Rationale:   Volatility Expansion (Z-Score=0.96 > 0.5), High Volatility Toxicity (Exhaustion=40 >= 30)
+• DVOL ETH: Close=48.19 | Z-Score=0.24 (Thresh <= 0.5) | RSI=71.0 | Exhaustion=40/100
+  Volatility Trend: UPWARD (Expansion)
+  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
+  Veto Rationale:   High Volatility Toxicity (Exhaustion=40 >= 30)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
@@ -35,11 +37,11 @@ Disconnected from ::1 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-05 01:00:13 to 2026-08-05 04:59:54
+• Report Window (Recent Decisions): 2026-08-05 02:00:23 to 2026-08-05 06:00:01
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 132064 (13206400.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 133289 (13328900.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              : 4542 (454200.0%)
@@ -59,13 +61,13 @@ Disconnected from ::1 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  117.0 hour(s) (4d 20h 59m)
+• Time Until Next Optimizer:  116.0 hour(s) (4d 19h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-04 04:00:19 PM PDT
-• Rebuilt in last 8 hrs?: 🟢 (6.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (7.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
