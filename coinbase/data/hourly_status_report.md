@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-05 09:00:13 
+Generated at: 2026-08-05 10:00:13 
 
 ```text
 ================================================================================
@@ -9,11 +9,10 @@ Generated at: 2026-08-05 09:00:13
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.56 | Z-Score=0.80 (Thresh <= 0.5) | RSI=52.6 | Exhaustion=20/100
+• DVOL BTC: Close=34.32 | Z-Score=-0.34 (Thresh <= 0.5) | RSI=49.3 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
-  Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   Volatility Expansion (Z-Score=0.80 > 0.5)
-• DVOL ETH: Close=47.98 | Z-Score=-0.67 (Thresh <= 0.5) | RSI=26.3 | Exhaustion=20/100
+  Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
+• DVOL ETH: Close=47.70 | Z-Score=-2.66 (Thresh <= 0.5) | RSI=26.7 | Exhaustion=20/100
   Volatility Trend: DOWNWARD (Compression)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
@@ -30,22 +29,21 @@ Disconnected from ::1 port 22
 🟢 L3 Order Book Feed:        ACTIVE
 🟢 Active Traders:             0 asset loop(s) running
 • Recent EC2 Errors:
-    logs/watchdog_Trader_BTC_USD.log:2026-08-03 22:27:27 - coinbase.RESTClient - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
-    logs/watchdog_Trader_BTC_USD.log:2026-08-03 22:27:27,228 - ERROR - HTTP Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
-    logs/watchdog_Trader_BTC_USD.log:2026-08-03 22:27:27,228 - WARNING - [BTC-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.45s... | Error: 503 Server Error: Service Unavailable go/sg/ef39e44f-b3f6-48e6-b767-772e408986f8
+    logs/watchdog_Trader_SOL_USD.log:2026-08-05 16:58:28,221 - ERROR - [SOL-USD] Error loading API keys: API Keys retrieved are empty.
+    logs/watchdog_Trader_SOL_USD.log:Warning: Failed to load local key file at /opt/hft_trader/traditional-cdp_api_key .json: [Errno 2] No such file or directory: '/opt/hft_trader/traditional-cdp_api_key .json'
+    logs/watchdog_Trader_SOL_USD.log:2026-08-05 16:59:03,330 - ERROR - [SOL-USD] Error loading API keys: API Keys retrieved are empty.
+    logs/watchdog_Trader_SOL_USD.log:Warning: Failed to load local key file at /opt/hft_trader/traditional-cdp_api_key .json: [Errno 2] No such file or directory: '/opt/hft_trader/traditional-cdp_api_key .json'
+    logs/watchdog_Trader_SOL_USD.log:2026-08-05 16:59:38,499 - ERROR - [SOL-USD] Error loading API keys: API Keys retrieved are empty.
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-05 12:00:23 to 2026-08-05 16:00:06
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 136753 (13675300.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 121083 (12108300.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
-  - Layer 4: SFGK Execution Horizon Gate              : 4542 (454200.0%)
-  - timesfm_gating                                    : 3952 (395200.0%)
-  - sdr_liquidity_gate                                :    0 (0.0%)
+  - Layer 4: SFGK Execution Horizon Gate              :  605 (60500.0%)
 
 • Asset Performance & Drift Status:
   Asset        | Trades   | Win Rate   | Loss Streak 
@@ -54,19 +52,18 @@ Disconnected from ::1 port 22
   AVAX-USD     | 532      |    100.0% | 0            🟢 OK
   LINK-USD     | 532      |    100.0% | 0            🟢 OK
   SOL-USD      | 458      |     99.1% | 2            🟢 OK
-  LTC-USD      | 4        |     75.0% | 1            🟢 OK
 
 [5] VSTEF Optimizer & Parameter Schedule
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  106.0 hour(s) (4d 9h 59m)
+• Time Until Next Optimizer:  105.0 hour(s) (4d 8h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-05 08:38:42 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (0.4 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (1.4 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
