@@ -1,6 +1,6 @@
 # Hourly Status Report
 
-Generated at: 2026-08-05 00:00:18 
+Generated at: 2026-08-05 01:00:06 
 
 ```text
 ================================================================================
@@ -9,19 +9,19 @@ Generated at: 2026-08-05 00:00:18
 
 [1] DVOL Market Regime & Safety Assessment
 --------------------------------------------------
-• DVOL BTC: Close=34.42 | Z-Score=0.97 (Thresh <= 0.5) | RSI=47.8 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+• DVOL BTC: Close=34.43 | Z-Score=1.08 (Thresh <= 0.5) | RSI=46.4 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🔴 REJECTED_TOO_RISKY (Vetoed by DAW)
-  Veto Rationale:   Volatility Expansion (Z-Score=0.97 > 0.5)
-• DVOL ETH: Close=48.18 | Z-Score=0.33 (Thresh <= 0.5) | RSI=53.9 | Exhaustion=20/100
-  Volatility Trend: DOWNWARD (Compression)
+  Veto Rationale:   Volatility Expansion (Z-Score=1.08 > 0.5)
+• DVOL ETH: Close=48.17 | Z-Score=0.47 (Thresh <= 0.5) | RSI=48.2 | Exhaustion=0/100
+  Volatility Trend: UPWARD (Expansion)
   Safety Status:    🟢 BORING_AND_SAFE (Trading Approved)
 
 [2] Host Daemon Status (Mac Mini & Local)
 --------------------------------------------------
 ⚠️ Unable to query Mac Mini PM2 daemon: Permission denied, please try again.
-Received disconnect from 192.168.7.179 port 22:2: Too many authentication failures
-Disconnected from 192.168.7.179 port 22
+Received disconnect from ::1 port 22:2: Too many authentication failures
+Disconnected from ::1 port 22
 
 
 [3] Remote Trading Engine Processes (AWS EC2)
@@ -36,11 +36,11 @@ Disconnected from 192.168.7.179 port 22
 
 [4] 5-Layer Funnel Decision Audit & Performance Summary
 --------------------------------------------------
-• Report Window (Recent Decisions): 2026-08-05 03:00:23 to 2026-08-05 07:00:07
+• Report Window (Recent Decisions): 2026-08-05 04:00:16 to 2026-08-05 07:59:52
 • Cumulative Performance Metrics  : Total Trades=0 | System Win Rate=0.00% (Cumulative since daemon launch)
 • Decision Funnel:    Evaluated=0 | Approved=0 | Rejected=0
 • Rejection Reasons Breakdown:
-  - Layer 1: DAW Causal Volatility Veto               : 132760 (13276000.0%)
+  - Layer 1: DAW Causal Volatility Veto               : 133978 (13397800.0%)
   - Layer 2.5: Neural Network Low Trend Conviction    :    0 (0.0%)
   - Layer 5: Hawkes Microstructure Toxicity Gating    :    0 (0.0%)
   - Layer 4: SFGK Execution Horizon Gate              : 4542 (454200.0%)
@@ -60,13 +60,13 @@ Disconnected from 192.168.7.179 port 22
 --------------------------------------------------
 • Last Weekly VSTEF Run:      Never
 • Next Scheduled VSTEF Run:  2026-08-09 07:00:00 PM UTC-07:00 (Monday 02:00 UTC)
-• Time Until Next Optimizer:  115.0 hour(s) (4d 18h 59m)
+• Time Until Next Optimizer:  114.0 hour(s) (4d 17h 59m)
 
 [6] TimesFM Database & Mac Mini Host Check
 --------------------------------------------------
 ⚠️ Could not fetch PM2 info for 'timesfm-recreate' on Mac Mini.
 • EC2 DB Last Updated:    2026-08-05 12:00:18 AM PDT
-• Rebuilt in last 8 hrs?: 🟢 (0.0 hours ago)
+• Rebuilt in last 8 hrs?: 🟢 (1.0 hours ago)
 • Recent Mac Mini Errors: None or could not read log.
 ================================================================================
 
