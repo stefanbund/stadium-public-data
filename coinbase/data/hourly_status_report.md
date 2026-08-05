@@ -1,6 +1,6 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-05 11:32:12 AM PDT (2026-08-05 18:32:12 UTC)`  
-> **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
+> **Report Generated**: `2026-08-05 12:00:10 PM PDT (2026-08-05 19:00:10 UTC)`  
+> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
 ## 1. ⚡ Macro Volatility & Layer 1 DAW Causal Oracle
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **34.14** | **-1.44** (≤ -0.5) | 37.8 | 20/100 (< 30) | Compression 📉 | 🟢 Approved |
-| `ETH-USD` | **47.79** | **-1.90** (≤ -0.5) | 55.2 | 0/100 (< 30) | Expansion 📈 | 🟢 Approved |
+| `BTC-USD` | **34.10** | **-1.70** (≤ -0.5) | 36.1 | 20/100 (< 30) | Compression 📉 | 🟢 Approved |
+| `ETH-USD` | **47.96** | **-0.78** (≤ -0.5) | 71.3 | 40/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -19,7 +19,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `122,217` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,869` | **99.5%** |
 | Layer 2.5: TimesFM Forecast Gate | `0` | **0.0%** |
 | Layer 3: SDR Liquidity Filter | `0` | **0.0%** |
 | Layer 4: SFGK Execution Horizon Gate | `605` | **0.5%** |
@@ -71,9 +71,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.9h ago (2026-08-05 08:38 AM PDT)
-- **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **103.5h (4d 7h 27m)**)
+- **TimesFM Forecast DB**: 🟢 Updated 3.4h ago (2026-08-05 08:38 AM PDT)
+- **Last Weekly VSTEF Optimization**: `Never`
+- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **103.0h (4d 6h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -82,19 +82,19 @@ Zero-shot multi-step forward return forecasts and VSTEF parameter grid search st
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:32:09 PM
-   CPU:  37.6%  |  MEM:   6.9% (14.4GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:39:23 PM
+   CPU:   0.5%  |  MEM:   6.5% (14.4GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 457105   | RUNNING         | -        | Continuous Websocket Feed
-Trader DOT-USD       | 492404   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader ETH-USD       | 492405   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader ADA-USD       | 492406   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader DOGE-USD      | 492407   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader BTC-USD       | 492408   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader LTC-USD       | 492409   | COOL-DOWN       | 260      | Next run in 15.0s
-Trader SOL-USD       | 492410   | COOL-DOWN       | 260      | Next run in 15.0s
+Trader DOT-USD       | 494955   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader ETH-USD       | 494956   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader ADA-USD       | 494957   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader DOGE-USD      | 494958   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader BTC-USD       | 494959   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader LTC-USD       | 494960   | COOL-DOWN       | 281      | Next run in 9.9s
+Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 ================================================================================
 ```
 
