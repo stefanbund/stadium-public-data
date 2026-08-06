@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-05 06:00:05 PM PDT (2026-08-06 01:00:05 UTC)`  
+> **Report Generated**: `2026-08-05 07:00:06 PM PDT (2026-08-06 02:00:06 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **34.63** | **+0.80** (≤ -0.5) | 33.8 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
-| `ETH-USD` | **47.99** | **-0.28** (≤ -0.5) | 50.8 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `BTC-USD` | **34.67** | **+0.90** (≤ -0.5) | 51.2 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `ETH-USD` | **48.02** | **-0.05** (≤ -0.5) | 45.0 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -19,7 +19,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,869` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `123,101` | **99.5%** |
 | Layer 2.5: TimesFM Forecast Gate | `0` | **0.0%** |
 | Layer 3: SDR Liquidity Filter | `0` | **0.0%** |
 | Layer 4: SFGK Execution Horizon Gate | `605` | **0.5%** |
@@ -71,9 +71,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-05 04:00 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.0h ago (2026-08-05 04:00 PM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **97.0h (4d 0h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **96.0h (3d 23h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
