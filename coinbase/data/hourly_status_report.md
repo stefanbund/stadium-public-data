@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-08 02:00:06 PM PDT (2026-08-08 21:00:06 UTC)`  
+> **Report Generated**: `2026-08-08 02:07:05 PM PDT (2026-08-08 21:07:05 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **34.14** | **+1.49** (≤ -0.5) | 37.0 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
-| `ETH-USD` | **48.04** | **+1.92** (≤ -0.5) | 62.2 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `BTC-USD` | **34.10** | **+1.06** (≤ -0.5) | 24.2 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `ETH-USD` | **48.03** | **+1.82** (≤ -0.5) | 40.6 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,22 +21,27 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = +1.49$ (Safety Margin: **+1.99** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
-> - **ETH-USD**: $Z = +1.92$ (Safety Margin: **+2.42** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = +1.06$ (Safety Margin: **+1.56** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **ETH-USD**: $Z = +1.82$ (Safety Margin: **+2.32** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
-## 2. 📊 5-Layer Funnel Live Decision Telemetry
+## 2. 📊 8-Stage Funnel Live Decision Telemetry
 Layer-by-layer tick evaluation waterfall and asset-specific performance tracking.
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,848` | **99.5%** |
-| Layer 2.5: TimesFM Forecast Gate | `0` | **0.0%** |
-| Layer 3: SDR Liquidity Filter | `0` | **0.0%** |
-| Layer 4: SFGK Execution Horizon Gate | `605` | **0.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,988` | **99.5%** |
+| Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
+| Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
+| Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
+| Layer 2.5: TimesFM Forecast Velocity Gate | `0` | **0.0%** |
+| Layer 3: SDR Liquidity Sizing Floor | `0` | **0.0%** |
+| Layer 4: SFGK Commercial Margin Gate (< 0.25%) | `605` | **0.5%** |
 | Layer 5: Hawkes Microstructure Toxicity | `0` | **0.0%** |
+| System: Asset Cooldown Active | `0` | **0.0%** |
+| System: Asset Blacklist Gate | `0` | **0.0%** |
 
-![5-Layer Funnel Rejection Waterfall](./images/funnel_waterfall_breakdown.png)
+![8-Stage Funnel Rejection Waterfall](./images/funnel_waterfall_breakdown.png)
 
 ### Active Universe Performance & Drift Matrix
 | Asset | Trades | Win Rate | Loss Streak | Status |
@@ -82,9 +87,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 6.0h ago (2026-08-08 08:00 AM PDT)
-- **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **29.0h (1d 4h 59m)**)
+- **TimesFM Forecast DB**: 🟢 Updated 6.1h ago (2026-08-08 08:00 AM PDT)
+- **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
+- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **28.9h (1d 4h 52m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
