@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-07 06:00:05 PM PDT (2026-08-08 01:00:05 UTC)`  
+> **Report Generated**: `2026-08-07 07:00:06 PM PDT (2026-08-08 02:00:06 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **33.93** | **-1.13** (≤ -0.5) | 72.1 | 60/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
-| `ETH-USD` | **47.49** | **+0.63** (≤ -0.5) | 46.5 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `BTC-USD` | **33.95** | **-0.92** (≤ -0.5) | 49.3 | 0/100 (< 30) | Expansion 📈 | 🟢 Approved |
+| `ETH-USD` | **47.54** | **+0.95** (≤ -0.5) | 65.2 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,8 +21,8 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = -1.13$ (Safety Margin: **-0.63** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
-> - **ETH-USD**: $Z = +0.63$ (Safety Margin: **+1.13** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = -0.92$ (Safety Margin: **-0.42** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
+> - **ETH-USD**: $Z = +0.95$ (Safety Margin: **+1.45** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
 ## 2. 📊 5-Layer Funnel Live Decision Telemetry
@@ -30,7 +30,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,855` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `123,087` | **99.5%** |
 | Layer 2.5: TimesFM Forecast Gate | `0` | **0.0%** |
 | Layer 3: SDR Liquidity Filter | `0` | **0.0%** |
 | Layer 4: SFGK Execution Horizon Gate | `605` | **0.5%** |
@@ -82,9 +82,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-07 04:00 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.0h ago (2026-08-07 04:00 PM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **49.0h (2d 0h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-09 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **48.0h (1d 23h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
