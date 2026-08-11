@@ -25,27 +25,27 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
         - *Role*: Syncs critical telemetry to Google Drive for remote monitoring via Gemini.
 - **Stage 2: Intelligence & Execution**
     - **Unified Post-Go-List MLOps Runner**: [`UNIFIED_MLOPS_WORKSPACE/unified_weekly_mlops_runner.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_MLOPS_WORKSPACE/unified_weekly_mlops_runner.py)
-        - *Role*: Executes the weekly Walk-Forward modeling pipeline, TimesFM zero-shot inference, VSTEF optimization, and configuration deployment directly after Go-List generation on schedule (Monday at 01:00 UTC).
+        - *Role*: Executes the weekly Walk-Forward modeling pipeline and configuration deployment directly after Go-List generation on schedule (Monday at 01:00 UTC).
         - *Mechanism*:
-            - **Algorithmic Mega Cap Discovery**: Executes `update_mega_caps.py` to organically discover the top 9 non-stablecoin assets by 24-hour Coinbase trading volume, instantly updating `global_config_v2.json`.
-            - Updates `preferred_markets.json` weekly via the Yield Stability Profiler.
-            - Runs `directional_preprocessor_v2.py` across all active Go-List symbols.
-            - **Global TimesFM & GARCH Engine**: Generates zero-shot return velocity predictions and volatility risk profiles for all active universe symbols using Google TimesFM 2.0 on Apple Silicon (`mps`), exporting them to `timesfm_garch_forecasts.json` which is synchronized to the EC2 production instance.
-            - **VSTEF 2-Parameter Optimizer**: Runs `run_registered_grid_search_v4.py` and `promote_vstef_parameters.py` to optimize entry Z-score ceilings and holding horizons, promoting updated configurations (`ysp_candidates.json` and `sfgk_holding_times.json`) directly to EC2.
+            - Updates the `preferred_markets_v2.json` weekly via the Yield Stability Profiler.
+            - Runs `yss_dvol_oracle.py` to establish the final correlation-filtered target list in `active_universe.json`.
+            - **Mega-Caps** (e.g. `BTC`, `ETH`, `SOL`) are routed to the **PyTorch LSTM time-series modeler** (`mega_cap_lstm_modeler.py`) utilizing Apple Silicon hardware acceleration (`torch.device("mps")`) and their completed models are uploaded to the EC2 production instance.
+            - **Global TimesFM & GARCH Engine**: Generates zero-shot return velocity predictions and volatility risk profiles for all active universe symbols, exporting them to `timesfm_garch_forecasts.json` which is copied to the EC2 target (updated every 8 hours).
             - Updates and deploys the unified Firebase dashboard (`deploy_dashboard.py`).
-            - *(Legacy Decommissioning Note)*: LSTM, KMeans, and Decision Tree training pipelines have been retired; zero-shot foundation modeling and VSTEF parameter optimization are now the sole machine learning drivers.
         - *Workflow Diagram*:
             ```mermaid
             graph TD
-                A["1. Run yield_stability_profiler.py"] -->|preferred_markets.json| B["2. Run directional_preprocessor_v2.py"]
-                B --> C["3. Run generate_timesfm_forecasts.py (Zero-Shot)"]
-                C --> D["4. Run VSTEF Grid Search & Promote Parameters"]
-                D --> E["5. Upload forecasts.json & configs to EC2"]
-                E --> F["6. Regenerate & Deploy Dashboard to Firebase"]
+                A["1. Run yield_stability_profiler.py"] -->|preferred_markets_v2.json| B["2. Run yss_dvol_oracle.py"]
+                B -->|active_universe.json| C{Is Asset Mega-Cap?}
+                C -->|Yes| D["3. Train LSTM Model & Upload .pt"]
+                C -->|No/All| E["3. Run generate_timesfm_forecasts.py"]
+                D --> F["4. SCP/Rsync Upload forecasts.json"]
+                E --> F
+                F --> G["5. Regenerate & Push Dashboard"]
             ```
-    - **SFGK Asynchronous Trader**: [`UNIFIED_TRADER_WORKSPACE/core_engine/async_sfgk_trader.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/async_sfgk_trader.py)
+    - **Hierarchical Trader**: [`UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL_v2.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/trader_NN_HIERARCHICAL_v2.py) (Version 2 production script)
         - *Condition*: Only starts after confirming active LOB data flow.
-        - *Role*: Asynchronously executes limit orders utilizing optimal quotes derived from the 5-Layer Funnel decision engine.
+        - *Role*: Processes live signals through the neural hierarchy.
 - **Stage 3: [Reserved]**
 - **Stage 4: Visualization**
     - **Reporting Orchestrator**: [`UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_REPORTING_WORKSPACE/reporting_orchestrator.py)
@@ -58,81 +58,29 @@ The [Guardian Watchdog](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_M
 
 ---
 
-## 2. Multi-Layer Decision Matrix & Execution Funnel
-The system operates on an 8-stage sequential decision funnel orchestrated by [`decision_engine.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/decision_engine.py) and executed via [`async_sfgk_trader.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/async_sfgk_trader.py).
+## 2. Neural Intelligence Hierarchy
+The system operates on a **3-Tier Ultra-Lean Waterfall** decision engine, optimized for high-velocity execution, alpha preservation, and machine learning-driven risk gating.
 
-```
-[Market Data Tick / LOB]
-          │
-          ▼
-1. Layer 1: DAW Volatility Master Veto (Z-score & VRP)
-          │
-          ▼
-2. Layer 2A: Macro Vol Surface Veto (Term Inversion & Put Skew)
-          │
-          ▼
-3. Layer 2B: DVOL Directional Bias (MA Ratio Regime)
-          │
-          ▼
-4. Layer 2.5: TimesFM Forward Return Hurdle (Zero-Shot Dynamic Horizon)
-          │
-          ▼
-5. Layer 3: KER Tactical Efficiency Filter (Momentum vs Mean-Reversion)
-          │
-          ▼
-6. Layer 4: SFGK Microstructure Pricing (Price-Relative & Vol-Scaled Avellaneda-Stoikov)
-          │
-          ▼
-7. Commercial Exec Gate: Profitability Threshold (+0.25%) & SDR Sizing Floor ($50)
-          │
-          ▼
-8. Layer 5: Hawkes Microstructure Sniper (Toxicity Cascade Interception)
-          │
-          ▼
-   [Live Limit Order Execution]
-```
-
-1. **Layer 1: Dynamic Algorithmic Weighting (DAW/DVG)**
-   - *Source*: [causality_layer.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/DAW_CAUSALITY_LAYER/causality_layer.py)
-   - *Mechanism*: Evaluates rolling volatility Z-scores and Volatility Risk Premium (VRP) against optimal promoted thresholds.
-
-2. **Layer 2A: Volatility Surface Dynamic Veto**
-   - *Source*: [`DAW_CAUSALITY_LAYER/vol_surface_*.json`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/DAW_CAUSALITY_LAYER)
-   - *Mechanism*: Vetos entries if implied volatility term structure is inverted (liquidity panic) or 25-delta put-call skew exceeds 10.0 (crash risk).
-
-3. **Layer 2B: Directional Bias (DVOL)**
-   - *Source*: [layer2_dvol.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer2_dvol.py)
-   - *Role*: Calculates moving average ratios of short vs long DVOL to determine regime posture (e.g., LONG-ONLY on collapsing volatility).
-
-4. **Layer 2.5: Google TimesFM Forecast Gate (Remediated Aug 8, 2026)**
-   - *Source*: [layer2_5_timesfm.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer2_5_timesfm.py)
-   - *Mechanism*: Evaluates zero-shot cumulative return trajectory over a dynamic short horizon (default 4 steps / 1 hour). Vetos if projected maximum upward return is below target threshold (`+0.15%` / `+0.25%`), enforcing strict Fail-Closed safety if cache is missing or older than 8 hours.
-
-5. **Layer 3: Tactical Filter (KER)**
-   - *Source*: [layer3_ker.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer3_ker.py)
-   - *Role*: Kaufman Efficiency Ratio classifies price trajectory into trending momentum vs mean-reverting ranges.
-
-6. **Layer 4: SFGK Microstructure Pricing (Remediated Aug 8, 2026)**
-   - *Source*: [layer4_sfgk.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer4_sfgk.py)
-   - *Model*: Price-relative, volatility-scaled Avellaneda-Stoikov / SFGK model:
-     \[
-     \Delta_{\text{spread}} = S \cdot \max\left(\text{target\_scalp\_pct},\; \text{target\_scalp\_pct} + \gamma \ln\left(1 + \frac{\mu}{\alpha + 0.001}\right) \cdot 0.005\right)
-     \]
-     \[
-     R(s, q) = S - \left(q \cdot \gamma \cdot 0.001\right) \cdot S
-     \]
-     \[
-     p_{\text{bid}} = R(s, q) - \frac{\Delta_{\text{spread}}}{2}, \quad p_{\text{ask}} = R(s, q) + \frac{\Delta_{\text{spread}}}{2}
-     \]
-   - Ensures quote spreads are percentage-scaled across any asset price level ($0.10 to $100k+).
-
-7. **Commercial Execution & SDR Sizing Gate**
-   - *Source*: [async_sfgk_trader.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/async_sfgk_trader.py)
-   - *Check*: Verifies $p_{\text{ask}} \ge p_{\text{bid}} \cdot (1 + \text{target\_scalp\_pct})$ and dynamic SDR order size $\ge \$50.00$.
-
-8. **Layer 5: Hawkes Microstructure Sniper**
-   - *Source*: [layer5_hawkes.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer5_hawkes.py)
-   - *Role*: Calculates self-exciting point-process intensity from incoming fills to pause execution during toxic order flow cascades.
+1.  **Tier 0: Dynamic Volatility Governor (DAW/DVG)**
+    - *Source*: [causality_layer.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/DAW_CAUSALITY_LAYER/causality_layer.py)
+    - *Mechanism*: Acts as a macro-risk firewall by modulating the fused execution threshold based on the **assigned causal oracle (DVOL or Spot Volatility)**.
+    - *Multi-Regime Causal Spot Integration (Added July 4, 2026)*: Rather than relying solely on the BTC-derived DVOL implied volatility index, the system maps each asset to its optimal Granger-causal driver (e.g. `ETH-USD` spot for assets like `CBETH` and `DOT`). If an asset is mapped to a spot oracle, the DVG calculates its real-time rolling realized spot volatility over its optimal Granger lag, gating executions on the spot volatility Z-score instead.
+    - *Volatility Oracle Tuning (Updated July 4, 2026)*: The rolling return standard deviation window was shortened from 24 hours (1440 minutes) to 4 hours (240 minutes) to increase responsiveness to immediate volatility shocks.
+    - *Adaptive Logic*: `Effective_Threshold = Base * (1 + max(0, Z/2))`. This ensures the "Lean Shield" tightens automatically during high-volatility exhaustion regimes.
+2.  **Tier 1: Directional (DVOL Bias)**
+    - *Threshold*: Evaluated using the rolling moving average ratio of DVOL.
+    - *Role*: Determines directionality and volatility expansion risks.
+3.  **Layer 2.5: Google TimesFM Forecast Gate (Added July 14, 2026)**
+    - *Source*: [layer2_5_timesfm.py](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/core_engine/layers/layer2_5_timesfm.py)
+    - *Role*: Serves as a zero-shot conditional mean predictor (\(\hat{r}_{t+h}\)) for returns forecasting.
+    - *Mechanism*: Evaluates the pre-computed TimesFM cumulative return prediction vector for the asset (restricted to active symbols listed in `active_universe.json`). If the projected return over the next 15-30 minutes is less than **`+0.25%`**, it immediately vetoes the cycle (`HALTED_AT_TIMESFM`), preventing entry during flat or bearish trends.
+4.  **Tier 2: Tactical Filter (KER)**
+    - *Threshold*: Configured in `global_config.json` (default 0.85).
+    - *Role*: Identifies price travel efficiency to toggle momentum/mean-reversion execution styles.
+    - *Trend Gating Engine (Added June 24, 2026, Updated July 4, 2026)*: To prevent catching falling knives in structural downtrends (which caused drawdowns on ADA & CRV), the directional waterfall is guarded by a combined trend-gating filter:
+        - **Momentum Governor (EMA-10 Check)**: Vetos buy orders if the current price is below the 10-period Exponential Moving Average (`price < ema_10`), upgraded from EMA-20 to reduce reaction lag from 10 to 5 minutes.
+        - **RSI Filter**: Vetos buy orders if the 14-period RSI is oversold and declining below 35 (`RSI < 35`).
+        - **Volatility Firewall**: Dynamically scales the minimum directional confidence threshold from `0.60` to `0.75` if normalized volatility (`ATR / Price`) exceeds `1.5%`.
 
 
 ### **Versioned Heuristic Regimes**
@@ -173,7 +121,7 @@ An important distinction in the architecture is the strict separation of respons
 - **The Hands: `async_trader_v2.py` (The Execution Engine)**
   - **Broker Interface:** Receives the symbol, dollar amount, and profit target from the Orchestrator, logs into the exchange API, and submits the Limit Buy order.
   - **Order Management:** Waits for the Buy order to be filled. Once filled, it mathematically calculates the take-profit price and submits the Sell order.
-  - **Safety Protocols:** Handles retries for API errors and monitors the exit policy using the **VSTEF (Volatility-Synchronized Stop-Tightening Execution Filter)** strategy. While VSTEF traditionally applies dynamic time-dependent stop-losses (e.g., `-0.60%` then `-0.15%`), **as of August 11, 2026, the stop-loss has been disabled in the execution engine** to give predictions the full 12-hour holding horizon to reach target profitability without premature liquidations caused by intra-day noise. It manages exit timeouts using symbol-specific overrides from `sfgk_holding_times.json` (such as a 12-hour window) or falls back to a rolling historical average of completed trades. If a Sell order remains unfilled past the timeout limit, the VSTEF protocol triggers a 5-minute Maker limit order walk-down liquidation, falling back to a market order sell-off if still unfilled.
+  - **Safety Protocols:** Handles retries for API errors and monitors the "Circuit Breaker" timeout (reverted to a static **12-hour timeout** on June 19, 2026, after an audit revealed the dynamic OU reversion speed timeout clipped trades too early, dragging win rates down to 52%). If a Sell order sits for too long, it cancels the original order, attempts a **5-minute Maker limit order** at the spot price to liquidate (minimizing taker fees and spread slippage), and falls back to a guaranteed market order sell-off if still unfilled.
   - **Automated Alerts:** Dispatches non-blocking Twilio SMS alerts to the operator on critical API/liquidation execution failures.
   - **Telemetry:** Records the exact profit, latency, and success into the CSV logs and triggers the reporting scripts.
 
@@ -244,14 +192,8 @@ All visual intelligence is compiled and published via the system reporting scrip
   - **DVOL Sync Monitoring**: Inspects the modification time of `dvol_live_cache.json` on the remote EC2 host to display the **DVOL Volatility Sync** status card on the deployments dashboard (`deployments.html`), certifying that live volatility metrics are syncing to the AWS trading instance in real time.
   - **HFT Practice Trades (sfgk_hft.html)**: Visualizes historical dry-run and high-fidelity simulated scalp executions generated by the upgraded `async_sfgk_trader.py` HFT strategy engine. Automatically compiled via `generate_sfgk_data.py` (which aggregates `sfgk_executions_log.csv` and `sfgk_executions_log_legacy.csv`), it displays interactive cumulative practice profit/loss curves, token performance breakdowns, and a searchable execution ledger. Localizes all timestamps to the US East Coast timezone (`US/Eastern`) to align directly with active Coinbase logs.
   - **HFT Profit & Trust Audit (sfgk_profit_analysis.html)**: Dedicated page devoted to analyzing the simulated $89k HFT practice trades net profit. Features cumulative profit trajectories with interactive tooltips (revealing per-trade details upon clicking a data point), statistical quality metrics (standard deviation of trade returns, 95% win rate confidence intervals), and uncertainty bounds (optimistic, slippage-adjusted, and pessimistic bounds).
-- **Visual Hourly Status Report**: Hosted at [`stadium-public-data/coinbase/data/hourly_status_report.md`](https://github.com/stefanbund/stadium-public-data/blob/main/coinbase/data/hourly_status_report.md).
-  - **Automated Chart Generation**: [`MODERN_REPORTING_WORKSPACE/generate_status_charts.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/MODERN_REPORTING_WORKSPACE/generate_status_charts.py) uses headless `matplotlib` to render 4 high-resolution visual intelligence charts on each hourly cycle:
-    1. `dvol_regime_timeline.png` (BTC & ETH Implied Volatility and 4h Z-Score thresholds).
-    2. `funnel_waterfall_breakdown.png` (5-layer tick rejection telemetry waterfall).
-    3. `realized_pnl_timeline.png` (24-hour cumulative realized P&L and individual fills).
-    4. `timesfm_forecast_matrix.png` (Multi-step forward forecast return matrix across active universe).
-  - **Native Markdown Aggregator**: [`UNIFIED_TRADER_WORKSPACE/unified_status_report.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/UNIFIED_TRADER_WORKSPACE/unified_status_report.py) compiles native GitHub Flavored Markdown, incorporates live Coinbase wallet balances & open orders, checks TimesFM freshness, computes the weekly VSTEF optimizer countdown, sanitizes ANSI watchdog tables, and embeds the relative image paths.
-  - **Atomic GitHub Pusher**: [`MODERN_REPORTING_WORKSPACE/push_status_to_gh.py`](file:///Users/stefanbund/Developer/LAPTOP_PREPROCESSOR_MODELER/MODERN_REPORTING_WORKSPACE/push_status_to_gh.py) orchestrates chart generation and atomically commits both markdown and all PNG assets to `stadium-public-data` under the supervision of `guardian.py`.
+  - **Algorithmic Layer Analysis (sfgk_layer_analysis.html)**: Explains the functions of the 5 algorithmic layers (Directional, Imbalance, Crash Risk, Generalist, Specialist). Integrates a bar chart displaying the Limit Order Book (LOB) depth distribution (updated dynamically via `capture_lob_distribution.py`), and a tab-filtered log viewer isolating log lines for each operational tier.
+  - **US East Coast Timezone Display**: Localizes all timestamps shown on the Coinbase P&L dashboard (`coinbase_pnl.html`) and the Recent Coinbase Executions Ledger to the US East Coast timezone (`US/Eastern`) for consistent operational reviews.
 
 ---
 
@@ -311,7 +253,7 @@ To ensure high-fidelity translation of algorithmic concepts from simulation to p
 *   **`[FIS-5]`**: **Dynamic Target Magnitude Regressor** (Exit logic estimating Maximum Favorable Excursion using VWAP distance, ATR, and ADX).
 *   **`[FIS-6]`**: **Macro Risk/Crash Firewall (Veto)** (Vetoing trade signals or stopping active trades if systemic risk metrics or DVOL Z-score levels exceed limits).
 *   **`[FIS-7]`**: **Portfolio Tranche Wallet Sizing** (Dynamic capital allocation and slot limits based on active regime or asset tier).
-*   **`[FIS-8]`**: **Temporal Exit Horizon / VSTEF Strategy** (Enforcing time-based exit bounds using the **VSTEF (Volatility-Synchronized Stop-Tightening Execution Filter)** strategy, which dynamically couples macro volatility conditions with STEF exit rules to optimize entry and exit boundaries).
+*   **`[FIS-8]`**: **Temporal Exit Horizon (Timeout)** (Enforcing time-based exit bounds, e.g., 14 days in backtests, 12 hours static in production, to prevent capital decay instead of static stop losses).
 *   **`[FIS-9]`**: **70/30 Chronological Gating** (Anti-overfitting rule preventing look-ahead bias by splitting train/validation/test chronologically).
 
 ---
@@ -399,18 +341,15 @@ The execution engine `async_sfgk_trader.py` was refactored with the following bu
 To maintain optimal execution latency, minimize cloud compute costs, and utilize high-capacity local compute for machine learning workloads, the system operations are divided into distinct local and remote tiers:
 
 ### 1. Local Processes (Laptop / Mac Mini `stefans-Mac-mini.local`)
-These operations run locally to leverage strong Apple Silicon GPU/CPU hardware and are orchestrated via PM2 (`ecosystem.config.js`):
-* **Yield Stability Profiler (YSP) & Active Universe (`mlops-yss-weekly`)**: Runs weekly to screen candidate assets, calculate Yield Stability Scores (YSS), define the trading universe (`preferred_markets_v2.json` / `active_universe.json`), and automatically push them to the remote EC2 server (Monday at 01:00 UTC).
-* **TimesFM Zero-Shot & GARCH Forecasting (`timesfm-recreate`)**: Runs on the Mac Mini every 8 hours (at 00:00, 08:00, and 16:00) to prevent the EC2 trader's "TimesFM Gate" from rejecting expired forecasts. It performs deep learning predictions and GARCH fits for symbols in `active_universe.json` and syncs the cache to EC2.
-* **DVOL Update (`dvol-sync`)**: Queries Deribit and pushes the updated cache to EC2 every 120 seconds continuously to ensure live volatility data is available.
+These operations run locally to leverage strong Apple Silicon GPU/CPU hardware:
+* **Yield Stability Profiler (YSP) & Active Universe**: Runs weekly to screen candidate assets, calculate Yield Stability Scores (YSS), define the trading universe (`preferred_markets_v2.json` / `active_universe.json`), and automatically push them to the remote EC2 server.
+* **TimesFM Zero-Shot & GARCH Forecasting (The TimesFM Database)**: Managed on the Mac Mini via `com.stefanbund.daily_update.plist`. To prevent the EC2 trader's "TimesFM Gate" from rejecting forecasts (which expires if the file is more than 8 hours old), this service runs every 8 hours (at 00:00, 08:00, and 16:00) instead of just once at midnight. It performs deep learning sequence predictions and GARCH volatility fits for symbols in `active_universe.json` and syncs the updated database cache to EC2.
+* **DVOL Update**: Handled by the local daemon `com.stefanbund.dvol_sync.plist` on the Mac Mini. It queries Deribit and pushes the updated cache to EC2 every 120 seconds continuously to ensure live volatility data is available.
 * **MLOps Model Training**: Handles intensive, on-demand Auto-ML (TPOT / Mega-Caps LSTM) model training and pre-processing tasks locally before copying the completed models to the remote server.
-* **Execution Dashboard (`dashboard-update`)**: Runs every 15 minutes to generate `shadow_trading_dashboard.html` and deploy updates directly to Firebase (`metastadium.web.app`), offloading this workload from the primary ML training pipeline.
+* **Execution Dashboard**: Handled by `com.stefanbund.dashboard_update.plist` on the Mac Mini. It runs every 15 minutes to generate `shadow_trading_dashboard.html` and push it directly to Firebase, offloading the dashboard workload from the primary ML training pipeline.
 
 ### 2. Remote Cloud Processes (AWS EC2 Instance)
 These operations run continuously in the cloud for 24/7 reliability and low latency connectivity to the exchange:
 * **Active HFT Trader Engine**: The production trading system (running under the `guardian_sfgk.py` watchdog) executes the 5-Layer Funnel trader loops for active symbols.
 * **DAW Gate / Volatility Firewall**: Evaluates the live market regimes against the locally cached forecasts and oracle data pushed from the Mac Mini.
 * **Unified Reporting Orchestrator**: Executes reporting updates and serves data on EC2, receiving updates pushed from the local system services (such as the Execution Dashboard).
-### Remote Config Path Auto-Correction (July 2026)
-- The centralized config loader `shared_lib/config_loader.py` was updated to dynamically detect non-macOS environments (when `TRADER_ENV` is set to `"production"` or when the root-level `/Volumes` directory does not exist).
-- In these cases, it automatically intercepts and rewrites macOS-specific external drive paths (like `/Volumes/M4_BACKUP/...`) to relative project root paths (e.g. `{project_root}/STADIUM_DATA/...`), preventing start-up failures in the CCXT LOB Sampler and other scripts.
