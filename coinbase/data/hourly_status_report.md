@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-11 02:00:03 AM PDT (2026-08-11 09:00:03 UTC)`  
+> **Report Generated**: `2026-08-11 03:00:03 AM PDT (2026-08-11 10:00:03 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **35.83** | **-1.96** (≤ -0.5) | 27.7 | 20/100 (< 30) | Compression 📉 | 🟢 Approved |
-| `ETH-USD` | **49.66** | **-0.31** (≤ -0.5) | 54.5 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `BTC-USD` | **35.73** | **-2.43** (≤ -0.5) | 8.0 | 20/100 (< 30) | Compression 📉 | 🟢 Approved |
+| `ETH-USD` | **49.63** | **-0.52** (≤ -0.5) | 81.7 | 60/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,8 +21,8 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = -1.96$ (Safety Margin: **-1.46** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
-> - **ETH-USD**: $Z = -0.31$ (Safety Margin: **+0.19** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = -2.43$ (Safety Margin: **-1.93** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
+> - **ETH-USD**: $Z = -0.52$ (Safety Margin: **-0.02** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
 
 ---
 ## 2. 📊 8-Stage Funnel Live Decision Telemetry
@@ -30,7 +30,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,813` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `122,471` | **99.5%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -87,9 +87,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-11 12:00 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.0h ago (2026-08-11 12:00 AM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **137.0h (5d 16h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **136.0h (5d 15h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -125,14 +125,14 @@ Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-05 17:36:35,903 - ERROR - [SOL-USD] Error loading API keys: API Keys retrieved are empty.
-logs/watchdog_Trader_SOL_USD.log:2026-08-05 17:37:11,198 - ERROR - [SOL-USD] Error loading API keys: API Keys retrieved are empty.
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:44:55,257 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (170.3s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:44:55,257 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:45:15,549 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (190.5s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:45:15,549 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:45:35,968 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (211.0s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-07 09:45:35,968 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:31,151 - ERROR - [SOL-USD] CRITICAL: Empty DVOL state returned from oracle for BTC (Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:31,152 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:51,139 - WARNING - ⚠️ DVOL Oracle: Deribit API returned HTTP 503 for BTC. Response: {"jsonrpc":"2.0","error":{"message":"system_maintenance","code":11051}}
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:51,141 - ERROR - [SOL-USD] CRITICAL: Empty DVOL state returned from oracle for BTC (Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:51,141 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,474 - WARNING - ⚠️ DVOL Oracle: Deribit API returned HTTP 503 for BTC. Response: {"jsonrpc":"2.0","error":{"message":"system_maintenance","code":11051}}
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,476 - ERROR - [SOL-USD] CRITICAL: Empty DVOL state returned from oracle for BTC (Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,476 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
 ```
 </details>
 
