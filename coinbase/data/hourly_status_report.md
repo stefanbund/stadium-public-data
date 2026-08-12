@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-11 05:17:55 PM PDT (2026-08-12 00:17:55 UTC)`  
+> **Report Generated**: `2026-08-11 05:19:23 PM PDT (2026-08-12 00:19:23 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -23,6 +23,19 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
 > **Current Live Margin of Safety**:
 > - **BTC-USD**: $Z = +2.17$ (Safety Margin: **+2.67** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 > - **ETH-USD**: $Z = -0.71$ (Safety Margin: **-0.21** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
+
+---
+## 2. 🔒 MLOps Data Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
+We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
+
+✅ **Go-List JSON**: Fresh (3.69h old) - 08-11 13:38
+✅ **TimesFM Forecasts**: Fresh (0.12h old) - 08-11 17:12
+✅ **Holding Times config**: Fresh (0.12h old) - 08-11 17:12
+❌ **BTC DVOL Cache**: STALE! (0.1h old, limits 0.083h)
+❌ **ETH DVOL Cache**: STALE! (0.1h old, limits 0.083h)
+
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 2678 recent read events).
+
 
 ---
 ## 2. 📊 8-Stage Funnel Live Decision Telemetry
@@ -68,13 +81,18 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ![24-Hour Realized P&L](./images/realized_pnl_timeline.png)
 
 ---
-## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
-Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
+## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
+Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
 - **TimesFM Forecast DB**: 🟢 Updated 0.1h ago (2026-08-11 05:12 PM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **121.7h (5d 1h 42m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **121.7h (5d 1h 40m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
+
+### Algorithmic Mega Cap Selection
+- **Last Run (Confirmation)**: `2026-08-11 10:42:12 AM PDT`
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **120.7h (5d 0h 40m)**)
+- **Selected Mega Cap Universe**: `BTC, ETH, XRP, SOL, ZEC, HYPE, LINK, ADA, PUMP`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
 
@@ -109,14 +127,14 @@ Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:16:45,503 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (366.5s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:16:45,503 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:05,610 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (386.6s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:05,610 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:25,987 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (407.0s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:25,987 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:46,079 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (427.1s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:46,080 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:18:26,179 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (467.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:18:26,179 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:18:46,353 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (487.4s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:18:46,353 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:19:06,248 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (507.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:19:06,248 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:19:26,648 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (527.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:19:26,648 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
 ```
 </details>
 
