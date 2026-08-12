@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-12 02:44:20 PM PDT (2026-08-12 21:44:20 UTC)`  
+> **Report Generated**: `2026-08-12 02:46:27 PM PDT (2026-08-12 21:46:27 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **35.82** | **-0.35** (≤ -0.5) | 63.0 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
-| `ETH-USD` | **49.48** | **-0.19** (≤ -0.5) | 47.3 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `BTC-USD` | **35.79** | **-0.54** (≤ -0.5) | 46.9 | 0/100 (< 30) | Expansion 📈 | 🟢 Approved |
+| `ETH-USD` | **49.49** | **-0.14** (≤ -0.5) | 51.0 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,8 +21,8 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = -0.35$ (Safety Margin: **+0.15** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
-> - **ETH-USD**: $Z = -0.19$ (Safety Margin: **+0.31** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = -0.54$ (Safety Margin: **-0.04** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
+> - **ETH-USD**: $Z = -0.14$ (Safety Margin: **+0.36** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
 ## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
@@ -30,16 +30,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (1.39h old) | 08-12 13:21 |
-| ✅ | **TimesFM Forecasts** | Fresh (5.08h old) | 08-12 09:39 |
-| ✅ | **Holding Times config** | Fresh (5.08h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-12 14:44 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-12 14:44 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 14:44 |
+| ✅ | **Go-List JSON** | Fresh (1.43h old) | 08-12 13:21 |
+| ✅ | **TimesFM Forecasts** | Fresh (5.11h old) | 08-12 09:39 |
+| ✅ | **Holding Times config** | Fresh (5.12h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-12 14:46 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-12 14:46 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 14:46 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 413 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 462 recent read events).
 
 
 ---
@@ -48,7 +48,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,496` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,538` | **99.5%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -76,12 +76,28 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ### Active Wallet Balances
 | Currency | Available | Hold | Total Balance |
 | :--- | :--- | :--- | :--- |
-| `USD` | 0.00 | 0.00 | **0.00** |
+| `CBETH` | 0.9734 | 0.0000 | **0.9734** |
+| `CRV` | 0.0500 | 0.0000 | **0.0500** |
+| `ADA` | 13260.3378 | 0.0000 | **13260.3378** |
+| `DOGE` | 0.1000 | 0.0000 | **0.1000** |
+| `FIL` | 0.0050 | 0.0000 | **0.0050** |
+| `ALEPH` | 2.4000 | 0.0000 | **2.4000** |
+| `SKL` | 0.1000 | 0.0000 | **0.1000** |
+| `SAFE` | 0.1400 | 0.0000 | **0.1400** |
+| `AIOZ` | 0.3000 | 0.0000 | **0.3000** |
+| `BTRST` | 0.0100 | 0.0000 | **0.0100** |
+| `FET` | 0.2000 | 0.0000 | **0.2000** |
+| `PYR` | 0.5400 | 0.0000 | **0.5400** |
+| `MPL` | 0.0005 | 0.0000 | **0.0005** |
+| `MOBILE` | 0.8691 | 0.0000 | **0.8691** |
+| `SHPING` | 0.7952 | 0.0000 | **0.7952** |
+| `AUCTION` | 0.0002 | 0.0000 | **0.0002** |
+| `LIT` | 0.0085 | 0.0000 | **0.0085** |
 
 ### Open Maker Orders on the Book
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
-| *None* | - | - | No active maker orders |
+| `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
 
 ![24-Hour Realized P&L](./images/realized_pnl_timeline.png)
 
@@ -91,12 +107,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 5.1h ago (2026-08-12 09:39 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-12 01:22:32 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **100.3h (4d 4h 15m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **100.2h (4d 4h 13m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-07-07 07:35:30 AM PDT`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **99.3h (4d 3h 15m)**)
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **99.2h (4d 3h 13m)**)
 - **Selected Mega Cap Universe**: `AVAX, ETH, ADA, DOGE, BTC, LINK, SOL`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -110,19 +126,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:44:18 PM
-   CPU:  54.8%  |  MEM:   6.1% (14.5GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:46:25 PM
+   CPU:   4.3%  |  MEM:   5.8% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 454013   | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 471735   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader ETH-USD       | 471736   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader ADA-USD       | 471737   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader DOGE-USD      | 471738   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader BTC-USD       | 471739   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader LINK-USD      | 471740   | COOL-DOWN       | 58       | Next run in 15.0s
-Trader SOL-USD       | 471741   | COOL-DOWN       | 58       | Next run in 15.0s
+Trader AVAX-USD      | 474008   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader ETH-USD       | 474009   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader ADA-USD       | 474010   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader DOGE-USD      | 474011   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader BTC-USD       | 474012   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader LINK-USD      | 474013   | COOL-DOWN       | 64       | Next run in 10.0s
+Trader SOL-USD       | 474014   | COOL-DOWN       | 64       | Next run in 10.0s
 ================================================================================
 ```
 
