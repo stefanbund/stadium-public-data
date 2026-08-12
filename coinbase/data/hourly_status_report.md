@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-12 11:51:49 AM PDT (2026-08-12 18:51:49 UTC)`  
+> **Report Generated**: `2026-08-12 12:09:18 PM PDT (2026-08-12 19:09:18 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **35.83** | **-0.49** (≤ -0.5) | 66.9 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
-| `ETH-USD` | **49.59** | **+0.47** (≤ -0.5) | 42.8 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `BTC-USD` | **35.86** | **-0.28** (≤ -0.5) | 45.2 | 0/100 (< 30) | Expansion 📈 | 🔴 DAW Vetoed |
+| `ETH-USD` | **49.58** | **+0.40** (≤ -0.5) | 45.1 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,25 +21,25 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = -0.49$ (Safety Margin: **+0.01** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
-> - **ETH-USD**: $Z = +0.47$ (Safety Margin: **+0.97** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = -0.28$ (Safety Margin: **+0.22** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **ETH-USD**: $Z = +0.40$ (Safety Margin: **+0.90** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
-## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
+## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (2.21h old) | 08-12 09:39 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.20h old) | 08-12 09:39 |
-| ✅ | **Holding Times config** | Fresh (2.20h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-12 11:51 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-12 11:51 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 11:51 |
+| ❌ | **Go-List JSON** | NOT FOUND ON EC2 | - |
+| ✅ | **TimesFM Forecasts** | Fresh (2.50h old) | 08-12 09:39 |
+| ✅ | **Holding Times config** | Fresh (0.28h old) | 08-12 11:52 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-12 12:09 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-12 12:09 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 12:09 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 2510 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 294 recent read events).
 
 
 ---
@@ -48,7 +48,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,722` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,370` | **99.5%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -105,14 +105,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.2h ago (2026-08-12 09:39 AM PDT)
-- **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **103.1h (4d 7h 8m)**)
+- **TimesFM Forecast DB**: 🟢 Updated 2.5h ago (2026-08-12 09:39 AM PDT)
+- **Last Weekly VSTEF Optimization**: `2026-08-12 11:52:07 AM PDT`
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **102.8h (4d 6h 50m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-11 10:42:12 AM PDT`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **102.1h (4d 6h 7m)**)
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **101.8h (4d 5h 50m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, XRP, SOL, ZEC, HYPE, LINK, ADA, PUMP`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -125,21 +125,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ---
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
-================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:39:23 PM
-   CPU:   0.5%  |  MEM:   6.5% (14.4GB / 15.4GB Free)
-================================================================================
-SERVICE              | PID      | STATUS          | RESTARTS | INFO
---------------------------------------------------------------------------------
-L3 Consumer          | 457105   | RUNNING         | -        | Continuous Websocket Feed
-Trader DOT-USD       | 494955   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader ETH-USD       | 494956   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader ADA-USD       | 494957   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader DOGE-USD      | 494958   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader BTC-USD       | 494959   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader LTC-USD       | 494960   | COOL-DOWN       | 281      | Next run in 9.9s
-Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
-================================================================================
+Guardian watchdog table not available
 ```
 
 ---
@@ -148,14 +134,7 @@ Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:14:15,927 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (673.9s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:15:36,246 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (754.2s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:16:56,844 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (834.8s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:18:17,093 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (915.1s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:19:37,701 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (995.7s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:20:57,779 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (1075.8s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:22:18,179 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (1156.2s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 14:23:38,683 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (1236.7s old > 150s limit, Fail-Closed)
+No critical errors in current window.
 ```
 </details>
 
