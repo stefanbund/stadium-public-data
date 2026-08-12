@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-12 05:59:57 AM PDT (2026-08-12 12:59:57 UTC)`  
+> **Report Generated**: `2026-08-12 06:17:36 AM PDT (2026-08-12 13:17:36 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **36.05** | **+0.65** (≤ -0.5) | 12.4 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
-| `ETH-USD` | **49.55** | **+1.60** (≤ -0.5) | 35.8 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `BTC-USD` | **36.13** | **+1.10** (≤ -0.5) | 59.8 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `ETH-USD` | **49.75** | **+2.95** (≤ -0.5) | 77.7 | 100/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,18 +21,18 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = +0.65$ (Safety Margin: **+1.15** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
-> - **ETH-USD**: $Z = +1.60$ (Safety Margin: **+2.10** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = +1.10$ (Safety Margin: **+1.60** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **ETH-USD**: $Z = +2.95$ (Safety Margin: **+3.45** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
 ## 2. 🔒 MLOps Data Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
-✅ **Go-List JSON**: Fresh (16.36h old) - 08-11 13:38
-✅ **TimesFM Forecasts**: Fresh (4.80h old) - 08-12 01:12
-✅ **Holding Times config**: Fresh (4.80h old) - 08-12 01:12
-✅ **BTC DVOL Cache**: Fresh (0.01h old) - 08-12 05:59
-✅ **ETH DVOL Cache**: Fresh (0.01h old) - 08-12 05:59
+✅ **Go-List JSON**: Fresh (16.66h old) - 08-11 13:38
+✅ **TimesFM Forecasts**: Fresh (5.09h old) - 08-12 01:12
+✅ **Holding Times config**: Fresh (5.09h old) - 08-12 01:12
+✅ **BTC DVOL Cache**: Fresh (0.01h old) - 08-12 06:17
+✅ **ETH DVOL Cache**: Fresh (0.01h old) - 08-12 06:17
 
 > **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 3742 recent read events).
 
@@ -100,14 +100,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 4.8h ago (2026-08-12 01:12 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 5.1h ago (2026-08-12 01:12 AM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **109.0h (4d 13h 0m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **108.7h (4d 12h 42m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-11 10:42:12 AM PDT`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **108.0h (4d 11h 59m)**)
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **107.7h (4d 11h 42m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, XRP, SOL, ZEC, HYPE, LINK, ADA, PUMP`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -143,14 +143,14 @@ Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:50:26,397 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58150.4s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:51:46,830 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58230.8s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:53:07,477 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58311.5s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:54:27,828 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58391.8s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:55:48,119 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58472.1s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:57:08,880 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58552.9s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:58:29,135 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58633.1s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-12 12:59:49,530 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (58713.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:07:52,197 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59196.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:09:12,612 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59276.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:10:32,932 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59356.9s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:11:53,471 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59437.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:13:13,615 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59517.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:14:34,277 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59598.3s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:15:54,637 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59678.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 13:17:15,319 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (59759.3s old > 150s limit, Fail-Closed)
 ```
 </details>
 
