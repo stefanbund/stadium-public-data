@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-11 05:11:50 PM PDT (2026-08-12 00:11:50 UTC)`  
+> **Report Generated**: `2026-08-11 05:17:55 PM PDT (2026-08-12 00:17:55 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -30,7 +30,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `123,290` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,463` | **99.5%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -58,28 +58,12 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ### Active Wallet Balances
 | Currency | Available | Hold | Total Balance |
 | :--- | :--- | :--- | :--- |
-| `CBETH` | 0.9734 | 0.0000 | **0.9734** |
-| `CRV` | 0.0500 | 0.0000 | **0.0500** |
-| `ADA` | 13260.3378 | 0.0000 | **13260.3378** |
-| `DOGE` | 0.1000 | 0.0000 | **0.1000** |
-| `FIL` | 0.0050 | 0.0000 | **0.0050** |
-| `ALEPH` | 2.4000 | 0.0000 | **2.4000** |
-| `SKL` | 0.1000 | 0.0000 | **0.1000** |
-| `SAFE` | 0.1400 | 0.0000 | **0.1400** |
-| `AIOZ` | 0.3000 | 0.0000 | **0.3000** |
-| `BTRST` | 0.0100 | 0.0000 | **0.0100** |
-| `FET` | 0.2000 | 0.0000 | **0.2000** |
-| `PYR` | 0.5400 | 0.0000 | **0.5400** |
-| `MPL` | 0.0005 | 0.0000 | **0.0005** |
-| `MOBILE` | 0.8691 | 0.0000 | **0.8691** |
-| `SHPING` | 0.7952 | 0.0000 | **0.7952** |
-| `AUCTION` | 0.0002 | 0.0000 | **0.0002** |
-| `LIT` | 0.0085 | 0.0000 | **0.0085** |
+| `USD` | 0.00 | 0.00 | **0.00** |
 
 ### Open Maker Orders on the Book
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
-| `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
+| *None* | - | - | No active maker orders |
 
 ![24-Hour Realized P&L](./images/realized_pnl_timeline.png)
 
@@ -87,9 +71,9 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & TimesFM 2.0
 Zero-shot multi-step forward return forecasts and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.0h ago (2026-08-11 05:11 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 0.1h ago (2026-08-11 05:12 PM PDT)
 - **Last Weekly VSTEF Optimization**: `Never`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **121.8h (5d 1h 48m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **121.7h (5d 1h 42m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -125,14 +109,14 @@ Trader SOL-USD       | 494961   | COOL-DOWN       | 281      | Next run in 9.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:29:51,141 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,474 - WARNING - ⚠️ DVOL Oracle: Deribit API returned HTTP 503 for BTC. Response: {"jsonrpc":"2.0","error":{"message":"system_maintenance","code":11051}}
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,476 - ERROR - [SOL-USD] CRITICAL: Empty DVOL state returned from oracle for BTC (Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 09:30:11,476 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 18:58:03,656 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (1213303.7s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:ModuleNotFoundError: No module named 'DAW_CAUSALITY_LAYER'
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 20:35:33,700 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (157.7s old > 150s limit, Fail-Closed)
-logs/watchdog_Trader_SOL_USD.log:2026-08-11 20:36:54,328 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (238.3s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:16:45,503 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (366.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:16:45,503 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:05,610 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (386.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:05,610 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:25,987 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (407.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:25,987 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:46,079 - ERROR - [SOL-USD] CRITICAL: DVOL cache is stale (427.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-12 00:17:46,080 - ERROR - [SOL-USD] Dependency check failed in fetch_live_state. Aborting cycle.
 ```
 </details>
 
