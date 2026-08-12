@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-12 09:48:55 AM PDT (2026-08-12 16:48:55 UTC)`  
+> **Report Generated**: `2026-08-12 10:05:42 AM PDT (2026-08-12 17:05:42 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,8 +8,8 @@ Real-time Deribit implied volatility (DVOL) tracking and causal volatility gatin
 
 | Symbol | Spot DVOL | 4h Rolling Z-Score | 14p RSI | Exhaustion Index | Vol Trend | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | **35.91** | **-0.20** (≤ -0.5) | 67.1 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
-| `ETH-USD` | **49.53** | **+0.32** (≤ -0.5) | 48.1 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
+| `BTC-USD` | **35.83** | **-0.66** (≤ -0.5) | 25.0 | 20/100 (< 30) | Compression 📉 | 🟢 Approved |
+| `ETH-USD` | **49.54** | **+0.35** (≤ -0.5) | 48.9 | 20/100 (< 30) | Compression 📉 | 🔴 DAW Vetoed |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -21,8 +21,8 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟡 **Transition ($-0.5 < Z < +0.5$)**: Neutral/shifting volatility; trade pacing is cautious.
   - 🔴 **Hostile / High VRP ($Z \ge +0.5$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 > **Current Live Margin of Safety**:
-> - **BTC-USD**: $Z = -0.20$ (Safety Margin: **+0.30** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
-> - **ETH-USD**: $Z = +0.32$ (Safety Margin: **+0.82** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
+> - **BTC-USD**: $Z = -0.66$ (Safety Margin: **-0.16** vs. gate $-0.5$) $\rightarrow$ **🟢 SAFE / COMPRESSED**
+> - **ETH-USD**: $Z = +0.35$ (Safety Margin: **+0.85** vs. gate $-0.5$) $\rightarrow$ **🔴 DAW VETOED**
 
 ---
 ## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
@@ -30,12 +30,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.16h old) | 08-12 09:39 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.16h old) | 08-12 09:39 |
-| ✅ | **Holding Times config** | Fresh (0.16h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-12 09:48 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-12 09:48 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 09:49 |
+| ✅ | **Go-List JSON** | Fresh (0.44h old) | 08-12 09:39 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.44h old) | 08-12 09:39 |
+| ✅ | **Holding Times config** | Fresh (0.44h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-12 10:05 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-12 10:05 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-12 10:05 |
 
 <br>
 
@@ -48,7 +48,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `121,484` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `121,834` | **99.5%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -105,15 +105,15 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.2h ago (2026-08-12 09:39 AM PDT)
-- **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **105.2h (4d 9h 11m)**)
+- **TimesFM Forecast DB**: 🟢 Updated 0.4h ago (2026-08-12 09:39 AM PDT)
+- **Last Weekly VSTEF Optimization**: `Never`
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **104.9h (4d 8h 54m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-08-12 09:38:11 AM PDT`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **104.2h (4d 8h 10m)**)
-- **Selected Mega Cap Universe**: `BTC, ETH, SOL, XRP, LSETH, UNI, ZEC, HYPE, LINK`
+- **Last Run (Confirmation)**: `2026-08-11 10:42:12 AM PDT`
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **103.9h (4d 7h 54m)**)
+- **Selected Mega Cap Universe**: `BTC, ETH, XRP, SOL, ZEC, HYPE, LINK, ADA, PUMP`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
 
