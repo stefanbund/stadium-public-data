@@ -1,6 +1,6 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-13 06:47:16 PM PDT (2026-08-14 01:47:16 UTC)`  
-> **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
+> **Report Generated**: `2026-08-13 07:02:08 PM PDT (2026-08-14 02:02:08 UTC)`  
+> **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `74.2%` | **Completed Trades**: `89`
 
 ---
 ## 1. ⚡ Macro Volatility & Layer 1 DAW Causal Oracle
@@ -8,13 +8,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.10** | **-0.50** | **-0.60** | **+28.09** | 5.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-2.15** | **-0.50** | **-1.65** | **+14.20** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.30** | **-0.50** | **-0.80** | **N/A** | 5.0 | 🟢 SAFE |
+| `ADA-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-2.13** | **-0.50** | **-1.63** | **N/A** | 5.0 | 🟢 SAFE |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -39,21 +39,21 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟢 **Safe / Compression ($Z \le Z_{opt}$)**: Derivatives market prices low tail risk. Order books are deep, adverse selection is minimal, and TimesFM zero-shot scalps operate at peak win rates.
   - 🔴 **Hostile / Expansion ($Z > Z_{opt}$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 ---
-## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
+## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (29.44h old) | 08-12 13:21 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.76h old) | 08-13 16:02 |
-| ✅ | **Holding Times config** | Fresh (33.13h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-13 18:47 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-13 18:47 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-13 18:47 |
+| ✅ | **Go-List JSON** | Fresh (11.89h old) | 08-13 07:08 |
+| ✅ | **TimesFM Forecasts** | Fresh (3.00h old) | 08-13 16:02 |
+| ✅ | **Holding Times config** | Fresh (33.38h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-13 19:02 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-13 19:02 |
+| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1946 recent read events).
+> **Utilization Certification**: 🔴 **FAILED.** Guardian watchdog offline, unable to certify utilization.
 
 
 ---
@@ -62,13 +62,13 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `128,476` | **99.5%** |
+| Layer 1: DAW Causal Volatility Veto | `17` | **9.3%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
-| Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
+| Layer 2B: DVOL Directional Momentum Bias | `165` | **90.7%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
 | Layer 2.5: TimesFM Forecast Velocity Gate | `0` | **0.0%** |
 | Layer 3: SDR Liquidity Sizing Floor | `0` | **0.0%** |
-| Layer 4: SFGK Commercial Margin Gate (< 0.25%) | `605` | **0.5%** |
+| Layer 4: SFGK Commercial Margin Gate (< 0.25%) | `0` | **0.0%** |
 | Layer 5: Hawkes Microstructure Toxicity | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
 | System: Asset Blacklist Gate | `0` | **0.0%** |
@@ -78,10 +78,16 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 ### Active Universe Performance & Drift Matrix
 | Asset | Trades | Win Rate | Loss Streak | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| `ADA-USD` | 532 | 100.0% | 0 | 🟢 OK |
-| `AVAX-USD` | 532 | 100.0% | 0 | 🟢 OK |
-| `LINK-USD` | 532 | 100.0% | 0 | 🟢 OK |
-| `SOL-USD` | 458 | 99.1% | 2 | 🟢 OK |
+| `DOGE-USD` | 2 | 100.0% | 0 | 🟢 OK |
+| `CHZ-USD` | 15 | 80.0% | 1 | 🟢 OK |
+| `CRV-USD` | 16 | 90.0% | 0 | 🟢 OK |
+| `CRO-USD` | 5 | 100.0% | 0 | 🟢 OK |
+| `ACH-USD` | 4 | 75.0% | 1 | 🟢 OK |
+| `ALGO-USD` | 19 | 40.0% | 1 | ⚠️ DRIFT |
+| `BCH-USD` | 4 | 100.0% | 0 | 🟢 OK |
+| `CBETH-USD` | 5 | 60.0% | 2 | 🟢 OK |
+| `BNT-USD` | 12 | 50.0% | 0 | 🟢 OK |
+| `GNO-USD` | 7 | 57.1% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -90,12 +96,28 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ### Active Wallet Balances
 | Currency | Available | Hold | Total Balance |
 | :--- | :--- | :--- | :--- |
-| `USD` | 0.00 | 0.00 | **0.00** |
+| `CBETH` | 0.9734 | 0.0000 | **0.9734** |
+| `CRV` | 0.0500 | 0.0000 | **0.0500** |
+| `ADA` | 13260.3378 | 0.0000 | **13260.3378** |
+| `DOGE` | 0.1000 | 0.0000 | **0.1000** |
+| `FIL` | 0.0050 | 0.0000 | **0.0050** |
+| `ALEPH` | 2.4000 | 0.0000 | **2.4000** |
+| `SKL` | 0.1000 | 0.0000 | **0.1000** |
+| `SAFE` | 0.1400 | 0.0000 | **0.1400** |
+| `AIOZ` | 0.3000 | 0.0000 | **0.3000** |
+| `BTRST` | 0.0100 | 0.0000 | **0.0100** |
+| `FET` | 0.2000 | 0.0000 | **0.2000** |
+| `PYR` | 0.5400 | 0.0000 | **0.5400** |
+| `MPL` | 0.0005 | 0.0000 | **0.0005** |
+| `MOBILE` | 0.8691 | 0.0000 | **0.8691** |
+| `SHPING` | 0.7952 | 0.0000 | **0.7952** |
+| `AUCTION` | 0.0002 | 0.0000 | **0.0002** |
+| `LIT` | 0.0085 | 0.0000 | **0.0085** |
 
 ### Open Maker Orders on the Book
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
-| *None* | - | - | No active maker orders |
+| `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
 
 ![24-Hour Realized P&L](./images/realized_pnl_timeline.png)
 
@@ -103,15 +125,15 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.8h ago (2026-08-13 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.0h ago (2026-08-13 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-12 01:22:32 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **72.2h (3d 0h 12m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **72.0h (2d 23h 57m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-08-12 02:28:22 PM PDT`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **71.2h (2d 23h 12m)**)
-- **Selected Mega Cap Universe**: `BTC, ETH, LSETH, LINK, UNI, XRP, SOL, ZEC`
+- **Last Run (Confirmation)**: `Never`
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **71.0h (2d 22h 57m)**)
+- **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
 
@@ -123,21 +145,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ---
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
-================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  01:47:14 AM
-   CPU:  37.4%  |  MEM:   6.3% (14.4GB / 15.4GB Free)
-================================================================================
-SERVICE              | PID      | STATUS          | RESTARTS | INFO
---------------------------------------------------------------------------------
-L3 Consumer          | 1951000  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 1959730  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader ETH-USD       | 1959731  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader ADA-USD       | 1959732  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader DOGE-USD      | 1959733  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader BTC-USD       | 1959734  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader LINK-USD      | 1959735  | COOL-DOWN       | 26       | Next run in 14.8s
-Trader SOL-USD       | 1959736  | COOL-DOWN       | 26       | Next run in 14.8s
-================================================================================
+Guardian watchdog table not available
 ```
 
 ---
@@ -152,46 +160,7 @@ Error reading recommendations: name 'pd' is not defined
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_LINK_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_LINK_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_LINK_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_LINK_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_LINK_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background
-logs/watchdog_Trader_LINK_USD.log:2026-08-13 22:30:02,947 - ERROR - HTTP Error: 502 Server Error: Bad Gateway <html>
-logs/watchdog_Trader_LINK_USD.log:    <style>@font-face{font-display:swap;font-family:CoinbaseDisplay;src:url(data:font/woff2;base64,d09GMgABAAAAAJ64ABAAAAAB1EgAAJ5UAAEIMQAAAAAAAAAAAAAAAAAAAAAAAAAAG4GJWhylHAZgAI5UCIFwCZdiEQgKhN1EhJpmATYCJAOZTAuMagAEI
-logs/watchdog_Trader_LINK_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_LINK_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_LINK_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_LINK_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_LINK_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background
-logs/watchdog_Trader_LINK_USD.log:2026-08-13 22:30:02,979 - WARNING - [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.36s... | Error: 502 Server Error: Bad Gateway <html>
-logs/watchdog_Trader_LINK_USD.log:    <style>@font-face{font-display:swap;font-family:CoinbaseDisplay;src:url(data:font/woff2;base64,d09GMgABAAAAAJ64ABAAAAAB1EgAAJ5UAAEIMQAAAAAAAAAAAAAAAAAAAAAAAAAAG4GJWhylHAZgAI5UCIFwCZdiEQgKhN1EhJpmATYCJAOZTAuMagAEI
-logs/watchdog_Trader_LINK_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_LINK_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_LINK_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_LINK_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_LINK_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background
-logs/watchdog_Trader_SOL_USD.log:2026-08-13 22:24:18 - coinbase.RESTClient - ERROR - HTTP Error: 502 Server Error: Bad Gateway <html>
-logs/watchdog_Trader_SOL_USD.log:    <style>@font-face{font-display:swap;font-family:CoinbaseDisplay;src:url(data:font/woff2;base64,d09GMgABAAAAAJ64ABAAAAAB1EgAAJ5UAAEIMQAAAAAAAAAAAAAAAAAAAAAAAAAAG4GJWhylHAZgAI5UCIFwCZdiEQgKhN1EhJpmATYCJAOZTAuMagAEIA
-logs/watchdog_Trader_SOL_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_SOL_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_SOL_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_SOL_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_SOL_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background-
-logs/watchdog_Trader_SOL_USD.log:2026-08-13 22:24:18,844 - ERROR - HTTP Error: 502 Server Error: Bad Gateway <html>
-logs/watchdog_Trader_SOL_USD.log:    <style>@font-face{font-display:swap;font-family:CoinbaseDisplay;src:url(data:font/woff2;base64,d09GMgABAAAAAJ64ABAAAAAB1EgAAJ5UAAEIMQAAAAAAAAAAAAAAAAAAAAAAAAAAG4GJWhylHAZgAI5UCIFwCZdiEQgKhN1EhJpmATYCJAOZTAuMagAEIA
-logs/watchdog_Trader_SOL_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_SOL_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_SOL_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_SOL_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_SOL_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background-
-logs/watchdog_Trader_SOL_USD.log:2026-08-13 22:24:18,853 - WARNING - [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.27s... | Error: 502 Server Error: Bad Gateway <html>
-logs/watchdog_Trader_SOL_USD.log:    <style>@font-face{font-display:swap;font-family:CoinbaseDisplay;src:url(data:font/woff2;base64,d09GMgABAAAAAJ64ABAAAAAB1EgAAJ5UAAEIMQAAAAAAAAAAAAAAAAAAAAAAAAAAG4GJWhylHAZgAI5UCIFwCZdiEQgKhN1EhJpmATYCJAOZTAuMagAEIA
-logs/watchdog_Trader_SOL_USD.log:    <div id="cloudflare-error" style="display:none;">::CAPTCHA_BOX:: ::IM_UNDER_ATTACK_BOX:: <div class="cf-error-details cf-error-502">
-logs/watchdog_Trader_SOL_USD.log:  <p>The web server reported a bad gateway error.</p>
-logs/watchdog_Trader_SOL_USD.log:    <li>Error reference number: 502</li>
-logs/watchdog_Trader_SOL_USD.log:</div> ::CLOUDFLARE_ERROR_1000S_BOX:: ::ALWAYS_ONLINE_NO_COPY_BOX::</div>
-logs/watchdog_Trader_SOL_USD.log:    <div class="cds-large-llfbhh8 cds-light-l1k3tbpe" style="--foreground:rgb(var(--gray100));--foreground-muted:rgb(var(--gray60));--background:rgb(var(--gray0));--background-alternate:rgb(var(--gray5));--background-
+No critical errors in current window.
 ```
 </details>
 
