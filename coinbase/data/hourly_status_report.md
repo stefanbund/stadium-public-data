@@ -1,5 +1,5 @@
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-15 01:04:20 AM PDT (2026-08-15 08:04:20 UTC)`  
+> **Report Generated**: `2026-08-15 01:22:33 AM PDT (2026-08-15 08:22:33 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -8,13 +8,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **-0.14** | **-0.50** | **+0.36** | **+27.88** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.06** | **-0.50** | **+0.56** | **+15.44** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-0.41** | **-0.50** | **+0.09** | **+27.80** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-0.57** | **-0.50** | **-0.07** | **+15.38** | 5.0 | 🔴 DAW VETOED |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -44,12 +44,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (41.93h old) | 08-13 07:08 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.04h old) | 08-15 00:02 |
-| ✅ | **Holding Times config** | Fresh (63.41h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-15 01:04 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-15 01:04 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-15 01:04 |
+| ✅ | **Go-List JSON** | Fresh (42.23h old) | 08-13 07:08 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.35h old) | 08-15 00:02 |
+| ✅ | **Holding Times config** | Fresh (63.72h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-15 01:22 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-15 01:22 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-15 01:22 |
 
 <br>
 
@@ -62,7 +62,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `8,743` | **100.0%** |
+| Layer 1: DAW Causal Volatility Veto | `9,100` | **100.0%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
 | Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
@@ -111,14 +111,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 1.0h ago (2026-08-15 12:02 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.3h ago (2026-08-15 12:02 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **41.9h (1d 17h 55m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-16 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **41.6h (1d 17h 37m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **40.9h (1d 16h 55m)**)
+- **Next Scheduled Run**: `2026-08-16 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **40.6h (1d 16h 37m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -132,19 +132,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  08:04:21 AM
-   CPU:   5.7%  |  MEM:   5.4% (14.6GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  08:22:33 AM
+   CPU:  14.7%  |  MEM:   6.2% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 3534762  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 3556899  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader ETH-USD       | 3556900  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader ADA-USD       | 3556901  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader DOGE-USD      | 3556902  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader BTC-USD       | 3556903  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader LINK-USD      | 3556904  | COOL-DOWN       | 72       | Next run in 9.7s
-Trader SOL-USD       | 3556905  | COOL-DOWN       | 72       | Next run in 9.7s
+Trader AVAX-USD      | 3572968  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3572969  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 3572970  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3572971  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 3572972  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 3572973  | RUNNING         | 124      | Evaluating Funnel/Polling Order
+Trader SOL-USD       | 3572974  | RUNNING         | 124      | Evaluating Funnel/Polling Order
 ================================================================================
 ```
 
