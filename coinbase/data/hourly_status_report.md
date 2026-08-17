@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-17 06:53:19 AM PDT (2026-08-17 13:53:19 UTC)`  
+> **Report Generated**: `2026-08-17 06:53:54 AM PDT (2026-08-17 13:53:54 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -48,16 +48,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (5.87h old) | 08-17 01:01 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.20h old) | 08-17 04:41 |
-| ✅ | **Holding Times config** | Fresh (5.66h old) | 08-17 01:13 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.03h old) | 08-17 06:51 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.03h old) | 08-17 06:51 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-17 06:53 |
+| ✅ | **Go-List JSON** | Fresh (0.00h old) | 08-17 06:53 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.21h old) | 08-17 04:41 |
+| ✅ | **Holding Times config** | Fresh (117.24h old) | 08-12 09:39 |
+| ❌ | **BTC DVOL Cache** | STALE! (0.0h old) | Limit 0.033h |
+| ❌ | **ETH DVOL Cache** | STALE! (0.0h old) | Limit 0.033h |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-17 06:54 |
 
 <br>
 
-> **Utilization Certification**: 🔴 **FAILED.** Guardian watchdog offline, unable to certify utilization.
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 0 recent read events).
 
 
 ---
@@ -102,7 +102,7 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **155.1h (6d 11h 6m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **155.1h (6d 11h 5m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -115,21 +115,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ---
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
-================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  01:53:15 PM
-   CPU:  44.1%  |  MEM:   6.9% (14.4GB / 15.4GB Free)
-================================================================================
-SERVICE              | PID      | STATUS          | RESTARTS | INFO
---------------------------------------------------------------------------------
-L3 Consumer          | 2184627  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 2195469  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader ETH-USD       | 2195470  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader ADA-USD       | 2195471  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader DOGE-USD      | 2195472  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader BTC-USD       | 2195473  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader LINK-USD      | 2195474  | COOL-DOWN       | 34       | Next run in 14.8s
-Trader SOL-USD       | 2195475  | COOL-DOWN       | 34       | Next run in 14.8s
-================================================================================
+Guardian watchdog table not available
 ```
 
 ---
