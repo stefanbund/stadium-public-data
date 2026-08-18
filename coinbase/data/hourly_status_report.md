@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-18 02:00:07 AM PDT (2026-08-18 09:00:07 UTC)`  
+> **Report Generated**: `2026-08-18 02:14:59 AM PDT (2026-08-18 09:14:59 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -12,13 +12,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **-1.25** | **-0.50** | **-0.75** | **+23.75** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **-1.47** | **-0.50** | **-0.97** | **+12.16** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-1.44** | **-0.50** | **-0.94** | **+24.08** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-1.52** | **-0.50** | **-1.02** | **+12.52** | 5.0 | 🔴 DAW VETOED |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -43,17 +43,17 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟢 **Safe / Compression ($Z \le Z_{opt}$)**: Derivatives market prices low tail risk. Order books are deep, adverse selection is minimal, and TimesFM zero-shot scalps operate at peak win rates.
   - 🔴 **Hostile / Expansion ($Z > Z_{opt}$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 ---
-## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
+## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (7.48h old) | 08-17 18:31 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.97h old) | 08-18 00:02 |
-| ✅ | **Holding Times config** | Fresh (7.26h old) | 08-17 18:45 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-18 02:00 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-18 02:00 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.01h old) | 08-18 02:00 |
+| ✅ | **Go-List JSON** | Fresh (7.73h old) | 08-17 18:31 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.22h old) | 08-18 00:02 |
+| ✅ | **Holding Times config** | Fresh (7.50h old) | 08-17 18:45 |
+| ❌ | **BTC DVOL Cache** | STALE! (0.2h old) | Limit 0.033h |
+| ❌ | **ETH DVOL Cache** | STALE! (0.2h old) | Limit 0.033h |
+| ❌ | **Live Trading Telemetry** | STALE! (0.2h old) | Limit 0.05h |
 
 <br>
 
@@ -96,14 +96,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-18 12:02 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.2h ago (2026-08-18 12:02 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-17 06:44:25 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **137.0h (5d 16h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **136.7h (5d 16h 44m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **136.0h (5d 15h 59m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **135.7h (5d 15h 44m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -117,19 +117,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:00:06 AM
-   CPU:  47.3%  |  MEM:   6.3% (14.4GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:14:55 AM
+   CPU:   3.4%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 3063468  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 3153841  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader ETH-USD       | 3153842  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader ADA-USD       | 3153843  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader DOGE-USD      | 3153844  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader BTC-USD       | 3153845  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader LINK-USD      | 3153846  | COOL-DOWN       | 291      | Next run in 14.9s
-Trader SOL-USD       | 3153847  | COOL-DOWN       | 291      | Next run in 14.9s
+Trader AVAX-USD      | 3156231  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3156232  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 3156225  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3156233  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 3156257  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 3156234  | RUNNING         | 308      | Evaluating Funnel/Polling Order
+Trader SOL-USD       | 3156235  | RUNNING         | 308      | Evaluating Funnel/Polling Order
 ================================================================================
 ```
 
@@ -149,7 +149,46 @@ Trader SOL-USD       | 3153847  | COOL-DOWN       | 291      | Next run in 14.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-No critical errors in current window.
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:02:52 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (163.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:04:14 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (245.9s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:05:32 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (323.4s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:06:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (400.9s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:08:07 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (479.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:09:25 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (556.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:10:43 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (634.4s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:12:00 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (712.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:13:18 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (789.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 09:14:36 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [DOGE-USD] CRITICAL: DVOL cache is stale (867.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:02:52 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (155.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:04:14 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (237.9s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:05:32 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (315.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:06:50 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (393.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:08:07 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (470.9s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:09:25 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (548.7s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:10:43 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (626.4s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:12:01 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (704.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:13:18 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (781.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_ETH_USD.log:2026-08-18 09:14:36 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [ETH-USD] CRITICAL: DVOL cache is stale (859.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:02:52 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (163.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:04:15 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (246.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:05:32 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (323.4s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:06:50 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (401.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:08:08 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (479.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:09:25 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (556.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:10:43 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (634.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:12:01 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (712.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:13:18 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (789.7s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 09:14:36 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [LINK-USD] CRITICAL: DVOL cache is stale (867.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:02:52 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (163.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:04:14 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (245.8s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:05:32 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (323.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:06:50 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (401.3s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:08:07 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (479.0s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:09:25 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (556.6s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:10:43 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (634.5s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:12:01 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (712.1s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:13:18 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (789.8s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 09:14:36 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (867.4s old > 150s limit, Fail-Closed)
 ```
 </details>
 
