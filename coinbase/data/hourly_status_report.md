@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-17 05:00:07 PM PDT (2026-08-18 00:00:07 UTC)`  
+> **Report Generated**: `2026-08-17 05:00:23 PM PDT (2026-08-18 00:00:23 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `74.2%` | **Completed Trades**: `89`
 
 ---
@@ -12,13 +12,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
 | `ETH-USD` | DVOL_ETH | **+1.19** | **-0.50** | **+1.69** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.82** | **-0.50** | **+1.32** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+0.85** | **-0.50** | **+1.35** | **N/A** | 5.0 | 🔴 DAW VETOED |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -48,9 +48,9 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (10.05h old) | 08-17 06:57 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.97h old) | 08-17 16:02 |
-| ✅ | **Holding Times config** | Fresh (127.34h old) | 08-12 09:39 |
+| ✅ | **Go-List JSON** | Fresh (10.06h old) | 08-17 06:57 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.98h old) | 08-17 16:02 |
+| ✅ | **Holding Times config** | Fresh (127.35h old) | 08-12 09:39 |
 | ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-17 17:00 |
 | ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-17 17:00 |
 | ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
@@ -132,8 +132,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:00:07 AM
-   CPU:   0.1%  |  MEM:   8.2% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:00:22 AM
+   CPU:   9.1%  |  MEM:   8.2% (14.2GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
