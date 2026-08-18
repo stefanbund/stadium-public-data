@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-18 01:00:06 AM PDT (2026-08-18 08:00:06 UTC)`  
+> **Report Generated**: `2026-08-18 01:04:10 AM PDT (2026-08-18 08:04:10 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
@@ -12,13 +12,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **-0.63** | **-0.50** | **-0.13** | **+24.14** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+12.56** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-1.27** | **-0.50** | **-0.77** | **+24.01** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-0.97** | **-0.50** | **-0.47** | **+12.50** | 5.0 | 🔴 DAW VETOED |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -48,12 +48,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (6.48h old) | 08-17 18:31 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.97h old) | 08-18 00:02 |
-| ✅ | **Holding Times config** | Fresh (6.26h old) | 08-17 18:45 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-18 00:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-18 00:59 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-18 01:00 |
+| ✅ | **Go-List JSON** | Fresh (6.55h old) | 08-17 18:31 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.04h old) | 08-18 00:02 |
+| ✅ | **Holding Times config** | Fresh (6.32h old) | 08-17 18:45 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-18 01:04 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-18 01:04 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-18 01:04 |
 
 <br>
 
@@ -98,12 +98,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 1.0h ago (2026-08-18 12:02 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-17 06:44:25 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **138.0h (5d 17h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **137.9h (5d 17h 55m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **137.0h (5d 16h 59m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **136.9h (5d 16h 55m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -117,19 +117,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  08:00:06 AM
-   CPU:   0.7%  |  MEM:   6.3% (14.4GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  08:04:10 AM
+   CPU:  14.3%  |  MEM:   6.0% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 3063468  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 3100964  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader ETH-USD       | 3100965  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader ADA-USD       | 3100966  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader DOGE-USD      | 3100967  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader BTC-USD       | 3100968  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader LINK-USD      | 3100969  | COOL-DOWN       | 121      | Next run in 9.7s
-Trader SOL-USD       | 3100970  | COOL-DOWN       | 121      | Next run in 9.7s
+Trader AVAX-USD      | 3105029  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3105030  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 3105031  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3105032  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 3105033  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 3105034  | RUNNING         | 133      | Evaluating Funnel/Polling Order
+Trader SOL-USD       | 3105035  | RUNNING         | 133      | Evaluating Funnel/Polling Order
 ================================================================================
 ```
 
