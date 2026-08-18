@@ -3,8 +3,8 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-17 06:17:37 PM PDT (2026-08-18 01:17:37 UTC)`  
-> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `74.2%` | **Completed Trades**: `89`
+> **Report Generated**: `2026-08-17 06:19:55 PM PDT (2026-08-18 01:19:55 UTC)`  
+> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 ---
 ## 1. ⚡ Macro Volatility & Layer 1 DAW Causal Oracle
@@ -12,13 +12,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.78** | **-0.50** | **+1.28** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.71** | **-0.50** | **+1.21** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+0.81** | **-0.50** | **+1.31** | **+23.44** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+0.80** | **-0.50** | **+1.30** | **+12.02** | 5.0 | 🔴 DAW VETOED |
 
 ![DVOL Market Regime](./images/dvol_regime_timeline.png)
 
@@ -43,17 +43,17 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟢 **Safe / Compression ($Z \le Z_{opt}$)**: Derivatives market prices low tail risk. Order books are deep, adverse selection is minimal, and TimesFM zero-shot scalps operate at peak win rates.
   - 🔴 **Hostile / Expansion ($Z > Z_{opt}$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 ---
-## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
+## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.02h old) | 08-17 18:16 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.01h old) | 08-17 18:17 |
-| ✅ | **Holding Times config** | Fresh (128.64h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-17 18:17 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-17 18:17 |
-| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
+| ✅ | **Go-List JSON** | Fresh (0.06h old) | 08-17 18:16 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.02h old) | 08-17 18:19 |
+| ✅ | **Holding Times config** | Fresh (128.67h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-17 18:19 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-17 18:20 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-17 18:20 |
 
 <br>
 
@@ -66,9 +66,9 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Layer 1: DAW Causal Volatility Veto | `17` | **9.3%** |
+| Layer 1: DAW Causal Volatility Veto | `7` | **100.0%** |
 | Layer 2A: Vol Surface Skew & VRP Gate | `0` | **0.0%** |
-| Layer 2B: DVOL Directional Momentum Bias | `165` | **90.7%** |
+| Layer 2B: DVOL Directional Momentum Bias | `0` | **0.0%** |
 | Layer 2C: KER Efficiency Noise Filter | `0` | **0.0%** |
 | Layer 2.5: TimesFM Forecast Velocity Gate | `0` | **0.0%** |
 | Layer 3: SDR Liquidity Sizing Floor | `0` | **0.0%** |
@@ -78,21 +78,6 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | System: Asset Blacklist Gate | `0` | **0.0%** |
 
 ![8-Stage Funnel Rejection Waterfall](./images/funnel_waterfall_breakdown.png)
-
-### Active Universe Performance & Drift Matrix
-
-| Asset | Trades | Win Rate | Loss Streak | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `DOGE-USD` | 2 | 100.0% | 0 | 🟢 OK |
-| `CHZ-USD` | 15 | 80.0% | 1 | 🟢 OK |
-| `CRV-USD` | 16 | 90.0% | 0 | 🟢 OK |
-| `CRO-USD` | 5 | 100.0% | 0 | 🟢 OK |
-| `ACH-USD` | 4 | 75.0% | 1 | 🟢 OK |
-| `ALGO-USD` | 19 | 40.0% | 1 | ⚠️ DRIFT |
-| `BCH-USD` | 4 | 100.0% | 0 | 🟢 OK |
-| `CBETH-USD` | 5 | 60.0% | 2 | 🟢 OK |
-| `BNT-USD` | 12 | 50.0% | 0 | 🟢 OK |
-| `GNO-USD` | 7 | 57.1% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -111,14 +96,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.0h ago (2026-08-17 06:17 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 0.0h ago (2026-08-17 06:19 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-17 06:58:43 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **144.7h (6d 0h 42m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **144.7h (6d 0h 40m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **143.7h (5d 23h 42m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **143.7h (5d 23h 39m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 ![TimesFM Forecast Matrix](./images/timesfm_forecast_matrix.png)
@@ -132,27 +117,31 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  01:17:38 AM
-   CPU:   3.1%  |  MEM:   8.1% (14.2GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  01:19:53 AM
+   CPU:  54.1%  |  MEM:   6.5% (14.4GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 2743935  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 2744049  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 2744050  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ADA-USD       | 2744051  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 2744052  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 2744053  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader LINK-USD      | 2744054  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader SOL-USD       | 2744055  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader AVAX-USD      | 2746745  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader ETH-USD       | 2746746  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader ADA-USD       | 2746747  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader DOGE-USD      | 2746748  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader BTC-USD       | 2746749  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader LINK-USD      | 2746750  | COOL-DOWN       | 2        | Next run in 15.0s
+Trader SOL-USD       | 2746751  | COOL-DOWN       | 2        | Next run in 15.0s
 ================================================================================
 ```
 
 ---
-## 6. ☀️ Mac Mini Day Trader Intelligence
-**Day Trader Watchdog Status**: 🔴 OFFLINE
+## 6. ☀️ Mac Mini Day Trader Intelligence & PnL
+**Guardian Watchdog Status**: 🟢 ONLINE
 
-Error reading recommendations: name 'pd' is not defined
+### 💰 Cumulative PnL Dashboards
+| Environment | Total Trades | Win Rate | Net PnL (USD) |
+| :--- | :--- | :--- | :--- |
+| **LIVE EC2** | 0 | N/A | **$+0.00** |
+| **SHADOW (Paper)** | 0 | N/A | **$+0.00** |
 
 ---
 ## 7. ⚠️ Actionable Error & Incident Radar (Last 10h)
@@ -160,7 +149,6 @@ Error reading recommendations: name 'pd' is not defined
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-18 00:25:08 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (38009.1s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 00:26:28 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (38089.2s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 00:27:48 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (38169.2s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 00:29:08 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (38249.5s old > 150s limit, Fail-Closed)
@@ -200,6 +188,7 @@ logs/watchdog_Trader_SOL_USD.log:2026-08-18 01:13:14 [ERROR] [async_sfgk_trader.
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 01:14:34 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (40975.7s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 01:15:54 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (41055.8s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-18 01:16:55 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (41116.2s old > 150s limit, Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 01:18:15 [ERROR] [async_sfgk_trader.py:fetch_live_state:469] [SOL-USD] CRITICAL: DVOL cache is stale (41196.5s old > 150s limit, Fail-Closed)
 ```
 </details>
 
