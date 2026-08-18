@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-18 12:00:01 PM PDT (2026-08-18 19:00:01 UTC)`  
+> **Report Generated**: `2026-08-18 12:16:01 PM PDT (2026-08-18 19:16:01 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+1.27** | **-0.50** | **+1.77** | **+22.49** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+1.19** | **-0.50** | **+1.69** | **+11.19** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+2.29** | **-0.50** | **+2.79** | **+23.13** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+1.41** | **-0.50** | **+1.91** | **+11.70** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (124.85h old) | 08-13 07:08 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.68h old) | 08-18 10:19 |
-| ✅ | **Holding Times config** | Fresh (17.25h old) | 08-17 18:45 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-18 11:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-18 11:59 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-18 12:00 |
+| ✅ | **Go-List JSON** | Fresh (125.12h old) | 08-13 07:08 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.95h old) | 08-18 10:19 |
+| ✅ | **Holding Times config** | Fresh (17.52h old) | 08-17 18:45 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-18 12:16 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-18 12:15 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-18 12:15 |
 
 <br>
 
@@ -81,14 +81,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 1.7h ago (2026-08-18 10:19 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.9h ago (2026-08-18 10:19 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-17 06:44:25 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **127.0h (5d 6h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **126.7h (5d 6h 43m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **126.0h (5d 5h 59m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **125.7h (5d 5h 43m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 
@@ -102,19 +102,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:59:58 PM
-   CPU:   0.9%  |  MEM:   5.5% (14.6GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  07:16:00 PM
+   CPU:  44.7%  |  MEM:   6.2% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 3522061  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 3612728  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader ETH-USD       | 3612729  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader ADA-USD       | 3612730  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader DOGE-USD      | 3612731  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader BTC-USD       | 3612732  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader LINK-USD      | 3612733  | COOL-DOWN       | 301      | Next run in 4.7s
-Trader SOL-USD       | 3612734  | COOL-DOWN       | 301      | Next run in 4.7s
+Trader AVAX-USD      | 3626746  | COOL-DOWN       | 345      | Next run in 14.9s
+Trader ETH-USD       | 3626747  | COOL-DOWN       | 348      | Next run in 14.9s
+Trader ADA-USD       | 3626748  | COOL-DOWN       | 345      | Next run in 14.9s
+Trader DOGE-USD      | 3626749  | COOL-DOWN       | 345      | Next run in 14.9s
+Trader BTC-USD       | 3626750  | COOL-DOWN       | 345      | Next run in 14.9s
+Trader LINK-USD      | 3626751  | COOL-DOWN       | 345      | Next run in 14.9s
+Trader SOL-USD       | 3626752  | COOL-DOWN       | 345      | Next run in 14.9s
 ================================================================================
 ```
 
@@ -134,7 +134,24 @@ Trader SOL-USD       | 3612734  | COOL-DOWN       | 301      | Next run in 4.7s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-No critical errors in current window.
+logs/watchdog_Trader_ADA_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [ADA-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_ADA_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_ADA_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
+logs/watchdog_Trader_AVAX_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [AVAX-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_AVAX_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_AVAX_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
+logs/watchdog_Trader_BTC_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [BTC-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_BTC_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_BTC_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
+logs/watchdog_Trader_DOGE_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [DOGE-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_DOGE_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_DOGE_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
+logs/watchdog_Trader_LINK_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [LINK-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_LINK_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_LINK_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
+logs/watchdog_Trader_SOL_USD.log:2026-08-18 19:11:49 [ERROR] [async_sfgk_trader.py:fetch_live_state:485] [SOL-USD] CRITICAL: Failed to fetch DVOL from oracle or check dependencies: Extra data: line 12 column 2 (char 338) (Fail-Closed)
+logs/watchdog_Trader_SOL_USD.log:    raise JSONDecodeError("Extra data", s, end)
+logs/watchdog_Trader_SOL_USD.log:json.decoder.JSONDecodeError: Extra data: line 12 column 2 (char 338)
 ```
 </details>
 
