@@ -3,8 +3,8 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-19 07:14:26 AM PDT (2026-08-19 14:14:26 UTC)`  
-> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
+> **Report Generated**: `2026-08-19 07:32:29 AM PDT (2026-08-19 14:32:29 UTC)`  
+> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `74.2%` | **Completed Trades**: `89`
 
 
 > 🖼️ **[View Detailed Visual Intelligence & 3-Tier Profiling Graphs](./visual_intelligence.html)**
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+2.17** | **-0.50** | **+2.67** | **+23.32** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **-0.58** | **-0.50** | **-0.08** | **+11.69** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+2.34** | **-0.50** | **+2.84** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+0.91** | **-0.50** | **+1.41** | **N/A** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -32,21 +32,21 @@ The system's Layer 1 DAW Causal Gate continuously gauges execution safety using 
   - 🟢 **Safe / Compression ($Z \le Z_{opt}$)**: Derivatives market prices low tail risk. Order books are deep, adverse selection is minimal, and TimesFM zero-shot scalps operate at peak win rates.
   - 🔴 **Hostile / Expansion ($Z > Z_{opt}$)**: Options pricing aggressive shock risk. Taker order sweeps cause adverse selection; **DAW Causality Veto is active** to preserve capital.
 ---
-## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🟢 ALL SYNCED & CERTIFIED
+## 2. 🔒 MLOps & Trading Telemetry Provenance & Utilization Certification: 🔴 CRITICAL SYNC/UTILIZATION FAILURE
 We hereby certify that the mission-critical algorithmic data assets uploaded by the Mac Mini MLOps node have been audited for freshness, fall within their strict operational due dates, and are actively being utilized by the live EC2 HFT Trader.
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (144.10h old) | 08-13 07:08 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.51h old) | 08-19 06:43 |
-| ✅ | **Holding Times config** | Fresh (165.58h old) | 08-12 09:39 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 07:14 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 07:14 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-19 07:14 |
+| ❌ | **Go-List JSON** | NOT FOUND ON EC2 | - |
+| ✅ | **TimesFM Forecasts** | Fresh (0.81h old) | 08-19 06:43 |
+| ✅ | **Holding Times config** | Fresh (165.88h old) | 08-12 09:39 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 07:32 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 07:32 |
+| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 0 recent read events).
+> **Utilization Certification**: 🔴 **FAILED.** Guardian watchdog offline, unable to certify utilization.
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `14,532` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `0` | **0.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -63,6 +63,21 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | Legacy / Unknown Veto | `0` | **0.0%** |
 
 
+
+### Active Universe Performance & Drift Matrix
+
+| Asset | Trades | Win Rate | Loss Streak | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| `DOGE-USD` | 2 | 100.0% | 0 | 🟢 OK |
+| `CHZ-USD` | 15 | 80.0% | 1 | 🟢 OK |
+| `CRV-USD` | 16 | 90.0% | 0 | 🟢 OK |
+| `CRO-USD` | 5 | 100.0% | 0 | 🟢 OK |
+| `ACH-USD` | 4 | 75.0% | 1 | 🟢 OK |
+| `ALGO-USD` | 19 | 40.0% | 1 | ⚠️ DRIFT |
+| `BCH-USD` | 4 | 100.0% | 0 | 🟢 OK |
+| `CBETH-USD` | 5 | 60.0% | 2 | 🟢 OK |
+| `BNT-USD` | 12 | 50.0% | 0 | 🟢 OK |
+| `GNO-USD` | 7 | 57.1% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -81,14 +96,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.5h ago (2026-08-19 06:43 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 0.8h ago (2026-08-19 06:43 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **107.8h (4d 11h 45m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **107.5h (4d 11h 27m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **106.8h (4d 10h 45m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **106.5h (4d 10h 27m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 
@@ -101,21 +116,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ---
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
-================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:14:25 PM
-   CPU:  42.6%  |  MEM:   6.4% (14.4GB / 15.4GB Free)
-================================================================================
-SERVICE              | PID      | STATUS          | RESTARTS | INFO
---------------------------------------------------------------------------------
-L3 Consumer          | 413179   | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 441184   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader ETH-USD       | 441185   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader ADA-USD       | 441186   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader DOGE-USD      | 441187   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader BTC-USD       | 441188   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader LINK-USD      | 441189   | COOL-DOWN       | 90       | Next run in 14.9s
-Trader SOL-USD       | 441190   | COOL-DOWN       | 90       | Next run in 14.9s
-================================================================================
+Guardian watchdog table not available
 ```
 
 ---
@@ -134,7 +135,7 @@ Trader SOL-USD       | 441190   | COOL-DOWN       | 90       | Next run in 14.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_L3_Consumer.log:CRITICAL: Failed to retrieve keys from AWS Secrets Manager: Unable to locate credentials
+No critical errors in current window.
 ```
 </details>
 
