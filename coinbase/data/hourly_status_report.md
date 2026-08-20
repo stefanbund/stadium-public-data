@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-19 11:00:03 PM PDT (2026-08-20 06:00:03 UTC)`  
+> **Report Generated**: `2026-08-19 11:00:50 PM PDT (2026-08-20 06:00:50 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,11 +37,11 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (5.28h old) | 08-19 17:43 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.27h old) | 08-19 22:44 |
-| ❌ | **Holding Times config** | STALE! (181.3h old) | Limit 168h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-19 22:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 22:59 |
+| ✅ | **Go-List JSON** | Fresh (5.29h old) | 08-19 17:43 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.28h old) | 08-19 22:44 |
+| ❌ | **Holding Times config** | STALE! (181.4h old) | Limit 168h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 23:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 23:00 |
 | ❌ | **Live Trading Telemetry** | STALE! (0.6h old) | Limit 0.05h |
 
 <br>
@@ -103,7 +103,7 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **91.0h (3d 18h 59m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **91.0h (3d 18h 58m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 
@@ -117,8 +117,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:00:03 AM
-   CPU:   0.2%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:00:48 AM
+   CPU:   2.5%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
