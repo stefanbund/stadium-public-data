@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-19 07:00:09 PM PDT (2026-08-20 02:00:09 UTC)`  
+> **Report Generated**: `2026-08-19 07:00:37 PM PDT (2026-08-20 02:00:37 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,11 +37,11 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (1.28h old) | 08-19 17:43 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.97h old) | 08-19 16:02 |
-| ❌ | **Holding Times config** | STALE! (177.3h old) | Limit 168h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 19:00 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 19:00 |
+| ✅ | **Go-List JSON** | Fresh (1.29h old) | 08-19 17:43 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.98h old) | 08-19 16:02 |
+| ❌ | **Holding Times config** | STALE! (177.4h old) | Limit 168h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-19 19:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-19 19:00 |
 | ❌ | **Live Trading Telemetry** | STALE! (0.2h old) | Limit 0.05h |
 
 <br>
@@ -119,8 +119,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:00:05 AM
-   CPU:   1.8%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:00:36 AM
+   CPU:   3.1%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
