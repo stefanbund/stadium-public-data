@@ -3,8 +3,8 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-19 05:48:03 PM PDT (2026-08-20 00:48:03 UTC)`  
-> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `74.2%` | **Completed Trades**: `89`
+> **Report Generated**: `2026-08-19 06:00:06 PM PDT (2026-08-20 01:00:06 UTC)`  
+> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
 > 🖼️ **[View Detailed Visual Intelligence & 3-Tier Profiling Graphs](./visual_intelligence.html)**
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.78** | **-0.50** | **+1.28** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.44** | **-0.50** | **+0.94** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **-38.65** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+0.75** | **-0.50** | **+1.25** | **-24.69** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **-38.73** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **-38.72** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **-38.73** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+0.46** | **-0.50** | **+0.96** | **-38.73** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,11 +37,11 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.08h old) | 08-19 17:43 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.77h old) | 08-19 16:02 |
-| ✅ | **Holding Times config** | Fresh (0.08h old) | 08-19 17:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 17:48 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 17:48 |
+| ✅ | **Go-List JSON** | Fresh (0.28h old) | 08-19 17:43 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.97h old) | 08-19 16:02 |
+| ✅ | **Holding Times config** | Fresh (0.28h old) | 08-19 17:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-19 18:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-19 18:00 |
 | ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
@@ -64,21 +64,6 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 
 
-### Active Universe Performance & Drift Matrix
-
-| Asset | Trades | Win Rate | Loss Streak | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `DOGE-USD` | 2 | 100.0% | 0 | 🟢 OK |
-| `CHZ-USD` | 15 | 80.0% | 1 | 🟢 OK |
-| `CRV-USD` | 16 | 90.0% | 0 | 🟢 OK |
-| `CRO-USD` | 5 | 100.0% | 0 | 🟢 OK |
-| `ACH-USD` | 4 | 75.0% | 1 | 🟢 OK |
-| `ALGO-USD` | 19 | 40.0% | 1 | ⚠️ DRIFT |
-| `BCH-USD` | 4 | 100.0% | 0 | 🟢 OK |
-| `CBETH-USD` | 5 | 60.0% | 2 | 🟢 OK |
-| `BNT-USD` | 12 | 50.0% | 0 | 🟢 OK |
-| `GNO-USD` | 7 | 57.1% | 0 | 🟢 OK |
-
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
 Live balance sheet and open maker liquidity positions from Coinbase CDP.
@@ -89,13 +74,13 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `ADA-USD` | BUY | 0.18657 | `d989f1e0-12f7-4069-b16b-621e1064bbda` |
-| `AVAX-USD` | BUY | 6.785 | `47bbcfa1-9e6c-4aa7-932b-f99610cbd6fe` |
-| `LINK-USD` | BUY | 10.569 | `263f02ca-5e0c-46f3-8f0a-985a97bc98e3` |
-| `BTC-USD` | BUY | 69517.87 | `40ca02af-682e-4689-bd22-da54f5628a46` |
-| `ETH-USD` | BUY | 2267.42 | `3bfe1698-cbf1-4492-981a-617d203b7697` |
-| `SOL-USD` | BUY | 85.42 | `bab2eae5-67dd-4a9b-9484-0c6463b85fa6` |
-| `DOGE-USD` | BUY | 0.07548 | `a48382a3-50bb-4883-a52c-af400ed60df0` |
+| `BTC-USD` | BUY | 69333.75 | `424dc1bf-2747-41f2-8fb0-dfcce15fa3dc` |
+| `LINK-USD` | SELL | 10.595 | `9864461e-fe6d-4ecc-bd07-a886c83e884b` |
+| `ETH-USD` | SELL | 2273.73 | `6178a012-db27-414b-b669-edf54fdb2f0d` |
+| `ADA-USD` | SELL | 0.1871 | `f61d405f-0715-4f26-8512-162cd45a75c8` |
+| `DOGE-USD` | SELL | 0.07567 | `dd2c7d9d-4b85-427a-b2f1-2072a22210ed` |
+| `SOL-USD` | SELL | 85.66 | `a22d9167-ab29-4976-84ab-ad2f2158ca90` |
+| `AVAX-USD` | SELL | 6.792 | `b9926cb8-c29c-4663-9c79-8d82e6ee2927` |
 
 
 
@@ -103,14 +88,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 1.8h ago (2026-08-19 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-19 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **97.2h (4d 1h 11m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-23 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **97.0h (4d 0h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `Never`
-- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **96.2h (4d 0h 11m)**)
+- **Next Scheduled Run**: `2026-08-23 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **96.0h (3d 23h 59m)**)
 - **Selected Mega Cap Universe**: `Could not fetch active universe from EC2`
 
 
@@ -124,19 +109,19 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:48:02 AM
-   CPU:   3.8%  |  MEM:   8.3% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  01:00:04 AM
+   CPU:   1.2%  |  MEM:   8.3% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 982780   | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 984839   | RUNNING         | 1        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 984840   | RUNNING         | 1        | Evaluating Funnel/Polling Order
-Trader ADA-USD       | 984841   | RUNNING         | 1        | Evaluating Funnel/Polling Order
+Trader AVAX-USD      | 988621   | RUNNING         | 3        | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 986869   | RUNNING         | 2        | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 986870   | RUNNING         | 2        | Evaluating Funnel/Polling Order
 Trader DOGE-USD      | 984842   | RUNNING         | 1        | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 984843   | RUNNING         | 1        | Evaluating Funnel/Polling Order
-Trader LINK-USD      | 984844   | RUNNING         | 1        | Evaluating Funnel/Polling Order
-Trader SOL-USD       | 984845   | RUNNING         | 1        | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 993638   | RUNNING         | 6        | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 986872   | RUNNING         | 2        | Evaluating Funnel/Polling Order
+Trader SOL-USD       | 986873   | RUNNING         | 2        | Evaluating Funnel/Polling Order
 ================================================================================
 ```
 
