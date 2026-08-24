@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-24 03:00:04 PM PDT (2026-08-24 22:00:04 UTC)`  
+> **Report Generated**: `2026-08-24 03:14:06 PM PDT (2026-08-24 22:14:06 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.91** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.50** | **-0.50** | **-1.00** | **+9.48** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.98** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.95** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.91** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.93** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-0.64** | **-0.50** | **-0.14** | **-5.97** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **N/A** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.56** | **-0.50** | **-1.06** | **+9.66** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **-5.34** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **N/A** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **N/A** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **N/A** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-0.70** | **-0.50** | **-0.20** | **N/A** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (2.07h old) | 08-24 12:56 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.10h old) | 08-24 12:54 |
-| ✅ | **Holding Times config** | Fresh (2.09h old) | 08-24 12:55 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-24 15:00 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-24 15:00 |
-| ❌ | **Live Trading Telemetry** | STALE! (1.3h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (0.08h old) | 08-24 15:09 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.33h old) | 08-24 12:54 |
+| ✅ | **Holding Times config** | Fresh (0.08h old) | 08-24 15:09 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-24 15:14 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-24 15:14 |
+| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 0 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 22 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `635` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `10` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -63,14 +63,6 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | Legacy / Unknown Veto | `0` | **0.0%** |
 
 
-
-### Active Universe Performance & Drift Matrix
-
-| Asset | Trades | Win Rate | Loss Streak | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `ADA-USD` | 4 | 100.0% | 0 | 🟢 OK |
-| `DOGE-USD` | 2 | 100.0% | 0 | 🟢 OK |
-| `LINK-USD` | 2 | 100.0% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -88,7 +80,17 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | `ETH-USD` | SELL | 2514.95 | `dd05ead3-9b5a-497a-ac26-256d87814b6f` |
 | `AVAX-USD` | BUY | 7.512 | `a90a3078-8c18-4d6b-b207-68245b7a2324` |
 | `AVAX-USD` | BUY | 7.512 | `0b0a69ab-0416-47aa-819d-2f2e2e8986f4` |
+| `ADA-USD` | SELL | 0.22138 | `f2754a2e-0b90-4c7f-a6bb-38b829d1e6c0` |
+| `AVAX-USD` | BUY | 7.533 | `13e01280-703e-4f7a-a00d-b6a53d642d3e` |
+| `DOGE-USD` | BUY | 0.08976 | `f443d043-54f2-412a-916e-050a40e29382` |
+| `SOL-USD` | BUY | 97.32 | `cc932aeb-f7e2-4a1e-a503-2378818a512c` |
+| `BTC-USD` | BUY | 78752.95 | `c7c681af-dff2-4bd5-a809-255c0b2c1c91` |
+| `BTC-USD` | BUY | 78768.91 | `73507a14-4052-4642-b866-fb9fcb080714` |
 | `ADA-USD` | BUY | 0.22017 | `ea7f79a4-1cfa-4b0f-8961-78aca7a42711` |
+| `DOGE-USD` | BUY | 0.08979 | `227386b0-4faa-44de-bcdf-1a3224d40410` |
+| `ETH-USD` | BUY | 2477.71 | `e3cc20fe-f4de-413a-8a0c-bd8b5de86a48` |
+| `ADA-USD` | BUY | 0.22047 | `ea92ecce-f056-411e-b9ac-2690828f3f6b` |
+| `LINK-USD` | BUY | 11.573 | `6beae88a-4dbc-4a92-966c-798cdefd8c14` |
 
 
 
@@ -96,15 +98,15 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.1h ago (2026-08-24 12:54 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.3h ago (2026-08-24 12:54 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-24 12:54:26 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **148.0h (6d 3h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **147.8h (6d 3h 45m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-08-24 12:56:08 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **147.0h (6d 2h 59m)**)
-- **Selected Mega Cap Universe**: `BTC, ADA, ETH, DOGE, SUI, XRP, SOL, ZEC`
+- **Last Run (Confirmation)**: `2026-08-24 03:09:32 PM PDT`
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **146.8h (6d 2h 45m)**)
+- **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
 
@@ -117,20 +119,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  10:00:04 PM
-   CPU:   5.2%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  10:14:04 PM
+   CPU:   2.5%  |  MEM:   8.1% (14.2GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
-L3 Consumer          | 2686156  | RUNNING         | -        | Continuous Websocket Feed
-Trader AVAX-USD      | 2694020  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 2694021  | RUNNING         | 28       | Evaluating Funnel/Polling Order
-Trader ADA-USD       | 2694022  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 2694023  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 2694024  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-Trader LINK-USD      | 2694025  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-Trader SOL-USD       | 2694026  | RUNNING         | 4        | Evaluating Funnel/Polling Order
-================================================================================
+L3 Consumer          | 2706004  | RUNNING         | -        | Continuous Websocket Feed
+MAO Daemon           | 2706010  | RUNNING         | -        | Oracle Yield Analysis
+Stable Farmer        | 2706012  | RUNNING         | -        | Volume Farmer
+Trader AVAX-USD      | 2707994  | RUNNING         | 1        | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 2708486  | COOL-DOWN       | 9        | Next run in 5.0s
+Trader ADA-USD       | 2706015  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 2708006  | RUNNING         | 1        | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 2708007  | RUNNING         | 1        | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 2708008  | RUNNING         | 1        | Evaluating Funnel/Polling Order
 ```
 
 ---
@@ -149,46 +151,25 @@ Trader SOL-USD       | 2694026  | RUNNING         | 4        | Evaluating Funnel
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
-logs/watchdog_Trader_SOL_USD.log:NameError: name 'TimesFMForecastGate' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:12:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:12:43 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:12:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:12:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:12:58 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:03 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:08 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:18 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:23 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:29 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:34 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:39 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:44 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:49 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:54 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:13:59 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:14:04 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_ADA_USD.log:2026-08-24 22:14:09 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [ADA-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 ```
 </details>
 
