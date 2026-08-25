@@ -3,8 +3,8 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-25 09:00:01 AM PDT (2026-08-25 16:00:01 UTC)`  
-> **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
+> **Report Generated**: `2026-08-25 09:11:43 AM PDT (2026-08-25 16:11:43 UTC)`  
+> **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
 > 🖼️ **[View Detailed Visual Intelligence & 3-Tier Profiling Graphs](./visual_intelligence.md)**
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.90** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.37** | **-0.50** | **-0.87** | **-36.12** | 5.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.90** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.90** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.90** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.90** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-0.72** | **-0.50** | **-0.22** | **-48.83** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.31** | **-0.50** | **-0.81** | **+5.53** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **N/A** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (13.72h old) | 08-24 19:16 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.95h old) | 08-25 08:03 |
-| ❌ | **Holding Times config** | STALE! (96.0h old) | Limit 38.0h |
-| ❌ | **BTC DVOL Cache** | STALE! (309.8h old) | Limit 0.0h |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-25 08:59 |
-| ❌ | **Live Trading Telemetry** | STALE! (96.2h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (0.16h old) | 08-25 09:02 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.14h old) | 08-25 08:03 |
+| ✅ | **Holding Times config** | Fresh (0.16h old) | 08-25 09:02 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-25 09:11 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-25 09:11 |
+| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 156 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 32 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `15,920` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `25` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -63,18 +63,6 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | Legacy / Unknown Veto | `0` | **0.0%** |
 
 
-
-### Active Universe Performance & Drift Matrix
-
-| Asset | Trades | Win Rate | Loss Streak | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | 87 | 93.1% | 0 | 🟢 OK |
-| `ADA-USD` | 150 | 94.7% | 0 | 🟢 OK |
-| `ETH-USD` | 85 | 89.4% | 0 | 🟢 OK |
-| `AVAX-USD` | 128 | 93.0% | 0 | 🟢 OK |
-| `SOL-USD` | 95 | 93.7% | 0 | 🟢 OK |
-| `DOGE-USD` | 142 | 93.7% | 0 | 🟢 OK |
-| `LINK-USD` | 95 | 94.7% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -98,7 +86,6 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | `AVAX-USD` | SELL | 7.625 | `c14c3c5a-f35f-4043-a616-ea4c20cfa9f2` |
 | `BTC-USD` | SELL | 79882.66 | `560ee9a9-d0c6-4242-b2d2-c0d7ddc7393f` |
 | `DOGE-USD` | SELL | 0.09132 | `2f2ed9b7-454b-4377-9672-5f4c78c84b1e` |
-| `ETH-USD` | SELL | 2485.77 | `76a14da3-375d-4f9d-98f2-7e2673f751d3` |
 | `AVAX-USD` | SELL | 7.558 | `fc9234ee-6ef0-4ba3-a44b-d86922f91144` |
 
 
@@ -107,14 +94,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.9h ago (2026-08-25 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.1h ago (2026-08-25 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **130.0h (5d 9h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **129.8h (5d 9h 48m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-08-24 07:16:47 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **129.0h (5d 8h 59m)**)
+- **Last Run (Confirmation)**: `2026-08-25 09:02:14 AM PDT`
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **128.8h (5d 8h 48m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -128,20 +115,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  04:00:00 PM
-   CPU:   1.2%  |  MEM:   8.8% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  04:11:40 PM
+   CPU:   2.7%  |  MEM:   8.2% (14.2GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
-L3 Consumer          | 3551496  | RUNNING         | -        | Continuous Websocket Feed
-MAO Daemon           | 3551610  | RUNNING         | -        | Oracle Yield Analysis
-Stable Farmer        | 3551612  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 3551613  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 3551614  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ADA-USD       | 3551615  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 3551616  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 3551617  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader LINK-USD      | 3551618  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+L3 Consumer          | 3563069  | RUNNING         | -        | Continuous Websocket Feed
+MAO Daemon           | 3563119  | RUNNING         | -        | Oracle Yield Analysis
+Stable Farmer        | 3563121  | RUNNING         | -        | Volume Farmer
+Trader AVAX-USD      | 3563122  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3569380  | COOL-DOWN       | 24       | Next run in 10.0s
+Trader ADA-USD       | 3563124  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3563125  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 3563126  | RUNNING         | 0        | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 3563128  | RUNNING         | 0        | Evaluating Funnel/Polling Order
 ```
 
 ---
@@ -160,46 +147,7 @@ Trader LINK-USD      | 3551618  | RUNNING         | 0        | Evaluating Funnel
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:25 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:35 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:40 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:45 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:45:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:06 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:16 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:21 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:42 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:47 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:46:57 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:02 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:08 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:18 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:23 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:28 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:38 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:44 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:49 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:54 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:47:59 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:04 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:09 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:25 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:48:35 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 15:59:53 [ERROR] [async_sfgk_trader.py:fetch_live_state:535] [SOL-USD] CRITICAL: DVOL cache is stale (1115296.6s old > 150s limit, Fail-Closed)
+No critical errors in current window.
 ```
 </details>
 
