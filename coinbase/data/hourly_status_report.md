@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-25 12:44:11 AM PDT (2026-08-25 07:44:11 UTC)`  
+> **Report Generated**: `2026-08-25 01:00:09 AM PDT (2026-08-25 08:00:09 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.70** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.93** | **-0.50** | **+1.43** | **+10.25** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.70** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.70** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.77** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.77** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.26** | **-0.50** | **+0.76** | **-4.77** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-8.39** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+0.44** | **-0.50** | **+0.94** | **+6.85** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-8.40** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-8.89** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-8.40** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-9.38** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-0.20** | **-0.50** | **+0.30** | **-8.40** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (5.46h old) | 08-24 19:16 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.71h old) | 08-25 00:01 |
-| ❌ | **Holding Times config** | STALE! (87.7h old) | Limit 29.7h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-25 00:44 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-25 00:44 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-25 00:44 |
+| ✅ | **Go-List JSON** | Fresh (5.72h old) | 08-24 19:16 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.97h old) | 08-25 00:01 |
+| ❌ | **Holding Times config** | STALE! (88.0h old) | Limit 30.0h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-25 01:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-25 01:00 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-25 01:00 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1954 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1957 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `4,347` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `4,555` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -71,8 +71,8 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | `ADA-USD` | 5 | 80.0% | 1 | 🟢 OK |
 | `ETH-USD` | 3 | 66.7% | 1 | 🟢 OK |
 | `AVAX-USD` | 4 | 100.0% | 0 | 🟢 OK |
-| `DOGE-USD` | 3 | 66.7% | 0 | 🟢 OK |
-| `LINK-USD` | 6 | 83.3% | 1 | 🟢 OK |
+| `DOGE-USD` | 4 | 75.0% | 0 | 🟢 OK |
+| `LINK-USD` | 7 | 85.7% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -84,6 +84,7 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
+| `AVAX-USD` | SELL | 7.546 | `e6f54b4e-4d05-40c6-86d4-44d0801adfae` |
 | `ETH-USD` | SELL | 2503.11 | `b8603d38-2b4a-481a-803a-19ecf1beb593` |
 | `LINK-USD` | SELL | 11.886 | `e550166a-4422-4a46-9c78-7db264061242` |
 | `ADA-USD` | SELL | 0.22853 | `2beee26b-f88c-4929-8625-ec618ae9e32d` |
@@ -92,6 +93,7 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | `ADA-USD` | SELL | 0.22503 | `eb72afdd-a3d7-40b8-9598-30b5ca2b74ef` |
 | `DOGE-USD` | SELL | 0.09237 | `3160f212-8ff6-4b19-a291-73c17cdf2a97` |
 | `AVAX-USD` | SELL | 7.625 | `c14c3c5a-f35f-4043-a616-ea4c20cfa9f2` |
+| `DOGE-USD` | BUY | 0.09067 | `03b193d4-ac9b-49b6-86c6-0886d1d9646b` |
 
 
 
@@ -99,14 +101,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.7h ago (2026-08-25 12:01 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.0h ago (2026-08-25 12:01 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **138.3h (5d 18h 15m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **138.0h (5d 17h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-24 07:16:47 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **137.3h (5d 17h 15m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **137.0h (5d 16h 59m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -120,20 +122,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  07:44:08 AM
-   CPU:   8.0%  |  MEM:   7.3% (14.3GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  08:00:05 AM
+   CPU:  24.4%  |  MEM:   7.6% (14.2GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
-L3 Consumer          | 3084610  | RUNNING         | -        | Continuous Websocket Feed
-MAO Daemon           | 3084662  | RUNNING         | -        | Oracle Yield Analysis
-Stable Farmer        | 3084664  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 3171199  | RUNNING         | 264      | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 3175735  | RUNNING         | 114      | Evaluating Funnel/Polling Order
-Trader ADA-USD       | 3171200  | RUNNING         | 86       | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 3171201  | RUNNING         | 204      | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 3180436  | COOL-DOWN       | 320      | Next run in 9.5s
-Trader LINK-USD      | 3180429  | COOL-DOWN       | 109      | Next run in 3.9s
+L3 Consumer          | 3185295  | RUNNING         | -        | Continuous Websocket Feed
+MAO Daemon           | 3185301  | RUNNING         | -        | Oracle Yield Analysis
+Stable Farmer        | 3185303  | RUNNING         | -        | Volume Farmer
+Trader AVAX-USD      | 3189962  | RUNNING         | 15       | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3194538  | RUNNING         | 30       | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 3194539  | RUNNING         | 30       | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3194391  | RUNNING         | 13       | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 3194540  | RUNNING         | 30       | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 3194392  | COOL-DOWN       | 23       | Next run in 14.1s
 ```
 
 ---
@@ -152,8 +154,6 @@ Trader LINK-USD      | 3180429  | COOL-DOWN       | 109      | Next run in 3.9s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:28:45 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:28:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:28:55 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:29:00 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:29:05 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
@@ -192,6 +192,8 @@ logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:31:50 [ERROR] [async_sfgk_trader
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:31:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:32:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:32:06 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:51:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 07:51:35 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [LINK-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 ```
 </details>
 
