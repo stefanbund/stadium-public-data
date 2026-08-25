@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-25 02:00:03 AM PDT (2026-08-25 09:00:03 UTC)`  
+> **Report Generated**: `2026-08-25 02:14:31 AM PDT (2026-08-25 09:14:31 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.51** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.40** | **-0.50** | **-0.90** | **+6.04** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.44** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.64** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.33** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.47** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-8.64** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.51** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.40** | **-0.50** | **-0.90** | **+6.82** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.44** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.64** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.33** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.47** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-0.93** | **-0.50** | **-0.43** | **-8.64** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (6.72h old) | 08-24 19:16 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.97h old) | 08-25 00:01 |
-| ❌ | **Holding Times config** | STALE! (89.0h old) | Limit 31.0h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-25 01:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-25 02:00 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-25 02:00 |
+| ✅ | **Go-List JSON** | Fresh (6.96h old) | 08-24 19:16 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.21h old) | 08-25 00:01 |
+| ❌ | **Holding Times config** | STALE! (89.2h old) | Limit 31.2h |
+| ❌ | **BTC DVOL Cache** | STALE! (0.2h old) | Limit 0.0h |
+| ❌ | **ETH DVOL Cache** | STALE! (0.2h old) | Limit 0.0h |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-25 02:14 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1701 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1584 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `5,017` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `5,023` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -105,14 +105,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.0h ago (2026-08-25 12:01 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.2h ago (2026-08-25 12:01 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **137.0h (5d 16h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **136.8h (5d 16h 45m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-24 07:16:47 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **136.0h (5d 15h 59m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **135.8h (5d 15h 45m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -126,8 +126,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:00:01 AM
-   CPU:  10.4%  |  MEM:   8.6% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  09:14:30 AM
+   CPU:   7.6%  |  MEM:   8.8% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ L3 Consumer          | 3185295  | RUNNING         | -        | Continuous Websoc
 MAO Daemon           | 3185301  | RUNNING         | -        | Oracle Yield Analysis
 Stable Farmer        | 3185303  | RUNNING         | -        | Volume Farmer
 Trader AVAX-USD      | 3216763  | RUNNING         | 34       | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 3243190  | RUNNING         | 198      | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 3244657  | RUNNING         | 214      | Evaluating Funnel/Polling Order
 Trader ADA-USD       | 3231750  | RUNNING         | 87       | Evaluating Funnel/Polling Order
 Trader DOGE-USD      | 3216698  | RUNNING         | 43       | Evaluating Funnel/Polling Order
 Trader BTC-USD       | 3225683  | RUNNING         | 106      | Evaluating Funnel/Polling Order
@@ -158,46 +158,46 @@ Trader LINK-USD      | 3218543  | RUNNING         | 90       | Evaluating Funnel
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:56:46 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:56:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:56:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:02 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:07 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:22 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:43 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:57:58 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:03 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:08 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:18 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:24 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:29 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:34 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:39 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:44 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:49 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:54 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:58:59 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:04 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:10 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:15 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:25 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:35 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:40 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:45 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 08:59:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:00:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
-logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:00:06 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:22 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:28 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:38 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:43 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:11:58 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:03 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:09 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:19 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:24 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:29 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:34 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:39 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:44 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:12:55 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:00 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:05 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:10 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:15 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:26 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:36 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:41 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:46 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:13:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:07 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:22 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
+logs/watchdog_Trader_SOL_USD.log:2026-08-25 09:14:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1006] [SOL-USD] Error polling sell order / ticker: name 'price_buffer' is not defined
 ```
 </details>
 
