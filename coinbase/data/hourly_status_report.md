@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-24 07:27:51 PM PDT (2026-08-25 02:27:51 UTC)`  
+> **Report Generated**: `2026-08-24 07:47:11 PM PDT (2026-08-25 02:47:11 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.67** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.49** | **-0.50** | **+0.99** | **+4.69** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.76** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.69** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.27** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.76** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+2.28** | **-0.50** | **+2.78** | **-9.27** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.39** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+2.00** | **-0.50** | **+2.50** | **+5.45** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.39** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.57** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.56** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.39** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+2.97** | **-0.50** | **+3.47** | **-8.56** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.19h old) | 08-24 19:16 |
-| ✅ | **TimesFM Forecasts** | Fresh (3.43h old) | 08-24 16:02 |
-| ✅ | **Holding Times config** | Fresh (0.19h old) | 08-24 19:16 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-24 19:27 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-24 19:27 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-24 19:27 |
+| ✅ | **Go-List JSON** | Fresh (0.51h old) | 08-24 19:16 |
+| ✅ | **TimesFM Forecasts** | Fresh (3.75h old) | 08-24 16:02 |
+| ✅ | **Holding Times config** | Fresh (0.51h old) | 08-24 19:16 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-24 19:47 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-24 19:47 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-24 19:47 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 172 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 560 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `163` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `545` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -70,6 +70,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | :--- | :--- | :--- | :--- | :--- |
 | `ADA-USD` | 1 | 100.0% | 0 | 🟢 OK |
 | `AVAX-USD` | 1 | 100.0% | 0 | 🟢 OK |
+| `LINK-USD` | 1 | 100.0% | 0 | 🟢 OK |
 
 ---
 ## 3. 💰 Coinbase Treasury, Balances & Active Orders
@@ -81,10 +82,6 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `LINK-USD` | BUY | 11.853 | `013a457f-0f08-4ae0-bbb7-b3b501822e3c` |
-| `ADA-USD` | BUY | 0.22659 | `bbba1769-67aa-48fa-8fc6-0d70dc07381b` |
-| `AVAX-USD` | BUY | 7.666 | `b5aa2246-55ba-42b5-8258-229d05c6092a` |
-| `DOGE-USD` | BUY | 0.0925 | `76dda846-e9d2-452b-b06f-49bd00a3f211` |
 
 
 
@@ -92,14 +89,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 3.4h ago (2026-08-24 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.8h ago (2026-08-24 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **143.5h (5d 23h 32m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **143.2h (5d 23h 12m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-24 07:16:47 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **142.5h (5d 22h 31m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **142.2h (5d 22h 12m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -113,20 +110,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:27:50 AM
-   CPU:  24.7%  |  MEM:   7.7% (14.2GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:47:07 AM
+   CPU:  15.0%  |  MEM:   5.7% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 2907171  | RUNNING         | -        | Continuous Websocket Feed
 MAO Daemon           | 2907224  | RUNNING         | -        | Oracle Yield Analysis
 Stable Farmer        | 2907226  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 2914804  | RUNNING         | 16       | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 2915558  | COOL-DOWN       | 29       | Next run in 15.0s
-Trader ADA-USD       | 2914729  | RUNNING         | 20       | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 2915190  | RUNNING         | 22       | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 2915559  | COOL-DOWN       | 29       | Next run in 15.0s
-Trader LINK-USD      | 2914674  | RUNNING         | 20       | Evaluating Funnel/Polling Order
+Trader AVAX-USD      | 2932341  | RUNNING         | 70       | Evaluating Funnel/Polling Order
+Trader ETH-USD       | 2931872  | COOL-DOWN       | 86       | Next run in 4.9s
+Trader ADA-USD       | 2932284  | COOL-DOWN       | 74       | Next run in 15.0s
+Trader DOGE-USD      | 2932084  | COOL-DOWN       | 74       | Next run in 9.9s
+Trader BTC-USD       | 2931873  | COOL-DOWN       | 86       | Next run in 4.9s
+Trader LINK-USD      | 2932285  | COOL-DOWN       | 71       | Next run in 15.0s
 ```
 
 ---
@@ -174,6 +171,17 @@ logs/watchdog_Trader_AVAX_USD.log:2026-08-25 02:19:35 [ERROR] [async_sfgk_trader
 logs/watchdog_Trader_AVAX_USD.log:2026-08-25 02:19:40 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [AVAX-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_AVAX_USD.log:2026-08-25 02:19:45 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [AVAX-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_AVAX_USD.log:2026-08-25 02:19:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [AVAX-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:07 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:22 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:42 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:47 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-25 02:29:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1007] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 ```
 </details>
 
