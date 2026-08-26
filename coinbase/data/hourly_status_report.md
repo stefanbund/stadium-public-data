@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-26 11:48:23 AM PDT (2026-08-26 18:48:23 UTC)`  
+> **Report Generated**: `2026-08-26 12:00:04 PM PDT (2026-08-26 19:00:04 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.21** | **-0.50** | **-0.71** | **+17.88** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.29** | **-0.50** | **-0.79** | **N/A** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.18** | **-0.50** | **-0.68** | **+17.89** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.22** | **-0.50** | **-0.72** | **N/A** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (1.06h old) | 08-26 10:44 |
-| ✅ | **TimesFM Forecasts** | Fresh (3.75h old) | 08-26 08:03 |
-| ❌ | **Holding Times config** | STALE! (122.8h old) | Limit 64.8h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-26 11:48 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-26 11:48 |
-| ❌ | **Live Trading Telemetry** | NOT FOUND ON EC2 | - |
+| ✅ | **Go-List JSON** | Fresh (1.26h old) | 08-26 10:44 |
+| ✅ | **TimesFM Forecasts** | Fresh (3.95h old) | 08-26 08:03 |
+| ❌ | **Holding Times config** | STALE! (123.0h old) | Limit 65.0h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-26 12:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-26 12:00 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-26 12:00 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 133 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 168 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `114` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `149` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -94,14 +94,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 3.7h ago (2026-08-26 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.9h ago (2026-08-26 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **103.2h (4d 7h 11m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **103.0h (4d 6h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-26 10:44:36 AM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **102.2h (4d 6h 11m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **102.0h (4d 5h 59m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -115,8 +115,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:48:21 PM
-   CPU:   4.2%  |  MEM:   8.1% (14.2GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  07:00:02 PM
+   CPU:   7.1%  |  MEM:   8.2% (14.2GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ L3 Consumer          | 645754   | RUNNING         | -        | Continuous Websoc
 MAO Daemon           | 645852   | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | 645854   | RUNNING         | -        | Volume Farmer
 Trader AVAX-USD      | 645855   | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 653003   | COOL-DOWN       | 28       | Next run in 10.0s
+Trader ETH-USD       | 662063   | COOL-DOWN       | 63       | Next run in 10.0s
 Trader ADA-USD       | 645857   | RUNNING         | 0        | Evaluating Funnel/Polling Order
 Trader DOGE-USD      | 645858   | RUNNING         | 0        | Evaluating Funnel/Polling Order
 Trader BTC-USD       | 645859   | RUNNING         | 0        | Evaluating Funnel/Polling Order
@@ -147,39 +147,44 @@ Trader LINK-USD      | 645860   | RUNNING         | 0        | Evaluating Funnel
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_ADA_USD.log:2026-08-26 18:38:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ADA-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_AVAX_USD.log:2026-08-26 18:38:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [AVAX-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_BTC_USD.log:2026-08-26 18:38:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [BTC-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_DOGE_USD.log:2026-08-26 18:38:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [DOGE-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:38:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:39:10 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:39:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:39:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:40:10 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:40:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:40:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:41:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:41:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:41:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:42:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:42:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:42:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:43:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:43:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:43:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:44:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:44:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:44:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:45:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:45:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:45:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:46:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:46:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:46:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
-logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:47:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
 logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:47:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
 logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:47:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
 logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:48:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:48:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:48:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:49:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:49:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:49:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:50:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:50:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:50:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:51:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:51:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:51:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:52:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:52:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:52:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:53:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:53:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:53:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:54:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:54:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:54:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:55:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:55:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:55:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:56:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:56:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:56:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:57:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:57:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:57:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:58:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:58:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:58:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:59:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:59:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
+logs/watchdog_Trader_ETH_USD.log:2026-08-26 18:59:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [ETH-USD] MAO state read failed: local variable 'json' referenced before assignment
 logs/watchdog_Trader_LINK_USD.log:2026-08-26 18:38:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [LINK-USD] MAO state read failed: local variable 'json' referenced before assignment
 logs/watchdog_Trader_SOL_USD.log:2026-08-26 18:38:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:678] [SOL-USD] MAO state read failed: local variable 'json' referenced before assignment
 ```
