@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-27 05:02:57 PM PDT (2026-08-28 00:02:57 UTC)`  
+> **Report Generated**: `2026-08-27 05:21:36 PM PDT (2026-08-28 00:21:36 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.08** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.08** | **-0.50** | **+0.58** | **+26.64** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.19** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.08** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.08** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.08** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.10** | **-0.50** | **+0.60** | **+11.08** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.27** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-0.36** | **-0.50** | **+0.14** | **+26.44** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.27** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.25** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.25** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.28** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+0.18** | **-0.50** | **+0.68** | **+11.25** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (7.33h old) | 08-27 09:43 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.02h old) | 08-27 16:02 |
-| ❌ | **Holding Times config** | STALE! (152.0h old) | Limit 94.1h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-27 17:03 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-27 17:02 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.01h old) | 08-27 17:02 |
+| ✅ | **Go-List JSON** | Fresh (7.64h old) | 08-27 09:43 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.33h old) | 08-27 16:02 |
+| ❌ | **Holding Times config** | STALE! (152.3h old) | Limit 94.4h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-27 17:21 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-27 17:21 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-27 17:21 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1955 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1984 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `7,339` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `7,627` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -69,9 +69,9 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | Asset | Trades | Win Rate | Loss Streak | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | `ADA-USD` | 13 | 69.2% | 0 | 🟢 OK |
-| `DOGE-USD` | 5 | 60.0% | 0 | 🟢 OK |
+| `DOGE-USD` | 6 | 66.7% | 0 | 🟢 OK |
 | `ETH-USD` | 4 | 75.0% | 0 | 🟢 OK |
-| `LINK-USD` | 5 | 60.0% | 0 | 🟢 OK |
+| `LINK-USD` | 6 | 66.7% | 0 | 🟢 OK |
 | `AVAX-USD` | 7 | 42.9% | 2 | ⚠️ DRIFT |
 
 ---
@@ -84,11 +84,11 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `ADA-USD` | SELL | 0.21673 | `1dc03db5-0c9d-4f4c-aaa3-95fedac1722f` |
 | `DOGE-USD` | SELL | 0.08986 | `7310d8e3-3a32-4ed3-a7a6-281de44a71f4` |
+| `ADA-USD` | SELL | 0.21673 | `1dc03db5-0c9d-4f4c-aaa3-95fedac1722f` |
 | `ETH-USD` | BUY | 2499.06 | `d0b46685-b4f2-4de4-a1c8-a056d02da41a` |
 | `ADA-USD` | SELL | 0.21444 | `f94155b6-a56b-4ffc-bc1c-c6d204f4f37c` |
-| `ADA-USD` | BUY | 0.21335 | `786f2e80-aae6-4486-b3eb-503bba95afa3` |
+| `ADA-USD` | BUY | 0.21379 | `ab52394e-0117-4dc1-86a0-d0e7bf70b2a8` |
 
 
 
@@ -96,14 +96,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 1.0h ago (2026-08-27 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.3h ago (2026-08-27 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **73.9h (3d 1h 56m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **73.6h (3d 1h 38m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-27 09:43:18 AM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **72.9h (3d 0h 56m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **72.6h (3d 0h 38m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -117,20 +117,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:02:56 AM
-   CPU:  31.2%  |  MEM:   7.0% (14.3GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:21:34 AM
+   CPU:  17.1%  |  MEM:   6.5% (14.4GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 2148832  | RUNNING         | -        | Continuous Websocket Feed
 MAO Daemon           | 2148860  | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | 2148862  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 2157520  | COOL-DOWN       | 22       | Next run in 14.8s
-Trader ETH-USD       | 2157521  | COOL-DOWN       | 28       | Next run in 14.8s
-Trader ADA-USD       | 2156514  | RUNNING         | 19       | Evaluating Funnel/Polling Order
-Trader DOGE-USD      | 2157522  | COOL-DOWN       | 16       | Next run in 14.8s
-Trader BTC-USD       | 2157523  | COOL-DOWN       | 28       | Next run in 14.8s
-Trader LINK-USD      | 2157524  | COOL-DOWN       | 22       | Next run in 14.8s
+Trader AVAX-USD      | 2173254  | COOL-DOWN       | 69       | Next run in 14.5s
+Trader ETH-USD       | 2173349  | RUNNING         | 81       | Evaluating Funnel/Polling Order
+Trader ADA-USD       | 2172297  | RUNNING         | 54       | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 2173350  | RUNNING         | 37       | Evaluating Funnel/Polling Order
+Trader BTC-USD       | 2173351  | RUNNING         | 81       | Evaluating Funnel/Polling Order
+Trader LINK-USD      | 2173120  | COOL-DOWN       | 55       | Next run in 4.1s
 ```
 
 ---
@@ -149,46 +149,46 @@ Trader LINK-USD      | 2157524  | COOL-DOWN       | 22       | Next run in 14.8s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:07 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:12 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:23 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:28 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:38 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:43 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:54 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:13:59 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:04 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:09 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:25 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:35 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:40 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:45 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:14:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:06 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:16 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:21 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:42 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:47 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:52 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:15:58 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:03 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:08 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:13 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:18 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:24 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 logs/watchdog_Trader_LINK_USD.log:2026-08-27 22:16:29 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:01 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:06 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:11 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:17 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:22 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:27 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:32 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:37 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:42 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:53 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:08:58 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:03 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:08 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:19 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:24 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:29 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:34 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:39 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:44 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:50 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:09:55 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:00 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:05 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:10 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:15 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:20 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:26 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:31 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:36 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:41 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:46 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:51 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:10:56 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
+logs/watchdog_Trader_LINK_USD.log:2026-08-28 00:11:02 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
 ```
 </details>
 
