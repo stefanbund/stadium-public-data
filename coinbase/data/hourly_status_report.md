@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-28 05:30:34 PM PDT (2026-08-29 00:30:34 UTC)`  
+> **Report Generated**: `2026-08-28 05:48:58 PM PDT (2026-08-29 00:48:58 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+1.28** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.18** | **-0.50** | **-0.68** | **+12.90** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+0.21** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+1.22** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+1.12** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+0.27** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.17** | **-0.50** | **-0.67** | **+0.22** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+1.28** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.30** | **-0.50** | **-0.80** | **+12.80** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+0.24** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+1.22** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+1.12** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+0.27** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.04** | **-0.50** | **-0.54** | **+0.22** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (8.64h old) | 08-28 08:52 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.48h old) | 08-28 16:02 |
-| ❌ | **Holding Times config** | STALE! (176.5h old) | Limit 118.5h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-28 17:30 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-28 17:30 |
-| ❌ | **Live Trading Telemetry** | STALE! (3.6h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (0.15h old) | 08-28 17:40 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.78h old) | 08-28 16:02 |
+| ✅ | **Holding Times config** | Fresh (0.15h old) | 08-28 17:40 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-28 17:49 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-28 17:49 |
+| ❌ | **Live Trading Telemetry** | STALE! (3.9h old) | Limit 0.1h |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 654 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 668 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `20,445` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `20,471` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -86,18 +86,15 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `USDT-USDC` | SELL | 1.0001 | `c6df0641-6530-4045-8576-80625cc069b0` |
-| `LINK-USD` | BUY | 11.456 | `ceee80ed-b1e1-4c45-954d-48dd1ea95531` |
 | `USDT-USDC` | SELL | 1.0001 | `4d9f1df5-f1ce-408b-8fcb-f870df3e47db` |
-| `USDT-USDC` | SELL | 1.0001 | `66cab2eb-254c-4f1b-b5b6-1251e98e9290` |
 | `USDT-USDC` | SELL | 1.0001 | `5fa15d4a-6b18-45bf-9b63-87c4abf65231` |
+| `USDT-USDC` | SELL | 1.0001 | `c6df0641-6530-4045-8576-80625cc069b0` |
+| `USDT-USDC` | SELL | 1.0001 | `66cab2eb-254c-4f1b-b5b6-1251e98e9290` |
 | `USDT-USDC` | SELL | 1.0001 | `b697dc68-9e4c-47f8-b03f-079cc7e80d03` |
 | `BTC-USD` | BUY | 77601.23 | `26167636-2101-4415-96b2-0d1cbcbf23a1` |
-| `ADA-USD` | BUY | 0.20273 | `033a4fe2-eb28-4429-a7b2-ea064fb8f2ba` |
 | `DOGE-USD` | BUY | 0.08509 | `2450b6b6-b2fa-4535-835d-458f87ea7aea` |
 | `AVAX-USD` | BUY | 7.293 | `1bd2043e-3c5a-478b-9f3b-47d918d4b62a` |
-| `DOGE-USD` | BUY | 0.08516 | `bd6aad26-63ad-40d3-89cd-488fda229a92` |
-| `SOL-USD` | BUY | 104.26 | `370f5a8a-e252-45c9-b10e-fdc2e0f8c22c` |
+| `ADA-USD` | SELL | 0.20364 | `faf970f4-cc82-4d21-b9a2-4dd5c6a768e4` |
 
 
 
@@ -105,14 +102,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 1.5h ago (2026-08-28 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 1.8h ago (2026-08-28 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **49.5h (2d 1h 29m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **49.2h (2d 1h 10m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-08-28 08:52:07 AM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **48.5h (2d 0h 29m)**)
+- **Last Run (Confirmation)**: `2026-08-28 05:40:05 PM PDT`
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **48.2h (2d 0h 10m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -126,20 +123,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:30:30 AM
-   CPU:   2.9%  |  MEM:   8.0% (14.2GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  12:48:58 AM
+   CPU:   2.8%  |  MEM:   6.2% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 3320892  | RUNNING         | -        | Continuous Websocket Feed
 MAO Daemon           | 3320942  | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | 3320944  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 3347290  | RUNNING         | 14       | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 3348729  | COOL-DOWN       | 100      | Next run in 9.3s
-Trader ADA-USD       | 3347284  | COOL-DOWN       | 14       | Next run in 14.7s
-Trader DOGE-USD      | 3347335  | RUNNING         | 14       | Evaluating Funnel/Polling Order
-Trader BTC-USD       | 3347291  | RUNNING         | 14       | Evaluating Funnel/Polling Order
-Trader LINK-USD      | 3348005  | RUNNING         | 6        | Evaluating Funnel/Polling Order
+Trader AVAX-USD      | 3363525  | COOL-DOWN       | 32       | Next run in 13.8s
+Trader ETH-USD       | 3363529  | COOL-DOWN       | 141      | Next run in 19.1s
+Trader ADA-USD       | 3349347  | RUNNING         | 15       | Evaluating Funnel/Polling Order
+Trader DOGE-USD      | 3363531  | COOL-DOWN       | 32       | Next run in 24.4s
+Trader BTC-USD       | 3363526  | COOL-DOWN       | 32       | Next run in 13.8s
+Trader LINK-USD      | 3363536  | COOL-DOWN       | 23       | Next run in 0.0s
 ```
 
 ---
@@ -158,34 +155,6 @@ Trader LINK-USD      | 3348005  | RUNNING         | 6        | Evaluating Funnel
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:28 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:33 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:38 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:43 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:48 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:54 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:51:59 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:52:04 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:52:09 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 01:52:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1018] [LINK-USD] Error polling sell order / ticker: 'TradeBotSFGK' object has no attribute 'get_lob_pressure'
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 07:28:23 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.49s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 07:28:45 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.27s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 07:44:30 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.35s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 07:45:36 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product_book | Sleeping 1.12s... | Error: 429 Client Error: Too Many Requests
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:14 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1001] [LINK-USD] Failed to post sell limit order after maximum repricing attempts. Proceeding to immediate liquidation.
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:14 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: cancel_orders | Sleeping 1.19s... | Error: 400 Client Error: Bad Request {"error":"
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:15 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 2/5). Func: cancel_orders | Sleeping 2.17s... | Error: 400 Client Error: Bad Request {"error":"
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:18 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 3/5). Func: cancel_orders | Sleeping 4.46s... | Error: 400 Client Error: Bad Request {"error":"
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:22 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 4/5). Func: cancel_orders | Sleeping 8.16s... | Error: 400 Client Error: Bad Request {"error":"
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:30 [ERROR] [async_sfgk_trader.py:_execute_api_call:206] [LINK-USD] Coinbase API Call Failed permanently after 5 attempts. Func: cancel_orders | Error: 400 Client Error: Bad Request {"error":"unknown"
-logs/watchdog_Trader_LINK_USD.log:    handle_exception(response)  # Raise an HTTPError for bad responses
-logs/watchdog_Trader_LINK_USD.log:  File "/opt/hft_trader/venv/lib64/python3.9/site-packages/coinbase/rest/rest_base.py", line 47, in handle_exception
-logs/watchdog_Trader_LINK_USD.log:    raise HTTPError(http_error_msg, response=response)
-logs/watchdog_Trader_LINK_USD.log:requests.exceptions.HTTPError: 400 Client Error: Bad Request {"error":"unknown","error_details":"proto: (line 1:16): invalid value for string field orderIds: null","message":"proto: (line 1:16): invalid value for str
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:30 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1205] [LINK-USD] Failed to cancel GTC order: 400 Client Error: Bad Request {"error":"unknown","error_details":"proto: (line 1:16): invalid value f
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:30 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_order | Sleeping 1.14s... | Error: 400 Client Error: Bad Request {"error":"INVA
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:32 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 2/5). Func: get_order | Sleeping 2.25s... | Error: 400 Client Error: Bad Request {"error":"INVA
-logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:34 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 3/5). Func: get_order | Sleeping 4.30s... | Error: 400 Client Error: Bad Request {"error":"INVA
 logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:38 [ERROR] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 4/5). Func: get_order | Sleeping 8.28s... | Error: 400 Client Error: Bad Request {"error":"INVA
 logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:47 [ERROR] [async_sfgk_trader.py:_execute_api_call:206] [LINK-USD] Coinbase API Call Failed permanently after 5 attempts. Func: get_order | Error: 400 Client Error: Bad Request {"error":"INVALID_ARGU
 logs/watchdog_Trader_LINK_USD.log:    handle_exception(response)  # Raise an HTTPError for bad responses
@@ -195,9 +164,37 @@ logs/watchdog_Trader_LINK_USD.log:requests.exceptions.HTTPError: 400 Client Erro
 logs/watchdog_Trader_LINK_USD.log:2026-08-28 14:07:47 [ERROR] [async_sfgk_trader.py:perform_trade_cycle:1213] [LINK-USD] Failed to check GTC order fill size: 400 Client Error: Bad Request {"error":"INVALID_ARGUMENT","error_details":"invalid OrderId N
 logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
 logs/watchdog_Trader_LINK_USD.log:2026-08-29 00:14:01 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [LINK-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_order | Sleeping 1.26s... | Error: 502 Server Error: Bad Gateway <html>   <he
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_LINK_USD.log:IndentationError: expected an indented block
 logs/watchdog_Trader_SOL_USD.log:2026-08-28 07:28:34 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.49s... | Error: 429 Client Error: Too Many Requests 
 logs/watchdog_Trader_SOL_USD.log:2026-08-28 15:39:34 [ERROR] [async_sfgk_trader.py:fetch_live_state:761] [SOL-USD] CRITICAL: DVOL cache is stale (1373277.3s old > 150s limit, Fail-Closed)
 logs/watchdog_Trader_SOL_USD.log:2026-08-29 00:15:17 [WARNING] [async_sfgk_trader.py:_execute_api_call:220] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_order | Sleeping 1.40s... | Error: 502 Server Error: Bad Gateway <html>   <head
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
+logs/watchdog_Trader_SOL_USD.log:IndentationError: expected an indented block
 ```
 </details>
 
