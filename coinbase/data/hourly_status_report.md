@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-28 09:57:06 PM PDT (2026-08-29 04:57:06 UTC)`  
+> **Report Generated**: `2026-08-28 10:00:08 PM PDT (2026-08-29 05:00:08 UTC)`  
 > **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **N/A** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.43** | **-0.50** | **-0.93** | **N/A** | 5.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **+0.24** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **N/A** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **N/A** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **+0.27** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **+0.39** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **N/A** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.44** | **-0.50** | **-0.94** | **N/A** | 5.0 | 🟢 SAFE |
+| `ADA-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **+0.24** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **N/A** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **N/A** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **+0.31** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.40** | **-0.50** | **-0.90** | **+0.39** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.52h old) | 08-28 21:26 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.09h old) | 08-28 20:51 |
-| ✅ | **Holding Times config** | Fresh (0.52h old) | 08-28 21:26 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-28 21:57 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-28 21:57 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-28 21:57 |
+| ✅ | **Go-List JSON** | Fresh (0.57h old) | 08-28 21:26 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.14h old) | 08-28 20:51 |
+| ✅ | **Holding Times config** | Fresh (0.57h old) | 08-28 21:26 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-28 22:00 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-28 22:00 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-28 22:00 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 500 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 495 recent read events).
 
 
 ---
@@ -86,17 +86,17 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Order ID |
 | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.005507 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `DOGE-USD` | SELL | 0.0852 | `df258d6c-8acd-4568-94b0-04381bf23ca2` |
+| `ADA-USD` | SELL | 0.20364 | `faf970f4-cc82-4d21-b9a2-4dd5c6a768e4` |
 | `USDT-USDC` | SELL | 1.0001 | `5fa15d4a-6b18-45bf-9b63-87c4abf65231` |
 | `USDT-USDC` | SELL | 1.0001 | `c6df0641-6530-4045-8576-80625cc069b0` |
 | `USDT-USDC` | SELL | 1.0001 | `66cab2eb-254c-4f1b-b5b6-1251e98e9290` |
 | `USDT-USDC` | SELL | 1.0001 | `b697dc68-9e4c-47f8-b03f-079cc7e80d03` |
-| `ADA-USD` | SELL | 0.20364 | `faf970f4-cc82-4d21-b9a2-4dd5c6a768e4` |
+| `SOL-USD` | SELL | 104.1 | `81316345-ea50-4c67-a639-4a9721a77ae0` |
+| `DOGE-USD` | SELL | 0.0852 | `df258d6c-8acd-4568-94b0-04381bf23ca2` |
 | `AVAX-USD` | SELL | 7.31 | `1b4aecfe-f1fb-4563-986a-08e6b6f566bf` |
 | `BTC-USD` | SELL | 77795.24 | `f521e3cb-7bcb-4005-8d60-751adc2577a5` |
 | `ETH-USD` | SELL | 2442.78 | `2984ffa4-2f74-4bb7-bf67-162fad68473f` |
-| `SOL-USD` | SELL | 104.1 | `81316345-ea50-4c67-a639-4a9721a77ae0` |
-| `LINK-USD` | BUY | 11.355 | `42778d11-5641-4110-a848-da8258e0aa25` |
+| `LINK-USD` | SELL | 11.384 | `08f91137-67e3-43ee-9f16-b1067f547169` |
 
 
 
@@ -106,12 +106,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 1.1h ago (2026-08-28 08:51 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **45.0h (1d 21h 2m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **45.0h (1d 20h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-28 09:26:20 PM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **44.0h (1d 20h 2m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **44.0h (1d 19h 59m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -125,8 +125,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  04:57:02 AM
-   CPU:   4.6%  |  MEM:   8.8% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  05:00:05 AM
+   CPU:   3.2%  |  MEM:   8.9% (14.0GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
