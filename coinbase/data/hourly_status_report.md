@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-29 09:57:51 AM PDT (2026-08-29 16:57:51 UTC)`  
+> **Report Generated**: `2026-08-29 10:00:02 AM PDT (2026-08-29 17:00:02 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+1.16** | **-0.50** | **+1.66** | **+15.21** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **N/A** | 5.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **+0.31** | 5.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **-0.39** | **-0.50** | **+0.11** | **+1.43** | 5.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+1.13** | **-0.50** | **+1.63** | **+15.21** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **N/A** | 5.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **+0.31** | 5.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-0.41** | **-0.50** | **+0.09** | **+1.43** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (9.94h old) | 08-29 00:01 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.91h old) | 08-29 08:03 |
-| ❌ | **Holding Times config** | STALE! (192.9h old) | Limit 135.0h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 08-29 09:57 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-29 09:57 |
+| ✅ | **Go-List JSON** | Fresh (9.97h old) | 08-29 00:01 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.95h old) | 08-29 08:03 |
+| ❌ | **Holding Times config** | STALE! (193.0h old) | Limit 135.0h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-29 09:59 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 08-29 09:59 |
 | ❌ | **Live Trading Telemetry** | STALE! (9.7h old) | Limit 0.1h |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 158 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 156 recent read events).
 
 
 ---
@@ -96,12 +96,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 1.9h ago (2026-08-29 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **33.0h (1d 9h 2m)**)
+- **Next Scheduled VSTEF Run**: `2026-08-30 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **33.0h (1d 8h 59m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-29 12:01:39 AM PDT`
-- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **32.0h (1d 8h 1m)**)
+- **Next Scheduled Run**: `2026-08-30 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **32.0h (1d 7h 59m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -115,20 +115,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  04:57:52 PM
-   CPU:   2.7%  |  MEM:   5.5% (14.6GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  04:59:59 PM
+   CPU:   1.6%  |  MEM:   5.4% (14.6GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 4062925  | RUNNING         | -        | Continuous Websocket Feed
 MAO Daemon           | 4062932  | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | 4062934  | RUNNING         | -        | Volume Farmer
-Trader AVAX-USD      | 4111183  | COOL-DOWN       | 106      | Next run in 24.9s
-Trader ETH-USD       | 4111184  | COOL-DOWN       | 106      | Next run in 24.9s
-Trader ADA-USD       | 4111185  | COOL-DOWN       | 106      | Next run in 24.9s
-Trader DOGE-USD      | 4111186  | COOL-DOWN       | 106      | Next run in 24.9s
-Trader BTC-USD       | 4111187  | COOL-DOWN       | 106      | Next run in 24.9s
-Trader LINK-USD      | 4111188  | COOL-DOWN       | 106      | Next run in 24.9s
+Trader AVAX-USD      | 4112799  | COOL-DOWN       | 109      | Next run in 4.6s
+Trader ETH-USD       | 4112800  | COOL-DOWN       | 109      | Next run in 4.6s
+Trader ADA-USD       | 4112801  | COOL-DOWN       | 109      | Next run in 4.6s
+Trader DOGE-USD      | 4112802  | COOL-DOWN       | 109      | Next run in 4.6s
+Trader BTC-USD       | 4112803  | COOL-DOWN       | 109      | Next run in 4.6s
+Trader LINK-USD      | 4112804  | COOL-DOWN       | 109      | Next run in 4.6s
 ```
 
 ---
