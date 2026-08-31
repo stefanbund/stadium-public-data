@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-08-30 11:00:10 PM PDT (2026-08-31 06:00:10 UTC)`  
+> **Report Generated**: `2026-08-30 11:08:31 PM PDT (2026-08-31 06:08:31 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.79** | 5.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.60** | **-0.50** | **-1.10** | **+18.25** | 5.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.79** | 5.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.87** | 5.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.55** | 5.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.79** | 5.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.15** | **-0.50** | **-0.65** | **+3.87** | 5.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.79** | 5.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.65** | **-0.50** | **-1.15** | **+18.73** | 5.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.79** | 5.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.87** | 5.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.55** | 5.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.79** | 5.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-0.83** | **-0.50** | **-0.33** | **+3.87** | 5.0 | 🟢 SAFE |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ❌ | **Go-List JSON** | STALE! (15.9h old) | Limit 5.0h |
-| ✅ | **TimesFM Forecasts** | Fresh (2.13h old) | 08-30 20:52 |
-| ❌ | **Holding Times config** | STALE! (230.0h old) | Limit 4.0h |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-30 22:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-30 23:00 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-30 23:00 |
+| ❌ | **Go-List JSON** | STALE! (16.0h old) | Limit 5.1h |
+| ✅ | **TimesFM Forecasts** | Fresh (2.27h old) | 08-30 20:52 |
+| ❌ | **Holding Times config** | STALE! (230.1h old) | Limit 4.1h |
+| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 08-30 23:08 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 08-30 23:08 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 08-30 23:08 |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1847 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1770 recent read events).
 
 
 ---
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `44,018` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `44,042` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -92,13 +92,12 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | `AVAX-USD` | SELL | 7.236 | `cf42329e-7ef5-45d4-bcee-23e674bf9bd2` |
 | `BTC-USD` | SELL | 78213 | `7b0a0c94-7fba-425b-94bd-b964dd54e329` |
 | `SOL-USD` | SELL | 102.91 | `52bd7c48-e36e-400f-95de-192710e45e4e` |
-| `USDT-USD` | BUY | 0.99988 | `9c0bff42-86be-457b-85df-2b876932c0bc` |
-| `USDT-USD` | SELL | 0.99989 | `95f57d41-481f-4ebf-88f4-e0c92ebd2919` |
 | `USDT-USD` | SELL | 0.99989 | `18c4b4cf-7275-41d4-b11f-d565d1035285` |
-| `USDT-USD` | BUY | 0.99988 | `d905e7fe-8a5c-44a3-ac62-0380fd484cfd` |
-| `USDT-USD` | BUY | 0.99988 | `d99643fe-a5eb-4701-81d7-b1fb367e746c` |
-| `USDT-USD` | BUY | 0.99988 | `6600504c-319a-4ffb-9a33-9c8763e5ec58` |
-| `USDT-USD` | BUY | 0.99988 | `cca531cb-ac92-4322-9e7e-22aa3b5bb3d8` |
+| `USDT-USD` | BUY | 0.99988 | `b6b45bf7-230a-4975-83c6-86d1c2187908` |
+| `USDT-USD` | BUY | 0.99988 | `a728bfe2-0a20-4261-be2a-1c45c863a25a` |
+| `USDT-USD` | BUY | 0.99988 | `62a58f35-ed62-41bc-ae4c-3db83d62a34b` |
+| `USDT-USD` | BUY | 0.99988 | `7f8b024d-f567-46e7-8263-ba42f249b65b` |
+| `USDT-USD` | SELL | 0.99989 | `f1169ad7-4e2c-4496-9cc0-42da36b528a6` |
 
 
 
@@ -106,14 +105,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 4. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.1h ago (2026-08-30 08:52 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.3h ago (2026-08-30 08:52 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-05 09:22:38 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **164.0h (6d 19h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **163.9h (6d 19h 51m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-08-30 07:08:16 AM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **163.0h (6d 18h 59m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **162.9h (6d 18h 51m)**)
 - **Selected Mega Cap Universe**: `BTC, BCH, AVAX, ETH, ALGO, ADA, LTC, DOGE, AAVE, LINK, DOT, HBAR`
 
 
@@ -127,8 +126,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 5. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:00:10 AM
-   CPU:   3.6%  |  MEM:   8.4% (14.1GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  06:08:29 AM
+   CPU:   8.5%  |  MEM:   8.6% (14.1GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
@@ -136,7 +135,7 @@ L3 Consumer          | 1752703  | RUNNING         | -        | Continuous Websoc
 MAO Daemon           | 1752825  | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | 1752827  | RUNNING         | -        | Volume Farmer
 Trader AVAX-USD      | 1752828  | RUNNING         | 0        | Evaluating Funnel/Polling Order
-Trader ETH-USD       | 1755284  | COOL-DOWN       | 9        | Next run in 9.6s
+Trader ETH-USD       | 1761929  | COOL-DOWN       | 33       | Next run in 14.8s
 Trader ADA-USD       | 1752830  | RUNNING         | 0        | Evaluating Funnel/Polling Order
 Trader DOGE-USD      | 1752831  | RUNNING         | 0        | Evaluating Funnel/Polling Order
 Trader BTC-USD       | 1752832  | RUNNING         | 0        | Evaluating Funnel/Polling Order
