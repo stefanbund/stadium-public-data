@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-02 07:11:12 PM PDT (2026-09-03 02:11:12 UTC)`  
+> **Report Generated**: `2026-09-02 07:29:41 PM PDT (2026-09-03 02:29:41 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+7.72** | -1.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **-0.99** | **-0.50** | **-0.49** | **+21.40** | -1.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+7.67** | -1.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+7.64** | -1.0 | 🔴 DAW VETOED |
-| `BTC-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+7.68** | -1.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+8.00** | -1.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+0.03** | **-0.50** | **+0.53** | **+7.68** | -1.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+7.72** | -1.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-1.36** | **-0.50** | **-0.86** | **+21.40** | -1.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+7.67** | -1.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+7.64** | -1.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+7.68** | -1.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+8.00** | -1.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **-0.88** | **-0.50** | **-0.38** | **+7.68** | -1.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (11.48h old) | 09-02 07:42 |
-| ✅ | **TimesFM Forecasts** | Fresh (3.16h old) | 09-02 16:02 |
-| ✅ | **Holding Times config** | Fresh (54.46h old) | 08-31 12:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-02 19:11 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-02 19:11 |
-| ❌ | **Live Trading Telemetry** | STALE! (0.2h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (11.79h old) | 09-02 07:42 |
+| ✅ | **TimesFM Forecasts** | Fresh (3.46h old) | 09-02 16:02 |
+| ✅ | **Holding Times config** | Fresh (54.77h old) | 08-31 12:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-02 19:29 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-02 19:29 |
+| ❌ | **Live Trading Telemetry** | STALE! (0.5h old) | Limit 0.1h |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1910 recent read events).
+> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 1874 recent read events).
 
 
 ---
@@ -87,9 +87,9 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 | **Tranche Order Sizing** | `$5,000.00 USD` | Multi-block continuous capital rotation |
 | **HFT Reserve Floor** | `$15,000.00 USD` | Unencumbered liquid USD strictly reserved for 0ms volatile strikes |
 | **Priority Interrupt Mode** | 🟢 ACTIVE FARMING | Instantly cancels U/U buys when volatile trade enters |
-| **Active BUY Tranches** | **0 Orders** (`$0.00 USD`) | Resting Limit Bids pegged to Best Bid |
-| **Active SELL Tranches** | **8 Orders** (`$39,981.50 USDT`) | Resting Limit Asks pegged to Best Ask |
-| **Total Deployed U/U Capital** | **`$39,981.50 USD`** | Active bidirectional turnover liquidity pool |
+| **Active BUY Tranches** | **3 Orders** (`$14,992.95 USD`) | Resting Limit Bids pegged to Best Bid |
+| **Active SELL Tranches** | **6 Orders** (`$29,987.50 USDT`) | Resting Limit Asks pegged to Best Ask |
+| **Total Deployed U/U Capital** | **`$44,980.45 USD`** | Active bidirectional turnover liquidity pool |
 | **Rolling 30-Day Volume** | **`$2,319,369.73 USD`** | **VIP 2** (Maker: **0.05%** / 5 bps, Taker: **0.10%**) |
 | **Next Tier Milestone (VIP 3)** | **46.4% Complete** | `$2,680,630.27 USD` to reach $5,000,000.00 threshold |
 
@@ -98,14 +98,15 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 
 | Pair | Side | Limit Price | Tranche Size | Est. Value | Order ID |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `9813ffe7-3943-471b-91eb-0cdcc6649d23` |
+| `USDT-USD` | 🟢 **BUY** | 0.99953 | 5,000.0 | `$4,997.65` | `5bffe755-a291-4dab-9b77-90b0b3f8d9dd` |
+| `USDT-USD` | 🟢 **BUY** | 0.99953 | 5,000.0 | `$4,997.65` | `4eab363f-6166-445b-a2df-37c1bbbc56e5` |
+| `USDT-USD` | 🟢 **BUY** | 0.99953 | 5,000.0 | `$4,997.65` | `efe5bfee-d2c7-4c8d-bb4c-68b327b9acf3` |
 | `USDT-USD` | 🔴 **SELL** | 0.99980 | 5,000.0 | `$4,999.00` | `3810b51b-920c-4f6d-9bb1-0c0274a5cef0` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `2c7d22ea-617a-463a-bbae-132d58ee07f0` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `c1030ad4-1e86-412f-a8b6-70f4dd42bcea` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `43f0e433-163f-4535-b58b-263daf015897` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `770eac37-a725-4379-a50a-b28530b5f1d5` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `5cbd21e9-2c73-400c-b36b-b07e04535d38` |
-| `USDT-USD` | 🔴 **SELL** | 0.99950 | 5,000.0 | `$4,997.50` | `f41be43a-3b14-4a60-8563-2af45acc8240` |
+| `USDT-USD` | 🔴 **SELL** | 0.99954 | 5,000.0 | `$4,997.70` | `3a21549b-3bae-4f23-a616-790230569d7a` |
+| `USDT-USD` | 🔴 **SELL** | 0.99954 | 5,000.0 | `$4,997.70` | `7cbdb219-c7d3-4ad1-9630-50b7d01abf8b` |
+| `USDT-USD` | 🔴 **SELL** | 0.99954 | 5,000.0 | `$4,997.70` | `2dcff782-c913-4cf0-bce1-8c8b41e09852` |
+| `USDT-USD` | 🔴 **SELL** | 0.99954 | 5,000.0 | `$4,997.70` | `67c51abd-66b4-4faf-8a33-d3a860dfa219` |
+| `USDT-USD` | 🔴 **SELL** | 0.99954 | 5,000.0 | `$4,997.70` | `38387eac-58af-4b35-9a15-44cea225e37d` |
 
 
 ---
@@ -114,7 +115,7 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 
 | Currency | Available | Hold | Total Balance |
 | :--- | :--- | :--- | :--- |
-| `USDT` | 23947.7900 | 25000.0000 | **48947.7900** |
+| `USDT` | 6515.2100 | 30000.0000 | **36515.2100** |
 | `CRV` | 0.0500 | 0.0000 | **0.0500** |
 | `DOGE` | 22044.5000 | 0.0000 | **22044.5000** |
 | `FIL` | 0.0050 | 0.0000 | **0.0050** |
@@ -135,9 +136,15 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Base Size | Order ID |
 | :--- | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.00551 | 8,234.10 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `LINK-USD` | SELL | 11.14600 | 104.69 | `922deb8a-b8a1-458a-b2bc-0f5aa5ebe43c` |
 | `USDT-USD` | SELL | 0.99980 | 5,000.00 | `3810b51b-920c-4f6d-9bb1-0c0274a5cef0` |
-| `USDT-USD` | SELL | 0.99950 | 5,000.00 | `ff515576-a9b0-48a3-a998-34b0a2d4411b` |
+| `USDT-USD` | BUY | 0.99953 | 5,000.00 | `5bffe755-a291-4dab-9b77-90b0b3f8d9dd` |
+| `USDT-USD` | BUY | 0.99953 | 5,000.00 | `4eab363f-6166-445b-a2df-37c1bbbc56e5` |
+| `USDT-USD` | BUY | 0.99953 | 5,000.00 | `efe5bfee-d2c7-4c8d-bb4c-68b327b9acf3` |
+| `USDT-USD` | SELL | 0.99954 | 5,000.00 | `3a21549b-3bae-4f23-a616-790230569d7a` |
+| `USDT-USD` | SELL | 0.99954 | 5,000.00 | `7cbdb219-c7d3-4ad1-9630-50b7d01abf8b` |
+| `USDT-USD` | SELL | 0.99954 | 5,000.00 | `2dcff782-c913-4cf0-bce1-8c8b41e09852` |
+| `USDT-USD` | SELL | 0.99954 | 5,000.00 | `67c51abd-66b4-4faf-8a33-d3a860dfa219` |
+| `USDT-USD` | SELL | 0.99954 | 5,000.00 | `38387eac-58af-4b35-9a15-44cea225e37d` |
 
 
 
@@ -145,14 +152,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 3.2h ago (2026-09-02 04:02 PM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 3.5h ago (2026-09-02 04:02 PM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **95.8h (3d 23h 48m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **95.5h (3d 23h 30m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-02 07:42:22 AM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **94.8h (3d 22h 48m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **94.5h (3d 22h 30m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, DOGE, SUI, XRP, SOL, ZEC`
 
 
@@ -166,20 +173,20 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ## 7. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
 ================================================================================
-   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:11:09 AM
-   CPU:   4.1%  |  MEM:   6.1% (14.5GB / 15.4GB Free)
+   🛡️  SFGK FUNNEL GUARDIAN WATCHDOG (HFT ONLY) |  02:29:40 AM
+   CPU:   5.6%  |  MEM:   6.1% (14.5GB / 15.4GB Free)
 ================================================================================
 SERVICE              | PID      | STATUS          | RESTARTS | INFO
 --------------------------------------------------------------------------------
 L3 Consumer          | 1649249  | RUNNING         | -        | Continuous Websocket Feed
 MAO Daemon           | 1649364  | RUNNING         | -        | Oracle Yield Analysis
 U/U Farmer           | -        | DISABLED        | -        | Excluded from Fee Tier
-Trader AVAX-USD      | 1660996  | COOL-DOWN       | 19       | Next run in 24.5s
-Trader ETH-USD       | 1660997  | COOL-DOWN       | 19       | Next run in 24.5s
-Trader ADA-USD       | 1660998  | COOL-DOWN       | 19       | Next run in 24.5s
-Trader DOGE-USD      | 1660999  | COOL-DOWN       | 19       | Next run in 24.5s
-Trader BTC-USD       | 1661000  | COOL-DOWN       | 19       | Next run in 24.5s
-Trader LINK-USD      | 1661001  | COOL-DOWN       | 19       | Next run in 24.5s
+Trader AVAX-USD      | 1678643  | COOL-DOWN       | 49       | Next run in 14.1s
+Trader ETH-USD       | 1678644  | COOL-DOWN       | 49       | Next run in 14.1s
+Trader ADA-USD       | 1678645  | COOL-DOWN       | 49       | Next run in 14.1s
+Trader DOGE-USD      | 1678646  | COOL-DOWN       | 49       | Next run in 14.1s
+Trader BTC-USD       | 1678647  | COOL-DOWN       | 49       | Next run in 14.1s
+Trader LINK-USD      | 1678648  | COOL-DOWN       | 49       | Next run in 14.1s
 ```
 
 ---
@@ -198,26 +205,26 @@ Trader LINK-USD      | 1661001  | COOL-DOWN       | 19       | Next run in 24.5s
 <summary><b>Click to expand raw incident logs</b></summary>
 
 ```text
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:30:53 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.36s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:31:15 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.10s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:31:37 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.40s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:32:20 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.43s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:32:42 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.12s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:33:26 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.42s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:34:53 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.21s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:35:15 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.37s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:35:37 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.20s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:35:59 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.49s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:36:21 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.39s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:36:43 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.28s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:38:53 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.33s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:39:15 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.32s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:39:37 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.29s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:39:59 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.24s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:41:46 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_product | Sleeping 1.24s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:42:07 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.15s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:43:12 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.44s... | Error: 429 Client Error: Too Many Requests 
-logs/watchdog_Trader_SOL_USD.log:2026-09-03 01:44:39 [WARNING] [async_sfgk_trader.py:_execute_api_call:299] [SOL-USD] Coinbase API Call Exception (Attempt 1/5). Func: get_accounts | Sleeping 1.29s... | Error: 429 Client Error: Too Many Requests 
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
+logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
 logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
 logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
 logs/watchdog_Trader_SOL_USD.log:SyntaxError: 'continue' not properly in loop
