@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-04 12:00:05 PM PDT (2026-09-04 19:00:05 UTC)`  
+> **Report Generated**: `2026-09-04 12:05:02 PM PDT (2026-09-04 19:05:02 UTC)`  
 > **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-27.44** | -1.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-27.44** | -1.0 | 🟢 SAFE |
 | `ETH-USD` | DVOL_ETH | **-1.96** | **-0.50** | **-1.46** | **-13.47** | -1.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-27.47** | -1.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-27.44** | -1.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-27.45** | -1.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-29.44** | -1.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.49** | **-0.50** | **-0.99** | **-29.29** | -1.0 | 🟢 SAFE |
+| `ADA-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-27.47** | -1.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-27.44** | -1.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-27.45** | -1.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-29.44** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.37** | **-0.50** | **-0.87** | **-29.29** | -1.0 | 🟢 SAFE |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (23.37h old) | 09-03 12:37 |
-| ✅ | **TimesFM Forecasts** | Fresh (1.16h old) | 09-04 10:50 |
-| ✅ | **Holding Times config** | Fresh (95.28h old) | 08-31 12:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 09-04 11:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 09-04 11:59 |
-| ❌ | **Live Trading Telemetry** | STALE! (0.2h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (23.46h old) | 09-03 12:37 |
+| ✅ | **TimesFM Forecasts** | Fresh (1.24h old) | 09-04 10:50 |
+| ✅ | **Holding Times config** | Fresh (95.36h old) | 08-31 12:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 12:04 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-04 12:05 |
+| ❌ | **Live Trading Telemetry** | STALE! (0.3h old) | Limit 0.1h |
 
 <br>
 
@@ -130,12 +130,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 1.2h ago (2026-09-04 10:50 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **55.0h (2d 6h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **54.9h (2d 6h 54m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-03 12:37:49 PM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **54.0h (2d 5h 59m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **53.9h (2d 5h 54m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, DOGE, SUI, XRP, SOL, ZEC`
 
 
