@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-04 11:09:19 AM PDT (2026-09-04 18:09:19 UTC)`  
+> **Report Generated**: `2026-09-04 11:27:46 AM PDT (2026-09-04 18:27:46 UTC)`  
 > **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.44** | -1.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.92** | **-0.50** | **-1.42** | **-13.47** | -1.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.47** | -1.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.44** | -1.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.45** | -1.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-29.44** | -1.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-29.29** | -1.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-27.44** | -1.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.95** | **-0.50** | **-1.45** | **-13.47** | -1.0 | 🟢 SAFE |
+| `ADA-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-27.47** | -1.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-27.44** | -1.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-27.45** | -1.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-29.44** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.26** | **-0.50** | **-0.76** | **-29.29** | -1.0 | 🟢 SAFE |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (22.53h old) | 09-03 12:37 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.31h old) | 09-04 10:50 |
-| ✅ | **Holding Times config** | Fresh (94.43h old) | 08-31 12:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 11:09 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-04 11:09 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 09-04 11:09 |
+| ✅ | **Go-List JSON** | Fresh (22.83h old) | 09-03 12:37 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.62h old) | 09-04 10:50 |
+| ✅ | **Holding Times config** | Fresh (94.74h old) | 08-31 12:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 11:27 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 09-04 11:27 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 09-04 11:27 |
 
 <br>
 
@@ -134,14 +134,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.3h ago (2026-09-04 10:50 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 0.6h ago (2026-09-04 10:50 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **55.8h (2d 7h 50m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **55.5h (2d 7h 32m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-03 12:37:49 PM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **54.8h (2d 6h 50m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **54.5h (2d 6h 31m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, DOGE, SUI, XRP, SOL, ZEC`
 
 
