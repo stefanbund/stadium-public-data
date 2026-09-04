@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-04 01:37:26 PM PDT (2026-09-04 20:37:26 UTC)`  
+> **Report Generated**: `2026-09-04 01:41:15 PM PDT (2026-09-04 20:41:15 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-27.44** | -1.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-1.76** | **-0.50** | **-1.26** | **+1.64** | -1.0 | 🔴 DAW VETOED |
-| `ADA-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-15.22** | -1.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-27.44** | -1.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-27.45** | -1.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-11.86** | -1.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-0.89** | **-0.50** | **-0.39** | **-11.87** | -1.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-27.44** | -1.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.74** | **-0.50** | **-1.24** | **+1.64** | -1.0 | 🔴 DAW VETOED |
+| `ADA-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-15.22** | -1.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-27.44** | -1.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-27.45** | -1.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-11.86** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-0.91** | **-0.50** | **-0.41** | **-11.87** | -1.0 | 🟢 SAFE |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (25.00h old) | 09-03 12:37 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.78h old) | 09-04 10:50 |
-| ✅ | **Holding Times config** | Fresh (96.90h old) | 08-31 12:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 13:37 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-04 13:37 |
-| ❌ | **Live Trading Telemetry** | STALE! (1.8h old) | Limit 0.1h |
+| ✅ | **Go-List JSON** | Fresh (25.06h old) | 09-03 12:37 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.84h old) | 09-04 10:50 |
+| ✅ | **Holding Times config** | Fresh (96.96h old) | 08-31 12:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 09-04 13:41 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 09-04 13:41 |
+| ❌ | **Live Trading Telemetry** | STALE! (1.9h old) | Limit 0.1h |
 
 <br>
 
@@ -55,7 +55,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 
 | Funnel Filter Layer | Total Rejections | % of Rejections |
 | :--- | :--- | :--- |
-| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `108,817` | **100.0%** |
+| Tier 1: Macro Volatility Tensor Gate (Omega_macro) | `108,861` | **100.0%** |
 | Tier 2: Unified Transport & Directional Engine | `0` | **0.0%** |
 | Tier 3: Continuous Hawkes-SFGK Pricer (HAS-Pricer) | `0` | **0.0%** |
 | System: Asset Cooldown Active | `0` | **0.0%** |
@@ -134,12 +134,12 @@ Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forec
 
 - **TimesFM Forecast DB**: 🟢 Updated 2.8h ago (2026-09-04 10:50 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **53.4h (2d 5h 22m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **53.3h (2d 5h 18m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-03 12:37:49 PM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **52.4h (2d 4h 22m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **52.3h (2d 4h 18m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, DOGE, SUI, XRP, SOL, ZEC`
 
 
@@ -173,7 +173,7 @@ Trader SOL-USD       | 3642507  | RUNNING         | 7        | Evaluating Funnel
 
 ---
 ## 8. ☀️ Mac Mini Day Trader Intelligence & PnL
-**Guardian Watchdog Status**: 🟢 ONLINE (PID 85852)
+**Guardian Watchdog Status**: 🟢 ONLINE (PID 36432)
 
 ### 💰 Cumulative PnL Dashboards
 | Environment | Total Trades | Win Rate | Net PnL (USD) |
