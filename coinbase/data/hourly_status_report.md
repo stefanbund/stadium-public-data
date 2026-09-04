@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-04 11:00:00 AM PDT (2026-09-04 18:00:00 UTC)`  
+> **Report Generated**: `2026-09-04 11:09:19 AM PDT (2026-09-04 18:09:19 UTC)`  
 > **System Health**: **🟢 ALL SYSTEMS NOMINAL** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `AVAX-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-27.44** | -1.0 | 🟢 SAFE |
-| `ETH-USD` | DVOL_ETH | **-2.17** | **-0.50** | **-1.67** | **-13.47** | -1.0 | 🟢 SAFE |
-| `ADA-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-27.47** | -1.0 | 🟢 SAFE |
-| `DOGE-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-27.44** | -1.0 | 🟢 SAFE |
-| `BTC-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-27.45** | -1.0 | 🟢 SAFE |
-| `LINK-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-29.44** | -1.0 | 🟢 SAFE |
-| `SOL-USD` | DVOL_BTC | **-1.13** | **-0.50** | **-0.63** | **-29.29** | -1.0 | 🟢 SAFE |
+| `AVAX-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.44** | -1.0 | 🟢 SAFE |
+| `ETH-USD` | DVOL_ETH | **-1.92** | **-0.50** | **-1.42** | **-13.47** | -1.0 | 🟢 SAFE |
+| `ADA-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.47** | -1.0 | 🟢 SAFE |
+| `DOGE-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.44** | -1.0 | 🟢 SAFE |
+| `BTC-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-27.45** | -1.0 | 🟢 SAFE |
+| `LINK-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-29.44** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **-1.36** | **-0.50** | **-0.86** | **-29.29** | -1.0 | 🟢 SAFE |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (22.37h old) | 09-03 12:37 |
-| ✅ | **TimesFM Forecasts** | Fresh (0.16h old) | 09-04 10:50 |
-| ✅ | **Holding Times config** | Fresh (94.28h old) | 08-31 12:43 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 10:59 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-04 11:00 |
-| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 09-04 11:00 |
+| ✅ | **Go-List JSON** | Fresh (22.53h old) | 09-03 12:37 |
+| ✅ | **TimesFM Forecasts** | Fresh (0.31h old) | 09-04 10:50 |
+| ✅ | **Holding Times config** | Fresh (94.43h old) | 08-31 12:43 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-04 11:09 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-04 11:09 |
+| ✅ | **Live Trading Telemetry** | Fresh (0.00h old) | 09-04 11:09 |
 
 <br>
 
@@ -69,7 +69,7 @@ Layer-by-layer tick evaluation waterfall and asset-specific performance tracking
 | Asset | Trades | Win Rate | Loss Streak | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | `BTC-USD` | 23 | 47.8% | 0 | 🟢 OK |
-| `ADA-USD` | 47 | 74.5% | 1 | 🟢 OK |
+| `ADA-USD` | 48 | 75.0% | 0 | 🟢 OK |
 | `DOGE-USD` | 108 | 65.7% | 0 | 🟢 OK |
 | `ETH-USD` | 51 | 60.8% | 0 | 🟢 OK |
 | `LINK-USD` | 119 | 68.9% | 0 | 🟢 OK |
@@ -90,8 +90,8 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 | **Active BUY Tranches** | **0 Orders** (`$0.00 USD`) | Resting Limit Bids pegged to Best Bid |
 | **Active SELL Tranches** | **0 Orders** (`$0.00 USDT`) | Resting Limit Asks pegged to Best Ask |
 | **Total Deployed U/U Capital** | **`$0.00 USD`** | Active bidirectional turnover liquidity pool |
-| **Rolling 30-Day Volume** | **`$2,723,794.35 USD`** | **VIP 2** (Maker: **0.05%** / 5 bps, Taker: **0.10%**) |
-| **Next Tier Milestone (VIP 3)** | **54.5% Complete** | `$2,276,205.65 USD` to reach $5,000,000.00 threshold |
+| **Rolling 30-Day Volume** | **`$2,724,516.11 USD`** | **VIP 2** (Maker: **0.05%** / 5 bps, Taker: **0.10%**) |
+| **Next Tier Milestone (VIP 3)** | **54.5% Complete** | `$2,275,483.89 USD` to reach $5,000,000.00 threshold |
 
 
 ---
@@ -102,7 +102,6 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | :--- | :--- | :--- | :--- |
 | `USDT` | 17980.3300 | 0.0000 | **17980.3300** |
 | `CRV` | 0.0500 | 0.0000 | **0.0500** |
-| `ADA` | 0.0000 | 3400.2208 | **3400.2208** |
 | `DOGE` | 0.6000 | 19815.0000 | **19815.6000** |
 | `FIL` | 0.0050 | 0.0000 | **0.0050** |
 | `ALEPH` | 2.4000 | 0.0000 | **2.4000** |
@@ -122,7 +121,6 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 | Product | Side | Limit Price | Base Size | Order ID |
 | :--- | :--- | :--- | :--- | :--- |
 | `ACH-USD` | SELL | 0.00551 | 8,234.10 | `a0d2e243-42b4-4df5-bd23-118f45998df8` |
-| `ADA-USD` | SELL | 0.21227 | 3,400.22 | `ed7cc07e-d206-4a2d-9812-0d5633807c92` |
 | `LINK-USD` | SELL | 11.74300 | 0.11 | `4698c39c-4a61-40ff-80f0-bfb331a6b275` |
 | `SOL-USD` | SELL | 102.09000 | 65.14 | `cd77110c-c44d-4a2a-b49d-70bce2e04880` |
 | `ETH-USD` | SELL | 2,463.99000 | 0.48 | `992622b4-e39d-438b-aea7-1371ccf42e75` |
@@ -136,14 +134,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 0.2h ago (2026-09-04 10:50 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 0.3h ago (2026-09-04 10:50 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **56.0h (2d 7h 59m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-06 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **55.8h (2d 7h 50m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-03 12:37:49 PM PDT`
-- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **55.0h (2d 6h 59m)**)
+- **Next Scheduled Run**: `2026-09-06 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **54.8h (2d 6h 50m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, DOGE, SUI, XRP, SOL, ZEC`
 
 
