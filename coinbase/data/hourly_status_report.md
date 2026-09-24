@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-24 02:09:47 PM PDT (2026-09-24 21:09:47 UTC)`  
+> **Report Generated**: `2026-09-24 02:27:13 PM PDT (2026-09-24 21:27:13 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (69.74h old) | 09-21 16:25 |
-| ✅ | **TimesFM Forecasts** | Fresh (6.11h old) | 09-24 08:03 |
-| ❌ | **Holding Times config** | STALE! (577.4h old) | Limit 91.2h |
-| ❌ | **BTC DVOL Cache** | STALE! (53.2h old) | Limit 0.0h |
-| ❌ | **ETH DVOL Cache** | STALE! (53.2h old) | Limit 0.0h |
-| ❌ | **Live Causal Telemetry** | STALE! (53.2h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (70.03h old) | 09-21 16:25 |
+| ✅ | **TimesFM Forecasts** | Fresh (6.40h old) | 09-24 08:03 |
+| ❌ | **Holding Times config** | STALE! (577.7h old) | Limit 91.5h |
+| ❌ | **BTC DVOL Cache** | STALE! (53.5h old) | Limit 0.0h |
+| ❌ | **ETH DVOL Cache** | STALE! (53.5h old) | Limit 0.0h |
+| ❌ | **Live Causal Telemetry** | STALE! (53.5h old) | Limit 0.5h |
 
 <br>
 
@@ -98,8 +98,8 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 | **Active BUY Tranches** | **0 Orders** (`$0.00 USD`) | Resting Limit Bids pegged to Best Bid |
 | **Active SELL Tranches** | **0 Orders** (`$0.00 USDT`) | Resting Limit Asks pegged to Best Ask |
 | **Total Deployed U/U Capital** | **`$0.00 USD`** | Active bidirectional turnover liquidity pool |
-| **Rolling 30-Day Volume** | **`$2,047,378.78 USD`** | **VIP 1** (Maker: **0.06%** / 6 bps, Taker: **0.10%**) |
-| **Next Tier Milestone (VIP 2)** | **40.9% Complete** | `$2,952,621.22 USD` to reach $5,000,000.00 threshold |
+| **Rolling 30-Day Volume** | **`$2,047,132.07 USD`** | **VIP 1** (Maker: **0.06%** / 6 bps, Taker: **0.10%**) |
+| **Next Tier Milestone (VIP 2)** | **40.9% Complete** | `$2,952,867.93 USD` to reach $5,000,000.00 threshold |
 
 
 ---
@@ -135,14 +135,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 6.1h ago (2026-09-24 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 6.4h ago (2026-09-24 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-27 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **76.8h (3d 4h 50m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-27 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **76.5h (3d 4h 32m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-21 04:25:29 PM PDT`
-- **Next Scheduled Run**: `2026-09-27 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **75.8h (3d 3h 49m)**)
+- **Next Scheduled Run**: `2026-09-27 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **75.5h (3d 3h 32m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -158,9 +158,9 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
-3277676  1-18:38:30  0.0  0.0 bash -c cd /opt/hft_trader && sudo nohup ./venv/bin/python3 -u guardian_causal.py > guardian_causal.log 2>&1 &
-3277677  1-18:38:30  0.0  0.0 sudo nohup ./venv/bin/python3 -u guardian_causal.py
-3277680  1-18:38:30  0.0  0.0 ./venv/bin/python3 -u guardian_causal.py
+3277676  1-18:55:56  0.0  0.0 bash -c cd /opt/hft_trader && sudo nohup ./venv/bin/python3 -u guardian_causal.py > guardian_causal.log 2>&1 &
+3277677  1-18:55:56  0.0  0.0 sudo nohup ./venv/bin/python3 -u guardian_causal.py
+3277680  1-18:55:56  0.0  0.0 ./venv/bin/python3 -u guardian_causal.py
 ```
 
 ---
