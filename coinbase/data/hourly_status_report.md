@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-25 10:24:37 AM PDT (2026-09-25 17:24:37 UTC)`  
+> **Report Generated**: `2026-09-25 10:41:58 AM PDT (2026-09-25 17:41:58 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,16 +37,16 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (89.99h old) | 09-21 16:25 |
-| ✅ | **TimesFM Forecasts** | Fresh (2.36h old) | 09-25 08:03 |
-| ❌ | **Holding Times config** | STALE! (597.7h old) | Limit 111.4h |
-| ❌ | **BTC DVOL Cache** | STALE! (73.4h old) | Limit 0.0h |
-| ❌ | **ETH DVOL Cache** | STALE! (73.4h old) | Limit 0.0h |
-| ❌ | **Live Causal Telemetry** | STALE! (73.4h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (90.28h old) | 09-21 16:25 |
+| ✅ | **TimesFM Forecasts** | Fresh (2.65h old) | 09-25 08:03 |
+| ❌ | **Holding Times config** | STALE! (598.0h old) | Limit 111.7h |
+| ❌ | **BTC DVOL Cache** | STALE! (73.7h old) | Limit 0.0h |
+| ❌ | **ETH DVOL Cache** | STALE! (73.7h old) | Limit 0.0h |
+| ❌ | **Live Causal Telemetry** | STALE! (73.7h old) | Limit 0.5h |
 
 <br>
 
-> **Utilization Certification**: ✅ **CERTIFIED.** The Guardian Watchdog is ONLINE and EC2 traders are actively querying the freshest MLOps data artifacts (Found 0 recent read events).
+> **Utilization Certification**: 🔴 **FAILED.** Guardian watchdog offline, unable to certify utilization.
 
 
 ---
@@ -135,14 +135,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 2.4h ago (2026-09-25 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 2.6h ago (2026-09-25 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-08-31 12:42:56 PM PDT`
-- **Next Scheduled VSTEF Run**: `2026-09-27 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **56.6h (2d 8h 35m)**)
+- **Next Scheduled VSTEF Run**: `2026-09-27 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **56.3h (2d 8h 17m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-21 04:25:29 PM PDT`
-- **Next Scheduled Run**: `2026-09-27 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **55.6h (2d 7h 35m)**)
+- **Next Scheduled Run**: `2026-09-27 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **55.3h (2d 7h 17m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -155,12 +155,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ---
 ## 7. 🖥️ Multi-Node Infrastructure & Watchdog Matrix
 ```text
-================================================================================
-   🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
-================================================================================
-3277676  2-14:53:20  0.0  0.0 bash -c cd /opt/hft_trader && sudo nohup ./venv/bin/python3 -u guardian_causal.py > guardian_causal.log 2>&1 &
-3277677  2-14:53:20  0.0  0.0 sudo nohup ./venv/bin/python3 -u guardian_causal.py
-3277680  2-14:53:20  0.0  0.0 ./venv/bin/python3 -u guardian_causal.py
+Guardian watchdog table not available
 ```
 
 ---
