@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-28 10:50:56 PM PDT (2026-09-29 05:50:56 UTC)`  
+> **Report Generated**: `2026-09-28 11:08:11 PM PDT (2026-09-29 06:08:11 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (21.66h old) | 09-28 01:11 |
-| ❌ | **TimesFM Forecasts** | STALE! (14.8h old) | Limit 9.0h |
-| ✅ | **Holding Times config** | Fresh (21.66h old) | 09-28 01:11 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-28 22:51 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-28 22:51 |
-| ❌ | **Live Causal Telemetry** | STALE! (323.1h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (21.95h old) | 09-28 01:11 |
+| ❌ | **TimesFM Forecasts** | STALE! (15.1h old) | Limit 9.0h |
+| ✅ | **Holding Times config** | Fresh (21.95h old) | 09-28 01:11 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-28 23:08 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-28 23:08 |
+| ❌ | **Live Causal Telemetry** | STALE! (323.4h old) | Limit 0.5h |
 
 <br>
 
@@ -135,14 +135,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🔴 Updated 14.8h ago (2026-09-28 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🔴 Updated 15.1h ago (2026-09-28 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-09-28 01:10:22 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **140.1h (5d 20h 8m)**)
+- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **139.9h (5d 19h 51m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-28 01:11:12 AM PDT`
-- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **139.1h (5d 19h 8m)**)
+- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **138.9h (5d 18h 51m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -158,7 +158,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
- 180576    01:23:33  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
+ 180576    01:40:48  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
 ```
 
 ---
