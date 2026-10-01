@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-09-30 06:45:18 PM PDT (2026-10-01 01:45:18 UTC)`  
+> **Report Generated**: `2026-09-30 07:02:42 PM PDT (2026-10-01 02:02:42 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (65.57h old) | 09-28 01:11 |
-| ❌ | **TimesFM Forecasts** | STALE! (10.7h old) | Limit 9.0h |
-| ✅ | **Holding Times config** | Fresh (65.57h old) | 09-28 01:11 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.01h old) | 09-30 18:45 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.01h old) | 09-30 18:45 |
-| ❌ | **Live Causal Telemetry** | STALE! (367.1h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (65.86h old) | 09-28 01:11 |
+| ❌ | **TimesFM Forecasts** | STALE! (11.0h old) | Limit 9.0h |
+| ✅ | **Holding Times config** | Fresh (65.86h old) | 09-28 01:11 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 09-30 19:02 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 09-30 19:02 |
+| ❌ | **Live Causal Telemetry** | STALE! (367.3h old) | Limit 0.5h |
 
 <br>
 
@@ -98,8 +98,8 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 | **Active BUY Tranches** | **0 Orders** (`$0.00 USD`) | Resting Limit Bids pegged to Best Bid |
 | **Active SELL Tranches** | **0 Orders** (`$0.00 USDT`) | Resting Limit Asks pegged to Best Ask |
 | **Total Deployed U/U Capital** | **`$0.00 USD`** | Active bidirectional turnover liquidity pool |
-| **Rolling 30-Day Volume** | **`$752,162.65 USD`** | **Advanced 3** (Maker: **0.10%** / 10 bps, Taker: **0.15%**) |
-| **Next Tier Milestone (VIP 1)** | **75.2% Complete** | `$247,837.35 USD` to reach $1,000,000.00 threshold |
+| **Rolling 30-Day Volume** | **`$744,068.07 USD`** | **Advanced 3** (Maker: **0.10%** / 10 bps, Taker: **0.15%**) |
+| **Next Tier Milestone (VIP 1)** | **74.4% Complete** | `$255,931.93 USD` to reach $1,000,000.00 threshold |
 
 
 ---
@@ -135,14 +135,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🔴 Updated 10.7h ago (2026-09-30 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🔴 Updated 11.0h ago (2026-09-30 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-09-28 01:10:22 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **96.2h (4d 0h 14m)**)
+- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **96.0h (3d 23h 57m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-28 01:11:12 AM PDT`
-- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **95.2h (3d 23h 14m)**)
+- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **95.0h (3d 22h 57m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -158,7 +158,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
- 474874  1-09:42:26  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
+ 474874  1-09:59:50  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
 ```
 
 ---
