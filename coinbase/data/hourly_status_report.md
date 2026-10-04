@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-10-04 02:09:59 PM PDT (2026-10-04 21:09:59 UTC)`  
+> **Report Generated**: `2026-10-04 02:27:10 PM PDT (2026-10-04 21:27:10 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **+0.92** | **-0.50** | **+1.42** | **+39.13** | -1.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.89** | -1.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.89** | -1.0 | 🔴 DAW VETOED |
-| `AVAX-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `XRP-USD` | DVOL_BTC | **+1.93** | **-0.50** | **+2.43** | **+22.89** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.91** | -1.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **+0.73** | **-0.50** | **+1.23** | **+39.13** | -1.0 | 🔴 DAW VETOED |
+| `SOL-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.89** | -1.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.89** | -1.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.91** | -1.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.91** | -1.0 | 🔴 DAW VETOED |
+| `XRP-USD` | DVOL_BTC | **+2.56** | **-0.50** | **+3.06** | **+22.89** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (156.98h old) | 09-28 01:11 |
-| ✅ | **TimesFM Forecasts** | Fresh (6.11h old) | 10-04 08:03 |
-| ✅ | **Holding Times config** | Fresh (156.98h old) | 09-28 01:11 |
-| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 10-04 14:10 |
-| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 10-04 14:10 |
-| ❌ | **Live Causal Telemetry** | STALE! (458.5h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (157.27h old) | 09-28 01:11 |
+| ✅ | **TimesFM Forecasts** | Fresh (6.39h old) | 10-04 08:03 |
+| ✅ | **Holding Times config** | Fresh (157.27h old) | 09-28 01:11 |
+| ✅ | **BTC DVOL Cache** | Fresh (0.00h old) | 10-04 14:27 |
+| ✅ | **ETH DVOL Cache** | Fresh (0.00h old) | 10-04 14:27 |
+| ❌ | **Live Causal Telemetry** | STALE! (458.8h old) | Limit 0.5h |
 
 <br>
 
@@ -98,8 +98,8 @@ Operational telemetry of the high-velocity stablecoin market-making and VIP fee 
 | **Active BUY Tranches** | **0 Orders** (`$0.00 USD`) | Resting Limit Bids pegged to Best Bid |
 | **Active SELL Tranches** | **0 Orders** (`$0.00 USDT`) | Resting Limit Asks pegged to Best Ask |
 | **Total Deployed U/U Capital** | **`$0.00 USD`** | Active bidirectional turnover liquidity pool |
-| **Rolling 30-Day Volume** | **`$1,298.22 USD`** | **Intro** (Maker: **0.50%** / 50 bps, Taker: **0.90%**) |
-| **Next Tier Milestone (Advanced 1)** | **13.0% Complete** | `$8,701.78 USD` to reach $10,000.00 threshold |
+| **Rolling 30-Day Volume** | **`$45.35 USD`** | **Intro** (Maker: **0.50%** / 50 bps, Taker: **0.90%**) |
+| **Next Tier Milestone (Advanced 1)** | **0.5% Complete** | `$9,954.65 USD` to reach $10,000.00 threshold |
 
 
 ---
@@ -135,14 +135,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🟢 Updated 6.1h ago (2026-10-04 08:03 AM PDT)
+- **TimesFM Forecast DB**: 🟢 Updated 6.4h ago (2026-10-04 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-09-28 01:10:22 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **4.8h (0d 4h 49m)**)
+- **Next Scheduled VSTEF Run**: `2026-10-04 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **4.5h (0d 4h 32m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-09-28 01:11:12 AM PDT`
-- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **3.8h (0d 3h 49m)**)
+- **Next Scheduled Run**: `2026-10-04 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **3.5h (0d 3h 32m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -158,7 +158,7 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
-2454565  2-01:34:00  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
+2454565  2-01:51:10  0.0  0.0 /opt/hft_trader/venv/bin/python -u guardian_causal.py
 ```
 
 ---
