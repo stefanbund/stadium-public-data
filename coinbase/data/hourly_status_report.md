@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-10-06 10:43:49 AM PDT (2026-10-06 17:43:49 UTC)`  
+> **Report Generated**: `2026-10-06 11:01:06 AM PDT (2026-10-06 18:01:06 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -15,13 +15,13 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 
 | Symbol | Proxy Oracle | Live Z-Score | Optimal Limit (YSP) | Safety Margin | Live VRP | Optimal VRP (YSP) | DAW Safety Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `BTC-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `ETH-USD` | DVOL_ETH | **-1.38** | **-0.50** | **-0.88** | **+39.13** | -1.0 | 🔴 DAW VETOED |
-| `SOL-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.89** | -1.0 | 🔴 DAW VETOED |
-| `DOGE-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.89** | -1.0 | 🔴 DAW VETOED |
-| `AVAX-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `LINK-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.91** | -1.0 | 🔴 DAW VETOED |
-| `XRP-USD` | DVOL_BTC | **-0.69** | **-0.50** | **-0.19** | **+22.89** | 5.0 | 🔴 DAW VETOED |
+| `BTC-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `ETH-USD` | DVOL_ETH | **-1.67** | **-0.50** | **-1.17** | **N/A** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `XRP-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -37,12 +37,12 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (0.01h old) | 10-06 10:43 |
-| ❌ | **TimesFM Forecasts** | NOT FOUND ON EC2 | - |
-| ✅ | **Holding Times config** | Fresh (0.01h old) | 10-06 10:43 |
-| ❌ | **BTC DVOL Cache** | STALE! (23.4h old) | Limit 0.0h |
-| ❌ | **ETH DVOL Cache** | STALE! (23.4h old) | Limit 0.0h |
-| ❌ | **Live Causal Telemetry** | STALE! (503.0h old) | Limit 0.5h |
+| ✅ | **Go-List JSON** | Fresh (0.18h old) | 10-06 10:50 |
+| ❌ | **TimesFM Forecasts** | STALE! (363.0h old) | Limit 9.0h |
+| ✅ | **Holding Times config** | Fresh (0.18h old) | 10-06 10:50 |
+| ❌ | **BTC DVOL Cache** | STALE! (0.2h old) | Limit 0.0h |
+| ❌ | **ETH DVOL Cache** | STALE! (0.2h old) | Limit 0.0h |
+| ❌ | **Live Causal Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
 
@@ -53,36 +53,7 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 ## 3. 🔬 Causal Gating Waterfall & Empirical Counterfactual Telemetry
 Layer-by-layer tick evaluation waterfall, empirical counterfactual alpha verification, and asset tracking.
 
-| Causal Filter Tier | Total Vetoes | % of Vetoes |
-| :--- | :--- | :--- |
-| Tier 0: Thermodynamic Macro Circuit Breaker (VRP Tipping & Skew Guard) | `3,715` | **94.3%** |
-| Tier 1: MS-AR Markov Regime Routing & Manifold Admission | `154` | **3.9%** |
-| Tier 2: Microstructural Inflow Confirmation (OKX L3 OFI) | `71` | **1.8%** |
 
-
-
-### 🧪 Empirical Counterfactual Shadow Probe Efficacy
-Measures whether causal gating saves capital (Losses Avoided) or creates drag (Opportunity Cost):
-
-| Metric | Volume & Distribution | Net PnL Alpha |
-| :--- | :--- | :--- |
-| 🛡️ **Losses Avoided (Disasters Filtered)** | `2000` (50.8%) | **+64000.0 bps** SAVED |
-| ❌ **Missed Wins (Opportunity Cost)** | `1295` (32.9%) | **-32375.0 bps** FOREGONE |
-| ⏱️ **Holding Timeouts (Indecision)** | `645` (16.4%) | **-3689.5 bps** NET |
-| 🌟 **Net Causal Value-Add** | `3940 Total Probes` | **+27935.5 bps** (Alpha Positive) |
-
-
-### Active Universe Gating & Execution Matrix (Session)
-
-| Asset | Completed Trades | Session Win Rate | Shadow Probes | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `LINK-USD` | 0 | 0.0% | 639 Probes | 🟢 Gated / Capital Preserved |
-| `ETH-USD` | 0 | 0.0% | 411 Probes | 🟢 Gated / Capital Preserved |
-| `AVAX-USD` | 0 | 0.0% | 656 Probes | 🟢 Gated / Capital Preserved |
-| `SOL-USD` | 0 | 0.0% | 521 Probes | 🟢 Gated / Capital Preserved |
-| `DOGE-USD` | 0 | 0.0% | 589 Probes | 🟢 Gated / Capital Preserved |
-| `XRP-USD` | 0 | 0.0% | 793 Probes | 🟢 Gated / Capital Preserved |
-| `BTC-USD` | 0 | 0.0% | 331 Probes | 🟢 Gated / Capital Preserved |
 
 ---
 ## 4. 🚜 Continuous U/U Liquidity Reservoir & Peg Farmer (USDT-USD)
@@ -135,14 +106,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🔴 Database Unreachable
+- **TimesFM Forecast DB**: 🔴 Updated 363.0h ago (2026-09-21 08:03 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-10-05 02:52:55 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-10-11 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **128.3h (5d 8h 16m)**)
+- **Next Scheduled VSTEF Run**: `2026-10-11 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **128.0h (5d 7h 58m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
-- **Last Run (Confirmation)**: `2026-10-06 10:43:24 AM PDT`
-- **Next Scheduled Run**: `2026-10-11 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **127.3h (5d 7h 15m)**)
+- **Last Run (Confirmation)**: `2026-10-06 10:50:21 AM PDT`
+- **Next Scheduled Run**: `2026-10-11 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **127.0h (5d 6h 58m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH, SOL, DOGE, AVAX, LINK, XRP`
 
 
@@ -158,8 +129,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
-2060078    17:10:53  0.0  0.0 bash -c cd /opt/hft_trader && nohup python3 guardian_causal.py > logs/guardian_causal.log 2>&1 &
-2060079    17:10:53  0.0  0.0 python3 guardian_causal.py
+2199134       09:46  0.0  0.0 bash -c cd /opt/hft_trader && export TRADER_ENV=production && export COINBASE_SECRET_NAME="traditional-cdp_api_key .json" && nohup venv/bin/python3 -u guardian_causal.py --live > guardian_console.log 2>&1 < /dev/null &
+2199135       09:46  0.0  0.0 venv/bin/python3 -u guardian_causal.py --live
 ```
 
 ---
