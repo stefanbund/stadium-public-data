@@ -3,7 +3,7 @@ layout: default
 ---
 
 # 🛡️ Unified Trading System Hourly Status & Visual Intelligence
-> **Report Generated**: `2026-10-18 08:02:38 PM PDT (2026-10-19 03:02:38 UTC)`  
+> **Report Generated**: `2026-10-18 08:19:54 PM PDT (2026-10-19 03:19:54 UTC)`  
 > **System Health**: **🟡 DEGRADED / RESTRICTED** | **Win Rate**: `0.0%` | **Completed Trades**: `0`
 
 
@@ -17,6 +17,11 @@ Real-time Deribit implied volatility (DVOL) proxy tracking against mathematicall
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `BTC-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
 | `ETH-USD` | DVOL_ETH | **-1.67** | **-0.50** | **-1.17** | **N/A** | -1.0 | 🟢 SAFE |
+| `SOL-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `DOGE-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `AVAX-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `LINK-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | -1.0 | 🔴 DAW VETOED |
+| `XRP-USD` | DVOL_BTC | **+0.83** | **-0.50** | **+1.33** | **N/A** | 5.0 | 🔴 DAW VETOED |
 
 
 
@@ -32,11 +37,11 @@ We hereby certify that the mission-critical algorithmic data assets uploaded by 
 
 | Status | Data Asset | Freshness / State | Details / Timestamp |
 | :---: | :--- | :--- | :--- |
-| ✅ | **Go-List JSON** | Fresh (1.41h old) | 10-18 18:38 |
-| ❌ | **TimesFM Forecasts** | STALE! (163.0h old) | Limit 9.0h |
-| ✅ | **Holding Times config** | Fresh (163.02h old) | 10-12 01:01 |
-| ❌ | **BTC DVOL Cache** | STALE! (163.0h old) | Limit 0.0h |
-| ❌ | **ETH DVOL Cache** | STALE! (163.0h old) | Limit 0.0h |
+| ✅ | **Go-List JSON** | Fresh (1.70h old) | 10-18 18:38 |
+| ❌ | **TimesFM Forecasts** | STALE! (163.3h old) | Limit 9.0h |
+| ✅ | **Holding Times config** | Fresh (163.30h old) | 10-12 01:01 |
+| ❌ | **BTC DVOL Cache** | STALE! (163.3h old) | Limit 0.0h |
+| ❌ | **ETH DVOL Cache** | STALE! (163.3h old) | Limit 0.0h |
 | ❌ | **Live Causal Telemetry** | NOT FOUND ON EC2 | - |
 
 <br>
@@ -101,14 +106,14 @@ Live balance sheet and open maker liquidity positions from Coinbase CDP.
 ## 6. 🤖 Foundation Model MLOps & Pipeline Orchestration
 Weekly Algorithmic Mega Cap selection, Zero-shot multi-step forward return forecasts, and VSTEF parameter grid search status.
 
-- **TimesFM Forecast DB**: 🔴 Updated 163.0h ago (2026-10-12 01:00 AM PDT)
+- **TimesFM Forecast DB**: 🔴 Updated 163.3h ago (2026-10-12 01:00 AM PDT)
 - **Last Weekly VSTEF Optimization**: `2026-10-05 02:52:55 AM PDT`
-- **Next Scheduled VSTEF Run**: `2026-10-25 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **167.0h (6d 22h 57m)**)
+- **Next Scheduled VSTEF Run**: `2026-10-25 07:00:00 PM PDT (Monday 02:00 UTC)` (Countdown: **166.7h (6d 22h 40m)**)
 - **Promoted Parameter Gates**: $Z_{DVOL} \le -0.5$ | Holding Horizon $= 12\text{h}$
 
 ### Algorithmic Mega Cap Selection
 - **Last Run (Confirmation)**: `2026-10-18 06:38:16 PM PDT`
-- **Next Scheduled Run**: `2026-10-25 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **166.0h (6d 21h 57m)**)
+- **Next Scheduled Run**: `2026-10-25 06:00:00 PM PDT (Monday 01:00 UTC)` (Countdown: **165.7h (6d 21h 39m)**)
 - **Selected Mega Cap Universe**: `BTC, ETH`
 
 
@@ -124,8 +129,8 @@ Visualizing the impact of the VSTEF (Volatility-Synchronized Stop-Tightening Exe
 ================================================================================
    🛡️  CAUSAL HFT GUARDIAN WATCHDOG v7.0.0 (CANARY ACTIVE)
 ================================================================================
-1215692    01:24:10  0.0  0.0 bash -c cd /opt/hft_trader && nohup /opt/hft_trader/venv/bin/python3 -u guardian_causal.py > logs/guardian_causal.log 2>&1 &
-1215693    01:24:10  0.0  0.0 /opt/hft_trader/venv/bin/python3 -u guardian_causal.py
+1215692    01:41:26  0.0  0.0 bash -c cd /opt/hft_trader && nohup /opt/hft_trader/venv/bin/python3 -u guardian_causal.py > logs/guardian_causal.log 2>&1 &
+1215693    01:41:26  0.0  0.0 /opt/hft_trader/venv/bin/python3 -u guardian_causal.py
 ```
 
 ---
