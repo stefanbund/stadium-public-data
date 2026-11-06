@@ -4,7 +4,7 @@
 **System Architecture Target**: Causal Inference Engine (CIE-v3.0.0 / Cohort V59)  
 **Classification**: High-Frequency Market Microstructure / Causal Econometrics  
 **Date**: November 2026  
-**Repository**: [`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/LAPTOP_PREPROCESSOR_MODELER)  
+**Repository**: [`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/stadium-public-data)  
 
 ---
 

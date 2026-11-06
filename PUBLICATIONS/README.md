@@ -1,6 +1,6 @@
 # Open Quantitative Research Series: High-Frequency Digital Asset Microstructure & Causal Inference
 
-Welcome to the public quantitative research library of the **Autonomous Causal Fleet Architecture** ([`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/LAPTOP_PREPROCESSOR_MODELER)). 
+Welcome to the public quantitative research library of the **Autonomous Causal Fleet Architecture** ([`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/stadium-public-data)). 
 
 This series documents the mathematical formulations, econometric models, and empirical production telemetry behind our high-frequency algorithmic market-making engine deployed across AWS EC2 and dedicated data-science nodes.
 

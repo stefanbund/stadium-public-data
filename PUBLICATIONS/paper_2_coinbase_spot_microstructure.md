@@ -4,7 +4,7 @@
 **System Architecture Target**: Causal Execution Engine (V29--V59 / Pure Maker Mandate)  
 **Classification**: High-Frequency Market Microstructure / Limit Order Book Queue Optimization  
 **Date**: November 2026  
-**Repository**: [`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/LAPTOP_PREPROCESSOR_MODELER)  
+**Repository**: [`LAPTOP_PREPROCESSOR_MODELER`](https://github.com/stefanbund/stadium-public-data)  
 
 ---
 
